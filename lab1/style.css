@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  /* Bu saytda bütün elementlər ortadadır və eyni şriftdən istifadə edir */
+  /* Bu seçimləri burada deaktiv edə və lazım olan class-larda əlavə edə biləriy */
+}
+
+.price-heading {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 80px;
+}
+
+.price-cards-item {
+  /* border: 1px solid black; */
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 100px;
+}
+
+.price-cards-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.price-cards-item:nth-child(2) {
+  margin: 0 20px;
+}
+
+.price-cards-item-top h3 {
+  font-size: 30px;
+  font-weight: 10;
+  margin: 30px 0;
+  font-family: "Mozilla Text", sans-serif;
+}
+
+.price-cards-item-top p {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+.price-cards-item-top i {
+  font-size: 40px;
+}
+
+.price-cards-item-list {
+  margin: 60px 0;
+}
+
+.price-cards-item-list ul {
+  font-size: 20px;
+}
+
+.price-cards-item-list li {
+  list-style-type: none;
+  padding: 5px;
+  margin: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #403e3e;
+}
+
+.bottom-button {
+  width: 200px;
+  height: 60px;
+  color: white;
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+#card-button1 {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+#card-button2 {
+  background-color: #63e6be;
+  border-color: #63e6be;
+}
+
+#card-button3 {
+  background-color: #0062ff;
+  border-color: #0062ff;
+}
