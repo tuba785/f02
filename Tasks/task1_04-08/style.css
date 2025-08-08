@@ -11,13 +11,15 @@ body {
 .login_section {
   height: 280px;
   width: 800px;
-  display: inline-block;
+  /* display: inline-block; */
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 60px 100px;
+  padding: 60px 0;
   border-radius: 20px;
+  /* No border, because box-sizing:border-box and padding:60px 0 are used */
+  /* border: 15px solid #e6e6fa; */
   box-shadow: #e6e6fa 0px 0px 0px 15px;
   background-image: linear-gradient(to right, #4169e1, #2a52be);
   text-align: center;
@@ -44,14 +46,15 @@ body {
   height: 50px;
   position: relative;
   border-radius: 50px;
-  background-color: #e6e6fa;
-  opacity: 60%;
+  background-color: #8094dc;
+  /* opacity: 70%; */
   padding-left: 20px;
   padding-right: 50px;
+  border: 0;
 }
 
 input::placeholder {
-  color: #91a6bd;
+  color: #e9edfa;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
 }
@@ -60,6 +63,7 @@ input::placeholder {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 0;
   position: absolute;
   right: 247px;
   bottom: 78px;
@@ -70,32 +74,43 @@ input::placeholder {
   height: 20px;
 }
 
-.login_section_people-photos {
+.login_section_people {
   position: relative;
-  bottom: -80px;
 }
 
-.login_section_people-photos img {
+.login_section_people_photos {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  bottom: -147px;
+  width: 800px;
+  height: auto;
+}
+
+.login_section_people_photos img {
   width: 60px;
   height: 60px;
+  display: inline-block;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  border: 0;
+  /* border: 5px solid white; */
   box-shadow: white 0px 0px 0px 5px;
-  position: absolute;
+  transition: 1s;
 }
 
-.login_section_people-photos img:nth-child(1) {
-    left: 20%;
+.login_section_people_photos img:hover {
+  transition: 1s;
+  transform: rotate(360deg);
+  width: 80px;
+  height: 80px;
 }
-.login_section_people-photos img:nth-child(2) {
-    left: 35%;
+
+.login_section_people_photos img:nth-child(2) {
+  margin-left: 40px;
 }
-.login_section_people-photos img:nth-child(3) {
-    left: 50%;
+.login_section_people_photos img:nth-child(3) {
+  margin: 0 40px;
 }
-.login_section_people-photos img:nth-child(4) {
-    left: 65%;
-}
-.login_section_people-photos img:nth-child(5) {
-    left: 80%;
+.login_section_people_photos img:nth-child(4) {
+  margin-right: 40px;
 }
