@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* This font could only be placed here, but it will not always be the same everywhere. */
+  /* font-family: "Work Sans", sans-serif; */
 }
 
 #header {
@@ -12,6 +14,7 @@
   align-items: center;
   width: 100%;
   height: 80px;
+  /* it doesn't work any other way */
   padding: 0 112px;
   position: sticky;
   top: 0;
@@ -55,7 +58,7 @@ a {
 }
 
 .header_menu_item a:hover {
-  color: aqua;
+  color: #2947a9;
   font-size: 25px;
   transition-duration: 1s;
 }
@@ -314,4 +317,195 @@ a {
 .experience {
   width: 100%;
   height: 723px;
+}
+
+.consultation {
+  width: 100%;
+  height: 300px;
+  background-image: url(./phtos/banner2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  justify-content: center;
+  gap: 182px;
+}
+
+.consultation_info h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.consultation_info span {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#consultation_info_number {
+  text-decoration: underline;
+}
+
+.consultation_button button {
+  width: 232px;
+  height: 53px;
+  padding: 16px 20px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 2px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+#consultation_button_link {
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.consultation_button button:hover {
+  background-color: gray;
+  border-color: #3559c7;
+  transition: 0.2s;
+}
+
+.projects {
+  width: 100%;
+  height: 1100px;
+  padding: 100px;
+  position: relative;
+}
+
+.projects h2 {
+  font-family: "Work Sans", sans-serif;
+  color: #292e3d;
+  font-weight: 700;
+  font-size: 36px;
+  width: 100%;
+  height: 42px;
+  margin-bottom: 40px;
+}
+
+.projects_navboxes {
+  display: flex;
+}
+
+.projects_nav {
+  width: 800px;
+  height: 800px;
+}
+
+.projects_nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects_nav ul li a {
+  font-family: "Work Sans", sans-serif;
+  color: #c2c7d6;
+  font-weight: 500;
+  font-size: 24px;
+  transition: 1s;
+  padding-left: 16px;
+}
+
+.projects_nav ul li a:hover {
+  color: #2947a9;
+  font-weight: 700;
+  transition: 0.2s;
+  border-left: 4px solid #2947a9;
+}
+
+.projects_cards {
+  width: 920px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.projects_card {
+  width: 400px;
+  height: 350px;
+  background-color: #2947a9;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  transition: 1s;
+}
+
+.projects_card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 1s;
+}
+
+.projects_card img {
+  width: 400px;
+  height: 250px;
+}
+
+.projects_card h2 {
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 12px 12px;
+  margin: 0;
+}
+
+.projects_card p {
+  font-family: "Work Sans", sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 12px 12px;
+}
+
+.projects_buttons {
+  display: flex;
+  width: 830px;
+  height: 64px;
+  position: absolute;
+  left: 900px;
+  gap: 43px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projects_buttons button {
+  width: 300px;
+  height: 100%;
+  background-color: #292e3d;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  border: 0px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.projects_buttons button:hover {
+  color: red;
+  background-color: #1a2d66;
+}
+
+.projects_buttons_radios {
+  width: 144px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.projects_buttons_radios input {
+  width: 16px;
+  height: 16px;
+  background-color: #f6f8f7;
+  border-radius: 50%;
 }
