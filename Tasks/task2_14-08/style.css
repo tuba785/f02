@@ -26,6 +26,8 @@
 h1 {
   color: #2947a9;
   font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 ul {
@@ -556,7 +558,7 @@ a {
 .form_row2 select {
   width: 280px;
   height: 41px;
-  border: 1px solid #E0E3EB;
+  border: 1px solid #e0e3eb;
   border-radius: 4px;
   padding: 0 8px;
 }
@@ -614,4 +616,141 @@ a {
   font-size: 18px;
   color: #a3aac2;
   background-color: white;
+}
+
+.f_info {
+  width: 100%;
+  height: 380px;
+  padding: 85px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.f_info_left {
+  width: 50%;
+  height: 100%;
+}
+
+.f_info_left_text {
+  display: flex;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+.f_info_left_blue {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #2947a9;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.f_info_left_black {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.f_info_left_logo {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+  align-items: center;
+}
+
+.f_info_left_logo img {
+}
+
+.f_info_left_logo h2 {
+  color: #2947a9;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.f_info_right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.f_info_right_form {
+}
+
+.f_info_right_form label {
+  color: #2947a9;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.f_info_right_form input {
+  width: 280px;
+  height: 40px;
+  border: 1px solid #e0e3eb;
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-top: 20px;
+}
+
+.f_info_right_form input::placeholder {
+  color: #a3aac2;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.f_info_right_form button {
+  width: 135px;
+  height: 40px;
+  border: 0px;
+  background-color: #f9995d;
+  border-radius: 4px;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 6px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.f_info_right_form button:hover {
+  background-color: gray;
+  border-color: #3559c7;
+  transition: 0.2s;
+  color: red;
+}
+
+.f_info_right p {
+  color: #2947a9;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 40px 0 20px 0;
+}
+
+.f_info_right_images {
+  display: flex;
+  gap: 20px;
+}
+
+.f_end {
+  width: 100%;
+  height: 70px;
+  background-color: #2947a9;
+}
+
+.f_end p {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  padding: 25px 0 25px 100px;
 }
