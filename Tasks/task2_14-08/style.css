@@ -28,6 +28,19 @@ h1 {
   font-family: "Work Sans", sans-serif;
   font-weight: 700;
   font-size: 30px;
+  font-style: italic;
+}
+
+h1::before {
+  content: url(./phtos/logo2.svg);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+h1::after {
+  content: "Box";
+  font-style: normal;
 }
 
 ul {
@@ -75,6 +88,23 @@ a {
   display: flex;
   justify-content: space-between;
   /* opacity: 60%; */
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.4) 25%,
+    none 100%
+  );
+  z-index: 1;
 }
 
 .banner_left {
@@ -84,6 +114,8 @@ a {
   align-self: center;
   margin-left: 112px;
   width: 556px;
+  position: relative;
+  z-index: 2;
 }
 
 .banner_right {
@@ -94,6 +126,8 @@ a {
   height: 190px;
   padding: 20px 0 0 0;
   align-self: flex-end;
+  position: relative;
+  z-index: 2;
 }
 
 .banner_right h2 {
@@ -482,17 +516,33 @@ a {
   color: white;
   justify-content: center;
   gap: 182px;
+  position: relative;
+}
+
+.consultation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 .consultation_info h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .consultation_info span {
   font-size: 24px;
   font-weight: 400;
+  position: relative;
+  z-index: 2;
 }
 
 #consultation_info_number {
@@ -508,6 +558,8 @@ a {
   border-radius: 2px;
   transition: 1s;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 #consultation_button_link {
@@ -717,6 +769,24 @@ a {
   gap: 40px;
 }
 
+.form_row2_select {
+  overflow: hidden;
+  background: url("./phtos/arrow.svg") no-repeat right white;
+  display: inline-block;
+  position: relative;
+  background-size: 20px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.form_form span::before {
+  content: "*";
+  color: red;
+}
+
 .form_form textarea {
   width: 600px;
   max-width: 2000px;
@@ -816,6 +886,19 @@ a {
   font-family: "Work Sans", sans-serif;
   font-weight: 700;
   font-size: 30px;
+  font-style: italic;
+}
+
+.f_info_left_logo h2::before {
+  content: url(./phtos/logo2.svg);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.f_info_left_logo h2::after {
+  content: "Box";
+  font-style: normal;
 }
 
 .f_info_right {
