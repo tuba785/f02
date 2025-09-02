@@ -1,0 +1,63 @@
+@mixin flex-default(
+  $justify-content: "center",
+  $align-items: "center",
+  $flex-direction: "row",
+  $text-align: "center"
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  text-align: $text-align;
+}
+
+@mixin button_transp {
+  border: 1px solid $color-black;
+  border-radius: 200px;
+  background-color: transparent;
+  a {
+    font-family: "Fraunces", serif;
+    font-size: 4rem;
+    font-weight: 500;
+    color: $color-black;
+  }
+  font-family: "Fraunces", serif;
+  font-size: 4rem;
+  font-weight: 500;
+  color: $color-black;
+  cursor: pointer;
+}
+
+@mixin button_black {
+  $border: 0;
+  border-radius: 200px;
+  background-color: $color-black;
+  a {
+    font-family: "Fraunces", serif;
+    font-size: 4rem;
+    font-weight: 500;
+    color: white;
+  }
+  font-family: "Fraunces", serif;
+  font-size: 4rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+@mixin text_fr($font-size: "4rem", $font-weight: "500") {
+  font-family: "Fraunces", serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin span_gray {
+  color: #344054;
+  background-color: #f2f4f7;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
