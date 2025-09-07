@@ -1,0 +1,194 @@
+@import "./variables";
+@import "./mixins";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+// font-family: "DM Sans", sans-serif;
+// font-family: "Poppins", sans-serif;
+
+// Make header sticky and buttons hover
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 4px;
+  // border: 1px solid red;
+  // For cheking borders
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  width: 100%;
+  height: 166px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  &_top {
+    width: 100%;
+    height: 82px;
+    @include flex-default(center, center, center, row, nowrap);
+    background-color: $color-header;
+    padding: 22px 61.5px;
+
+    &_left {
+      width: 50%;
+      height: 100%;
+      @include flex-default(left, center, center, row, nowrap);
+      gap: 30px;
+      &_phone {
+        @include flex-default(left, center, center, row, nowrap);
+        gap: 4px;
+        span {
+          @include text_dmsans(4rem, 600, $color-main-white);
+        }
+      }
+    }
+
+    &_right {
+      width: 50%;
+      height: 100%;
+      @include flex-default(right, center, center, row, nowrap);
+      gap: 32px;
+
+      &_lang {
+        width: 28px;
+        height: 28px;
+      }
+
+      &_buttons {
+        @include flex-default(center, center, center, row, nowrap);
+
+        &_button1 {
+          width: 159px;
+          height: 38px;
+          background-color: $color-green;
+          border: 0px;
+          border-radius: 32px;
+          a {
+            @include text_dmsans(4rem, 500, $color-main-white);
+          }
+        }
+
+        &_button2 {
+          width: 98px;
+          height: 38px;
+          background-color: $color-green;
+          border-radius: 32px;
+          border: 0px;
+          a {
+            @include text_dmsans(4rem, 500, $color-main-white);
+          }
+        }
+        gap: 16px;
+
+        &_mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    width: 100%;
+    height: 84px;
+    background-color: $color-main-white;
+    @include flex-default(space-between, center, center, row, nowrap);
+    padding: 0 60px;
+    &_left_menu {
+      @include flex-default(left, center, center, row, nowrap);
+      gap: 30px;
+      &_item_link {
+        @include text_dmsans(4rem, 500, #353535);
+        // Цвет
+      }
+    }
+    &_right {
+      @include flex-default(right, center, center, row, nowrap);
+      position: relative;
+      &_img {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: 20px;
+        // I don't know yet how to make it, like tag a, or button, or leave it as a photo
+      }
+      &_input {
+        width: 395px;
+        height: 50px;
+        border-radius: 100px;
+        background-color: #f5f5f5;
+        // Цвет
+        border: 0px;
+        padding: 0 50px;
+        @include text_dmsans(4.5rem, 400, $color-main-black);
+      }
+      &_input::placeholder {
+        @include text_dmsans(4.5rem, 400, #c0c0c0);
+        // Цвет
+      }
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 590px;
+  background-image: url(./pics/banner1.png);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  &_icon {
+    position: absolute;
+    right: 60px;
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 125px;
+    &_top {
+      height: 125px;
+      padding: 0 16px;
+      &_left_phone {
+        display: none;
+      }
+      &_right {
+        gap: 31px;
+        &_buttons {
+          button {
+            display: none;
+          }
+          img {
+            display: flex;
+            gap: 31px;
+          }
+        }
+      }
+    }
+    &_bottom {
+      display: none;
+    }
+  }
+
+  .banner {
+    width: calc(100% - 32px);
+    height: 723px;
+    overflow: hidden;
+    background-size: cover;
+    margin: 16px 16px 0 16px;
+    &_icon {
+      display: none;
+    }
+  }
+}

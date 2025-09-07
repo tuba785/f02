@@ -1,0 +1,28 @@
+@mixin flex-default(
+  $justify-content: "center",
+  $align-items: "center",
+  $text-align: "center",
+  $flex-direction: "row",
+  $flex-wrap: "nowrap"
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  text-align: $text-align;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
+
+@mixin text_dmsans($font-size: 4rem, $font-weight: 400, $color: red) {
+  font-family: "DM Sans", sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+@mixin text_poppins($font-size: 4rem, $font-weight: 400, $color: red) {
+  font-family: "Poppins", sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
