@@ -176,9 +176,13 @@ ul {
       gap: 30px;
       button:first-child {
         @include button_green;
+        width: 129px;
+        height: 38px;
       }
       button {
         @include button_transp;
+        width: 117px;
+        height: 38px;
       }
     }
   }
@@ -336,7 +340,7 @@ ul {
 
 .blog {
   width: 100%;
-  height: 618px;
+  height: 800px;
   padding: 0 60px 100px 60px;
   @include flex-default(center, center, center, column, nowrap);
   h2 {
@@ -353,6 +357,9 @@ ul {
     align-self: flex-end;
     text-decoration: underline;
     margin-bottom: 35px;
+  }
+  &_link_mobile {
+    display: none;
   }
   &_cards {
     @include flex-default(center, center, center, row, nowrap);
@@ -390,10 +397,17 @@ ul {
         }
       }
       h2 {
-        @include text_dmsans(5rem, 600, #4A4A4A);
+        @include text_dmsans(5rem, 600, #4a4a4a);
         margin-top: 44px;
       }
     }
+  }
+  &_buttonmobile {
+    @include button_transp;
+    width: 167px;
+    height: 44px;
+    margin-top: 30px;
+    display: none;
   }
 }
 
@@ -493,6 +507,56 @@ ul {
       @include text_dmsans(3.5rem, 400, $color-main-black);
       margin: 74px 0 40px 0;
       width: 285px;
+    }
+  }
+
+  .blog {
+    padding: 16px;
+    height: 1600px;
+    h2 {
+      @include text_dmsans(7rem, 600, $color-header);
+    }
+    p {
+      @include text_dmsans(3.5rem, 400, $color-main-black);
+      margin: 10px 0 40px 0;
+      width: 285px;
+    }
+    &_link_mobile {
+      display: inline !important;
+    }
+    &_link {
+      display: none;
+    }
+    &_cards {
+      @include flex-default(center, center, center, column, nowrap);
+      gap: 100px;
+      &_card {
+        width: 100%;
+        img {
+          width: 100%;
+          height: auto;
+          max-width: 400px;
+        }
+        h2 {
+          @include text_dmsans(5rem, 600, #4a4a4a);
+          width: 100%;
+        }
+        &_date {
+          left: 22px;
+          top: 250px;
+          p {
+            @include text_dmsans(3rem, 400, $color-main-white);
+            padding-bottom: 33px;
+          }
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+    &_buttonmobile {
+      display: block;
     }
   }
 }
