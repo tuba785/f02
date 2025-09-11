@@ -418,29 +418,31 @@ ul {
 .footer {
   width: 100%;
   height: 579px;
-  padding: 64px 100px 0 100px;
+  padding: 64px 80px 0 80px;
   border-top: 1px solid #e6e6e6;
   @include flex-default(center, flex-start, center, column, nowrap);
   &_top {
     @include flex-default(left, flex-start, left, row, nowrap);
-    gap: 60px;
+    gap: 100px;
     width: 100%;
     height: 236px;
     margin-bottom: 44px;
-    &_logo {
-      margin-right: 40px;
-    }
-    &_nav {
-      &_menu {
-        padding: 12px 0;
-        width: auto;
-        height: auto;
-        @include flex-default(left, flex-start, left, column, nowrap);
-        gap: 12px;
-        &_item {
-          @include text_dmsans(4rem, 600, $color-main-black);
-          &_link {
-            @include text_dmsans(3.5rem, 400, #000000cc);
+    &_navs {
+      @include flex-default(center, flex-start, left, row, nowrap);
+      gap: 60px;
+      width: auto;
+      &_nav {
+        &_menu {
+          padding: 12px 0;
+          width: auto;
+          height: auto;
+          @include flex-default(left, flex-start, left, column, nowrap);
+          gap: 12px;
+          &_item {
+            @include text_dmsans(4rem, 600, $color-main-black);
+            &_link {
+              @include text_dmsans(3.5rem, 400, #000000cc);
+            }
           }
         }
       }
@@ -457,6 +459,14 @@ ul {
     width: 100%;
     height: 65px;
     border-top: 1px solid #e6e6e6;
+    @include flex-default(space-between, center, center, row, nowrap);
+    p {
+      @include text_poppins(3rem, 400, #a6a7ab);
+    }
+    &_logos {
+      @include flex-default(space-between, center, center, row, nowrap);
+      gap: 16px;
+    }
   }
 }
 
@@ -513,6 +523,7 @@ ul {
       p {
         font-size: 3.5rem;
         width: 300px;
+        max-width: 70%;
       }
       &_buttons {
         width: 100%;
@@ -524,6 +535,7 @@ ul {
       img {
         width: 330px;
         height: 230px;
+        max-width: 90%
       }
     }
   }
@@ -606,6 +618,61 @@ ul {
     }
     &_buttonmobile {
       display: block;
+    }
+  }
+
+  .footer {
+    padding: 24px 16px;
+    height: auto;
+    @include flex-default(flex-start, flex-start, center, column, wrap);
+    &_top {
+      height: auto;
+      &_logo {
+        display: none;
+      }
+      &_navs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: auto;
+        width: 100%;
+        gap: 24px 35px;
+      }
+    }
+    &_logos {
+      width: 100%;
+      @include flex-default(flex-start, flex-start, left, row, wrap);
+      gap: 0px;
+      img {
+        transform: scale(0.5);
+      }
+    }
+    &_media {
+      width: 100%;
+      margin-top: 24px;
+      padding-top: 24px;
+      @include flex-default(center, center, left, column-reverse, wrap);
+      gap: 24px;
+      height: auto;
+      p {
+        width: 100%;
+        align-self: flex-start;
+      }
+      &_logos {
+        width: 100%;
+        gap: 30px;
+        &_item {
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+        &_item:nth-child(5) {
+          img {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
