@@ -87,28 +87,44 @@ ul {
 .header_top_right_buttons_button1 {
   width: 159px;
   height: 38px;
-  background-color: #109932;
-  border: 0px;
+  border: 0;
   border-radius: 32px;
-}
-.header_top_right_buttons_button1 a {
+  background-color: #109932;
   font-family: "DM Sans", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   color: white;
+  cursor: pointer;
+}
+.header_top_right_buttons_button1:hover {
+  background-color: green;
+}
+.header_top_right_buttons_button1 a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .header_top_right_buttons_button2 {
   width: 98px;
   height: 38px;
-  background-color: #109932;
+  border: 0;
   border-radius: 32px;
-  border: 0px;
-}
-.header_top_right_buttons_button2 a {
+  background-color: #109932;
   font-family: "DM Sans", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   color: white;
+  cursor: pointer;
+}
+.header_top_right_buttons_button2:hover {
+  background-color: green;
+}
+.header_top_right_buttons_button2 a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .header_top_right_buttons_mobile {
   display: none;
@@ -248,11 +264,14 @@ ul {
   width: 129px;
   height: 38px;
 }
+.floors_item_buttons button:first-child:hover {
+  background-color: green;
+}
 .floors_item_buttons button:first-child a {
-  font-family: "DM Sans", sans-serif;
-  font-size: 4rem;
-  font-weight: 500;
-  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .floors_item_buttons button {
   border: 1px solid #183E54;
@@ -266,11 +285,16 @@ ul {
   width: 117px;
   height: 38px;
 }
+.floors_item_buttons button:hover {
+  border: 0px;
+  background-color: #183E54;
+  color: white;
+}
 .floors_item_buttons button a {
-  font-family: "DM Sans", sans-serif;
-  font-size: 4rem;
-  font-weight: 500;
-  color: #183E54;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 .floors_item1 {
   background-image: linear-gradient(rgba(97, 144, 232, 0.2), rgba(167, 191, 232, 0.1019607843));
@@ -463,6 +487,26 @@ ul {
   width: 480px;
   margin: 20px 0 70px 0;
 }
+.testimonials_materials {
+  width: 100%;
+  height: 507px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 36px;
+  overflow: hidden;
+}
+.testimonials_materials_video {
+  width: 296px;
+  height: 507px;
+  border-radius: 32px;
+  border: 1px solid black;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .blog {
   width: 100%;
@@ -581,11 +625,85 @@ ul {
   margin-top: 30px;
   display: none;
 }
+.blog_buttonmobile:hover {
+  border: 0px;
+  background-color: #183E54;
+  color: white;
+}
 .blog_buttonmobile a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.footer {
+  width: 100%;
+  height: 579px;
+  padding: 64px 100px 0 100px;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.footer_top {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 60px;
+  width: 100%;
+  height: 236px;
+  margin-bottom: 44px;
+}
+.footer_top_logo {
+  margin-right: 40px;
+}
+.footer_top_nav_menu {
+  padding: 12px 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+.footer_top_nav_menu_item {
   font-family: "DM Sans", sans-serif;
   font-size: 4rem;
-  font-weight: 500;
-  color: #183E54;
+  font-weight: 600;
+  color: black;
+}
+.footer_top_nav_menu_item_link {
+  font-family: "DM Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.8);
+}
+.footer_logos {
+  width: 100%;
+  height: 170px;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 64px;
+}
+.footer_media {
+  width: 100%;
+  height: 65px;
+  border-top: 1px solid #e6e6e6;
 }
 
 @media screen and (max-width: 768px) {

@@ -31,36 +31,40 @@
   border: 0;
   border-radius: 32px;
   background-color: $color-green;
-  a {
-    font-family: "DM Sans", sans-serif;
-    font-size: 4rem;
-    font-weight: 500;
-    color: $color-main-white;
-  }
   font-family: "DM Sans", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   color: $color-main-white;
   cursor: pointer;
-  // width: 129px;
-  // height: 38px;
+  &:hover {
+    background-color: green;
+  }
+  a {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
 }
 
 @mixin button_transp {
   border: 1px solid $color-header;
   border-radius: 32px;
   background-color: transparent;
-  a {
-    font-family: "DM Sans", sans-serif;
-    font-size: 4rem;
-    font-weight: 500;
-    color: $color-header;
-  }
   font-family: "DM Sans", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   color: $color-header;
   cursor: pointer;
-  // width: 117px;
-  // height: 38px;
+  &:hover {
+    border: 0px;
+    background-color: $color-header;
+    color: $color-main-white;
+  }
+  a {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+  }
 }
