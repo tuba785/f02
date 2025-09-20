@@ -49,7 +49,7 @@ console.log("");
 console.log("Taks 6:");
 let task6 = ["js", "html", "css"];
 function containsWord(arr, word) {
-    return arr.includes(word);
+    return arr.includes(word.toLowerCase());
 }
 console.log(containsWord(task6, "html"));
 console.log("");
@@ -93,10 +93,10 @@ console.log("");
 // Task 11
 console.log("Taks 11:");
 let task11 = ["Python", "JavaScript", "C++"];
-// function containsWord(arr, word) {
-//     return arr.includes(word);
-// }
-console.log(containsWord(task11, "JavaScript"));
+function containsWord2(arr, word) {
+    return arr.includes(word);
+}
+console.log(containsWord2(task11, "JavaScript"));
 console.log("");
 
 // Task 12
