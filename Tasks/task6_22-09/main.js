@@ -249,7 +249,27 @@ getSeason(13);
 
 // func simpleCalc(){}
 // ???
-console.log("");
+function calculator(a, operation, b){
+  function plus(a, b){return a + b;}
+  function minus(a, b){return a - b;}
+  function multiply(a, b){return a * b;}
+  function divide(a, b){return a / b;}
+  // switch"
+  // ???
+  switch (operation) {
+    case 'plus' && "+" :
+      return plus(a, b);
+    case 'minus' && "+" :
+      return minus(a, b);
+    case 'multiply' && "+" :
+      return multiply(a, b);
+    case 'divide' && "+" :
+      return divide(a, b);
+    default:
+      return 'Write operation';
+  }
+}
+console.log(calculator(5, '+', 3));
 
 // Task 5.2
 console.log("Taks 5.2:");
@@ -279,8 +299,27 @@ function reverseArr(arr) {
 }
 reverseArr(rArr);
 
-// function simpleNum(untilNum) {}
-// ???
+// prime ver1
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= num / 2; i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+console.log(isPrime(31));
+
+// prime ver2
+function findPrimes(limit) {
+  let primes = [];
+  for (let i = 2; i <= limit; i++) {
+    if (isPrime(i)) { //using isPrime function there
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+console.log(findPrimes(30));
 
 function printTriangle(n) {
   let str = "";
