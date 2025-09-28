@@ -65,15 +65,20 @@ let buttonLeft = document.querySelector(".button_left");
 let buttonRight = document.querySelector(".button_right");
 let marginLeftSquare = 0;
 let marginRightSquare = 0;
+// Left and right margins divide the area in half
 buttonLeft.addEventListener("click", () => {
-    if (marginLeftSquare > -1400) {
-        marginLeftSquare -= 50;
-        square.style.marginLeft = marginLeftSquare + "px";
-    }
+  if (marginLeftSquare > -700 && marginLeftSquare + marginRightSquare > -700 && marginLeftSquare + marginRightSquare < 700) {
+    marginLeftSquare -= 50;
+    marginRightSquare += 50;
+    square.style.marginLeft = marginLeftSquare + "px";
+    square.style.marginRight = marginRightSquare + "px";
+  }
 });
 buttonRight.addEventListener("click", () => {
-        if (marginRightSquare > -1400) {
-        marginRightSquare -= 50;
-        square.style.marginRight = marginRightSquare + "px";
-    }
+  if (marginRightSquare > -700) {
+    marginRightSquare -= 50;
+    marginLeftSquare += 50;
+    square.style.marginLeft = marginLeftSquare + "px";
+    square.style.marginRight = marginRightSquare + "px";
+  }
 });
