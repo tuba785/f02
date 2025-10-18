@@ -59,8 +59,8 @@ function createCard(item) {
       likedItems = likedItems.filter((id) => id !== item.id);
     }
 
-    renderMainItems();
-    renderLikedItems();
+    showMainItems();
+    showLikedItems();
     console.log("Liked Items:", likedItems);
   });
 
@@ -70,7 +70,7 @@ function createCard(item) {
 }
 
 // Left side
-function renderMainItems() {
+function showMainItems() {
   mainContainer.innerHTML = "";
   items.forEach((item) => {
     const card = createCard(item);
@@ -79,7 +79,7 @@ function renderMainItems() {
 }
 
 // Right side
-function renderLikedItems() {
+function showLikedItems() {
   likedContainer.innerHTML = "";
   likedItems.forEach((id) => {
     const item = items.find((el) => el.id === id);
@@ -90,8 +90,8 @@ function renderLikedItems() {
   });
 }
 
-renderMainItems();
-renderLikedItems();
+showMainItems();
+showLikedItems();
 
 
 // First Version
