@@ -11,62 +11,65 @@ function Employee(id, name, age, position, experience, skills, startDate) {
 let employees = [];
 let editId = null;
 
-document
-  .getElementById("employeeForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+const form = document.getElementById("employeeForm");
+const tableBody = document.querySelector("#employeeTable tbody");
 
-    const name = document.getElementById("name").value.trim();
-    const age = parseInt(document.getElementById("age").value);
-    const position = document.getElementById("position").value.trim();
-    const experience = parseInt(document.getElementById("experience").value);
-    const skills = document.getElementById("skills").value;
-    const startDate = document.getElementById("startDate").value;
+function validateForm(name, age, position, experience, skills, startDate) {
+  if (!/^[A-Za-z\s]{3,50}$/.test(name)) {
+    alert("Name and surname must contain only letters (3-50 chars)");
+    return false;
+  }
+  if (age < 18 || age > 65) {
+    alert("Age must be between 18 and 65");
+    return false;
+  }
+  if (position.length < 2 || position.length > 30) {
+    alert("Position must be 2-30 characters");
+    return false;
+  }
+  if (experience < 0 || experience > age - 18) {
+    alert("Experience must be less than or equal to (Age - 18)");
+    return false;
+  }
+  if (!skills) {
+    alert("Please select at least one skill");
+    return false;
+  }
+  if (new Date(startDate) >= new Date()) {
+    alert("Start date must be in the past.");
+    return;
+  }
+  return true;
+}
 
-    if (!/^[A-Za-z\s]{3,50}$/.test(name)) {
-      alert("Name must contain only letters (3–50 chars).");
-      return;
-    }
-    if (isNaN(age) || age < 18 || age > 65) {
-      alert("Age must be between 18 and 65.");
-      return;
-    }
-    if (position.length < 2 || position.length > 30) {
-      alert("Position must be 2–30 characters.");
-      return;
-    }
-    if (experience < 0 || experience > age - 18) {
-      alert("Experience is not valid for this age.");
-      return;
-    }
-    if (!skills) {
-      alert("Please select at least one skill.");
-      return;
-    }
-    if (new Date(startDate) >= new Date()) {
-      alert("Start date must be in the past.");
-      return;
-    }
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    const id = Date.now();
-    const employee = new Employee(
-      id,
-      name,
-      age,
-      position,
-      experience,
-      skills,
-      startDate
-    );
-    employees.push(employee);
-    renderTable();
-    this.reset();
-  });
+  const name = document.getElementById("name").value.trim();
+  const age = parseInt(document.getElementById("age").value);
+  const position = document.getElementById("position").value.trim();
+  const experience = parseInt(document.getElementById("experience").value);
+  const skills = document.getElementById("skills").value;
+  const startDate = document.getElementById("startDate").value;
+
+  if (!validateForm(name, age, position, experience, skills, startDate)) return;
+
+  const newEmployee = new Employee(
+    Date.now(),
+    name,
+    age,
+    position,
+    experience,
+    skills,
+    startDate
+  );
+  employees.push(newEmployee);
+  renderTable();
+  form.reset();
+});
 
 function renderTable() {
-  const tbody = document.querySelector("#employeeTable tbody");
-  tbody.innerHTML = "";
-
+  tableBody.innerHTML = "";
   employees.forEach((emp, index) => {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -76,15 +79,17 @@ function renderTable() {
       <td>${emp.position}</td>
       <td>${emp.experience}</td>
       <td>${emp.skills}</td>
-      <td>${emp.startDate}</td>
+      <td>${emp.startDate.split("-").reverse().join(".")}</td>
       <td>
-        <button class="edit-btn" onclick="openEdit(${emp.id})">Edit</button>
-        <button class="delete-btn" onclick="deleteEmployee(${
+        <button class="action-btn edit-btn" onclick="editEmployee(${
+          emp.id
+        })">Edit</button>
+        <button class="action-btn delete-btn" onclick="deleteEmployee(${
           emp.id
         })">Delete</button>
       </td>
     `;
-    tbody.appendChild(row);
+    tableBody.appendChild(row);
   });
 }
 
@@ -93,25 +98,27 @@ function deleteEmployee(id) {
   renderTable();
 }
 
-function openEdit(id) {
-  const modal = document.getElementById("editModal");
-  modal.style.display = "block";
-  const emp = employees.find((e) => e.id === id);
-  editId = id;
+const modal = document.getElementById("editModal");
+const closeModalBtn = document.getElementById("closeModal");
 
+function editEmployee(id) {
+  const emp = employees.find((e) => e.id === id);
+  if (!emp) return;
+
+  editId = id;
   document.getElementById("editName").value = emp.name;
   document.getElementById("editAge").value = emp.age;
   document.getElementById("editPosition").value = emp.position;
   document.getElementById("editExperience").value = emp.experience;
   document.getElementById("editSkills").value = emp.skills;
   document.getElementById("editStartDate").value = emp.startDate;
+
+  modal.style.display = "flex";
 }
 
-document.getElementById("closeModal").addEventListener("click", () => {
-  document.getElementById("editModal").style.display = "none";
-});
+closeModalBtn.addEventListener("click", () => (modal.style.display = "none"));
 
-document.getElementById("editForm").addEventListener("submit", function (e) {
+document.getElementById("editForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const name = document.getElementById("editName").value.trim();
@@ -121,35 +128,18 @@ document.getElementById("editForm").addEventListener("submit", function (e) {
   const skills = document.getElementById("editSkills").value;
   const startDate = document.getElementById("editStartDate").value;
 
-  if (!/^[A-Za-z\s]{3,50}$/.test(name)) {
-    alert("Name must contain only letters (3–50 chars).");
-    return;
-  }
-  if (isNaN(age) || age < 18 || age > 65) {
-    alert("Age must be between 18 and 65.");
-    return;
-  }
-  if (position.length < 2 || position.length > 30) {
-    alert("Position must be 2–30 characters.");
-    return;
-  }
-  if (experience < 0 || experience > age - 18) {
-    alert("Experience is not valid for this age.");
-    return;
-  }
-  if (new Date(startDate) >= new Date()) {
-    alert("Start date must be in the past.");
-    return;
-  }
+  if (!validateForm(name, age, position, experience, skills, startDate)) return;
 
   const emp = employees.find((e) => e.id === editId);
-  emp.name = name;
-  emp.age = age;
-  emp.position = position;
-  emp.experience = experience;
-  emp.skills = skills;
-  emp.startDate = startDate;
+  if (emp) {
+    emp.name = name;
+    emp.age = age;
+    emp.position = position;
+    emp.experience = experience;
+    emp.skills = skills;
+    emp.startDate = startDate;
+  }
 
-  document.getElementById("editModal").style.display = "none";
   renderTable();
+  modal.style.display = "none";
 });

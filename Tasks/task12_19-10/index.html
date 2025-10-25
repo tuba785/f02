@@ -22,15 +22,14 @@
           required
         />
         <select id="skills" required>
-          <option value="">Select skill</option>
-          <option value="Communication">Communication</option>
-          <option value="Teamwork">Teamwork</option>
-          <option value="Leadership">Leadership</option>
-          <option value="Programming">Programming</option>
-          <option value="Design">Design</option>
+          <option value="">Select skills</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
         </select>
         <input type="date" id="startDate" required />
-        <button type="submit" id="addBtn">Add</button>
+        <button type="submit">Add</button>
       </form>
     </div>
 
@@ -50,29 +49,29 @@
       <tbody></tbody>
     </table>
 
-    <!-- Modal -->
-    <div id="editModal" class="modal">
+    <div class="modal" id="editModal">
       <div class="modal-content">
-        <h3>Edit Employee</h3>
+        <h2>Edit Employee</h2>
         <form id="editForm">
           <input type="text" id="editName" required />
           <input type="number" id="editAge" required />
           <input type="text" id="editPosition" required />
           <input type="number" id="editExperience" required />
           <select id="editSkills" required>
-            <option value="Communication">Communication</option>
-            <option value="Teamwork">Teamwork</option>
-            <option value="Leadership">Leadership</option>
-            <option value="Programming">Programming</option>
-            <option value="Design">Design</option>
+            <option value="">Select skills</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
           </select>
           <input type="date" id="editStartDate" required />
-          <button type="submit">Save</button>
-          <button type="button" id="closeModal">Cancel</button>
+          <div class="modal-buttons">
+            <button type="submit">Save</button>
+            <button type="button" id="closeModal">Cancel</button>
+          </div>
         </form>
       </div>
     </div>
-
-    <script src="mian.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

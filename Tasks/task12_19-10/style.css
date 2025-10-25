@@ -6,85 +6,155 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f6f6f6;
   margin: 20px;
+  background: #f8f8f8;
 }
 
 h1 {
-  text-align: center;
-  font-size: 28px;
+  text-align: left;
   margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
 }
 
 .form-container {
-  background-color: white;
-  padding: 20px;
+  background: #fff;
+  padding: 25px;
   border: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-.form-container h2 {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 form {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  align-items: center;
 }
 
-input,
-select {
-  padding: 8px;
+input, select {
+  padding: 12px 10px;
+  font-size: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  width: 100%;
 }
 
 button {
-  padding: 10px;
-  border: none;
+  grid-column: span 3;
+  padding: 14px;
+  background: #3333cc;
   color: white;
-  border-radius: 4px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #2a50f5;
+  font-size: 16px;
 }
 
-#employeeTable {
+button:hover {
+  background: #222299;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
+  background: white;
+  font-size: 15px;
 }
 
-#employeeTable th,
-#employeeTable td {
-  border: 1px solid #ccc;
+th, td {
+  border: 1px solid #999;
   padding: 10px;
   text-align: center;
 }
 
+th {
+  background: #eee;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.15s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
 .edit-btn {
-  background-color: #28a745;
+  background: #28a745;
+  color: white;
+  margin-right: 5px;
 }
 
 .delete-btn {
-  background-color: #dc3545;
+  background: #dc3545;
+  color: white;
 }
 
+/* ===== MODAL ===== */
 .modal {
   display: none;
   position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 .modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 20px;
-  width: 400px;
-  border-radius: 8px;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 550px;
+  max-width: 95%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.modal-content form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 10px 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.modal-buttons button[type="submit"] {
+  background: #3333cc;
+  color: white;
+}
+
+.modal-buttons button#closeModal {
+  background: #aaa;
+  color: white;
 }
