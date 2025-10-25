@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Employee management system</h1>
+
+    <div class="form-container">
+      <h2>Add a new employee</h2>
+      <form id="employeeForm">
+        <input type="text" id="name" placeholder="Name and Surname" required />
+        <input type="number" id="age" placeholder="Age" required />
+        <input type="text" id="position" placeholder="Position" required />
+        <input
+          type="number"
+          id="experience"
+          placeholder="Work experience (years)"
+          required
+        />
+        <select id="skills" required>
+          <option value="">Select skill</option>
+          <option value="Communication">Communication</option>
+          <option value="Teamwork">Teamwork</option>
+          <option value="Leadership">Leadership</option>
+          <option value="Programming">Programming</option>
+          <option value="Design">Design</option>
+        </select>
+        <input type="date" id="startDate" required />
+        <button type="submit" id="addBtn">Add</button>
+      </form>
+    </div>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Name and Surname</th>
+          <th>Age</th>
+          <th>Position</th>
+          <th>Work experience</th>
+          <th>Skills</th>
+          <th>Start date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Modal -->
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <h3>Edit Employee</h3>
+        <form id="editForm">
+          <input type="text" id="editName" required />
+          <input type="number" id="editAge" required />
+          <input type="text" id="editPosition" required />
+          <input type="number" id="editExperience" required />
+          <select id="editSkills" required>
+            <option value="Communication">Communication</option>
+            <option value="Teamwork">Teamwork</option>
+            <option value="Leadership">Leadership</option>
+            <option value="Programming">Programming</option>
+            <option value="Design">Design</option>
+          </select>
+          <input type="date" id="editStartDate" required />
+          <button type="submit">Save</button>
+          <button type="button" id="closeModal">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="mian.js"></script>
+  </body>
+</html>
