@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="boxMain">
+      <h2>Todo App</h2>
+
+      <form class="form">
+        <input type="text" class="input" placeholder="Add your new todo" />
+        <button type="submit" class="addButton">
+          <img src="pics/add.svg" alt="Add" class="addIcon" />
+        </button>
+      </form>
+
+      <div class="todoContainer">
+        <ul class="todoList"></ul>
+      </div>
+
+      <div class="footer">
+        <span>You have <span class="pendingTasks">0</span> pending tasks</span>
+        <button class="clearAll">Clear All</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
