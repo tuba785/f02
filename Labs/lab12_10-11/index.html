@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="lightTheme">
+    <header class="header">
+      <h1>Student Registration System</h1>
+      <button class="themeToggle">
+        <img src="pics/dark.svg" alt="Toggle Theme" class="themeIcon" />
+      </button>
+    </header>
+
+    <div class="searchContainer">
+      <input
+        type="text"
+        class="searchInput"
+        placeholder="Search by name, surname or group..."
+      />
+      <select class="filterSelect">
+        <option value="none">Select</option>
+        <option value="firstName">Sort by First Name</option>
+        <option value="lastName">Sort by Last Name</option>
+        <option value="group">Sort by Group</option>
+      </select>
+    </div>
+
+    <form class="addForm">
+      <input
+        type="text"
+        class="firstNameInput"
+        placeholder="First name"
+        required
+      />
+      <input
+        type="text"
+        class="lastNameInput"
+        placeholder="Last name"
+        required
+      />
+      <input
+        type="text"
+        class="groupInput"
+        placeholder="Group (e.g. 11A)"
+        required
+      />
+      <button type="submit" class="addButton">Add</button>
+    </form>
+
+    <ul class="studentList"></ul>
+
+    <script src="main.js"></script>
+  </body>
+</html>

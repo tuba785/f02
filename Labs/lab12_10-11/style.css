@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.searchContainer,
+.addForm {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 15px;
+}
+
+.searchInput,
+.filterSelect,
+.firstNameInput,
+.lastNameInput,
+.groupInput {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+}
+
+.addButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #218838;
+}
+
+.studentList {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.studentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+.lightTheme {
+  background: #f9f9f9;
+  color: #000;
+}
+
+.darkTheme {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.darkTheme .studentItem {
+  background: #333;
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.themeIcon {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+}
