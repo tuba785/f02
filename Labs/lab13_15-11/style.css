@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  background-color: #96bce2;
+  width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #0a68d3;
+  margin-bottom: 20px;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.info {
+  display: none;
+  margin-top: 20px;
+}
+
+.infoCity {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.infoDegree {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.infoWeather {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.infoIcon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-top: 10px;
+}
