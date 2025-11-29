@@ -12,7 +12,6 @@ body {
 .App {
   min-height: 100vh;
   width: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #f5e1e1, #c9afaf);
   display: flex;
   justify-content: center;

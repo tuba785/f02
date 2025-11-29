@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './slider.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Slider = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,17 +13,20 @@ const Slider = ({ images }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  console.log(images);
-
   return (
     <div className="slider-container">
-      <div className="slider">
-        <button className="prev" onClick={prevSlide}>
-          prev
+      <img
+        src={images[currentIndex]}
+        alt="Slide"
+        className="slider-image"
+      />
+
+      <div className="slider-buttons">
+        <button className="nav-btn" onClick={prevSlide}>
+          <FaChevronLeft />
         </button>
-        <img src={images[currentIndex]} alt="Slide" className="slider-image" />
-        <button className="next" onClick={nextSlide}>
-          next
+        <button className="nav-btn" onClick={nextSlide}>
+          <FaChevronRight />
         </button>
       </div>
     </div>
