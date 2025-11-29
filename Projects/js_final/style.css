@@ -10,10 +10,6 @@ body {
   height: auto;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
 body.theme_light {
   background-color: #f3f4f6;
   color: #0f172a;
