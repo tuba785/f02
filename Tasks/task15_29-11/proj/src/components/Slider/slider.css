@@ -1,0 +1,14 @@
+.slider-container {
+  width: 100%;
+}
+
+.slider-image {
+  width: 800px;
+  height: 500px;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

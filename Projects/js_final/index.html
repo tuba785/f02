@@ -1,12 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Final</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JS FINAL PROJ</title>
+  </head>
+  <body class="theme_light">
+    <div class="page_wrapper">
+      <div class="section_header">
+        <div class="section_header_text">
+          <h1>Task Manager</h1>
+          <h2>Manage your tasks effectively</h2>
+        </div>
+
+        <button class="theme_button">
+          <img src="photos/dark.svg" alt="Theme" class="theme_button_icon" />
+        </button>
+      </div>
+
+      <div class="section_info">
+        <div class="section_info_box section_info_box1">
+          <div class="section_info_box_text">
+            <p class="section_info_box_label">General Task</p>
+            <p class="section_info_box_value section_info_box_value_black">0</p>
+          </div>
+          <div class="section_info_box_circle section_info_box_circle_black">
+            <img
+              src="photos/circle.svg"
+              alt=""
+              class="section_info_box_icon section_info_box_icon_black"
+            />
+          </div>
+        </div>
+
+        <div class="section_info_box section_info_box2">
+          <div class="section_info_box_text">
+            <p class="section_info_box_label">Active</p>
+            <p class="section_info_box_value section_info_box_value_blue">0</p>
+          </div>
+          <div class="section_info_box_circle section_info_box_circle_blue">
+            <img
+              src="photos/circle.svg"
+              alt=""
+              class="section_info_box_icon section_info_box_icon_blue"
+            />
+          </div>
+        </div>
+
+        <div class="section_info_box section_info_box3">
+          <div class="section_info_box_text">
+            <p class="section_info_box_label">Completed</p>
+            <p class="section_info_box_value section_info_box_value_green">0</p>
+          </div>
+          <div class="section_info_box_circle section_info_box_circle_green">
+            <img
+              src="photos/check_circle.svg"
+              alt=""
+              class="section_info_box_icon section_info_box_icon_green"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="section_add">
+        <form class="section_add_form">
+          <input
+            type="text"
+            class="section_add_input"
+            placeholder="Add new task..."
+            required
+          />
+
+          <select class="section_add_select">
+            <option class="section_add_option1" value="low">Low</option>
+            <option class="section_add_option2" value="medium" selected>
+              Medium
+            </option>
+            <option class="section_add_option3" value="high">High</option>
+          </select>
+
+          <button type="button" class="section_add_button">
+            <span class="section_add_button_icon_wrapper">
+              <img
+                src="photos/plus.svg"
+                alt="Add"
+                class="section_add_button_icon"
+              />
+            </span>
+            <span class="section_add_button_text">Add</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="section_filter">
+        <div class="section_filter_inner">
+          <div class="section_filter_search">
+            <img
+              src="photos/search.svg"
+              class="section_filter_search_icon"
+              alt=""
+            />
+            <input
+              type="text"
+              class="section_filter_input"
+              placeholder="Search for task..."
+            />
+          </div>
+
+          <div class="section_filter_controls">
+            <div class="section_filter_status">
+              <button class="section_filter_button section_filter_button_all">
+                All
+              </button>
+              <button
+                class="section_filter_button section_filter_button_active"
+              >
+                Active
+              </button>
+              <button
+                class="section_filter_button section_filter_button_completed"
+              >
+                Completed
+              </button>
+            </div>
+
+            <div class="section_filter_more">
+              <button class="section_filter_soon1">
+                <img
+                  src="photos/download.svg"
+                  alt=""
+                  class="section_filter_soon_icon"
+                />
+              </button>
+              <button class="section_filter_soon2">
+                <img
+                  src="photos/upload.svg"
+                  alt=""
+                  class="section_filter_soon_icon"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section_listbox">
+        <div class="section_listbox_empty">
+          <div class="section_listbox_empty_icon"></div>
+          <p class="section_listbox_empty_title">No tasks found.</p>
+          <p class="section_listbox_empty_subtitle">
+            Start by adding a new task
+          </p>
+        </div>
+
+        <ul class="section_listbox_ul"></ul>
+      </div>
+    </div>
+
+    <div class="section_toast">
+      <div class="section_toast_content">
+        <span class="section_toast_text">Message</span>
+        <button class="section_toast_close">
+          <img src="photos/close.svg" alt="Close" />
+        </button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>

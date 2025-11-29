@@ -1,0 +1,12 @@
+.App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #c9afaf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
