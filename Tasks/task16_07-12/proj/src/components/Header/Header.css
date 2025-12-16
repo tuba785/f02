@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.header_icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #ecebff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_icon_svg {
+  font-size: 28px;
+  color: #4f46e5;
+}
+
+.header_title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header_subtitle {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}

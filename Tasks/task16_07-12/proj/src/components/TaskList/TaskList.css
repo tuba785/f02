@@ -1,0 +1,30 @@
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty_box {
+  border: 2px dashed #d7d7e3;
+  border-radius: 18px;
+  padding: 46px 22px;
+  text-align: center;
+  background: white;
+}
+
+.empty_icon {
+  font-size: 52px;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+.empty_title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.empty_text {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
