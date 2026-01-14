@@ -1,0 +1,72 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.containers {
+  background-color: #ffffff;
+  width: 320px;
+  min-height: 700px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.containers h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* .box1{} */
+/* .box2{} */
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.green {
+  background-color: #28a745;
+}
+
+.fruit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fruit {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}
