@@ -1,0 +1,12 @@
+usersApi.ts
+Two ways:
+1.
+export const getUsers = async () => {
+  const response = await api.get<User[]>("/users");
+  return response.data;
+};
+
+2.
+export const getUsers = () => {
+  return api.get('/users').then(response => response.data);
+};
