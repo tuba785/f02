@@ -1,0 +1,17 @@
+https://nodejs.org/en/download
+https://www.npmjs.com/
+https://vite.dev/guide/
+https://react.dev/
+
+https://github.com/sudheerj/javascript-interview-questions
+https://github.com/sudheerj/reactjs-interview-questions
+
+https://www.figma.com/design/XjxaJ6tz3XyHeq2fyrqNEq/Bookoe_BookStoreWebsite_AllPage?node-id=2-0&t=SkUffuMEq11hZ0Cy-0
+
+React swiper / react slick ---- slider
+Email js
+Chakra
+React hook form
+Redux toolkit
+React auth, react auth0 (env)
+Next.js -> tanstack

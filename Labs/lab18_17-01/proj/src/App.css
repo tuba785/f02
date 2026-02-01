@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  padding: 20px;
+}
+
+.filters {
+  margin-bottom: 15px;
+}
+
+.filters button {
+  margin-right: 8px;
+  padding: 6px 12px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 12px;
+}
