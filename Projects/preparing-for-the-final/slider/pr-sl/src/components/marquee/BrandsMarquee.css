@@ -1,0 +1,40 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #0f172a;
+  padding: 20px 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+
+  animation: scroll 20s linear infinite;
+}
+
+.brand {
+  min-width: 160px;
+  height: 80px;
+
+  background: #1e293b;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+}
+
+/* сама магия */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

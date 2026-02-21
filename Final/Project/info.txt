@@ -1,0 +1,50 @@
+Иерархия:
+src/
+├── assets/              # Картинки, шрифты, иконки
+│   ├── images/
+│   ├── fonts/
+│   └── icons/           # Кастомные SVG иконки проекта
+├── components/          # Переиспользуемые компоненты
+│   ├── ui/              # Базовые UI элементы (кнопки, инпуты, карточки)
+│   ├── layout/          # Header, Footer, Sidebar, Navbar
+│   └── common/          # Общие компоненты (Loader, Modal, Pagination)
+├── pages/               # Страницы приложения
+│   ├── Home/
+│   ├── Catalog/
+│   ├── BookDetail/
+│   ├── Cart/
+│   ├── Checkout/
+│   ├── Profile/
+│   ├── Auth/            # Login, Register
+│   └── NotFound/
+├── store/               # Redux Toolkit
+│   ├── index.js         # Конфигурация store
+│   └── slices/          # Слайсы (cartSlice, userSlice, booksSlice)
+├── hooks/               # Кастомные хуки (useAuth, useCart, useFetch)
+├── services/            # Запросы к API через Axios
+│   ├── api.js           # Базовый инстанс Axios
+│   ├── booksService.js
+│   └── authService.js
+├── types/               # TypeScript типы и интерфейсы
+│   ├── book.types.ts    # Типы для книг (Book, BookDetail, BookPreview)
+│   ├── cart.types.ts    # Типы для корзины (CartItem, Cart)
+│   ├── user.types.ts    # Типы для пользователя (User, AuthResponse)
+│   ├── api.types.ts     # Общие типы для API (Response, Pagination)
+│   └── index.ts         # Реэкспорт всех типов
+├── utils/               # Вспомогательные функции (форматирование цены, дат)
+├── constants/           # Константы (роуты, категории книг, API_URL)
+├── styles/              # Глобальные стили (если нужны)
+└── App.jsx
+
+Библиотеки (Основные):
+npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm install @reduxjs/toolkit react-redux
+npm install axios
+npm install react-icons
+npm install react-router-dom
+
+Библиотеки (Второстепенные):
+npm install react-hook-form
+npm install yup @hookform/resolvers
+npm install react-hot-toast
+npm install react-auth-kit

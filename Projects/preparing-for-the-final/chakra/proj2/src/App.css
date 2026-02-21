@@ -1,0 +1,14 @@
+option {
+  background-color: white;
+  color: black;
+}
+
+.select-dark option {
+  background-color: #2D3748;
+  color: white;
+}
+
+.select-light option {
+  background-color: white;
+  color: black;
+}

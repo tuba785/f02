@@ -1,0 +1,73 @@
+section {
+  margin: 80px auto;
+  max-width: 1000px;
+}
+
+.slider-box {
+  height: 220px !important;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+/* базовый слайд */
+.slide {
+  height: 220px;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* цветовые варианты */
+.slide-green {
+  background: #16a34a;
+}
+.slide-orange {
+  background: #ea580c;
+}
+.slide-red {
+  background: #dc2626;
+}
+.slide-purple {
+  background: #7c3aed;
+}
+.slide-dark {
+  background: #0f172a;
+}
+.slide-blue {
+  background: #2563eb;
+}
+
+/* auto slides */
+.auto-slide {
+  width: 200px;
+}
+
+/* миниатюры */
+.thumbs {
+  margin-top: 12px;
+}
+
+.thumb {
+  height: 60px;
+  background: #e5e7eb;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* обязательное */
+.swiper {
+  width: 100%;
+}

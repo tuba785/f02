@@ -1,0 +1,28 @@
+.brands-swiper-wrapper {
+  width: 100%;
+  background: #0f172a;
+  padding: 20px 0;
+}
+
+.brand-slide {
+  width: 160px;
+}
+
+.brand {
+  height: 80px;
+  background: #1e293b;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+}
+
+/* обязательно */
+.swiper {
+  width: 100%;
+}
