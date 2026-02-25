@@ -5,6 +5,7 @@ import AuthActions from "../../ui/ui-for-header/AuthActions";
 import CartButton from "../../ui/ui-for-header/CartButton";
 import FavoritesButton from "../../ui/ui-for-header/FavoritesButton";
 import LanguageSelect from "../../ui/ui-for-header/LanguageSelect";
+import ProfileButton from "../../ui/ui-for-header/ProfileButton";
 import SearchBar from "../../ui/ui-for-header/SearchBar";
 import ThemeButton from "../../ui/ui-for-header/ThemeButton";
 
@@ -41,6 +42,7 @@ const Header = ({ isLoggedIn = false }: HeaderProps) => {
         <HStack gap={3} minW="280px" justify="flex-end">
           {isLoggedIn ? (
             <>
+              <ProfileButton />
               <FavoritesButton />
               <CartButton />
             </>

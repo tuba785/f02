@@ -1,5 +1,6 @@
 import { IconButton } from "@chakra-ui/react";
 import { FiSun } from "react-icons/fi";
+import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const ThemeButton = () => {
   return (
@@ -12,7 +13,7 @@ const ThemeButton = () => {
       h="44px"
       w="44px"
       borderRadius="14px"
-      _hover={{ bg: "#f0f0f0", color: "#6c5dd3", borderColor: "#d9d5ff" }}
+      _hover={{ bg: "#f0f0f0", color: PRIMARY_PURPLE, borderColor: "#d9d5ff" }}
     >
       <FiSun />
     </IconButton>

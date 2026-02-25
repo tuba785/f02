@@ -1,5 +1,6 @@
 import { Box, Button, Flex, Input, InputGroup } from "@chakra-ui/react";
 import { FiChevronDown, FiGrid, FiSearch } from "react-icons/fi";
+import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const SearchBar = () => {
   return (
@@ -17,7 +18,7 @@ const SearchBar = () => {
         alignItems="center"
         gap={2}
         variant="ghost"
-        color="#6c5dd3"
+        color={PRIMARY_PURPLE}
         bg="white"
         h="44px"
         px="18px"
@@ -40,7 +41,7 @@ const SearchBar = () => {
           h="44px"
           _placeholder={{ color: "gray.400" }}
           _focusVisible={{ boxShadow: "none", outline: "none" }}
-          caretColor="#6c5dd3"
+          caretColor={PRIMARY_PURPLE}
         />
       </InputGroup>
 
@@ -51,7 +52,7 @@ const SearchBar = () => {
         h="44px"
         borderLeft="1px solid"
         borderColor="gray.200"
-        color="#6c5dd3"
+        color={PRIMARY_PURPLE}
         bg="white"
       >
         <FiSearch />

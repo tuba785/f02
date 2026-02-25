@@ -1,5 +1,6 @@
 import { Box, Grid, VStack, HStack, Text, Heading } from "@chakra-ui/react";
 import { FaBolt, FaCheckCircle, FaThumbsUp, FaStar } from "react-icons/fa";
+import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
 
 interface FeatureItem {
   icon: React.ReactNode;
@@ -52,12 +53,12 @@ const Features1 = () => {
             <Box
               w="80px"
               h="80px"
-              bg="#f0eeff"
+              bg={PRIMARY_LIGHT_PURPLE}
               borderRadius="12px"
               display="flex"
               alignItems="center"
               justifyContent="center"
-              color="#6c5dd3"
+              color={PRIMARY_PURPLE}
               flexShrink={0}
             >
               {feature.icon}

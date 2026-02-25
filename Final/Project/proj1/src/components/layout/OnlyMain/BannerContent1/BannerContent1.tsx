@@ -1,0 +1,200 @@
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { HiArrowRight } from "react-icons/hi";
+import { PRIMARY_PURPLE } from "../../../../styles/colors";
+
+interface Slide {
+  title: string;
+  subtitle: string;
+  discount: string;
+  badge: string;
+  description: string;
+}
+
+const slides: Slide[] = [
+  {
+    title: "Special 50% Off",
+    subtitle: "for our student community",
+    discount: "50%",
+    badge: "BACK TO SCHOOL",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris",
+  },
+  {
+    title: "Extra 40% Off",
+    subtitle: "for our elder community",
+    discount: "40%",
+    badge: "SENIOR SPECIAL",
+    description:
+      "Exclusive offer for our valued seniors. Enjoy premium products and services with special senior discounts. Experience quality and comfort with our dedicated senior-friendly options.",
+  },
+  {
+    title: "Amazing 45% Off",
+    subtitle: "for kids and families",
+    discount: "45%",
+    badge: "KIDS SPECIAL",
+    description:
+      "Make your kids happy! Special discounts on educational toys, games, and children products. Safe, fun, and affordable options for your little ones and family enjoyment.",
+  },
+  {
+    title: "Bundle Deal 55% Off",
+    subtitle: "buy more save more",
+    discount: "55%",
+    badge: "FAMILY BUNDLE",
+    description:
+      "Perfect for family shopping! Get amazing discounts when you bundle your purchases. Mix and match products from different categories and save even more on your total purchase.",
+  },
+];
+
+export const BannerContent1 = () => {
+  return (
+    <Box
+      width="1220px"
+      height="660px"
+      position="relative"
+      mx="auto"
+      backgroundImage={`url('src/assets/banners/home-banner1.png')`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      borderRadius="8px"
+      overflow="hidden"
+    >
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        backgroundColor="rgba(255, 255, 255, 0.08)"
+        zIndex={0}
+      />
+
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        pagination={{
+          clickable: true,
+          dynamicBullets: false,
+          el: ".swiper-pagination",
+        }}
+        autoplay={{
+          delay: 10000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide
+            key={index}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              paddingLeft: "100px",
+            }}
+          >
+            <Flex
+              flexDirection="column"
+              justifyContent="flex-start"
+              width="45%"
+              gap="30px"
+            >
+              <Text
+                fontSize="16px"
+                fontWeight="700"
+                color={PRIMARY_PURPLE}
+                letterSpacing="2px"
+                textTransform="uppercase"
+              >
+                {slide.badge}
+              </Text>
+
+              <Text
+                fontSize="60px"
+                fontWeight="700"
+                color="#1a202c"
+                lineHeight="1.2"
+              >
+                {slide.title}
+              </Text>
+
+              <Text
+                fontSize="32px"
+                fontWeight="600"
+                color="#1a202c"
+                lineHeight="1.4"
+              >
+                {slide.subtitle}
+              </Text>
+
+              <Text
+                fontSize="16px"
+                color="#4a5568"
+                lineHeight="1.6"
+                maxWidth="420px"
+                marginY="16px"
+              >
+                {slide.description}
+              </Text>
+
+              <Flex gap="16px" alignItems="center" marginTop="16px">
+                <Button
+                  backgroundColor={PRIMARY_PURPLE}
+                  color="white"
+                  height="48px"
+                  paddingX="32px"
+                  paddingY="12px"
+                  borderRadius="8px"
+                  fontSize="16px"
+                  fontWeight="600"
+                  cursor="pointer"
+                  display="flex"
+                  alignItems="center"
+                  gap="8px"
+                  _hover={{
+                    opacity: 0.9,
+                    transform: "translateY(-2px)",
+                  }}
+                  transition="all 0.3s ease"
+                >
+                  Get the deal
+                  <HiArrowRight size={20} />
+                </Button>
+
+                <Button
+                  backgroundColor="transparent"
+                  color="#1a202c"
+                  height="48px"
+                  paddingX="32px"
+                  paddingY="12px"
+                  borderRadius="8px"
+                  fontSize="16px"
+                  fontWeight="600"
+                  border={`2px solid #e2e8f0`}
+                  cursor="pointer"
+                  _hover={{
+                    borderColor: PRIMARY_PURPLE,
+                    color: PRIMARY_PURPLE,
+                  }}
+                  transition="all 0.3s ease"
+                >
+                  See other promos
+                </Button>
+              </Flex>
+            </Flex>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Box className="swiper-pagination" />
+    </Box>
+  );
+};

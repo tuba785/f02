@@ -1,4 +1,5 @@
 import { HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const CenterFooter = () => {
   const booksCategories = [
@@ -34,7 +35,11 @@ const CenterFooter = () => {
             fontSize="14px"
             color="gray.600"
             textDecoration="none"
-            _hover={{ color: "#6c5dd3", textDecoration: "none", fontWeight: "600" }}
+            _hover={{
+              color: PRIMARY_PURPLE,
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
           >
             {category}
           </Link>
@@ -51,7 +56,11 @@ const CenterFooter = () => {
             fontSize="14px"
             color="gray.600"
             textDecoration="none"
-            _hover={{ color: "#6c5dd3", textDecoration: "none", fontWeight: "600" }}
+            _hover={{
+              color: PRIMARY_PURPLE,
+              textDecoration: "none",
+              fontWeight: "600",
+            }}
           >
             {link}
           </Link>

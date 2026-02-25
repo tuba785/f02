@@ -1,18 +1,19 @@
 import { Box, Button, HStack } from "@chakra-ui/react";
 import { FiUser } from "react-icons/fi";
+import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
 
 const AuthActions = () => {
   return (
     <HStack gap={3}>
       <Button
         variant="ghost"
-        color="#7466d5"
+        color={PRIMARY_PURPLE}
         h="44px"
         px="16px"
-        bg="#f0e9ff"
+        bg={PRIMARY_LIGHT_PURPLE}
         borderRadius="14px"
         fontWeight="600"
-        _hover={{ bg: "#e0d4ff" }}
+        _hover={{ opacity: 0.8 }}
       >
         Log In
       </Button>
@@ -20,12 +21,12 @@ const AuthActions = () => {
         display="flex"
         alignItems="center"
         gap={2}
-        bg="#6C63FF"
+        bg={PRIMARY_PURPLE}
         color="white"
         h="44px"
         px="18px"
         borderRadius="14px"
-        _hover={{ bg: "#5b53e6" }}
+        _hover={{ opacity: 0.85 }}
       >
         <FiUser />
         <Box as="span">Sign Up</Box>

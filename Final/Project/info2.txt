@@ -1,0 +1,17 @@
+Уроки для себя
+
+https://www.youtube.com/watch?v=GeulXZP_kZ8 - React for noobies
+https://www.youtube.com/watch?v=vdBxfFVXnc0 - Github Copilot
+
+Сайты логина, регистра, покупок, 404 у Мамеда сайта. Сделать так же нужно сайты с футера
+Прочитать в клауде хуки, попробовать использовать всё : {
+    UseState
+    UseEffect
+    UseContext
+    UseParams
+    Redux Toolkit
+    Axios
+    React.memo, useMemo, useCallback
+    UseRef
+    UseSelector
+}

@@ -4,6 +4,7 @@ import {
   NativeSelectRoot,
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
+import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const LanguageSelect = () => {
   return (
@@ -27,7 +28,7 @@ const LanguageSelect = () => {
         <option value="AZ">AZ</option>
         <option value="RU">RU</option>
       </NativeSelectField>
-      <NativeSelectIndicator color="#6c5dd3">
+      <NativeSelectIndicator color={PRIMARY_PURPLE}>
         <FiChevronDown />
       </NativeSelectIndicator>
     </NativeSelectRoot>
