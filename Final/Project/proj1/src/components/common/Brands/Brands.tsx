@@ -28,7 +28,6 @@ const Brands = () => {
         animation={`${scroll} 25s linear infinite`}
         w="max-content"
       >
-        {/* First set of logos */}
         {brands.map((logo, index) => (
           <Box
             key={`first-${index}`}
@@ -51,7 +50,6 @@ const Brands = () => {
             />
           </Box>
         ))}
-        {/* Duplicate set for seamless loop */}
         {brands.map((logo, index) => (
           <Box
             key={`second-${index}`}
