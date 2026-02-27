@@ -6,12 +6,14 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "./styles/theme";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
+import AppTest from "./AppTest.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <ChakraProvider value={theme}>
-        <App />
+        {/* <App /> */}
+        <AppTest />
       </ChakraProvider>
     </Provider>
   </StrictMode>,

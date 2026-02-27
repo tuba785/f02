@@ -49,11 +49,19 @@ const slides: Slide[] = [
   },
 ];
 
-export const BannerContent1 = () => {
+interface BannerContent1Props {
+  width?: string;
+  height?: string;
+}
+
+export const BannerContent1 = ({
+  width = "1220px",
+  height = "662px",
+}: BannerContent1Props) => {
   return (
     <Box
-      width="1220px"
-      height="660px"
+      width={width}
+      height={height}
       position="relative"
       mx="auto"
       backgroundImage={`url('src/assets/banners/home-banner1.png')`}
