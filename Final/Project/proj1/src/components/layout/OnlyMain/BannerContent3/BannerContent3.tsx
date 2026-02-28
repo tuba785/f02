@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -128,22 +129,25 @@ export const BannerContent3 = () => {
         >
           {topBooks.map((book) => (
             <SwiperSlide key={book.id}>
-              <Box
-                width={`${BOOK_COVER_WIDTH}px`}
-                height={`${BOOK_COVER_HEIGHT}px`}
-                borderRadius="12px"
-                overflow="hidden"
-                backgroundColor="#cbd5e0"
-                boxShadow="inset 0 0 0 2px rgba(255, 255, 255, 0.7)"
-              >
-                <Image
-                  src={`${book.cover}/${BOOK_COVER_WIDTH}/${BOOK_COVER_HEIGHT}`}
-                  alt={book.title}
-                  width="100%"
-                  height="100%"
-                  objectFit="cover"
-                />
-              </Box>
+              <Link to={`/books/${book.id}`}>
+                <Box
+                  width={`${BOOK_COVER_WIDTH}px`}
+                  height={`${BOOK_COVER_HEIGHT}px`}
+                  borderRadius="12px"
+                  overflow="hidden"
+                  backgroundColor="#cbd5e0"
+                  boxShadow="inset 0 0 0 2px rgba(255, 255, 255, 0.7)"
+                  cursor="pointer"
+                >
+                  <Image
+                    src={`${book.cover}/${BOOK_COVER_WIDTH}/${BOOK_COVER_HEIGHT}`}
+                    alt={book.title}
+                    width="100%"
+                    height="100%"
+                    objectFit="cover"
+                  />
+                </Box>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

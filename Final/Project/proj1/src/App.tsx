@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home/HomePage";
 import BooksPage from "./pages/Books/BooksPage";
 import BookPage from "./pages/Book/BookPage";
@@ -7,41 +7,51 @@ import RegisterPage from "./pages/Register/RegisterPage";
 import PurchasePage from "./pages/Purchase/PurchasePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import ErrorPage from "./pages/Error/ErrorPage";
+import ScrollToTop from "./utils/ScrollToTop";
+
+function RootLayout() {
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
+}
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
+    element: <RootLayout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/books",
-    element: <BooksPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/books/:id",
-    element: <BookPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/purchase",
-    element: <PurchasePage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/books",
+        element: <BooksPage />,
+      },
+      {
+        path: "/books/:id",
+        element: <BookPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
+      },
+      {
+        path: "/purchase",
+        element: <PurchasePage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
+      },
+    ],
   },
 ]);
 

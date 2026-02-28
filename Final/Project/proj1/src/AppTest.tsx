@@ -1,9 +1,9 @@
-import BooksR from "./components/layout/OnlyBooks/BooksR";
+import Book from "./components/layout/OnlyBook/Book";
 
 const AppTest = () => {
   return (
     <>
-      <BooksR />
+      <Book />
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Button,
@@ -103,187 +104,194 @@ export const BannerContent4 = () => {
           </VStack>
 
           {mainBook && (
-            <Box
-              bg="white"
-              borderRadius="16px"
-              padding="24px"
-              boxShadow="0 10px 40px rgba(0, 0, 0, 0.12)"
-              width="100%"
-              w="650px"
+            <Link
+              to={`/books/${mainBook.id}`}
+              style={{ textDecoration: "none" }}
             >
-              <Flex gap="20px">
-                <Box
-                  width={`${MAIN_BOOK_WIDTH}px`}
-                  height={`${MAIN_BOOK_HEIGHT}px`}
-                  borderRadius="12px"
-                  overflow="hidden"
-                  backgroundColor="#cbd5e0"
-                  flexShrink={0}
-                  position="relative"
-                >
-                  {mainBook.is_bestseller && (
-                    <Badge
-                      position="absolute"
-                      top="12px"
-                      right="12px"
-                      bg={PRIMARY_ORANGE}
-                      color="white"
-                      borderRadius="6px"
-                      px="8px"
-                      py="4px"
-                      fontSize="11px"
-                      fontWeight="bold"
-                      zIndex={2}
-                    >
-                      BESTSELLER
-                    </Badge>
-                  )}
-                  {mainBook.discount && mainBook.discount > 0 && (
-                    <Badge
-                      position="absolute"
-                      top="12px"
-                      left="12px"
-                      bg={PRIMARY_PURPLE}
-                      color="white"
-                      borderRadius="6px"
-                      px="8px"
-                      py="4px"
-                      fontSize="11px"
-                      fontWeight="bold"
-                      zIndex={2}
-                    >
-                      -{mainBook.discount}%
-                    </Badge>
-                  )}
-                  <Image
-                    src={`${mainBook.cover}/${MAIN_BOOK_WIDTH}/${MAIN_BOOK_HEIGHT}`}
-                    alt={mainBook.title}
-                    width="100%"
-                    height="100%"
-                    objectFit="cover"
-                  />
-                </Box>
-
-                <Flex
-                  direction="column"
-                  justify="space-between"
-                  height={`${MAIN_BOOK_HEIGHT}px`}
-                  flex="1"
-                >
-                  <Box>
-                    <Heading
-                      as="h3"
-                      fontSize="18px"
-                      fontWeight="700"
-                      color="#1a202c"
-                      lineHeight="1.3"
-                      mb="6px"
-                    >
-                      {mainBook.title}
-                    </Heading>
-                    <Text
-                      fontSize="12px"
-                      color={PRIMARY_PURPLE}
-                      fontWeight="600"
-                      mb="12px"
-                    >
-                      {mainBook.genre} • {mainBook.language} • {mainBook.format}
-                    </Text>
-
-                    <Text
-                      fontSize="13px"
-                      color="#4a5568"
-                      lineHeight="1.6"
-                      display="-webkit-box"
-                      overflow="hidden"
-                      css={{
-                        WebkitLineClamp: 6,
-                        WebkitBoxOrient: "vertical",
-                      }}
-                    >
-                      {mainBook.description}
-                    </Text>
-                  </Box>
-
-                  <Box>
-                    <Flex
-                      gap="24px"
-                      width="100%"
-                      fontSize="13px"
-                      color="#4a5568"
-                    >
-                      <VStack align="flex-start" gap="2px">
-                        <Text
-                          fontWeight="500"
-                          fontSize="11px"
-                          color="#9ca3af"
-                          textTransform="uppercase"
-                        >
-                          Written by
-                        </Text>
-                        <Text fontWeight="600" color="#1a202c">
-                          {mainBook.author}
-                        </Text>
-                      </VStack>
-                      <VStack align="flex-start" gap="2px">
-                        <Text
-                          fontWeight="500"
-                          fontSize="11px"
-                          color="#9ca3af"
-                          textTransform="uppercase"
-                        >
-                          Year
-                        </Text>
-                        <Text fontWeight="600" color="#1a202c">
-                          {mainBook.release_date.split("/")[2]}
-                        </Text>
-                      </VStack>
-                    </Flex>
-
-                    <Flex gap="12px" align="center" width="100%" mt="10px">
-                      <Heading
-                        as="h4"
-                        fontSize="22px"
-                        fontWeight="700"
-                        color="#1a202c"
+              <Box
+                bg="white"
+                borderRadius="16px"
+                padding="24px"
+                boxShadow="0 10px 40px rgba(0, 0, 0, 0.12)"
+                width="100%"
+                w="650px"
+                cursor="pointer"
+              >
+                <Flex gap="20px">
+                  <Box
+                    width={`${MAIN_BOOK_WIDTH}px`}
+                    height={`${MAIN_BOOK_HEIGHT}px`}
+                    borderRadius="12px"
+                    overflow="hidden"
+                    backgroundColor="#cbd5e0"
+                    flexShrink={0}
+                    position="relative"
+                  >
+                    {mainBook.is_bestseller && (
+                      <Badge
+                        position="absolute"
+                        top="12px"
+                        right="12px"
+                        bg={PRIMARY_ORANGE}
+                        color="white"
+                        borderRadius="6px"
+                        px="8px"
+                        py="4px"
+                        fontSize="11px"
+                        fontWeight="bold"
+                        zIndex={2}
                       >
-                        ${mainBook.discounted_price.toFixed(2)}
-                      </Heading>
-                      {mainBook.discount && mainBook.discount > 0 && (
-                        <Text
-                          fontSize="14px"
-                          color="#9ca3af"
-                          textDecoration="line-through"
-                        >
-                          ${mainBook.price.toFixed(2)}
-                        </Text>
-                      )}
-                      <Button
-                        ml="auto"
+                        BESTSELLER
+                      </Badge>
+                    )}
+                    {mainBook.discount && mainBook.discount > 0 && (
+                      <Badge
+                        position="absolute"
+                        top="12px"
+                        left="12px"
                         bg={PRIMARY_PURPLE}
                         color="white"
-                        height="44px"
-                        paddingX="20px"
-                        borderRadius="8px"
-                        fontSize="13px"
-                        fontWeight="600"
-                        cursor="pointer"
-                        display="flex"
-                        alignItems="center"
-                        gap="8px"
-                        _hover={{
-                          opacity: 0.9,
-                        }}
-                        transition="all 0.3s ease"
+                        borderRadius="6px"
+                        px="8px"
+                        py="4px"
+                        fontSize="11px"
+                        fontWeight="bold"
+                        zIndex={2}
                       >
-                        <HiShoppingCart size={18} />
-                        ADD
-                      </Button>
-                    </Flex>
+                        -{mainBook.discount}%
+                      </Badge>
+                    )}
+                    <Image
+                      src={`${mainBook.cover}/${MAIN_BOOK_WIDTH}/${MAIN_BOOK_HEIGHT}`}
+                      alt={mainBook.title}
+                      width="100%"
+                      height="100%"
+                      objectFit="cover"
+                    />
                   </Box>
+
+                  <Flex
+                    direction="column"
+                    justify="space-between"
+                    height={`${MAIN_BOOK_HEIGHT}px`}
+                    flex="1"
+                  >
+                    <Box>
+                      <Heading
+                        as="h3"
+                        fontSize="18px"
+                        fontWeight="700"
+                        color="#1a202c"
+                        lineHeight="1.3"
+                        mb="6px"
+                      >
+                        {mainBook.title}
+                      </Heading>
+                      <Text
+                        fontSize="12px"
+                        color={PRIMARY_PURPLE}
+                        fontWeight="600"
+                        mb="12px"
+                      >
+                        {mainBook.genre} • {mainBook.language} •{" "}
+                        {mainBook.format}
+                      </Text>
+
+                      <Text
+                        fontSize="13px"
+                        color="#4a5568"
+                        lineHeight="1.6"
+                        display="-webkit-box"
+                        overflow="hidden"
+                        css={{
+                          WebkitLineClamp: 6,
+                          WebkitBoxOrient: "vertical",
+                        }}
+                      >
+                        {mainBook.description}
+                      </Text>
+                    </Box>
+
+                    <Box>
+                      <Flex
+                        gap="24px"
+                        width="100%"
+                        fontSize="13px"
+                        color="#4a5568"
+                      >
+                        <VStack align="flex-start" gap="2px">
+                          <Text
+                            fontWeight="500"
+                            fontSize="11px"
+                            color="#9ca3af"
+                            textTransform="uppercase"
+                          >
+                            Written by
+                          </Text>
+                          <Text fontWeight="600" color="#1a202c">
+                            {mainBook.author}
+                          </Text>
+                        </VStack>
+                        <VStack align="flex-start" gap="2px">
+                          <Text
+                            fontWeight="500"
+                            fontSize="11px"
+                            color="#9ca3af"
+                            textTransform="uppercase"
+                          >
+                            Year
+                          </Text>
+                          <Text fontWeight="600" color="#1a202c">
+                            {mainBook.release_date.split("/")[2]}
+                          </Text>
+                        </VStack>
+                      </Flex>
+
+                      <Flex gap="12px" align="center" width="100%" mt="10px">
+                        <Heading
+                          as="h4"
+                          fontSize="22px"
+                          fontWeight="700"
+                          color="#1a202c"
+                        >
+                          ${mainBook.discounted_price.toFixed(2)}
+                        </Heading>
+                        {mainBook.discount && mainBook.discount > 0 && (
+                          <Text
+                            fontSize="14px"
+                            color="#9ca3af"
+                            textDecoration="line-through"
+                          >
+                            ${mainBook.price.toFixed(2)}
+                          </Text>
+                        )}
+                        <Button
+                          ml="auto"
+                          bg={PRIMARY_PURPLE}
+                          color="white"
+                          height="44px"
+                          paddingX="20px"
+                          borderRadius="8px"
+                          fontSize="13px"
+                          fontWeight="600"
+                          cursor="pointer"
+                          display="flex"
+                          alignItems="center"
+                          gap="8px"
+                          _hover={{
+                            opacity: 0.9,
+                          }}
+                          transition="all 0.3s ease"
+                        >
+                          <HiShoppingCart size={18} />
+                          ADD
+                        </Button>
+                      </Flex>
+                    </Box>
+                  </Flex>
                 </Flex>
-              </Flex>
-            </Box>
+              </Box>
+            </Link>
           )}
         </VStack>
 
@@ -296,63 +304,69 @@ export const BannerContent4 = () => {
             height="fit-content"
           >
             {featuredBooks.map((book) => (
-              <Box
+              <Link
                 key={book.id}
-                width={`${SMALL_BOOK_WIDTH}px`}
-                height={`${SMALL_BOOK_HEIGHT}px`}
-                borderRadius="12px"
-                overflow="hidden"
-                backgroundColor="#cbd5e0"
-                boxShadow="0 8px 20px rgba(0, 0, 0, 0.1)"
-                transition="all 0.3s ease"
-                _hover={{
-                  transform: "translateY(-8px)",
-                  boxShadow: "0 16px 40px rgba(0, 0, 0, 0.15)",
-                }}
-                position="relative"
+                to={`/books/${book.id}`}
+                style={{ textDecoration: "none" }}
               >
-                {book.is_bestseller && (
-                  <Badge
-                    position="absolute"
-                    top="8px"
-                    right="8px"
-                    bg={PRIMARY_ORANGE}
-                    color="white"
-                    borderRadius="6px"
-                    px="6px"
-                    py="3px"
-                    fontSize="10px"
-                    fontWeight="bold"
-                    zIndex={2}
-                  >
-                    BESTSELLER
-                  </Badge>
-                )}
-                {book.discount && book.discount > 0 && (
-                  <Badge
-                    position="absolute"
-                    top="8px"
-                    left="8px"
-                    bg={PRIMARY_PURPLE}
-                    color="white"
-                    borderRadius="6px"
-                    px="6px"
-                    py="3px"
-                    fontSize="10px"
-                    fontWeight="bold"
-                    zIndex={2}
-                  >
-                    -{book.discount}%
-                  </Badge>
-                )}
-                <Image
-                  src={`${book.cover}/${SMALL_BOOK_WIDTH}/${SMALL_BOOK_HEIGHT}`}
-                  alt={book.title}
-                  width="100%"
-                  height="100%"
-                  objectFit="cover"
-                />
-              </Box>
+                <Box
+                  width={`${SMALL_BOOK_WIDTH}px`}
+                  height={`${SMALL_BOOK_HEIGHT}px`}
+                  borderRadius="12px"
+                  overflow="hidden"
+                  backgroundColor="#cbd5e0"
+                  boxShadow="0 8px 20px rgba(0, 0, 0, 0.1)"
+                  transition="all 0.3s ease"
+                  _hover={{
+                    transform: "translateY(-8px)",
+                    boxShadow: "0 16px 40px rgba(0, 0, 0, 0.15)",
+                  }}
+                  position="relative"
+                  cursor="pointer"
+                >
+                  {book.is_bestseller && (
+                    <Badge
+                      position="absolute"
+                      top="8px"
+                      right="8px"
+                      bg={PRIMARY_ORANGE}
+                      color="white"
+                      borderRadius="6px"
+                      px="6px"
+                      py="3px"
+                      fontSize="10px"
+                      fontWeight="bold"
+                      zIndex={2}
+                    >
+                      BESTSELLER
+                    </Badge>
+                  )}
+                  {book.discount && book.discount > 0 && (
+                    <Badge
+                      position="absolute"
+                      top="8px"
+                      left="8px"
+                      bg={PRIMARY_PURPLE}
+                      color="white"
+                      borderRadius="6px"
+                      px="6px"
+                      py="3px"
+                      fontSize="10px"
+                      fontWeight="bold"
+                      zIndex={2}
+                    >
+                      -{book.discount}%
+                    </Badge>
+                  )}
+                  <Image
+                    src={`${book.cover}/${SMALL_BOOK_WIDTH}/${SMALL_BOOK_HEIGHT}`}
+                    alt={book.title}
+                    width="100%"
+                    height="100%"
+                    objectFit="cover"
+                  />
+                </Box>
+              </Link>
             ))}
           </Grid>
         </Flex>

@@ -10,12 +10,6 @@ interface BooksPartNavProps {
   onPageChange: (page: number) => void;
 }
 
-/**
- * Build the page buttons array:
- *  ≤3 pages  → [1] [2] [3]
- *  4+ pages  → always show first, last, current, current-1
- *             with "..." where gaps exist
- */
 const buildPages = (current: number, total: number): (number | "...")[] => {
   if (total <= 3) {
     return Array.from({ length: total }, (_, i) => i + 1);
@@ -62,14 +56,11 @@ const BooksPartNav = ({
       mx="auto"
       py={4}
     >
-      {/* Left: info text */}
       <Text fontSize="14px" fontWeight="400" color="#b0b7c3">
         Showing {showingStart}-{showingEnd} from {totalItems} data
       </Text>
 
-      {/* Right: pagination */}
       <Flex align="center" gap={2}>
-        {/* Previous */}
         <Flex
           align="center"
           gap={1}
@@ -92,7 +83,6 @@ const BooksPartNav = ({
           </Text>
         </Flex>
 
-        {/* Page numbers */}
         <Flex align="center" gap={1}>
           {pages.map((page, i) => (
             <Box
@@ -131,7 +121,6 @@ const BooksPartNav = ({
           ))}
         </Flex>
 
-        {/* Next */}
         <Flex
           align="center"
           gap={1}

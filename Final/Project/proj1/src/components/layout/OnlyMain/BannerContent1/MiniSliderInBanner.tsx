@@ -1,5 +1,6 @@
 import { Box, Button, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Swiper as SwiperClass } from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -116,93 +117,103 @@ const MiniSliderInBanner = () => {
             >
               {books.map((book) => (
                 <SwiperSlide key={book.id}>
-                  <VStack
-                    gap={3}
-                    align="center"
-                    justify="flex-start"
-                    w="full"
-                    h="full"
+                  <Link
+                    to={`/books/${book.id}`}
+                    style={{
+                      textDecoration: "none",
+                      width: "100%",
+                      height: "100%",
+                    }}
                   >
-                    <Box
-                      w="220px"
-                      h="310px"
-                      bg="gray.300"
-                      borderRadius="2xl"
-                      overflow="hidden"
-                      flexShrink={0}
-                    >
-                      {book.cover && (
-                        <Image
-                          src={`${book.cover}/220/310`}
-                          alt={book.title}
-                          w="full"
-                          h="full"
-                          objectFit="cover"
-                        />
-                      )}
-                    </Box>
-
-                    <Text
-                      fontSize="xl"
-                      fontWeight="bold"
-                      color="white"
-                      textAlign="center"
-                      lineHeight={1.2}
-                      css={{
-                        display: "-webkit-box",
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {book.title}
-                    </Text>
-
-                    <Text
-                      fontSize="xs"
-                      color="gray.300"
-                      textAlign="center"
-                      textTransform="uppercase"
-                      letterSpacing="1px"
-                      css={{
-                        display: "-webkit-box",
-                        WebkitLineClamp: 1,
-                        WebkitBoxOrient: "vertical",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {book.genre}, {book.language}, {book.format}
-                    </Text>
-
-                    <HStack
-                      as="button"
+                    <VStack
                       gap={3}
-                      bg="white"
-                      px={7}
-                      py={3}
-                      borderRadius="xl"
-                      w="auto"
-                      justify="center"
-                      mt={1}
+                      align="center"
+                      justify="flex-start"
+                      w="full"
+                      h="full"
                       cursor="pointer"
                     >
-                      <Text
-                        fontSize="md"
-                        fontWeight="semibold"
-                        color="gray.400"
-                        textDecoration="line-through"
+                      <Box
+                        w="220px"
+                        h="310px"
+                        bg="gray.300"
+                        borderRadius="2xl"
+                        overflow="hidden"
+                        flexShrink={0}
                       >
-                        {formatPrice(book.price)}
-                      </Text>
+                        {book.cover && (
+                          <Image
+                            src={`${book.cover}/220/310`}
+                            alt={book.title}
+                            w="full"
+                            h="full"
+                            objectFit="cover"
+                          />
+                        )}
+                      </Box>
+
                       <Text
                         fontSize="xl"
-                        fontWeight="extrabold"
-                        color="gray.800"
+                        fontWeight="bold"
+                        color="white"
+                        textAlign="center"
+                        lineHeight={1.2}
+                        css={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
                       >
-                        USD {formatPrice(book.discounted_price)}
+                        {book.title}
                       </Text>
-                    </HStack>
-                  </VStack>
+
+                      <Text
+                        fontSize="xs"
+                        color="gray.300"
+                        textAlign="center"
+                        textTransform="uppercase"
+                        letterSpacing="1px"
+                        css={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 1,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {book.genre}, {book.language}, {book.format}
+                      </Text>
+
+                      <HStack
+                        as="button"
+                        gap={3}
+                        bg="white"
+                        px={7}
+                        py={3}
+                        borderRadius="xl"
+                        w="auto"
+                        justify="center"
+                        mt={1}
+                        cursor="pointer"
+                      >
+                        <Text
+                          fontSize="md"
+                          fontWeight="semibold"
+                          color="gray.400"
+                          textDecoration="line-through"
+                        >
+                          {formatPrice(book.price)}
+                        </Text>
+                        <Text
+                          fontSize="xl"
+                          fontWeight="extrabold"
+                          color="gray.800"
+                        >
+                          USD {formatPrice(book.discounted_price)}
+                        </Text>
+                      </HStack>
+                    </VStack>
+                  </Link>
                 </SwiperSlide>
               ))}
             </Swiper>

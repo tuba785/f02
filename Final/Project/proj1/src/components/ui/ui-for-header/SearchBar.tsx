@@ -1,62 +1,144 @@
+import { useEffect, useRef, useState } from "react";
 import { Box, Button, Flex, Input, InputGroup } from "@chakra-ui/react";
-import { FiChevronDown, FiGrid, FiSearch } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp, FiGrid, FiSearch } from "react-icons/fi";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { PRIMARY_PURPLE } from "../../../styles/colors";
+import { useBooks } from "../../../hooks/useBooks";
+import Search from "../../layout/Modals/Search";
+import Menus from "../../layout/Modals/Menus";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const { books, getBooks } = useBooks();
+
+  const [query, setQuery] = useState(searchParams.get("search") || "");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (books.length === 0) getBooks();
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
+        setIsMenuOpen(false);
+        setIsSearchOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    setIsSearchOpen(query.trim().length > 0);
+  }, [query]);
+
+  const matchedBooks = query.trim()
+    ? books
+        .filter(
+          (b) =>
+            b.title.toLowerCase().includes(query.trim().toLowerCase()) ||
+            b.author.toLowerCase().includes(query.trim().toLowerCase()),
+        )
+        .slice(0, 5)
+    : [];
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      setIsSearchOpen(false);
+      setIsMenuOpen(false);
+      navigate(`/books?search=${encodeURIComponent(query.trim())}`);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
   return (
-    <Flex
-      w="100%"
-      align="center"
-      bg="white"
-      border="1px solid"
-      borderColor="gray.200"
-      borderRadius="16px"
-      overflow="hidden"
-    >
-      <Button
-        display="flex"
-        alignItems="center"
-        gap={2}
-        variant="ghost"
-        color={PRIMARY_PURPLE}
-        bg="white"
-        h="44px"
-        px="18px"
-        borderRadius="0"
-        fontWeight="600"
-      >
-        <FiGrid />
-        <Box as="span">Menus</Box>
-        <FiChevronDown />
-      </Button>
-
-      <Box w="1px" h="44px" bg="gray.200" />
-
-      <InputGroup flex="1">
-        <Input
-          size="md"
-          placeholder="Search over 30 million book titles"
-          bg="white"
-          border="none"
-          h="44px"
-          _placeholder={{ color: "gray.400" }}
-          _focusVisible={{ boxShadow: "none", outline: "none" }}
-          caretColor={PRIMARY_PURPLE}
-        />
-      </InputGroup>
-
+    <Flex ref={containerRef} position="relative" w="100%">
       <Flex
+        w="100%"
         align="center"
-        justify="center"
-        w="56px"
-        h="44px"
-        borderLeft="1px solid"
-        borderColor="gray.200"
-        color={PRIMARY_PURPLE}
         bg="white"
+        border="1px solid"
+        borderColor="gray.200"
+        borderRadius="16px"
+        overflow="hidden"
       >
-        <FiSearch />
+        <Button
+          display="flex"
+          alignItems="center"
+          gap={2}
+          variant="ghost"
+          color={PRIMARY_PURPLE}
+          bg="white"
+          h="44px"
+          px="18px"
+          borderRadius="0"
+          fontWeight="600"
+          onClick={() => {
+            setIsMenuOpen(!isMenuOpen);
+            setIsSearchOpen(false);
+          }}
+        >
+          <FiGrid />
+          <Box as="span">Menus</Box>
+          {isMenuOpen ? <FiChevronUp /> : <FiChevronDown />}
+        </Button>
+
+        <Box w="1px" h="44px" bg="gray.200" />
+
+        <InputGroup flex="1">
+          <Input
+            size="md"
+            placeholder="Search over 30 million book titles"
+            bg="white"
+            border="none"
+            h="44px"
+            _placeholder={{ color: "gray.400" }}
+            _focusVisible={{ boxShadow: "none", outline: "none" }}
+            caretColor={PRIMARY_PURPLE}
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setIsMenuOpen(false);
+            }}
+            onKeyDown={handleKeyDown}
+          />
+        </InputGroup>
+
+        <Flex
+          align="center"
+          justify="center"
+          w="56px"
+          h="44px"
+          borderLeft="1px solid"
+          borderColor="gray.200"
+          color={PRIMARY_PURPLE}
+          bg="white"
+          cursor="pointer"
+          transition="background 0.15s"
+          _hover={{ bg: "#f8f8fb" }}
+          onClick={handleSearch}
+        >
+          <FiSearch />
+        </Flex>
       </Flex>
+
+      <Menus isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <Search
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        books={matchedBooks}
+        query={query}
+      />
     </Flex>
   );
 };

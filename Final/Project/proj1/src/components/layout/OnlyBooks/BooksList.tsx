@@ -29,9 +29,13 @@ const BooksList = ({ books, loading, error }: BooksListProps) => {
 
   if (books.length === 0) {
     return (
-      <Flex justify="center" py={10}>
-        <Text color="#b0b7c3" fontSize="14px">
+      <Flex direction="column" align="center" justify="center" py={16} gap={2}>
+        <Text fontSize="40px">📚</Text>
+        <Text fontSize="18px" fontWeight="700" color="#11142d">
           No books found
+        </Text>
+        <Text fontSize="14px" color="#808191">
+          Try adjusting your filters or search criteria
         </Text>
       </Flex>
     );

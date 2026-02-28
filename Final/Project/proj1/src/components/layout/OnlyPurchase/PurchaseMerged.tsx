@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Flex } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../../store/slices/cartSlice";
 import PurchaseForm1, { type BuyerInfoData } from "./PurchaseForm1";
 import PurchaseForm2, { type PaymentData } from "./PurchaseForm2";
 import PurchaseModal from "../Modals/PurchaseModal";
@@ -26,6 +28,7 @@ const initialPayment: PaymentData = {
 };
 
 const PurchaseMerged = () => {
+  const dispatch = useDispatch();
   const [buyer, setBuyer] = useState<BuyerInfoData>(initialBuyer);
   const [payment, setPayment] = useState<PaymentData>(initialPayment);
   const [submitted, setSubmitted] = useState(false);
@@ -70,6 +73,7 @@ const PurchaseMerged = () => {
   const handleSubmit = () => {
     setSubmitted(true);
     if (validate()) {
+      dispatch(clearCart());
       setModalOpen(true);
     }
   };

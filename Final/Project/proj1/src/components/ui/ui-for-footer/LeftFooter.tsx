@@ -6,12 +6,20 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const LeftFooter = () => {
   return (
     <VStack align="start" gap={4} maxW="360px">
       <HStack gap={3}>
-        <Image src="/bookoe-logo-main.svg" alt="Bookoe logo" h="44px" />
+        <Link to="/">
+          <Image
+            src="/bookoe-logo-main.svg"
+            alt="Bookoe logo"
+            h="44px"
+            cursor="pointer"
+          />
+        </Link>
       </HStack>
 
       <Text fontSize="14px" color="gray.600" lineHeight="1.6">

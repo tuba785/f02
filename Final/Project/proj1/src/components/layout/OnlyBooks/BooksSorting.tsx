@@ -12,10 +12,11 @@ import { FaList, FaThLarge } from "react-icons/fa";
 import { BsSortDown } from "react-icons/bs";
 import { PRIMARY_PURPLE } from "../../../styles/colors";
 
-type Era = "1900-1999" | "2000-now";
+type Era = "all" | "1900-1999" | "2000-now";
 type View = "list" | "gallery";
 
 const SORT_OPTIONS = [
+  { value: "none", label: "None" },
   { value: "newest", label: "Newest" },
   { value: "oldest", label: "Oldest" },
   { value: "price-high", label: "Price: High" },
@@ -35,9 +36,9 @@ interface BooksSortingProps {
 }
 
 const BooksSorting = ({ onChange }: BooksSortingProps) => {
-  const [era, setEra] = useState<Era>("1900-1999");
+  const [era, setEra] = useState<Era>("all");
   const [view, setView] = useState<View>("list");
-  const [sort, setSort] = useState("newest");
+  const [sort, setSort] = useState("none");
 
   const notify = (next: Partial<SortingState>) => {
     const state = { era, view, sort, ...next };
@@ -72,27 +73,28 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
       h="60px"
       px={6}
     >
-      {/* ── Left: era tabs ── */}
       <Flex gap={8} align="center" h="full">
-        {(["1900-1999", "2000-now"] as Era[]).map((tab) => (
+        {[
+          { value: "all" as Era, label: "All" },
+          { value: "1900-1999" as Era, label: "1900-1999" },
+          { value: "2000-now" as Era, label: "2000-now" },
+        ].map((tab) => (
           <Text
-            key={tab}
+            key={tab.value}
             fontSize="15px"
-            fontWeight={era === tab ? "700" : "400"}
-            color={era === tab ? "#11142d" : "#b0b7c3"}
+            fontWeight={era === tab.value ? "700" : "400"}
+            color={era === tab.value ? "#11142d" : "#b0b7c3"}
             cursor="pointer"
             transition="all 0.15s"
             _hover={{ color: "#11142d" }}
-            onClick={() => selectEra(tab)}
+            onClick={() => selectEra(tab.value)}
           >
-            {tab}
+            {tab.label}
           </Text>
         ))}
       </Flex>
 
-      {/* ── Right: view icons | sort ── */}
       <Flex align="center" gap={0} h="full">
-        {/* View icons */}
         <Flex align="center" gap={3} mr={4}>
           <Box
             cursor="pointer"
@@ -114,10 +116,8 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
           </Box>
         </Flex>
 
-        {/* Separator */}
         <Box w="1px" h="28px" bg="#e8e8e8" />
 
-        {/* Sort */}
         <Flex align="center" gap={2} ml={4}>
           <Box color={PRIMARY_PURPLE} display="flex" alignItems="center">
             <BsSortDown size={18} />

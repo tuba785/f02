@@ -14,7 +14,6 @@ const initialState: BooksState = {
   error: null,
 };
 
-// Асинхронный thunk для получения книг
 export const fetchBooks = createAsyncThunk(
   "books/fetchBooks",
   async (_, { rejectWithValue }) => {
