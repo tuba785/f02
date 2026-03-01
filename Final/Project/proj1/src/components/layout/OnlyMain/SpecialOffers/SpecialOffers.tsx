@@ -1,4 +1,4 @@
-import { Box, VStack, Heading, Text, HStack, Button } from "@chakra-ui/react";
+﻿import { Box, VStack, Heading, Text, HStack, Button } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type SwiperCore from "swiper";
@@ -27,8 +27,9 @@ const SpecialOffers = () => {
       const discounted = allBooks.filter(
         (book) => book.discount !== null && book.discount > 0,
       );
-      const shuffled = [...discounted].sort(() => 0.5 - Math.random());
-      const selectedBooks = shuffled.slice(0, 7);
+      const selectedBooks = [...discounted]
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 7);
       setBooks(selectedBooks);
       setInitialSlide(Math.floor(selectedBooks.length / 2));
     }
@@ -77,15 +78,15 @@ const SpecialOffers = () => {
           </Text>
         </VStack>
 
-        <Box w="full" flex={1} position="relative">
+        <Box w="full" flex={1} position="relative" overflow="hidden" px={2}>
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
               handleSlideChange(swiper);
             }}
-            style={{ height: "760px" }}
+            style={{ height: "760px", overflow: "visible" }}
             slidesPerView={3}
-            spaceBetween={30}
+            spaceBetween={40}
             centeredSlides={true}
             loop={false}
             initialSlide={initialSlide}

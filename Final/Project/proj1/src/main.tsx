@@ -7,7 +7,6 @@ import { ColorModeProvider } from "./components/ui/color-mode";
 import { theme } from "./styles/theme";
 import { Provider } from "react-redux";
 import { store } from "./store/store.ts";
-import AppTest from "./AppTest.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,7 +14,6 @@ createRoot(document.getElementById("root")!).render(
       <ChakraProvider value={theme}>
         <ColorModeProvider>
           <App />
-          {/* <AppTest /> */}
         </ColorModeProvider>
       </ChakraProvider>
     </Provider>

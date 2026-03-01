@@ -17,7 +17,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
     state.cart.items.some((i) => i.bookId === book.id),
   );
   const formatPrice = (value: number) => value.toFixed(2);
-  const coverUrl = `${book.cover}/512/300`;
+  const coverUrl = `${book.cover}/450/300`;
 
   return (
     <Link to={`/books/${book.id}`} style={{ textDecoration: "none" }}>
@@ -27,7 +27,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
         bg="bg.surface"
         borderRadius="lg"
         p={6}
-        w="512px"
+        w="full"
         h="690px"
         boxShadow="0 10px 20px -5px rgba(0, 0, 0, 0.1)"
         cursor="pointer"

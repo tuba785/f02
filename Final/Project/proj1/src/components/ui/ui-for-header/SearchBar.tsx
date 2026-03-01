@@ -67,7 +67,7 @@ const SearchBar = () => {
         align="center"
         bg="bg.surface"
         border="1px solid"
-        borderColor="border.header"
+        borderColor="border.subtle"
         borderRadius="16px"
         overflow="hidden"
       >
@@ -77,6 +77,8 @@ const SearchBar = () => {
           gap={2}
           variant="ghost"
           color="brand.purple"
+          borderRight="1px solid"
+          borderColor="border.subtle"
           bg="bg.surface"
           h="44px"
           px="18px"
@@ -120,7 +122,7 @@ const SearchBar = () => {
           w="56px"
           h="44px"
           borderLeft="1px solid"
-          borderColor="border.header"
+          borderColor="border.subtle"
           color="brand.purple"
           bg="bg.surface"
           cursor="pointer"

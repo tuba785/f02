@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Image, Text, VStack } from "@chakra-ui/react";
+﻿import { Box, Button, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -28,11 +28,11 @@ const MiniSliderInBanner = () => {
       );
 
       const selectedCount = Math.min(5, bestsellersWithDiscount.length);
-      const shuffledBooks = bestsellersWithDiscount
-        .sort(() => Math.random() - 0.5)
+      const topRatedBooks = [...bestsellersWithDiscount]
+        .sort((a, b) => b.rating - a.rating)
         .slice(0, selectedCount);
 
-      setBooks(shuffledBooks);
+      setBooks(topRatedBooks);
     }
   }, [allBooks]);
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";

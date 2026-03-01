@@ -16,7 +16,8 @@ const FavoritesButton = () => {
         <IconButton
           aria-label="Favorites"
           variant="outline"
-          borderColor="border.header"
+          border="1px solid"
+          borderColor="border.subtle"
           color="text.subtle"
           bg="bg.surface"
           h="44px"

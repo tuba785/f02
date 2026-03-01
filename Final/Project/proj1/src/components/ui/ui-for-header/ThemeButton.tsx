@@ -10,7 +10,8 @@ const ThemeButton = () => {
     <IconButton
       aria-label="Toggle theme"
       variant="outline"
-      borderColor="border.header"
+      border="1px solid"
+      borderColor="border.subtle"
       color="text.subtle"
       bg="bg.surface"
       h="44px"
