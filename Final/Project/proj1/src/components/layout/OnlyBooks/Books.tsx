@@ -8,7 +8,6 @@ import BooksGallery from "./BooksGallery";
 import BooksPartNav from "./BooksPartNav";
 import BooksFilters, { type FiltersState } from "./BooksFilters";
 import type { Book } from "../../../types/book";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const LIST_PER_PAGE = 4;
 const GALLERY_PER_PAGE = 12;
@@ -170,7 +169,7 @@ const BooksR = () => {
   return (
     <Flex gap={6} w="full" maxW="1440px" mx="auto" align="start">
       <Flex direction="column" gap={4} w="260px" flexShrink={0}>
-        <Text fontSize="22px" fontWeight="800" color="#11142d">
+        <Text fontSize="22px" fontWeight="800" color="text.heading">
           Filter Option
         </Text>
         <BooksFilters
@@ -184,16 +183,16 @@ const BooksR = () => {
       <Flex direction="column" gap={5} flex={1} minW={0} maxW="1148px">
         {urlSearch && (
           <Flex align="center" gap={2}>
-            <Text fontSize="22px" fontWeight="800" color="#11142d">
+            <Text fontSize="22px" fontWeight="800" color="text.heading">
               Search results for:
             </Text>
-            <Text fontSize="22px" fontWeight="800" color={PRIMARY_PURPLE}>
+            <Text fontSize="22px" fontWeight="800" color="brand.purple">
               &quot;{urlSearch}&quot;
             </Text>
           </Flex>
         )}
 
-        <Text fontSize="22px" fontWeight="800" color="#11142d">
+        <Text fontSize="22px" fontWeight="800" color="text.heading">
           Books
         </Text>
 

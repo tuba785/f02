@@ -57,7 +57,7 @@ const NBL = () => {
   ];
 
   return (
-    <Box py={16} px={4} bg="white">
+    <Box py={16} px={4} bg="bg.page">
       <VStack gap={8} maxW="1400px" mx="auto">
         <HStack justify="space-between" w="full" align="flex-start">
           <VStack align="flex-start" gap={3} maxW="600px">
@@ -65,11 +65,11 @@ const NBL = () => {
               as="h2"
               fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
               fontWeight="bold"
-              color="gray.800"
+              color="text.heading"
             >
               Letest News
             </Heading>
-            <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">
+            <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </Text>
@@ -77,7 +77,7 @@ const NBL = () => {
 
           <Button
             bg={colors.primary.purple}
-            color="white"
+            color="text.onBrand"
             px={8}
             py={6}
             borderRadius="lg"

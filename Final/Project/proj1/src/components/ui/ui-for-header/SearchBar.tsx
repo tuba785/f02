@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Box, Button, Flex, Input, InputGroup } from "@chakra-ui/react";
 import { FiChevronDown, FiChevronUp, FiGrid, FiSearch } from "react-icons/fi";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 import { useBooks } from "../../../hooks/useBooks";
 import Search from "../../layout/Modals/Search";
 import Menus from "../../layout/Modals/Menus";
@@ -66,9 +65,9 @@ const SearchBar = () => {
       <Flex
         w="100%"
         align="center"
-        bg="white"
+        bg="bg.surface"
         border="1px solid"
-        borderColor="gray.200"
+        borderColor="border.header"
         borderRadius="16px"
         overflow="hidden"
       >
@@ -77,8 +76,8 @@ const SearchBar = () => {
           alignItems="center"
           gap={2}
           variant="ghost"
-          color={PRIMARY_PURPLE}
-          bg="white"
+          color="brand.purple"
+          bg="bg.surface"
           h="44px"
           px="18px"
           borderRadius="0"
@@ -93,18 +92,19 @@ const SearchBar = () => {
           {isMenuOpen ? <FiChevronUp /> : <FiChevronDown />}
         </Button>
 
-        <Box w="1px" h="44px" bg="gray.200" />
+        <Box w="1px" h="44px" bg="border.header" />
 
         <InputGroup flex="1">
           <Input
             size="md"
             placeholder="Search over 30 million book titles"
-            bg="white"
+            bg="bg.surface"
             border="none"
             h="44px"
-            _placeholder={{ color: "gray.400" }}
+            color="text.primary"
+            _placeholder={{ color: "text.tertiary" }}
             _focusVisible={{ boxShadow: "none", outline: "none" }}
-            caretColor={PRIMARY_PURPLE}
+            caretColor="brand.purple"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -120,12 +120,12 @@ const SearchBar = () => {
           w="56px"
           h="44px"
           borderLeft="1px solid"
-          borderColor="gray.200"
-          color={PRIMARY_PURPLE}
-          bg="white"
+          borderColor="border.header"
+          color="brand.purple"
+          bg="bg.surface"
           cursor="pointer"
           transition="background 0.15s"
-          _hover={{ bg: "#f8f8fb" }}
+          _hover={{ bg: "bg.subtler" }}
           onClick={handleSearch}
         >
           <FiSearch />

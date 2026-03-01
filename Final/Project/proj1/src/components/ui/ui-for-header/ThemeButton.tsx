@@ -1,21 +1,29 @@
 import { IconButton } from "@chakra-ui/react";
-import { FiSun } from "react-icons/fi";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
+import { FiSun, FiMoon } from "react-icons/fi";
+import { useColorMode } from "../color-mode";
 
 const ThemeButton = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
   return (
     <IconButton
-      aria-label="Theme"
+      aria-label="Toggle theme"
       variant="outline"
-      borderColor="gray.200"
-      color="gray.600"
-      bg="white"
+      borderColor="border.header"
+      color="text.subtle"
+      bg="bg.surface"
       h="44px"
       w="44px"
       borderRadius="14px"
-      _hover={{ bg: "#f0f0f0", color: PRIMARY_PURPLE, borderColor: "#d9d5ff" }}
+      onClick={toggleColorMode}
+      _hover={{
+        bg: "hover.surface",
+        color: "brand.purple",
+        borderColor: "border.brandHover",
+      }}
     >
-      <FiSun />
+      {isDark ? <FiMoon /> : <FiSun />}
     </IconButton>
   );
 };

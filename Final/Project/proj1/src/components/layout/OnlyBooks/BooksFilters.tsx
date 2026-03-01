@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Flex, Text, Grid, Input, Slider } from "@chakra-ui/react";
 import { FiChevronUp, FiChevronDown, FiCheck } from "react-icons/fi";
-import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
 
 const YEARS_INITIAL = 16;
 
@@ -151,7 +150,12 @@ interface SectionProps {
 }
 
 const Section = ({ title, open, onToggle, children }: SectionProps) => (
-  <Box borderBottom="1px solid #eee" pb={4} mb={4}>
+  <Box
+    borderBottom="1px solid"
+    borderBottomColor="border.default"
+    pb={4}
+    mb={4}
+  >
     <Flex
       align="center"
       justify="space-between"
@@ -160,13 +164,13 @@ const Section = ({ title, open, onToggle, children }: SectionProps) => (
       userSelect="none"
       py={2}
     >
-      <Text fontSize="15px" fontWeight="700" color="#11142d">
+      <Text fontSize="15px" fontWeight="700" color="text.heading">
         {title}
       </Text>
       {open ? (
-        <FiChevronUp size={18} color="#808191" />
+        <FiChevronUp size={18} color="var(--chakra-colors-text-muted)" />
       ) : (
-        <FiChevronDown size={18} color="#808191" />
+        <FiChevronDown size={18} color="var(--chakra-colors-text-muted)" />
       )}
     </Flex>
     {open && <Box mt={2}>{children}</Box>}
@@ -187,7 +191,7 @@ const CheckboxItem = ({ label, active, onClick }: CheckboxItemProps) => (
     onClick={onClick}
     py={1}
     userSelect="none"
-    _hover={{ bg: PRIMARY_LIGHT_PURPLE }}
+    _hover={{ bg: "brand.lightPurple" }}
     px={1}
     borderRadius="6px"
     transition="background 0.15s"
@@ -199,17 +203,19 @@ const CheckboxItem = ({ label, active, onClick }: CheckboxItemProps) => (
       h="18px"
       borderRadius="4px"
       border="2px solid"
-      borderColor={active ? PRIMARY_PURPLE : "#d0d5dd"}
-      bg={active ? PRIMARY_PURPLE : "white"}
+      borderColor={active ? "brand.purple" : "border.default"}
+      bg={active ? "brand.purple" : "bg.surface"}
       transition="all 0.15s"
       flexShrink={0}
     >
-      {active && <FiCheck size={12} color="white" />}
+      {active && (
+        <FiCheck size={12} color="var(--chakra-colors-text-onBrand)" />
+      )}
     </Flex>
     <Text
       fontSize="13px"
       fontWeight="500"
-      color={active ? PRIMARY_PURPLE : "#11142d"}
+      color={active ? "brand.purple" : "text.heading"}
     >
       {label}
     </Text>
@@ -230,18 +236,18 @@ const Chip = ({ label, active, onClick }: ChipProps) => (
     h="32px"
     borderRadius="8px"
     border="1.5px solid"
-    borderColor={active ? PRIMARY_PURPLE : "#e8e8e8"}
-    bg={active ? PRIMARY_LIGHT_PURPLE : "white"}
-    color={active ? PRIMARY_PURPLE : "#11142d"}
+    borderColor={active ? "brand.purple" : "border.default"}
+    bg={active ? "brand.lightPurple" : "bg.surface"}
+    color={active ? "brand.purple" : "text.heading"}
     fontSize="13px"
     fontWeight="600"
     cursor="pointer"
     transition="all 0.15s"
     userSelect="none"
     _hover={{
-      bg: PRIMARY_LIGHT_PURPLE,
-      borderColor: PRIMARY_PURPLE,
-      color: PRIMARY_PURPLE,
+      bg: "brand.lightPurple",
+      borderColor: "brand.purple",
+      color: "brand.purple",
     }}
     onClick={onClick}
   >
@@ -271,17 +277,15 @@ const RadioItem = ({ label, active, onClick }: RadioItemProps) => (
       h="18px"
       borderRadius="full"
       border="2px solid"
-      borderColor={active ? PRIMARY_PURPLE : "#d0d5dd"}
+      borderColor={active ? "brand.purple" : "border.default"}
       transition="border-color 0.15s"
     >
-      {active && (
-        <Box w="9px" h="9px" borderRadius="full" bg={PRIMARY_PURPLE} />
-      )}
+      {active && <Box w="9px" h="9px" borderRadius="full" bg="brand.purple" />}
     </Flex>
     <Text
       fontSize="13px"
       fontWeight={active ? "600" : "400"}
-      color={active ? PRIMARY_PURPLE : "#11142d"}
+      color={active ? "brand.purple" : "text.heading"}
     >
       {label}
     </Text>
@@ -367,9 +371,10 @@ const BooksFilters = ({
   return (
     <Box
       w="260px"
-      bg="white"
+      bg="bg.surface"
       borderRadius="16px"
-      border="1px solid #e8e8e8"
+      border="1px solid"
+      borderColor="border.default"
       p={5}
       flexShrink={0}
     >
@@ -451,7 +456,7 @@ const BooksFilters = ({
         open={openSections.years}
         onToggle={() => toggle("years")}
       >
-        <Grid templateColumns="repeat(4, 1fr)" gap={2}>
+        <Grid templateColumns="repeat(3, 1fr)" gap={2}>
           {(showAllYears ? YEARS : YEARS.slice(0, YEARS_INITIAL)).map((y) => (
             <Chip
               key={y}
@@ -466,7 +471,7 @@ const BooksFilters = ({
             mt={2}
             fontSize="13px"
             fontWeight="600"
-            color={PRIMARY_PURPLE}
+            color="brand.purple"
             cursor="pointer"
             textAlign="center"
             _hover={{ textDecoration: "underline" }}
@@ -491,16 +496,16 @@ const BooksFilters = ({
             onValueChange={handlePriceSlider}
           >
             <Slider.Control>
-              <Slider.Track h="6px" bg="#e8e8e8" borderRadius="3px">
-                <Slider.Range bg={PRIMARY_PURPLE} borderRadius="3px" />
+              <Slider.Track h="6px" bg="border.default" borderRadius="3px">
+                <Slider.Range bg="brand.purple" borderRadius="3px" />
               </Slider.Track>
               <Slider.Thumb
                 index={0}
                 w="18px"
                 h="18px"
-                bg="white"
+                bg="bg.surface"
                 border="3px solid"
-                borderColor={PRIMARY_PURPLE}
+                borderColor="brand.purple"
                 borderRadius="full"
                 boxShadow="sm"
               />
@@ -508,9 +513,9 @@ const BooksFilters = ({
                 index={1}
                 w="18px"
                 h="18px"
-                bg="white"
+                bg="bg.surface"
                 border="3px solid"
-                borderColor={PRIMARY_PURPLE}
+                borderColor="brand.purple"
                 borderRadius="full"
                 boxShadow="sm"
               />
@@ -523,7 +528,8 @@ const BooksFilters = ({
               w="80px"
               textAlign="center"
               borderRadius="8px"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               fontWeight="600"
               fontSize="13px"
               value={`$${filters.priceMin}`}
@@ -531,13 +537,14 @@ const BooksFilters = ({
                 handlePriceInput("priceMin", e.target.value.replace("$", ""))
               }
             />
-            <Box w="12px" h="2px" bg="#d0d5dd" borderRadius="1px" />
+            <Box w="12px" h="2px" bg="border.default" borderRadius="1px" />
             <Input
               size="sm"
               w="80px"
               textAlign="center"
               borderRadius="8px"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               fontWeight="600"
               fontSize="13px"
               value={`$${filters.priceMax}`}
@@ -555,8 +562,8 @@ const BooksFilters = ({
           align="center"
           justify="center"
           h="44px"
-          bg={PRIMARY_PURPLE}
-          color="white"
+          bg="brand.purple"
+          color="text.onBrand"
           borderRadius="10px"
           fontWeight="700"
           fontSize="14px"
@@ -573,11 +580,11 @@ const BooksFilters = ({
           justify="center"
           h="36px"
           bg="transparent"
-          color="#808191"
+          color="text.muted"
           fontWeight="600"
           fontSize="13px"
           cursor="pointer"
-          _hover={{ color: "#11142d" }}
+          _hover={{ color: "text.heading" }}
           onClick={resetFilters}
         >
           Reset Filter

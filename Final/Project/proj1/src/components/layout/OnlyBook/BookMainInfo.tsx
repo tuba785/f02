@@ -15,11 +15,6 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import { setCartQty } from "../../../store/slices/cartSlice";
-import {
-  PRIMARY_PURPLE,
-  PRIMARY_LIGHT_PURPLE,
-  PRIMARY_ORANGE,
-} from "../../../styles/colors";
 import { AddToCartBtn, HeartBtn, StarRating } from "../OnlyBooks/BooksBtnCom";
 import { bookService } from "../../../services/bookService";
 import type { Book } from "../../../types/book";
@@ -64,7 +59,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
   if (loading) {
     return (
       <Flex justify="center" align="center" py={20}>
-        <Spinner size="lg" color={PRIMARY_PURPLE} />
+        <Spinner size="lg" color="brand.purple" />
       </Flex>
     );
   }
@@ -92,7 +87,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
 
   return (
     <Flex
-      bg="white"
+      bg="bg.page"
       borderRadius="20px"
       py={10}
       gap="60px"
@@ -103,7 +98,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
         w={`${COVER_W}px`}
         minW={`${COVER_W}px`}
         h={`${COVER_H}px`}
-        bg="#e0e0e0"
+        bg="bg.skeleton"
         borderRadius="16px"
         overflow="hidden"
         flexShrink={0}
@@ -121,20 +116,20 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
       </Box>
 
       <Flex flex={1} direction="column" gap={4} minW={0}>
-        <Text fontSize="32px" fontWeight="800" color="#11142d">
+        <Text fontSize="32px" fontWeight="800" color="text.heading">
           {book.title}
         </Text>
 
         <Flex align="center" gap={3} flexWrap="wrap">
           <StarRating rating={book.rating} size={20} />
-          <Text fontSize="18px" fontWeight="700" color="#11142d">
+          <Text fontSize="18px" fontWeight="700" color="text.heading">
             {book.rating}
           </Text>
-          <Flex align="center" gap={1} color={PRIMARY_PURPLE} fontSize="14px">
+          <Flex align="center" gap={1} color="brand.purple" fontSize="14px">
             <FaComment size={13} />
             <Text>{book.comments_count} Reviews</Text>
           </Flex>
-          <Flex align="center" gap={1} color={PRIMARY_PURPLE} fontSize="14px">
+          <Flex align="center" gap={1} color="brand.purple" fontSize="14px">
             <FaThumbsUp size={13} />
             <Text>{formatLikes(book.likes_count)} Like</Text>
           </Flex>
@@ -146,7 +141,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
                 align="center"
                 gap={1.5}
                 bg={s.bg}
-                color="white"
+                color="text.onBrand"
                 px={3}
                 h="32px"
                 borderRadius="8px"
@@ -163,14 +158,15 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
           </Flex>
         </Flex>
 
-        <Text fontSize="15px" color="#808191" lineHeight="1.75">
+        <Text fontSize="15px" color="text.muted" lineHeight="1.75">
           {book.description}
         </Text>
 
         <Flex
           align="center"
           gap={8}
-          borderBottom="1px dashed #e0e0e0"
+          borderBottom="1px dashed"
+          borderBottomColor="border.default"
           py={4}
           mt="auto"
         >
@@ -182,32 +178,32 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
               h="44px"
               borderRadius="full"
               objectFit="cover"
-              bg="#e0e0e0"
+              bg="bg.skeleton"
             />
             <Flex direction="column">
-              <Text fontSize="13px" color="#b0b7c3" fontWeight="400">
+              <Text fontSize="13px" color="text.muted" fontWeight="400">
                 Written by
               </Text>
-              <Text fontSize="15px" fontWeight="700" color="#11142d">
+              <Text fontSize="15px" fontWeight="700" color="text.strong">
                 {book.author}
               </Text>
             </Flex>
           </Flex>
 
           <Flex direction="column">
-            <Text fontSize="13px" color="#b0b7c3" fontWeight="400">
+            <Text fontSize="13px" color="text.muted" fontWeight="400">
               Publisher
             </Text>
-            <Text fontSize="15px" fontWeight="700" color="#11142d">
+            <Text fontSize="15px" fontWeight="700" color="text.strong">
               {book.publisher}
             </Text>
           </Flex>
 
           <Flex direction="column">
-            <Text fontSize="13px" color="#b0b7c3" fontWeight="400">
+            <Text fontSize="13px" color="text.muted" fontWeight="400">
               Year
             </Text>
-            <Text fontSize="15px" fontWeight="700" color="#11142d">
+            <Text fontSize="15px" fontWeight="700" color="text.strong">
               {year}
             </Text>
           </Flex>
@@ -216,16 +212,16 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
             <Flex
               align="center"
               gap={2}
-              bg={PRIMARY_LIGHT_PURPLE}
+              bg="brand.lightPurple"
               borderRadius="full"
               px={5}
               h="42px"
             >
-              <FaBolt size={16} color={PRIMARY_PURPLE} />
+              <FaBolt size={16} color="var(--chakra-colors-brand-purple)" />
               <Text
                 fontSize="14px"
                 fontWeight="700"
-                color={PRIMARY_PURPLE}
+                color="brand.purple"
                 textTransform="uppercase"
               >
                 Free Shipping
@@ -254,14 +250,14 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
 
         <Flex align="center" gap={4} mt={1}>
           <Flex align="baseline" gap={2}>
-            <Text fontSize="36px" fontWeight="800" color="#11142d">
+            <Text fontSize="36px" fontWeight="800" color="text.heading">
               ${book.discounted_price.toFixed(2)}
             </Text>
             {hasDiscount && (
               <Text
                 fontSize="18px"
                 fontWeight="400"
-                color="#b0b7c3"
+                color="text.muted"
                 textDecoration="line-through"
               >
                 ${book.price.toFixed(2)}
@@ -273,8 +269,8 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
             <Flex
               align="center"
               justify="center"
-              bg={PRIMARY_PURPLE}
-              color="white"
+              bg="brand.purple"
+              color="text.onBrand"
               fontSize="13px"
               fontWeight="700"
               px={2.5}
@@ -288,8 +284,8 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
             <Flex
               align="center"
               justify="center"
-              bg={PRIMARY_ORANGE}
-              color="white"
+              bg="brand.orange"
+              color="text.onBrand"
               fontSize="13px"
               fontWeight="700"
               px={2.5}
@@ -306,12 +302,13 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
               justify="center"
               w="40px"
               h="44px"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               borderRightWidth={0}
               borderLeftRadius="10px"
               cursor="pointer"
-              color={PRIMARY_PURPLE}
-              _hover={{ bg: PRIMARY_LIGHT_PURPLE }}
+              color="brand.purple"
+              _hover={{ bg: "brand.lightPurple" }}
               transition="background 0.15s"
               onClick={() => setQty((q) => Math.max(1, q - 1))}
             >
@@ -321,7 +318,8 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
               w="50px"
               h="44px"
               textAlign="center"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               borderRadius={0}
               fontWeight="700"
               fontSize="15px"
@@ -336,12 +334,13 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
               justify="center"
               w="40px"
               h="44px"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               borderLeftWidth={0}
               borderRightRadius="10px"
               cursor="pointer"
-              color={PRIMARY_PURPLE}
-              _hover={{ bg: PRIMARY_LIGHT_PURPLE }}
+              color="brand.purple"
+              _hover={{ bg: "brand.lightPurple" }}
               transition="background 0.15s"
               onClick={() => setQty((q) => q + 1)}
             >

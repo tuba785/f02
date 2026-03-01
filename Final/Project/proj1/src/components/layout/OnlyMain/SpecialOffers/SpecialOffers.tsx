@@ -60,18 +60,18 @@ const SpecialOffers = () => {
   };
 
   return (
-    <Box w="full" h="1100px" py={16} px={4} bg="white">
+    <Box w="full" h="1100px" py={16} px={4} bg="bg.page">
       <VStack gap={8} maxW="1400px" mx="auto" h="full">
         <VStack gap={3} textAlign="center">
           <Heading
             as="h2"
             fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
             fontWeight="bold"
-            color="gray.800"
+            color="text.heading"
           >
             Special Offers
           </Heading>
-          <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">
+          <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
@@ -115,7 +115,7 @@ const SpecialOffers = () => {
                 w="50px"
                 h="50px"
                 bg={colors.primary.purple}
-                color="white"
+                color="text.onBrand"
                 _hover={{ bg: colors.primary.purple, opacity: 0.9 }}
                 onClick={handlePrev}
                 display="flex"
@@ -131,7 +131,7 @@ const SpecialOffers = () => {
                 w="50px"
                 h="50px"
                 bg={colors.primary.purple}
-                color="white"
+                color="text.onBrand"
                 _hover={{ bg: colors.primary.purple, opacity: 0.9 }}
                 onClick={handleNext}
                 display="flex"

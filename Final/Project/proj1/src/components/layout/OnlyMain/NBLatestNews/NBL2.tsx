@@ -18,8 +18,14 @@ interface NewsCardProps {
 
 export const NewsCard = ({ article }: NewsCardProps) => {
   return (
-    <VStack align="stretch" gap={4} bg="white" borderRadius="lg">
-      <Box w="full" h="200px" bg="gray.300" borderRadius="lg" overflow="hidden">
+    <VStack align="stretch" gap={4} bg="bg.surface" borderRadius="lg">
+      <Box
+        w="full"
+        h="200px"
+        bg="bg.skeleton"
+        borderRadius="lg"
+        overflow="hidden"
+      >
         {article.image && (
           <Image
             src={article.image}
@@ -36,13 +42,13 @@ export const NewsCard = ({ article }: NewsCardProps) => {
           as="h3"
           fontSize="lg"
           fontWeight="semibold"
-          color="gray.800"
+          color="text.heading"
           lineHeight="tall"
         >
           {article.title}
         </Heading>
 
-        <Text fontSize="sm" color="gray.500" lineHeight="tall">
+        <Text fontSize="sm" color="text.muted" lineHeight="tall">
           {article.description}
         </Text>
 
@@ -59,10 +65,10 @@ export const NewsCard = ({ article }: NewsCardProps) => {
         <HStack gap={3} align="center">
           <NBT3 seed={article.authorAvatar} />
           <VStack align="flex-start" gap={0}>
-            <Text fontSize="sm" fontWeight="semibold" color="gray.800">
+            <Text fontSize="sm" fontWeight="semibold" color="text.strong">
               {article.author}
             </Text>
-            <Text fontSize="xs" color="gray.400">
+            <Text fontSize="xs" color="text.muted">
               {article.date}
             </Text>
           </VStack>

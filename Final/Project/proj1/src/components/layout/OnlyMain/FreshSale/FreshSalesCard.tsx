@@ -20,7 +20,7 @@ const FreshSalesCard = ({ book }: FreshSalesCardProps) => {
         <Box
           w="250px"
           h="350px"
-          bg="gray.300"
+          bg="bg.skeleton"
           borderRadius="xl"
           overflow="hidden"
         >
@@ -38,7 +38,7 @@ const FreshSalesCard = ({ book }: FreshSalesCardProps) => {
         <Text
           fontSize="lg"
           fontWeight="bold"
-          color="gray.800"
+          color="text.strong"
           textAlign="center"
           css={{
             display: "-webkit-box",
@@ -68,7 +68,7 @@ const FreshSalesCard = ({ book }: FreshSalesCardProps) => {
           <Text fontSize="xl" fontWeight="bold" color={colors.primary.purple}>
             $ {formatPrice(book.discounted_price)}
           </Text>
-          <Text fontSize="md" color="gray.400" textDecoration="line-through">
+          <Text fontSize="md" color="text.muted" textDecoration="line-through">
             $ {formatPrice(book.price)}
           </Text>
         </HStack>

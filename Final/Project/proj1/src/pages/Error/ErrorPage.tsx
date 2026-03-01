@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../styles/colors";
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -37,25 +36,30 @@ const ErrorPage = () => {
         <Text
           fontSize="120px"
           fontWeight="900"
-          color={PRIMARY_ORANGE}
+          color="brand.orange"
           lineHeight={1}
           letterSpacing="-4px"
         >
           {status}
         </Text>
 
-        <Text fontSize="28px" fontWeight="700" color="#1a202c">
+        <Text fontSize="28px" fontWeight="700" color="text.heading">
           An Error Occurred
         </Text>
 
-        <Text fontSize="15px" color="#9ca3af" maxW="420px" textAlign="center">
+        <Text
+          fontSize="15px"
+          color="text.placeholder"
+          maxW="420px"
+          textAlign="center"
+        >
           {message}
         </Text>
 
         <Box mt={4} display="flex" gap={3}>
           <Button
-            bg={PRIMARY_PURPLE}
-            color="white"
+            bg="brand.purple"
+            color="text.onBrand"
             px={8}
             py={6}
             fontSize="15px"
@@ -68,14 +72,15 @@ const ErrorPage = () => {
           </Button>
           <Button
             bg="transparent"
-            color="#1a202c"
-            border="2px solid #e2e8f0"
+            color="text.heading"
+            border="2px solid"
+            borderColor="border.input"
             px={8}
             py={6}
             fontSize="15px"
             fontWeight="600"
             borderRadius="10px"
-            _hover={{ borderColor: PRIMARY_PURPLE, color: PRIMARY_PURPLE }}
+            _hover={{ borderColor: "brand.purple", color: "brand.purple" }}
             onClick={() => navigate(-1)}
           >
             Go Back

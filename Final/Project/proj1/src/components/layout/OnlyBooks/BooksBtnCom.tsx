@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import { toggleFavorite } from "../../../store/slices/favoritesSlice";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../../styles/colors";
 
 interface StarRatingProps {
   rating: number;
@@ -21,7 +20,13 @@ export const StarRating = ({ rating, size = 16, justify }: StarRatingProps) => {
     <Flex gap="2px" justify={justify}>
       {[1, 2, 3, 4, 5].map((i) => {
         if (i <= full)
-          return <FaStar key={i} size={size} color={PRIMARY_ORANGE} />;
+          return (
+            <FaStar
+              key={i}
+              size={size}
+              color="var(--chakra-colors-brand-orange)"
+            />
+          );
         if (i === full + 1 && fraction > 0) {
           const pct = Math.round(fraction * 100);
           return (
@@ -35,7 +40,7 @@ export const StarRating = ({ rating, size = 16, justify }: StarRatingProps) => {
                 w={`${pct}%`}
                 h="full"
               >
-                <FaStar size={size} color={PRIMARY_ORANGE} />
+                <FaStar size={size} color="var(--chakra-colors-brand-orange)" />
               </Box>
             </Box>
           );
@@ -74,9 +79,10 @@ export const AddToCartBtn = ({
       <Flex
         align="center"
         gap={2}
-        bg="white"
-        color={PRIMARY_PURPLE}
-        border={`1.5px solid ${PRIMARY_PURPLE}`}
+        bg="bg.surface"
+        color="brand.purple"
+        border="1.5px solid"
+        borderColor="brand.purple"
         px={5}
         h="44px"
         borderRadius="10px"
@@ -84,7 +90,7 @@ export const AddToCartBtn = ({
         fontWeight="600"
         fontSize="14px"
         transition="all 0.2s"
-        _hover={{ bg: "#f0eeff" }}
+        _hover={{ bg: "brand.lightPurple" }}
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -100,8 +106,8 @@ export const AddToCartBtn = ({
     <Flex
       align="center"
       gap={2}
-      bg={PRIMARY_PURPLE}
-      color="white"
+      bg="brand.purple"
+      color="text.onBrand"
       px={5}
       h="44px"
       borderRadius="10px"
@@ -126,9 +132,10 @@ export const AlreadyInCartBtn = ({ onClick }: AlreadyInCartBtnProps) => (
   <Flex
     align="center"
     gap={2}
-    bg="white"
-    color={PRIMARY_PURPLE}
-    border={`1.5px solid ${PRIMARY_PURPLE}`}
+    bg="bg.surface"
+    color="brand.purple"
+    border="1.5px solid"
+    borderColor="brand.purple"
     px={5}
     h="44px"
     borderRadius="10px"
@@ -136,7 +143,7 @@ export const AlreadyInCartBtn = ({ onClick }: AlreadyInCartBtnProps) => (
     fontWeight="600"
     fontSize="14px"
     transition="all 0.2s"
-    _hover={{ bg: "#f0eeff" }}
+    _hover={{ bg: "brand.lightPurple" }}
     onClick={onClick}
   >
     <Text>Already in cart</Text>
@@ -169,12 +176,13 @@ export const HeartBtn = ({ bookId, onClick }: HeartBtnProps) => {
       alignItems="center"
       justifyContent="center"
       borderRadius="10px"
-      border={`1.5px solid ${PRIMARY_PURPLE}`}
-      bg="white"
-      color={PRIMARY_PURPLE}
+      border="1.5px solid"
+      borderColor="brand.purple"
+      bg="bg.surface"
+      color="brand.purple"
       cursor="pointer"
       transition="all 0.2s"
-      _hover={{ bg: "#f0eeff" }}
+      _hover={{ bg: "brand.lightPurple" }}
       onClick={handleClick}
     >
       {isFav ? <FaHeart size={18} /> : <FaRegHeart size={18} />}
@@ -200,12 +208,13 @@ export const HeartBtnFilled = ({ bookId, onClick }: HeartBtnProps) => {
       alignItems="center"
       justifyContent="center"
       borderRadius="10px"
-      border={`1.5px solid ${PRIMARY_PURPLE}`}
-      bg="white"
-      color={PRIMARY_PURPLE}
+      border="1.5px solid"
+      borderColor="brand.purple"
+      bg="bg.surface"
+      color="brand.purple"
       cursor="pointer"
       transition="all 0.2s"
-      _hover={{ bg: "#f0eeff" }}
+      _hover={{ bg: "brand.lightPurple" }}
       onClick={handleClick}
     >
       <FaHeart size={18} />

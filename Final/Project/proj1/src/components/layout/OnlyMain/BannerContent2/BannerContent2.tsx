@@ -8,6 +8,7 @@ import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useColorMode } from "../../../ui/color-mode";
 
 const BOOK_COVER_WIDTH = 140;
 const BOOK_COVER_HEIGHT = 200;
@@ -22,6 +23,7 @@ export const BannerContent2 = () => {
   const [randomBooks, setRandomBooks] = useState<Book[]>([]);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const { colorMode } = useColorMode();
 
   useEffect(() => {
     if (books.length === 0 && loading === "idle") {
@@ -41,7 +43,12 @@ export const BannerContent2 = () => {
       height="445px"
       position="relative"
       mx="auto"
-      backgroundImage={`url('src/assets/banners/home-banner2.png')`}
+      backgroundImage={
+        colorMode === "dark"
+          ? "none"
+          : `url('src/assets/banners/home-banner2.png')`
+      }
+      backgroundColor={colorMode === "dark" ? "bg.surface" : undefined}
       backgroundSize="cover"
       backgroundPosition="center"
       borderRadius="14px"
@@ -54,10 +61,10 @@ export const BannerContent2 = () => {
         paddingLeft="32px"
         paddingBottom="32px"
       >
-        <Text fontSize="28px" fontWeight="700" color="#1a202c">
+        <Text fontSize="28px" fontWeight="700" color="text.heading">
           Recommended For You
         </Text>
-        <Text fontSize="14px" color="#4a5568" lineHeight="1.6">
+        <Text fontSize="14px" color="text.secondary" lineHeight="1.6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
@@ -74,10 +81,10 @@ export const BannerContent2 = () => {
           width="42px"
           height="42px"
           borderRadius="999px"
-          backgroundColor="white"
+          backgroundColor="bg.surface"
           boxShadow="0 8px 20px rgba(0, 0, 0, 0.12)"
-          color="black"
-          _hover={{ backgroundColor: "#f7fafc" }}
+          color="text.inverse"
+          _hover={{ backgroundColor: "hover.arrow" }}
           className="banner2-prev"
           opacity={isAtStart ? 0 : 1}
           visibility={isAtStart ? "hidden" : "visible"}
@@ -95,10 +102,10 @@ export const BannerContent2 = () => {
           width="42px"
           height="42px"
           borderRadius="999px"
-          backgroundColor="white"
+          backgroundColor="bg.surface"
           boxShadow="0 8px 20px rgba(0, 0, 0, 0.12)"
-          color="black"
-          _hover={{ backgroundColor: "#f7fafc" }}
+          color="text.inverse"
+          _hover={{ backgroundColor: "hover.arrow" }}
           className="banner2-next"
           opacity={isAtEnd ? 0 : 1}
           visibility={isAtEnd ? "hidden" : "visible"}
@@ -140,7 +147,7 @@ export const BannerContent2 = () => {
                   height={`${BOOK_COVER_HEIGHT}px`}
                   borderRadius="12px"
                   overflow="hidden"
-                  backgroundColor="#cbd5e0"
+                  backgroundColor="status.inactive"
                   boxShadow="inset 0 0 0 2px rgba(255, 255, 255, 0.7)"
                   cursor="pointer"
                 >

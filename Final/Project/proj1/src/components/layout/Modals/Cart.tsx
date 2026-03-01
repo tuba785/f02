@@ -10,7 +10,6 @@ import {
   removeFromCart,
   clearCart,
 } from "../../../store/slices/cartSlice";
-import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
 import type { Book } from "../../../types/book";
 
 interface CartProps {
@@ -89,7 +88,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
         h="calc(100vh - 100px)"
         w="420px"
         maxW="90vw"
-        bg="white"
+        bg="bg.surface"
         boxShadow="-4px 0 24px rgba(0,0,0,0.1)"
         borderLeftRadius="16px"
         zIndex={11}
@@ -104,12 +103,16 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
           justify="space-between"
           px={6}
           py={5}
-          borderBottom="1px solid #f0f0f0"
+          borderBottom="1px solid"
+          borderColor="border.subtle"
           flexShrink={0}
         >
           <Flex align="center" gap={2}>
-            <FiShoppingCart size={18} color={PRIMARY_PURPLE} />
-            <Text fontSize="18px" fontWeight="800" color="#11142d">
+            <FiShoppingCart
+              size={18}
+              color="var(--chakra-colors-brand-purple)"
+            />
+            <Text fontSize="18px" fontWeight="800" color="text.primary">
               Cart
             </Text>
             {totalItems > 0 && (
@@ -120,8 +123,8 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                 h="22px"
                 px="6px"
                 borderRadius="11px"
-                bg={PRIMARY_PURPLE}
-                color="white"
+                bg="brand.purple"
+                color="text.onBrand"
                 fontSize="11px"
                 fontWeight="700"
               >
@@ -137,10 +140,10 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
             borderRadius="10px"
             cursor="pointer"
             transition="background 0.15s"
-            _hover={{ bg: "#f0f0f0" }}
+            _hover={{ bg: "hover.surface" }}
             onClick={onClose}
           >
-            <FiX size={20} color="#808191" />
+            <FiX size={20} color="var(--chakra-colors-text-secondary)" />
           </Flex>
         </Flex>
 
@@ -153,8 +156,8 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               gap={2}
               h="42px"
               borderRadius="10px"
-              bg={PRIMARY_PURPLE}
-              color="white"
+              bg="brand.purple"
+              color="text.onBrand"
               cursor="pointer"
               fontWeight="700"
               fontSize="14px"
@@ -171,13 +174,14 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               px={4}
               h="42px"
               borderRadius="10px"
-              border="1.5px solid #e53e3e"
-              color="#e53e3e"
+              border="1.5px solid"
+              borderColor="status.error"
+              color="status.error"
               cursor="pointer"
               fontWeight="600"
               fontSize="13px"
               transition="all 0.15s"
-              _hover={{ bg: "#fff5f5" }}
+              _hover={{ bg: "hover.danger" }}
               onClick={() => dispatch(clearCart())}
             >
               <FaTrash size={12} />
@@ -199,19 +203,22 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                 w="56px"
                 h="56px"
                 borderRadius="full"
-                bg={`${PRIMARY_PURPLE}18`}
+                bg="brand.purpleFaint"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
               >
-                <FiShoppingCart size={22} color={PRIMARY_PURPLE} />
+                <FiShoppingCart
+                  size={22}
+                  color="var(--chakra-colors-brand-purple)"
+                />
               </Box>
-              <Text fontSize="15px" fontWeight="600" color="#11142d">
+              <Text fontSize="15px" fontWeight="600" color="text.primary">
                 Your cart is empty
               </Text>
               <Text
                 fontSize="13px"
-                color="#808191"
+                color="text.secondary"
                 textAlign="center"
                 maxW="260px"
               >
@@ -242,13 +249,14 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
             justify="space-between"
             px={6}
             py={4}
-            borderTop="1px solid #f0f0f0"
+            borderTop="1px solid"
+            borderColor="border.subtle"
             flexShrink={0}
           >
-            <Text fontSize="14px" fontWeight="600" color="#808191">
+            <Text fontSize="14px" fontWeight="600" color="text.secondary">
               Total ({totalItems} items)
             </Text>
-            <Text fontSize="20px" fontWeight="800" color="#11142d">
+            <Text fontSize="20px" fontWeight="800" color="text.primary">
               ${totalPrice.toFixed(2)}
             </Text>
           </Flex>
@@ -280,8 +288,9 @@ const CartItem = ({
 
   return (
     <Flex
-      bg="#fafafa"
-      border="1px solid #f0f0f0"
+      bg="bg.surfaceMuted"
+      border="1px solid"
+      borderColor="border.subtle"
       borderRadius="12px"
       p={3}
       gap={3}
@@ -298,7 +307,7 @@ const CartItem = ({
         <Box
           w={`${THUMB}px`}
           h={`${THUMB + 20}px`}
-          bg="#e0e0e0"
+          bg="bg.placeholder"
           borderRadius="8px"
           overflow="hidden"
           cursor="pointer"
@@ -324,7 +333,7 @@ const CartItem = ({
           <Text
             fontSize="13px"
             fontWeight="700"
-            color="#11142d"
+            color="text.primary"
             lineClamp={1}
             cursor="pointer"
           >
@@ -332,11 +341,15 @@ const CartItem = ({
           </Text>
         </Link>
         <Flex align="baseline" gap={1.5}>
-          <Text fontSize="13px" fontWeight="700" color="#11142d">
+          <Text fontSize="13px" fontWeight="700" color="text.primary">
             ${book.discounted_price.toFixed(2)}
           </Text>
           {hasDiscount && (
-            <Text fontSize="11px" color="#b0b7c3" textDecoration="line-through">
+            <Text
+              fontSize="11px"
+              color="text.tertiary"
+              textDecoration="line-through"
+            >
               ${book.price.toFixed(2)}
             </Text>
           )}
@@ -348,12 +361,13 @@ const CartItem = ({
             justify="center"
             w="28px"
             h="28px"
-            border="1.5px solid #e8e8e8"
+            border="1.5px solid"
+            borderColor="border.default"
             borderRightWidth={0}
             borderLeftRadius="6px"
             cursor="pointer"
-            color={PRIMARY_PURPLE}
-            _hover={{ bg: PRIMARY_LIGHT_PURPLE }}
+            color="brand.purple"
+            _hover={{ bg: "hover.brand" }}
             transition="background 0.15s"
             onClick={() => onQtyChange(qty - 1)}
           >
@@ -363,10 +377,12 @@ const CartItem = ({
             w="36px"
             h="28px"
             textAlign="center"
-            border="1.5px solid #e8e8e8"
+            border="1.5px solid"
+            borderColor="border.default"
             borderRadius={0}
             fontWeight="700"
             fontSize="12px"
+            color="text.primary"
             px={0}
             value={qty}
             onChange={(e) => {
@@ -379,18 +395,19 @@ const CartItem = ({
             justify="center"
             w="28px"
             h="28px"
-            border="1.5px solid #e8e8e8"
+            border="1.5px solid"
+            borderColor="border.default"
             borderLeftWidth={0}
             borderRightRadius="6px"
             cursor="pointer"
-            color={PRIMARY_PURPLE}
-            _hover={{ bg: PRIMARY_LIGHT_PURPLE }}
+            color="brand.purple"
+            _hover={{ bg: "hover.brand" }}
             transition="background 0.15s"
             onClick={() => onQtyChange(qty + 1)}
           >
             <FaPlus size={9} />
           </Flex>
-          <Text fontSize="12px" fontWeight="600" color="#808191" ml={2}>
+          <Text fontSize="12px" fontWeight="600" color="text.secondary" ml={2}>
             = ${lineTotal.toFixed(2)}
           </Text>
         </Flex>
@@ -404,11 +421,11 @@ const CartItem = ({
         borderRadius="8px"
         cursor="pointer"
         transition="background 0.15s"
-        _hover={{ bg: "#fff5f5" }}
+        _hover={{ bg: "hover.danger" }}
         flexShrink={0}
         onClick={onRemove}
       >
-        <FiX size={16} color="#e53e3e" />
+        <FiX size={16} color="var(--chakra-colors-status-error)" />
       </Flex>
     </Flex>
   );

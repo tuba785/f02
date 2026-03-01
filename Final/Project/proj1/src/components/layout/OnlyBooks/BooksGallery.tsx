@@ -12,7 +12,7 @@ const BooksGallery = ({ books, loading, error }: BooksGalleryProps) => {
   if (loading === "pending") {
     return (
       <Flex justify="center" align="center" py={20}>
-        <Spinner size="lg" color="#6c5dd3" />
+        <Spinner size="lg" color="brand.purple" />
       </Flex>
     );
   }
@@ -31,10 +31,10 @@ const BooksGallery = ({ books, loading, error }: BooksGalleryProps) => {
     return (
       <Flex direction="column" align="center" justify="center" py={16} gap={2}>
         <Text fontSize="40px">📚</Text>
-        <Text fontSize="18px" fontWeight="700" color="#11142d">
+        <Text fontSize="18px" fontWeight="700" color="text.heading">
           No books found
         </Text>
-        <Text fontSize="14px" color="#808191">
+        <Text fontSize="14px" color="text.muted">
           Try adjusting your filters or search criteria
         </Text>
       </Flex>

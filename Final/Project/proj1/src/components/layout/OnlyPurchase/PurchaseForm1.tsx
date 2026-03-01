@@ -11,7 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const MAX_LEN = 20;
 
@@ -58,21 +57,22 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
   };
 
   const inputStyle = {
-    border: "1px solid #e2e8f0",
+    border: "1px solid",
+    borderColor: "border.input",
     borderRadius: "10px",
     h: "48px",
     px: "16px",
     fontSize: "14px",
     _focusVisible: {
-      borderColor: PRIMARY_PURPLE,
-      boxShadow: `0 0 0 1px ${PRIMARY_PURPLE}`,
+      borderColor: "brand.purple",
+      boxShadow: "0 0 0 1px var(--chakra-colors-brand-purple)",
     },
   };
 
   const labelStyle = {
     fontSize: "11px",
     fontWeight: "600",
-    color: "#9ca3af",
+    color: "text.placeholder",
     textTransform: "uppercase" as const,
     letterSpacing: "0.5px",
     mb: "6px",
@@ -80,7 +80,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
 
   return (
     <Box flex={1}>
-      <Text fontSize="28px" fontWeight="800" color="#1a202c" mb={6}>
+      <Text fontSize="28px" fontWeight="800" color="text.heading" mb={6}>
         Buyer Info
       </Text>
 
@@ -183,10 +183,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             <Text {...labelStyle}>STATE</Text>
             <NativeSelectRoot
               border="1px solid"
-              borderColor={err("state") ? "red.400" : "#e2e8f0"}
+              borderColor={err("state") ? "red.400" : "border.input"}
               borderRadius="10px"
               h="48px"
-              bg="white"
+              bg="bg.surface"
             >
               <NativeSelectField
                 value={data.state}
@@ -209,7 +209,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
                   </option>
                 ))}
               </NativeSelectField>
-              <NativeSelectIndicator color={PRIMARY_PURPLE}>
+              <NativeSelectIndicator color="brand.purple">
                 <FiChevronDown />
               </NativeSelectIndicator>
             </NativeSelectRoot>
@@ -259,7 +259,8 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
         <Box>
           <Text {...labelStyle}>NOTE</Text>
           <Textarea
-            border="1px solid #e2e8f0"
+            border="1px solid"
+            borderColor="border.input"
             borderRadius="10px"
             px="16px"
             py="12px"
@@ -269,8 +270,8 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             value={data.note}
             onChange={(e) => set("note", e.target.value)}
             _focusVisible={{
-              borderColor: PRIMARY_PURPLE,
-              boxShadow: `0 0 0 1px ${PRIMARY_PURPLE}`,
+              borderColor: "brand.purple",
+              boxShadow: "0 0 0 1px var(--chakra-colors-brand-purple)",
             }}
           />
         </Box>

@@ -30,20 +30,20 @@ const NBT = () => {
   ];
 
   return (
-    <Box py={16} px={4} bg="white" h="750px">
+    <Box py={16} px={4} bg="bg.page" h="750px">
       <VStack gap={8} maxW="1400px" mx="auto" h="full">
         <VStack gap={4} textAlign="center">
           <Heading
             as="h2"
             fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
             fontWeight="bold"
-            color="gray.800"
+            color="text.heading"
           >
             Testimonials
           </Heading>
           <Text
             fontSize={{ base: "sm", md: "md" }}
-            color="gray.500"
+            color="text.muted"
             maxW="600px"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -65,7 +65,7 @@ const NBT = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Text color="white" fontSize="xs" fontWeight="bold">
+            <Text color="text.onBrand" fontSize="xs" fontWeight="bold">
               21k+
             </Text>
           </Box>

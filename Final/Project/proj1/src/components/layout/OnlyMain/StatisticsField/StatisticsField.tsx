@@ -1,6 +1,5 @@
 import { Box, Grid, VStack, Text } from "@chakra-ui/react";
 import { FaUsers, FaBook, FaStore, FaFeather } from "react-icons/fa";
-import { PRIMARY_PURPLE } from "../../../../styles/colors";
 
 interface StatisticItem {
   icon: React.ReactNode;
@@ -43,11 +42,11 @@ const StatisticsField = () => {
       >
         {statistics.map((stat, index) => (
           <VStack key={index} gap={5} textAlign="center">
-            <Box color={PRIMARY_PURPLE}>{stat.icon}</Box>
-            <Text fontSize="60px" fontWeight={700} color="#1f2937">
+            <Box color="brand.purple">{stat.icon}</Box>
+            <Text fontSize="60px" fontWeight={700} color="text.heading">
               {stat.number}
             </Text>
-            <Text fontSize="14px" color="#9ca3af">
+            <Text fontSize="14px" color="text.placeholder">
               {stat.label}
             </Text>
           </VStack>

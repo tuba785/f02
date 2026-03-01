@@ -6,6 +6,14 @@ export const colors = {
   },
 };
 
+// Legacy constants — still used in some components alongside semantic tokens
 export const PRIMARY_PURPLE = "#6c5dd3";
 export const PRIMARY_LIGHT_PURPLE = "#f0eeff";
 export const PRIMARY_ORANGE = "#ff754c";
+
+// Social media brand colors — stay the same in both modes
+export const SOCIAL_FACEBOOK = "#3b5998";
+export const SOCIAL_YOUTUBE = "#FF0000";
+export const SOCIAL_TWITTER = "#1DA1F2";
+export const SOCIAL_LINKEDIN = "#0077B5";
+export const SOCIAL_INSTAGRAM = "#E1306C";

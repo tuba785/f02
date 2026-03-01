@@ -10,7 +10,6 @@ import {
 import { FiChevronDown } from "react-icons/fi";
 import { FaList, FaThLarge } from "react-icons/fa";
 import { BsSortDown } from "react-icons/bs";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 type Era = "all" | "1900-1999" | "2000-now";
 type View = "list" | "gallery";
@@ -67,8 +66,9 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
       w="full"
       maxW="1200px"
       mx="auto"
-      bg="white"
-      border="1px solid #e8e8e8"
+      bg="bg.surface"
+      border="1px solid"
+      borderColor="border.default"
       borderRadius="12px"
       h="60px"
       px={6}
@@ -83,10 +83,10 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
             key={tab.value}
             fontSize="15px"
             fontWeight={era === tab.value ? "700" : "400"}
-            color={era === tab.value ? "#11142d" : "#b0b7c3"}
+            color={era === tab.value ? "text.heading" : "text.muted"}
             cursor="pointer"
             transition="all 0.15s"
-            _hover={{ color: "#11142d" }}
+            _hover={{ color: "text.heading" }}
             onClick={() => selectEra(tab.value)}
           >
             {tab.label}
@@ -98,28 +98,28 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
         <Flex align="center" gap={3} mr={4}>
           <Box
             cursor="pointer"
-            color={view === "list" ? PRIMARY_PURPLE : "#b0b7c3"}
+            color={view === "list" ? "brand.purple" : "text.muted"}
             transition="color 0.15s"
-            _hover={{ color: PRIMARY_PURPLE }}
+            _hover={{ color: "brand.purple" }}
             onClick={() => selectView("list")}
           >
             <FaList size={18} />
           </Box>
           <Box
             cursor="pointer"
-            color={view === "gallery" ? PRIMARY_PURPLE : "#b0b7c3"}
+            color={view === "gallery" ? "brand.purple" : "text.muted"}
             transition="color 0.15s"
-            _hover={{ color: PRIMARY_PURPLE }}
+            _hover={{ color: "brand.purple" }}
             onClick={() => selectView("gallery")}
           >
             <FaThLarge size={18} />
           </Box>
         </Flex>
 
-        <Box w="1px" h="28px" bg="#e8e8e8" />
+        <Box w="1px" h="28px" bg="border.default" />
 
         <Flex align="center" gap={2} ml={4}>
-          <Box color={PRIMARY_PURPLE} display="flex" alignItems="center">
+          <Box color="brand.purple" display="flex" alignItems="center">
             <BsSortDown size={18} />
           </Box>
           <NativeSelectRoot w="120px" h="36px" border="none" bg="transparent">
@@ -130,7 +130,7 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
               px="4px"
               fontSize="15px"
               fontWeight="600"
-              color="#11142d"
+              color="text.heading"
               border="none"
               _focusVisible={{ boxShadow: "none", outline: "none" }}
             >
@@ -140,7 +140,7 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
                 </option>
               ))}
             </NativeSelectField>
-            <NativeSelectIndicator color="#b0b7c3">
+            <NativeSelectIndicator color="text.muted">
               <FiChevronDown />
             </NativeSelectIndicator>
           </NativeSelectRoot>

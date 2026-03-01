@@ -1,5 +1,4 @@
 import { HStack, Link, Text, VStack } from "@chakra-ui/react";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const CenterFooter = () => {
   const booksCategories = [
@@ -26,17 +25,17 @@ const CenterFooter = () => {
   return (
     <HStack align="start" gap={12}>
       <VStack align="start" gap={3}>
-        <Text fontSize="16px" fontWeight="700" color="gray.800" mb={1}>
+        <Text fontSize="16px" fontWeight="700" color="text.strong" mb={1}>
           Books Categories
         </Text>
         {booksCategories.map((category) => (
           <Link
             key={category}
             fontSize="14px"
-            color="gray.600"
+            color="text.subtle"
             textDecoration="none"
             _hover={{
-              color: PRIMARY_PURPLE,
+              color: "brand.purple",
               textDecoration: "none",
               fontWeight: "600",
             }}
@@ -47,17 +46,17 @@ const CenterFooter = () => {
       </VStack>
 
       <VStack align="start" gap={3}>
-        <Text fontSize="16px" fontWeight="700" color="gray.800" mb={1}>
+        <Text fontSize="16px" fontWeight="700" color="text.strong" mb={1}>
           Quick Links
         </Text>
         {quickLinks.map((link) => (
           <Link
             key={link}
             fontSize="14px"
-            color="gray.600"
+            color="text.subtle"
             textDecoration="none"
             _hover={{
-              color: PRIMARY_PURPLE,
+              color: "brand.purple",
               textDecoration: "none",
               fontWeight: "600",
             }}

@@ -78,8 +78,8 @@ const SubscriptionEmail = () => {
             />
             <Button
               onClick={handleSubscribe}
-              bg="white"
-              color="#1f2937"
+              bg="bg.surface"
+              color="text.heading"
               fontWeight={700}
               fontSize="14px"
               px={7}
@@ -87,7 +87,7 @@ const SubscriptionEmail = () => {
               borderRadius="0 8px 8px 0"
               whiteSpace="nowrap"
               _hover={{
-                bg: "gray.200",
+                bg: "hover.surface",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               }}
               _active={{ transform: "translateY(0)" }}

@@ -1,5 +1,4 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 const ComingSoon = () => {
   return (
@@ -7,12 +6,12 @@ const ComingSoon = () => {
       <Text
         fontSize="48px"
         fontWeight="800"
-        color={PRIMARY_PURPLE}
+        color="brand.purple"
         letterSpacing="-1px"
       >
         Coming Soon
       </Text>
-      <Text fontSize="15px" color="#9ca3af">
+      <Text fontSize="15px" color="text.placeholder">
         This section is under construction. Stay tuned!
       </Text>
     </Flex>

@@ -8,9 +8,9 @@ const Footer = () => {
     <Box
       as="footer"
       w="100%"
-      bg="white"
+      bg="bg.surface"
       borderTop="1px solid"
-      borderColor="gray.200"
+      borderColor="border.header"
     >
       <Flex
         maxW="1400px"
@@ -29,7 +29,7 @@ const Footer = () => {
 
       <Box
         borderTop="1px solid"
-        borderColor="gray.200"
+        borderColor="border.header"
         py={4}
         px={{ base: 4, md: 8, lg: 12 }}
       >
@@ -38,14 +38,14 @@ const Footer = () => {
           mx="auto"
           justify="space-between"
           fontSize="13px"
-          color="gray.600"
+          color="text.subtle"
           flexWrap="wrap"
           gap={2}
         >
           <Text>Bookoe Book Store Website - © 2026 All Rights Reserved</Text>
           <Text>
             Made with ❤️ by{" "}
-            <Text as="span" fontWeight="600" color="gray.800">
+            <Text as="span" fontWeight="600" color="text.strong">
               Peterdraw
             </Text>
           </Text>

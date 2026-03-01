@@ -1,6 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiX } from "react-icons/fi";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 interface ProfileSettingsProps {
   isOpen: boolean;
@@ -17,7 +16,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
       left={0}
       w="100vw"
       h="100vh"
-      bg="blackAlpha.600"
+      bg="overlay.heavy"
       backdropFilter="blur(4px)"
       zIndex={3300}
       display="flex"
@@ -26,7 +25,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
       onClick={onClose}
     >
       <Box
-        bg="white"
+        bg="bg.surface"
         borderRadius="16px"
         w="480px"
         maxW="90%"
@@ -35,7 +34,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
         onClick={(e) => e.stopPropagation()}
       >
         <Flex align="center" justify="space-between" mb={6}>
-          <Text fontSize="20px" fontWeight="800" color="#11142d">
+          <Text fontSize="20px" fontWeight="800" color="text.primary">
             Account Settings
           </Text>
           <Flex
@@ -46,10 +45,10 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
             borderRadius="10px"
             cursor="pointer"
             transition="background 0.15s"
-            _hover={{ bg: "#f0f0f0" }}
+            _hover={{ bg: "hover.surface" }}
             onClick={onClose}
           >
-            <FiX size={20} color="#808191" />
+            <FiX size={20} color="var(--chakra-colors-text-secondary)" />
           </Flex>
         </Flex>
 
@@ -64,17 +63,22 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
             w="56px"
             h="56px"
             borderRadius="full"
-            bg={`${PRIMARY_PURPLE}18`}
+            bg="brand.purpleFaint"
             display="flex"
             alignItems="center"
             justifyContent="center"
           >
             <Text fontSize="22px">⚙️</Text>
           </Box>
-          <Text fontSize="15px" fontWeight="600" color="#11142d">
+          <Text fontSize="15px" fontWeight="600" color="text.primary">
             Settings coming soon
           </Text>
-          <Text fontSize="13px" color="#808191" textAlign="center" maxW="300px">
+          <Text
+            fontSize="13px"
+            color="text.secondary"
+            textAlign="center"
+            maxW="300px"
+          >
             Account settings and profile customization will be available in a
             future update.
           </Text>

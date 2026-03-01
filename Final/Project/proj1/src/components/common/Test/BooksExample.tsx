@@ -10,7 +10,6 @@ import {
   Image,
 } from "@chakra-ui/react";
 import { useBooks } from "../../../hooks/useBooks";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../../styles/colors";
 
 // Image dimensions for book covers
 const BOOK_COVER_WIDTH = 230;
@@ -54,16 +53,16 @@ const BooksDisplay = () => {
   }
 
   return (
-    <Box w="100%" py={16} px={8} bg="white">
-      <Heading as="h2" fontSize="32px" mb={2} color="#1f2937">
+    <Box w="100%" py={16} px={8} bg="bg.surface">
+      <Heading as="h2" fontSize="32px" mb={2} color="text.heading">
         📚 Our Books Collection
       </Heading>
-      <Text fontSize="16px" color="gray.600" mb={12}>
+      <Text fontSize="16px" color="text.muted" mb={12}>
         {books.length} books available
       </Text>
 
       {books.length === 0 ? (
-        <Text fontSize="16px" color="gray.600">
+        <Text fontSize="16px" color="text.muted">
           No books found
         </Text>
       ) : (
@@ -79,11 +78,11 @@ const BooksDisplay = () => {
           {books.map((book) => (
             <Box
               key={book.id}
-              bg="white"
+              bg="bg.surface"
               w="275px"
               h="495px"
               border="1px solid"
-              borderColor="gray.200"
+              borderColor="border.default"
               borderRadius="12px"
               overflow="hidden"
               transition="all 0.3s ease"
@@ -93,7 +92,7 @@ const BooksDisplay = () => {
               }}
             >
               {/* Обложка книги */}
-              <Box position="relative" w="100%" h="220px" bg="gray.100">
+              <Box position="relative" w="100%" h="220px" bg="bg.subtle">
                 <Image
                   src={`${book.cover}/${BOOK_COVER_WIDTH}/${BOOK_COVER_HEIGHT}`}
                   alt={book.title}
@@ -108,8 +107,8 @@ const BooksDisplay = () => {
                     position="absolute"
                     top={2}
                     right={2}
-                    bg={PRIMARY_ORANGE}
-                    color="white"
+                    bg="brand.orange"
+                    color="text.onBrand"
                     borderRadius="6px"
                     px={2}
                     py={1}
@@ -126,8 +125,8 @@ const BooksDisplay = () => {
                     position="absolute"
                     top={2}
                     left={2}
-                    bg={PRIMARY_PURPLE}
-                    color="white"
+                    bg="brand.purple"
+                    color="text.onBrand"
                     borderRadius="6px"
                     px={2}
                     py={1}
@@ -146,7 +145,7 @@ const BooksDisplay = () => {
                   <Heading
                     as="h3"
                     fontSize="15px"
-                    color="#1f2937"
+                    color="text.heading"
                     lineHeight="1.3"
                     overflow="hidden"
                     textOverflow="ellipsis"
@@ -158,23 +157,23 @@ const BooksDisplay = () => {
                   >
                     {book.title}
                   </Heading>
-                  <Text fontSize="13px" color="gray.600">
+                  <Text fontSize="13px" color="text.muted">
                     {book.author}
                   </Text>
                 </VStack>
 
                 {/* Жанр и язык */}
                 <HStack gap={2} flexWrap="wrap">
-                  <Badge bg="gray.100" color="gray.700" fontSize="11px">
+                  <Badge bg="bg.subtle" color="text.secondary" fontSize="11px">
                     {book.genre}
                   </Badge>
-                  <Badge bg="gray.100" color="gray.700" fontSize="11px">
+                  <Badge bg="bg.subtle" color="text.secondary" fontSize="11px">
                     {book.language}
                   </Badge>
                 </HStack>
 
                 {/* Формат и страницы */}
-                <HStack gap={4} fontSize="12px" color="gray.600">
+                <HStack gap={4} fontSize="12px" color="text.muted">
                   <Text>{book.format}</Text>
                   <Text>📖 {book.page_count} pages</Text>
                 </HStack>
@@ -182,12 +181,12 @@ const BooksDisplay = () => {
                 {/* Рейтинг и отзывы */}
                 <HStack gap={4} fontSize="13px">
                   <HStack gap={1}>
-                    <Text color={PRIMARY_ORANGE} fontWeight="bold">
+                    <Text color="brand.orange" fontWeight="bold">
                       ★ {book.rating.toFixed(1)}
                     </Text>
-                    <Text color="gray.600">({book.comments_count})</Text>
+                    <Text color="text.muted">({book.comments_count})</Text>
                   </HStack>
-                  <HStack gap={1} color="gray.600">
+                  <HStack gap={1} color="text.muted">
                     <Text>❤️ {book.likes_count.toLocaleString()}</Text>
                   </HStack>
                 </HStack>
@@ -197,20 +196,20 @@ const BooksDisplay = () => {
                   gap={2}
                   pt={2}
                   borderTop="1px solid"
-                  borderColor="gray.200"
+                  borderColor="border.default"
                 >
                   {book.discount && book.discount > 0 ? (
                     <>
                       <Text
                         fontSize="18px"
                         fontWeight="bold"
-                        color={PRIMARY_PURPLE}
+                        color="brand.purple"
                       >
                         ${book.discounted_price.toFixed(2)}
                       </Text>
                       <Text
                         fontSize="14px"
-                        color="gray.400"
+                        color="text.placeholder"
                         textDecoration="line-through"
                       >
                         ${book.price.toFixed(2)}
@@ -220,7 +219,7 @@ const BooksDisplay = () => {
                     <Text
                       fontSize="18px"
                       fontWeight="bold"
-                      color={PRIMARY_PURPLE}
+                      color="brand.purple"
                     >
                       ${book.price.toFixed(2)}
                     </Text>
@@ -230,7 +229,7 @@ const BooksDisplay = () => {
                 {/* ISBN и издатель */}
                 <Text
                   fontSize="11px"
-                  color="gray.500"
+                  color="text.muted"
                   overflow="hidden"
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
@@ -239,7 +238,7 @@ const BooksDisplay = () => {
                 </Text>
                 <Text
                   fontSize="11px"
-                  color="gray.500"
+                  color="text.muted"
                   overflow="hidden"
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"

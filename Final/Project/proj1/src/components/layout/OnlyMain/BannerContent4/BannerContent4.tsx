@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../../../styles/colors";
+import { useColorMode } from "../../../ui/color-mode";
 import { HiShoppingCart } from "react-icons/hi";
 
 const MAIN_BOOK_WIDTH = 292;
@@ -43,12 +43,19 @@ export const BannerContent4 = () => {
     }
   }, [books]);
 
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       width="100%"
       height="850px"
       position="relative"
-      backgroundImage={`url('src/assets/banners/home-banner4.png')`}
+      backgroundImage={
+        colorMode === "dark"
+          ? "none"
+          : `url('src/assets/banners/home-banner4.png')`
+      }
+      backgroundColor={colorMode === "dark" ? "bg.surface" : undefined}
       backgroundSize="cover"
       backgroundPosition="center"
       overflow="hidden"
@@ -82,7 +89,7 @@ export const BannerContent4 = () => {
             <Text
               fontSize="14px"
               fontWeight="600"
-              color={PRIMARY_PURPLE}
+              color="brand.purple"
               textTransform="uppercase"
               letterSpacing="1px"
             >
@@ -92,12 +99,17 @@ export const BannerContent4 = () => {
               as="h2"
               fontSize="42px"
               fontWeight="700"
-              color="#1a202c"
+              color="text.heading"
               lineHeight="1.2"
             >
               Featured Books
             </Heading>
-            <Text fontSize="15px" color="#4a5568" lineHeight="1.6" maxW="420px">
+            <Text
+              fontSize="15px"
+              color="text.secondary"
+              lineHeight="1.6"
+              maxW="420px"
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore
             </Text>
@@ -109,7 +121,7 @@ export const BannerContent4 = () => {
               style={{ textDecoration: "none" }}
             >
               <Box
-                bg="white"
+                bg="bg.surface"
                 borderRadius="16px"
                 padding="24px"
                 boxShadow="0 10px 40px rgba(0, 0, 0, 0.12)"
@@ -123,7 +135,7 @@ export const BannerContent4 = () => {
                     height={`${MAIN_BOOK_HEIGHT}px`}
                     borderRadius="12px"
                     overflow="hidden"
-                    backgroundColor="#cbd5e0"
+                    backgroundColor="status.inactive"
                     flexShrink={0}
                     position="relative"
                   >
@@ -132,8 +144,8 @@ export const BannerContent4 = () => {
                         position="absolute"
                         top="12px"
                         right="12px"
-                        bg={PRIMARY_ORANGE}
-                        color="white"
+                        bg="brand.orange"
+                        color="text.onBrand"
                         borderRadius="6px"
                         px="8px"
                         py="4px"
@@ -149,8 +161,8 @@ export const BannerContent4 = () => {
                         position="absolute"
                         top="12px"
                         left="12px"
-                        bg={PRIMARY_PURPLE}
-                        color="white"
+                        bg="brand.purple"
+                        color="text.onBrand"
                         borderRadius="6px"
                         px="8px"
                         py="4px"
@@ -181,7 +193,7 @@ export const BannerContent4 = () => {
                         as="h3"
                         fontSize="18px"
                         fontWeight="700"
-                        color="#1a202c"
+                        color="text.heading"
                         lineHeight="1.3"
                         mb="6px"
                       >
@@ -189,7 +201,7 @@ export const BannerContent4 = () => {
                       </Heading>
                       <Text
                         fontSize="12px"
-                        color={PRIMARY_PURPLE}
+                        color="brand.purple"
                         fontWeight="600"
                         mb="12px"
                       >
@@ -199,7 +211,7 @@ export const BannerContent4 = () => {
 
                       <Text
                         fontSize="13px"
-                        color="#4a5568"
+                        color="text.secondary"
                         lineHeight="1.6"
                         display="-webkit-box"
                         overflow="hidden"
@@ -217,18 +229,18 @@ export const BannerContent4 = () => {
                         gap="24px"
                         width="100%"
                         fontSize="13px"
-                        color="#4a5568"
+                        color="text.secondary"
                       >
                         <VStack align="flex-start" gap="2px">
                           <Text
                             fontWeight="500"
                             fontSize="11px"
-                            color="#9ca3af"
+                            color="text.placeholder"
                             textTransform="uppercase"
                           >
                             Written by
                           </Text>
-                          <Text fontWeight="600" color="#1a202c">
+                          <Text fontWeight="600" color="text.heading">
                             {mainBook.author}
                           </Text>
                         </VStack>
@@ -236,12 +248,12 @@ export const BannerContent4 = () => {
                           <Text
                             fontWeight="500"
                             fontSize="11px"
-                            color="#9ca3af"
+                            color="text.placeholder"
                             textTransform="uppercase"
                           >
                             Year
                           </Text>
-                          <Text fontWeight="600" color="#1a202c">
+                          <Text fontWeight="600" color="text.heading">
                             {mainBook.release_date.split("/")[2]}
                           </Text>
                         </VStack>
@@ -252,14 +264,14 @@ export const BannerContent4 = () => {
                           as="h4"
                           fontSize="22px"
                           fontWeight="700"
-                          color="#1a202c"
+                          color="text.heading"
                         >
                           ${mainBook.discounted_price.toFixed(2)}
                         </Heading>
                         {mainBook.discount && mainBook.discount > 0 && (
                           <Text
                             fontSize="14px"
-                            color="#9ca3af"
+                            color="text.placeholder"
                             textDecoration="line-through"
                           >
                             ${mainBook.price.toFixed(2)}
@@ -267,8 +279,8 @@ export const BannerContent4 = () => {
                         )}
                         <Button
                           ml="auto"
-                          bg={PRIMARY_PURPLE}
-                          color="white"
+                          bg="brand.purple"
+                          color="text.onBrand"
                           height="44px"
                           paddingX="20px"
                           borderRadius="8px"
@@ -314,7 +326,7 @@ export const BannerContent4 = () => {
                   height={`${SMALL_BOOK_HEIGHT}px`}
                   borderRadius="12px"
                   overflow="hidden"
-                  backgroundColor="#cbd5e0"
+                  backgroundColor="status.inactive"
                   boxShadow="0 8px 20px rgba(0, 0, 0, 0.1)"
                   transition="all 0.3s ease"
                   _hover={{
@@ -329,8 +341,8 @@ export const BannerContent4 = () => {
                       position="absolute"
                       top="8px"
                       right="8px"
-                      bg={PRIMARY_ORANGE}
-                      color="white"
+                      bg="brand.orange"
+                      color="text.onBrand"
                       borderRadius="6px"
                       px="6px"
                       py="3px"
@@ -346,8 +358,8 @@ export const BannerContent4 = () => {
                       position="absolute"
                       top="8px"
                       left="8px"
-                      bg={PRIMARY_PURPLE}
-                      color="white"
+                      bg="brand.purple"
+                      color="text.onBrand"
                       borderRadius="6px"
                       px="6px"
                       py="3px"

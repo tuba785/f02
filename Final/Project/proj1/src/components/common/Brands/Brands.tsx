@@ -21,7 +21,7 @@ const Brands = () => {
   const brands = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
   return (
-    <Box w="100%" py={12} bg="white" overflow="hidden">
+    <Box w="100%" py={12} bg="bg.page" overflow="hidden">
       <Flex
         gap={16}
         alignItems="center"

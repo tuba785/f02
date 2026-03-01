@@ -8,7 +8,6 @@ import {
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 interface PurchaseModalProps {
   isOpen: boolean;
@@ -50,7 +49,7 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
         top="50%"
         left="50%"
         transform="translate(-50%, -50%)"
-        bg="white"
+        bg="bg.surface"
         zIndex={1300}
         maxW="460px"
         w="90%"
@@ -65,27 +64,27 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
               w="72px"
               h="72px"
               borderRadius="full"
-              bg={`${PRIMARY_PURPLE}18`}
+              bg="brand.purpleFaint"
               display="flex"
               alignItems="center"
               justifyContent="center"
             >
-              <FaCheck size={30} color={PRIMARY_PURPLE} />
+              <FaCheck size={30} color="var(--chakra-colors-brand-purple)" />
             </Box>
 
-            <Text fontSize="22px" fontWeight="800" color="#1a202c">
+            <Text fontSize="22px" fontWeight="800" color="text.heading">
               Purchase Successful!
             </Text>
 
-            <Text fontSize="14px" color="#9ca3af" maxW="320px">
+            <Text fontSize="14px" color="text.placeholder" maxW="320px">
               Your order has been placed successfully. Thank you for your
               purchase!
             </Text>
 
             <Flex direction="column" gap={3} w="full" mt={2}>
               <Button
-                bg={PRIMARY_PURPLE}
-                color="white"
+                bg="brand.purple"
+                color="text.onBrand"
                 w="full"
                 py={6}
                 fontSize="15px"
@@ -98,14 +97,15 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
               </Button>
               <Button
                 bg="transparent"
-                color="#1a202c"
-                border="2px solid #e2e8f0"
+                color="text.heading"
+                border="2px solid"
+                borderColor="border.input"
                 w="full"
                 py={6}
                 fontSize="15px"
                 fontWeight="600"
                 borderRadius="10px"
-                _hover={{ borderColor: PRIMARY_PURPLE, color: PRIMARY_PURPLE }}
+                _hover={{ borderColor: "brand.purple", color: "brand.purple" }}
                 onClick={goPurchase}
               >
                 Back to Purchase

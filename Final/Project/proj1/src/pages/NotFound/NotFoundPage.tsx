@@ -2,7 +2,6 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
-import { PRIMARY_PURPLE } from "../../styles/colors";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -22,25 +21,30 @@ const NotFoundPage = () => {
         <Text
           fontSize="120px"
           fontWeight="900"
-          color={PRIMARY_PURPLE}
+          color="brand.purple"
           lineHeight={1}
           letterSpacing="-4px"
         >
           404
         </Text>
 
-        <Text fontSize="28px" fontWeight="700" color="#1a202c">
+        <Text fontSize="28px" fontWeight="700" color="text.heading">
           Page Not Found
         </Text>
 
-        <Text fontSize="15px" color="#9ca3af" maxW="380px" textAlign="center">
+        <Text
+          fontSize="15px"
+          color="text.placeholder"
+          maxW="380px"
+          textAlign="center"
+        >
           The page you're looking for doesn't exist or has been moved.
         </Text>
 
         <Box mt={4}>
           <Button
-            bg={PRIMARY_PURPLE}
-            color="white"
+            bg="brand.purple"
+            color="text.onBrand"
             px={8}
             py={6}
             fontSize="15px"

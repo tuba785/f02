@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
+
 import BookMainInfo from "./BookMainInfo";
 import BookDetails from "./BookDetails";
 import BookReviews from "./BookReviews";
@@ -25,34 +25,32 @@ const Book = ({ bookId = "15" }: BookProps) => {
             <Text
               fontSize="20px"
               fontWeight="700"
-              color={tab === "details" ? "#11142d" : "#b0b7c3"}
+              color={tab === "details" ? "text.heading" : "text.muted"}
               cursor="pointer"
-              borderBottom={
-                tab === "details"
-                  ? `3px solid ${PRIMARY_PURPLE}`
-                  : "3px solid transparent"
+              borderBottom="3px solid"
+              borderBottomColor={
+                tab === "details" ? "brand.purple" : "transparent"
               }
               pb={2}
               transition="all 0.15s"
               onClick={() => setTab("details")}
-              _hover={{ color: "#11142d" }}
+              _hover={{ color: "text.heading" }}
             >
               Details Product
             </Text>
             <Text
               fontSize="20px"
               fontWeight="700"
-              color={tab === "reviews" ? "#11142d" : "#b0b7c3"}
+              color={tab === "reviews" ? "text.heading" : "text.muted"}
               cursor="pointer"
-              borderBottom={
-                tab === "reviews"
-                  ? `3px solid ${PRIMARY_PURPLE}`
-                  : "3px solid transparent"
+              borderBottom="3px solid"
+              borderBottomColor={
+                tab === "reviews" ? "brand.purple" : "transparent"
               }
               pb={2}
               transition="all 0.15s"
               onClick={() => setTab("reviews")}
-              _hover={{ color: "#11142d" }}
+              _hover={{ color: "text.heading" }}
             >
               Customer Reviews
             </Text>
@@ -66,7 +64,7 @@ const Book = ({ bookId = "15" }: BookProps) => {
         </Flex>
 
         <Flex direction="column" gap={6} w="320px" minW="320px" flexShrink={0}>
-          <Text fontSize="20px" fontWeight="700" color="#11142d">
+          <Text fontSize="20px" fontWeight="700" color="text.heading">
             Related Books
           </Text>
           <RelatedBooks />

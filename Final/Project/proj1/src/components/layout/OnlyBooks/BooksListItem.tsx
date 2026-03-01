@@ -1,6 +1,5 @@
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../../styles/colors";
 import { AddToCartBtn, HeartBtn, StarRating } from "./BooksBtnCom";
 import type { Book } from "../../../types/book";
 
@@ -24,8 +23,9 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
       style={{ textDecoration: "none", width: "100%" }}
     >
       <Flex
-        bg="white"
-        border="1px solid #e8e8e8"
+        bg="bg.surface"
+        border="1px solid"
+        borderColor="border.default"
         borderRadius="16px"
         p={6}
         gap={6}
@@ -39,7 +39,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
           minW="160px"
           maxW="160px"
           h="220px"
-          bg="#e0e0e0"
+          bg="bg.skeleton"
           borderRadius="12px"
           overflow="hidden"
           flexShrink={0}
@@ -58,14 +58,14 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
         <Flex flex="1" direction="column" justify="space-between" gap={2}>
           <Flex justify="space-between" align="flex-start">
             <Flex direction="column" gap={1} flex="1" mr={4}>
-              <Text fontSize="20px" fontWeight="700" color="#11142d">
+              <Text fontSize="20px" fontWeight="700" color="text.strong">
                 {book.title}
               </Text>
               {subtitle && (
                 <Text
                   fontSize="12px"
                   fontWeight="500"
-                  color={PRIMARY_PURPLE}
+                  color="brand.purple"
                   textTransform="uppercase"
                 >
                   {subtitle}
@@ -74,7 +74,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
               <Text
                 fontSize="13px"
                 fontWeight="400"
-                color="#808191"
+                color="text.muted"
                 mt={2}
                 lineClamp={3}
               >
@@ -85,10 +85,10 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
             <Flex direction="column" align="flex-end" gap={0} flexShrink={0}>
               <StarRating rating={book.rating} />
               <Flex align="center" gap={1} mt={1}>
-                <Text fontSize="14px" fontWeight="700" color="#11142d">
+                <Text fontSize="14px" fontWeight="700" color="text.strong">
                   {book.rating}
                 </Text>
-                <Text fontSize="12px" fontWeight="400" color="#b0b7c3">
+                <Text fontSize="12px" fontWeight="400" color="text.muted">
                   {book.comments_count} Reviews
                 </Text>
               </Flex>
@@ -97,14 +97,14 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
 
           <Flex align="center" gap={3} flexWrap="wrap">
             <Flex align="baseline" gap={2}>
-              <Text fontSize="22px" fontWeight="700" color="#11142d">
+              <Text fontSize="22px" fontWeight="700" color="text.strong">
                 $ {book.discounted_price.toFixed(2)}
               </Text>
               {hasDiscount && (
                 <Text
                   fontSize="14px"
                   fontWeight="400"
-                  color="#b0b7c3"
+                  color="text.muted"
                   textDecoration="line-through"
                 >
                   ${book.price.toFixed(2)}
@@ -118,15 +118,16 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                 px={3}
                 h="30px"
                 borderRadius="20px"
-                border={`1px solid ${PRIMARY_PURPLE}`}
+                border="1px solid"
+                borderColor="brand.purple"
                 cursor="pointer"
                 transition="all 0.15s"
-                _hover={{ bg: "#f0eeff" }}
+                _hover={{ bg: "brand.lightPurple" }}
               >
                 <Text
                   fontSize="11px"
                   fontWeight="600"
-                  color={PRIMARY_PURPLE}
+                  color="brand.purple"
                   whiteSpace="nowrap"
                 >
                   {book.discount}% OFF Discount
@@ -139,7 +140,8 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                 px={3}
                 h="30px"
                 borderRadius="20px"
-                border={`1px solid ${PRIMARY_ORANGE}`}
+                border="1px solid"
+                borderColor="brand.orange"
                 cursor="pointer"
                 transition="all 0.15s"
                 _hover={{ bg: "#fff5f2" }}
@@ -147,7 +149,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                 <Text
                   fontSize="11px"
                   fontWeight="600"
-                  color={PRIMARY_ORANGE}
+                  color="brand.orange"
                   whiteSpace="nowrap"
                 >
                   Bestseller
@@ -159,32 +161,33 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
           <Flex
             align="center"
             justify="space-between"
-            borderTop="1px solid #f0f0f0"
+            borderTop="1px solid"
+            borderTopColor="border.default"
             pt={3}
             mt={1}
           >
             <Flex gap={8}>
               <Flex direction="column" gap={0}>
-                <Text fontSize="11px" fontWeight="400" color="#b0b7c3">
+                <Text fontSize="11px" fontWeight="400" color="text.muted">
                   Written by
                 </Text>
-                <Text fontSize="13px" fontWeight="600" color="#11142d">
+                <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.author}
                 </Text>
               </Flex>
               <Flex direction="column" gap={0}>
-                <Text fontSize="11px" fontWeight="400" color="#b0b7c3">
+                <Text fontSize="11px" fontWeight="400" color="text.muted">
                   Publisher
                 </Text>
-                <Text fontSize="13px" fontWeight="600" color="#11142d">
+                <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.publisher}
                 </Text>
               </Flex>
               <Flex direction="column" gap={0}>
-                <Text fontSize="11px" fontWeight="400" color="#b0b7c3">
+                <Text fontSize="11px" fontWeight="400" color="text.muted">
                   Year
                 </Text>
-                <Text fontSize="13px" fontWeight="600" color="#11142d">
+                <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.release_date?.split("/")[2]}
                 </Text>
               </Flex>

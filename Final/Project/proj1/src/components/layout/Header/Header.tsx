@@ -1,6 +1,7 @@
 import { Box, Flex, HStack, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useColorMode } from "../../ui/color-mode";
 import type { RootState } from "../../../store/store";
 import AuthActions from "../../ui/ui-for-header/AuthActions";
 import CartButton from "../../ui/ui-for-header/CartButton";
@@ -12,12 +13,13 @@ import ThemeButton from "../../ui/ui-for-header/ThemeButton";
 
 const Header = () => {
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const { colorMode } = useColorMode();
 
   return (
     <Box
       as="header"
       w="100%"
-      bg="white"
+      bg="bg.surface"
       boxShadow="sm"
       position="sticky"
       top="0"
@@ -33,7 +35,11 @@ const Header = () => {
         <HStack gap={4} minW="220px">
           <Link to="/">
             <Image
-              src="/bookoe-logo-main.svg"
+              src={
+                colorMode === "dark"
+                  ? "/bookoe_logo_dark.svg"
+                  : "/bookoe-logo-main.svg"
+              }
               alt="Bookoe logo"
               h="44px"
               cursor="pointer"

@@ -54,7 +54,7 @@ export const TestimonialCard = ({
     <Box
       maxW="500px"
       w="full"
-      bg="white"
+      bg="bg.surface"
       p={8}
       borderRadius="2xl"
       boxShadow={showShadow ? "0 25px 70px rgba(0, 0, 0, 0.2)" : "none"}
@@ -67,7 +67,7 @@ export const TestimonialCard = ({
         <Text
           fontSize={{ base: "md", md: "lg" }}
           textAlign="center"
-          color="gray.700"
+          color="text.muted"
           lineHeight="tall"
         >
           {testimonial.text}
@@ -78,7 +78,7 @@ export const TestimonialCard = ({
             <Box
               w="60px"
               h="60px"
-              bg="gray.300"
+              bg="bg.skeleton"
               borderRadius="full"
               overflow="hidden"
               flexShrink={0}
@@ -95,10 +95,10 @@ export const TestimonialCard = ({
             </Box>
 
             <VStack gap={0} align="flex-start">
-              <Text fontSize="md" fontWeight="bold" color="gray.800">
+              <Text fontSize="md" fontWeight="bold" color="text.strong">
                 {testimonial.name}
               </Text>
-              <Text fontSize="sm" color="gray.500">
+              <Text fontSize="sm" color="text.muted">
                 {testimonial.role}
               </Text>
             </VStack>

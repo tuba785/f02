@@ -136,7 +136,7 @@ const MiniSliderInBanner = () => {
                       <Box
                         w="220px"
                         h="310px"
-                        bg="gray.300"
+                        bg="bg.skeleton"
                         borderRadius="2xl"
                         overflow="hidden"
                         flexShrink={0}
@@ -187,7 +187,7 @@ const MiniSliderInBanner = () => {
                       <HStack
                         as="button"
                         gap={3}
-                        bg="white"
+                        bg="bg.surface"
                         px={7}
                         py={3}
                         borderRadius="xl"
@@ -207,7 +207,7 @@ const MiniSliderInBanner = () => {
                         <Text
                           fontSize="xl"
                           fontWeight="extrabold"
-                          color="gray.800"
+                          color="text.strong"
                         >
                           USD {formatPrice(book.discounted_price)}
                         </Text>

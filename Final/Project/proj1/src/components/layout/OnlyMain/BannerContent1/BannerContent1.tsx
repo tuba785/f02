@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { HiArrowRight } from "react-icons/hi";
-import { PRIMARY_PURPLE } from "../../../../styles/colors";
+import { useColorMode } from "../../../ui/color-mode";
 
 interface Slide {
   title: string;
@@ -58,13 +58,19 @@ export const BannerContent1 = ({
   width = "1220px",
   height = "662px",
 }: BannerContent1Props) => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
   return (
     <Box
       width={width}
       height={height}
       position="relative"
       mx="auto"
-      backgroundImage={`url('src/assets/banners/home-banner1.png')`}
+      backgroundImage={
+        isDark ? "none" : `url('src/assets/banners/home-banner1.png')`
+      }
+      backgroundColor={isDark ? "bg.surface" : undefined}
       backgroundSize="cover"
       backgroundPosition="center"
       borderRadius="8px"
@@ -118,7 +124,7 @@ export const BannerContent1 = ({
               <Text
                 fontSize="16px"
                 fontWeight="700"
-                color={PRIMARY_PURPLE}
+                color="brand.purple"
                 letterSpacing="2px"
                 textTransform="uppercase"
               >
@@ -128,7 +134,7 @@ export const BannerContent1 = ({
               <Text
                 fontSize="60px"
                 fontWeight="700"
-                color="#1a202c"
+                color="text.heading"
                 lineHeight="1.2"
               >
                 {slide.title}
@@ -137,7 +143,7 @@ export const BannerContent1 = ({
               <Text
                 fontSize="32px"
                 fontWeight="600"
-                color="#1a202c"
+                color="text.heading"
                 lineHeight="1.4"
               >
                 {slide.subtitle}
@@ -145,7 +151,7 @@ export const BannerContent1 = ({
 
               <Text
                 fontSize="16px"
-                color="#4a5568"
+                color="text.secondary"
                 lineHeight="1.6"
                 maxWidth="420px"
                 marginY="16px"
@@ -155,8 +161,8 @@ export const BannerContent1 = ({
 
               <Flex gap="16px" alignItems="center" marginTop="16px">
                 <Button
-                  backgroundColor={PRIMARY_PURPLE}
-                  color="white"
+                  backgroundColor="brand.purple"
+                  color="text.onBrand"
                   height="48px"
                   paddingX="32px"
                   paddingY="12px"
@@ -179,18 +185,19 @@ export const BannerContent1 = ({
 
                 <Button
                   backgroundColor="transparent"
-                  color="#1a202c"
+                  color="text.heading"
                   height="48px"
                   paddingX="32px"
                   paddingY="12px"
                   borderRadius="8px"
                   fontSize="16px"
                   fontWeight="600"
-                  border={`2px solid #e2e8f0`}
+                  border="2px solid"
+                  borderColor="border.input"
                   cursor="pointer"
                   _hover={{
-                    borderColor: PRIMARY_PURPLE,
-                    color: PRIMARY_PURPLE,
+                    borderColor: "brand.purple",
+                    color: "brand.purple",
                   }}
                   transition="all 0.3s ease"
                 >

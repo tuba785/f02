@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaCheck } from "react-icons/fa";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 export type PStep = "Shopping Summary" | "Checkout" | "Payment" | "Shipping";
 
@@ -48,11 +47,11 @@ const PStepper = ({
                 alignItems="center"
                 justifyContent="center"
                 flexShrink={0}
-                bg={isActive ? PRIMARY_PURPLE : "#b0b7c3"}
+                bg={isActive ? "brand.purple" : "text.tertiary"}
                 transition="background 0.2s"
               >
                 {isActive && (
-                  <Box color="white" display="flex">
+                  <Box color="text.onBrand" display="flex">
                     <FaCheck size={13} />
                   </Box>
                 )}
@@ -61,7 +60,7 @@ const PStepper = ({
               <Text
                 fontSize="12px"
                 fontWeight={isActive ? "600" : "400"}
-                color={isActive ? "#1a202c" : "#9ca3af"}
+                color={isActive ? "text.heading" : "text.placeholder"}
                 whiteSpace="nowrap"
                 textAlign="center"
                 transition="color 0.2s"
@@ -74,7 +73,7 @@ const PStepper = ({
               <Box
                 height="2px"
                 width="120px"
-                bg="#e5e7eb"
+                bg="status.stepperTrack"
                 mt="15px"
                 flexShrink={0}
               />

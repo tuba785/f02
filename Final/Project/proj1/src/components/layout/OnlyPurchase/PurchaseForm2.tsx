@@ -12,7 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
 import { FaExchangeAlt, FaCreditCard, FaPaypal } from "react-icons/fa";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 import CVVInfo from "../MiniModals/CVVInfo";
 
 const MAX_LEN = 20;
@@ -82,21 +81,22 @@ const PurchaseForm2 = ({
   };
 
   const inputStyle = {
-    border: "1px solid #e2e8f0",
+    border: "1px solid",
+    borderColor: "border.input",
     borderRadius: "10px",
     h: "48px",
     px: "16px",
     fontSize: "14px",
     _focusVisible: {
-      borderColor: PRIMARY_PURPLE,
-      boxShadow: `0 0 0 1px ${PRIMARY_PURPLE}`,
+      borderColor: "brand.purple",
+      boxShadow: "0 0 0 1px var(--chakra-colors-brand-purple)",
     },
   };
 
   const labelStyle = {
     fontSize: "11px",
     fontWeight: "600",
-    color: "#9ca3af",
+    color: "text.placeholder",
     textTransform: "uppercase" as const,
     letterSpacing: "0.5px",
     mb: "6px",
@@ -104,7 +104,7 @@ const PurchaseForm2 = ({
 
   return (
     <Box flex={1}>
-      <Text fontSize="28px" fontWeight="800" color="#1a202c" mb={6}>
+      <Text fontSize="28px" fontWeight="800" color="text.heading" mb={6}>
         Payment
       </Text>
 
@@ -117,14 +117,14 @@ const PurchaseForm2 = ({
                 key={m.id}
                 flex={1}
                 border="2px solid"
-                borderColor={selected ? PRIMARY_PURPLE : "#e2e8f0"}
+                borderColor={selected ? "brand.purple" : "border.input"}
                 borderRadius="12px"
                 py={5}
                 cursor="pointer"
                 position="relative"
                 onClick={() => set("method", m.id)}
                 transition="all 0.2s"
-                _hover={{ borderColor: PRIMARY_PURPLE }}
+                _hover={{ borderColor: "brand.purple" }}
               >
                 {selected && (
                   <Box
@@ -134,24 +134,24 @@ const PurchaseForm2 = ({
                     w="22px"
                     h="22px"
                     borderRadius="4px"
-                    bg={PRIMARY_PURPLE}
+                    bg="brand.purple"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    color="white"
+                    color="text.onBrand"
                     fontSize="12px"
                   >
                     ✓
                   </Box>
                 )}
                 <Flex direction="column" align="center" gap={2}>
-                  <Box color={selected ? PRIMARY_PURPLE : "#9ca3af"}>
+                  <Box color={selected ? "brand.purple" : "text.placeholder"}>
                     {m.icon}
                   </Box>
                   <Text
                     fontSize="13px"
                     fontWeight="600"
-                    color={selected ? "#1a202c" : "#9ca3af"}
+                    color={selected ? "text.heading" : "text.placeholder"}
                   >
                     {m.label}
                   </Text>
@@ -161,7 +161,7 @@ const PurchaseForm2 = ({
           })}
         </Flex>
 
-        <Box borderTop="2px dashed #e2e8f0" my={2} />
+        <Box borderTop="2px dashed" borderColor="border.input" my={2} />
 
         <Box>
           <Text {...labelStyle}>NAME ON CARD</Text>
@@ -237,11 +237,11 @@ const PurchaseForm2 = ({
               borderColor={
                 (touched.month || submitted) && !data.month
                   ? "red.400"
-                  : "#e2e8f0"
+                  : "border.input"
               }
               borderRadius="10px"
               h="48px"
-              bg="white"
+              bg="bg.surface"
             >
               <NativeSelectField
                 value={data.month}
@@ -264,7 +264,7 @@ const PurchaseForm2 = ({
                   </option>
                 ))}
               </NativeSelectField>
-              <NativeSelectIndicator color={PRIMARY_PURPLE}>
+              <NativeSelectIndicator color="brand.purple">
                 <FiChevronDown />
               </NativeSelectIndicator>
             </NativeSelectRoot>
@@ -281,11 +281,11 @@ const PurchaseForm2 = ({
               borderColor={
                 (touched.year || submitted) && !data.year
                   ? "red.400"
-                  : "#e2e8f0"
+                  : "border.input"
               }
               borderRadius="10px"
               h="48px"
-              bg="white"
+              bg="bg.surface"
             >
               <NativeSelectField
                 value={data.year}
@@ -308,7 +308,7 @@ const PurchaseForm2 = ({
                   </option>
                 ))}
               </NativeSelectField>
-              <NativeSelectIndicator color={PRIMARY_PURPLE}>
+              <NativeSelectIndicator color="brand.purple">
                 <FiChevronDown />
               </NativeSelectIndicator>
             </NativeSelectRoot>
@@ -321,8 +321,8 @@ const PurchaseForm2 = ({
         </Flex>
 
         <Button
-          bg={PRIMARY_PURPLE}
-          color="white"
+          bg="brand.purple"
+          color="text.onBrand"
           w="full"
           h="56px"
           fontSize="16px"

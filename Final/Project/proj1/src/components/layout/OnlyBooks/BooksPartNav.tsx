@@ -1,6 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 
 interface BooksPartNavProps {
   currentPage: number;
@@ -56,7 +55,7 @@ const BooksPartNav = ({
       mx="auto"
       py={4}
     >
-      <Text fontSize="14px" fontWeight="400" color="#b0b7c3">
+      <Text fontSize="14px" fontWeight="400" color="text.muted">
         Showing {showingStart}-{showingEnd} from {totalItems} data
       </Text>
 
@@ -67,18 +66,19 @@ const BooksPartNav = ({
           px={4}
           h="40px"
           borderRadius="10px"
-          border="1px solid #e8e8e8"
+          border="1px solid"
+          borderColor="border.default"
           cursor={currentPage === 1 ? "default" : "pointer"}
-          bg="white"
+          bg="bg.surface"
           opacity={currentPage === 1 ? 0.45 : 1}
           transition="all 0.15s"
-          _hover={currentPage === 1 ? {} : { borderColor: "#ccc" }}
+          _hover={currentPage === 1 ? {} : { borderColor: "border.default" }}
           onClick={() => {
             if (currentPage > 1) onPageChange(currentPage - 1);
           }}
         >
-          <FiChevronLeft size={16} color={PRIMARY_PURPLE} />
-          <Text fontSize="14px" fontWeight="500" color="#11142d">
+          <FiChevronLeft size={16} color="var(--chakra-colors-brand-purple)" />
+          <Text fontSize="14px" fontWeight="500" color="text.heading">
             Previous
           </Text>
         </Flex>
@@ -94,13 +94,13 @@ const BooksPartNav = ({
               justifyContent="center"
               borderRadius="10px"
               cursor={page === "..." ? "default" : "pointer"}
-              bg={currentPage === page ? PRIMARY_PURPLE : "transparent"}
+              bg={currentPage === page ? "brand.purple" : "transparent"}
               color={
                 currentPage === page
-                  ? "white"
+                  ? "text.onBrand"
                   : page === "..."
-                    ? "#b0b7c3"
-                    : "#11142d"
+                    ? "text.muted"
+                    : "text.heading"
               }
               fontSize="14px"
               fontWeight={currentPage === page ? "700" : "500"}
@@ -108,7 +108,8 @@ const BooksPartNav = ({
               _hover={
                 page !== "..."
                   ? {
-                      bg: currentPage === page ? PRIMARY_PURPLE : "#f5f5f5",
+                      bg:
+                        currentPage === page ? "brand.purple" : "hover.surface",
                     }
                   : {}
               }
@@ -127,20 +128,23 @@ const BooksPartNav = ({
           px={4}
           h="40px"
           borderRadius="10px"
-          border="1px solid #e8e8e8"
+          border="1px solid"
+          borderColor="border.default"
           cursor={currentPage === totalPages ? "default" : "pointer"}
-          bg="white"
+          bg="bg.surface"
           opacity={currentPage === totalPages ? 0.45 : 1}
           transition="all 0.15s"
-          _hover={currentPage === totalPages ? {} : { borderColor: "#ccc" }}
+          _hover={
+            currentPage === totalPages ? {} : { borderColor: "border.default" }
+          }
           onClick={() => {
             if (currentPage < totalPages) onPageChange(currentPage + 1);
           }}
         >
-          <Text fontSize="14px" fontWeight="500" color="#11142d">
+          <Text fontSize="14px" fontWeight="500" color="text.heading">
             Next
           </Text>
-          <FiChevronRight size={16} color={PRIMARY_PURPLE} />
+          <FiChevronRight size={16} color="var(--chakra-colors-brand-purple)" />
         </Flex>
       </Flex>
     </Flex>

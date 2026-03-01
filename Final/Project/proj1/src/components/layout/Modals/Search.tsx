@@ -1,6 +1,5 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 import type { Book } from "../../../types/book";
 
 interface SearchProps {
@@ -20,8 +19,9 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
       left={0}
       right={0}
       mt={2}
-      bg="white"
-      border="1px solid #e8e8e8"
+      bg="bg.surface"
+      border="1px solid"
+      borderColor="border.default"
       borderRadius="16px"
       boxShadow="0 8px 32px rgba(0,0,0,0.12)"
       p={4}
@@ -29,13 +29,13 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
       maxH="420px"
       overflowY="auto"
     >
-      <Text fontSize="13px" fontWeight="600" color="#808191" mb={2}>
+      <Text fontSize="13px" fontWeight="600" color="text.secondary" mb={2}>
         Search results
       </Text>
 
       {books.length === 0 ? (
         <Flex align="center" justify="center" py={6}>
-          <Text fontSize="14px" color="#808191">
+          <Text fontSize="14px" color="text.secondary">
             No books found for &quot;{query}&quot;
           </Text>
         </Flex>
@@ -50,14 +50,14 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
                 borderRadius="12px"
                 cursor="pointer"
                 transition="background 0.15s"
-                _hover={{ bg: "#f8f8fb" }}
+                _hover={{ bg: "bg.subtler" }}
               >
                 <Box
                   w="48px"
                   h="64px"
                   borderRadius="8px"
                   overflow="hidden"
-                  bg="#e0e0e0"
+                  bg="bg.placeholder"
                   flexShrink={0}
                 >
                   {book.cover && (
@@ -75,12 +75,12 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
                   <Text
                     fontSize="14px"
                     fontWeight="700"
-                    color="#11142d"
+                    color="text.primary"
                     lineClamp={1}
                   >
                     {book.title}
                   </Text>
-                  <Text fontSize="12px" color="#808191" lineClamp={1}>
+                  <Text fontSize="12px" color="text.secondary" lineClamp={1}>
                     {book.author}
                   </Text>
                 </Flex>
@@ -88,7 +88,7 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
                 <Text
                   fontSize="14px"
                   fontWeight="700"
-                  color={PRIMARY_PURPLE}
+                  color="brand.purple"
                   flexShrink={0}
                 >
                   ${book.discounted_price.toFixed(2)}

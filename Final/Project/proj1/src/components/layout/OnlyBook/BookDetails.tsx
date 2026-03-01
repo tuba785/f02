@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Flex, Text, Spinner } from "@chakra-ui/react";
-import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
+
 import { bookService } from "../../../services/bookService";
 import type { Book } from "../../../types/book";
 
@@ -62,7 +62,7 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
   if (loading) {
     return (
       <Flex justify="center" align="center" py={20}>
-        <Spinner size="lg" color={PRIMARY_PURPLE} />
+        <Spinner size="lg" color="brand.purple" />
       </Flex>
     );
   }
@@ -82,33 +82,33 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
   const tags: { label: string; color: string; bg: string; border: string }[] = [
     {
       label: book.genre,
-      color: PRIMARY_PURPLE,
-      bg: PRIMARY_LIGHT_PURPLE,
-      border: PRIMARY_PURPLE,
+      color: "brand.purple",
+      bg: "brand.lightPurple",
+      border: "brand.purple",
     },
     {
       label: getDecade(book.release_date),
-      color: PRIMARY_PURPLE,
-      bg: PRIMARY_LIGHT_PURPLE,
-      border: PRIMARY_PURPLE,
+      color: "brand.purple",
+      bg: "brand.lightPurple",
+      border: "brand.purple",
     },
   ];
 
   if (hasDiscount) {
     tags.push({
       label: `${book.discount}% OFF`,
-      color: PRIMARY_PURPLE,
-      bg: PRIMARY_LIGHT_PURPLE,
-      border: PRIMARY_PURPLE,
+      color: "brand.purple",
+      bg: "brand.lightPurple",
+      border: "brand.purple",
     });
   }
 
   if (book.is_bestseller) {
     tags.push({
       label: "Bestseller",
-      color: PRIMARY_PURPLE,
-      bg: PRIMARY_LIGHT_PURPLE,
-      border: PRIMARY_PURPLE,
+      color: "brand.purple",
+      bg: "brand.lightPurple",
+      border: "brand.purple",
     });
   }
 
@@ -126,36 +126,43 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
   ];
 
   return (
-    <Flex direction="column" bg="white" borderRadius="20px" w="full">
+    <Flex direction="column" bg="bg.surface" borderRadius="20px" w="full">
       {rows.map((row, i) => (
         <Flex
           key={row.label}
           align="center"
           py={5}
           px={8}
-          borderTop={i === 0 ? "none" : "1px solid #ebebeb"}
+          borderTop={i === 0 ? "none" : "1px solid"}
+          borderTopColor="border.default"
         >
           <Text
             fontSize="15px"
             fontWeight="700"
-            color="#11142d"
+            color="text.heading"
             w="280px"
             minW="280px"
             flexShrink={0}
           >
             {row.label}
           </Text>
-          <Text fontSize="15px" color="#808191" fontWeight="400">
+          <Text fontSize="15px" color="text.muted" fontWeight="400">
             {row.value}
           </Text>
         </Flex>
       ))}
 
-      <Flex align="flex-start" py={5} px={8} borderTop="1px solid #ebebeb">
+      <Flex
+        align="flex-start"
+        py={5}
+        px={8}
+        borderTop="1px solid"
+        borderTopColor="border.default"
+      >
         <Text
           fontSize="15px"
           fontWeight="700"
-          color="#11142d"
+          color="text.heading"
           w="280px"
           minW="280px"
           flexShrink={0}
@@ -172,7 +179,8 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
               px={4}
               h="34px"
               borderRadius="8px"
-              border={`1px solid ${tag.border}`}
+              border="1px solid"
+              borderColor={tag.border}
               bg={tag.bg}
             >
               <Text fontSize="13px" fontWeight="700" color={tag.color}>

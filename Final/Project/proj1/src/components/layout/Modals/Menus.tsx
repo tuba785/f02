@@ -1,6 +1,5 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
 
 const GENRES = [
   "Biography",
@@ -29,8 +28,9 @@ const Menus = ({ isOpen, onClose }: MenusProps) => {
       top="100%"
       left={0}
       mt={2}
-      bg="white"
-      border="1px solid #e8e8e8"
+      bg="bg.surface"
+      border="1px solid"
+      borderColor="border.default"
       borderRadius="16px"
       boxShadow="0 8px 32px rgba(0,0,0,0.12)"
       p={5}
@@ -42,8 +42,8 @@ const Menus = ({ isOpen, onClose }: MenusProps) => {
           align="center"
           justify="center"
           h="44px"
-          bg={PRIMARY_PURPLE}
-          color="white"
+          bg="brand.purple"
+          color="text.onBrand"
           borderRadius="10px"
           fontSize="14px"
           fontWeight="700"
@@ -56,7 +56,7 @@ const Menus = ({ isOpen, onClose }: MenusProps) => {
         </Flex>
       </Link>
 
-      <Text fontSize="15px" fontWeight="700" color="#11142d" mb={3}>
+      <Text fontSize="15px" fontWeight="700" color="text.primary" mb={3}>
         Browse by Genre
       </Text>
 
@@ -68,16 +68,17 @@ const Menus = ({ isOpen, onClose }: MenusProps) => {
               px={4}
               h="42px"
               borderRadius="10px"
-              border="1.5px solid #e8e8e8"
+              border="1.5px solid"
+              borderColor="border.default"
               fontSize="14px"
               fontWeight="600"
-              color="#11142d"
+              color="text.primary"
               cursor="pointer"
               transition="all 0.15s"
               _hover={{
-                bg: PRIMARY_LIGHT_PURPLE,
-                borderColor: PRIMARY_PURPLE,
-                color: PRIMARY_PURPLE,
+                bg: "brand.lightPurple",
+                borderColor: "brand.purple",
+                color: "brand.purple",
               }}
             >
               {genre}

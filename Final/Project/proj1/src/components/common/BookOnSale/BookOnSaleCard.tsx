@@ -2,7 +2,6 @@ import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import type { Book } from "../../../types/book";
-import { colors } from "../../../styles/colors";
 
 interface BookOnSaleCardProps {
   book: Book;
@@ -28,7 +27,7 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
             position="relative"
             w="full"
             h="260px"
-            bg="gray.300"
+            bg="bg.skeleton"
             borderRadius="xl"
             overflow="hidden"
           >
@@ -47,8 +46,8 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
                 position="absolute"
                 top={3}
                 left={3}
-                bg={colors.primary.orange}
-                color="white"
+                bg="brand.orange"
+                color="text.onBrand"
                 px={3}
                 py={1}
                 borderRadius="md"
@@ -63,7 +62,7 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
           <Text
             fontSize="md"
             fontWeight="bold"
-            color="gray.800"
+            color="text.strong"
             css={{
               display: "-webkit-box",
               WebkitLineClamp: 1,
@@ -76,7 +75,7 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
 
           <Text
             fontSize="xs"
-            color={colors.primary.purple}
+            color="brand.purple"
             css={{
               display: "-webkit-box",
               WebkitLineClamp: 2,
@@ -88,7 +87,7 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
           </Text>
 
           <HStack w="full" justify="space-between" pt={1}>
-            <HStack gap={2} color={colors.primary.orange}>
+            <HStack gap={2} color="brand.orange">
               <FaStar size={14} />
               <Text fontSize="sm" fontWeight="bold">
                 {book.rating.toFixed(1)}
@@ -96,12 +95,12 @@ const BookOnSaleCard = ({ book }: BookOnSaleCardProps) => {
             </HStack>
 
             <HStack gap={2}>
-              <Text fontSize="sm" fontWeight="bold" color="gray.800">
+              <Text fontSize="sm" fontWeight="bold" color="text.strong">
                 $ {formatPrice(book.discounted_price)}
               </Text>
               <Text
                 fontSize="xs"
-                color="gray.400"
+                color="text.placeholder"
                 textDecoration="line-through"
               >
                 $ {formatPrice(book.price)}

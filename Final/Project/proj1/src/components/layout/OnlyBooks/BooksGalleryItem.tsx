@@ -5,7 +5,6 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
-import { PRIMARY_PURPLE, PRIMARY_ORANGE } from "../../../styles/colors";
 import { HeartBtn, StarRating } from "./BooksBtnCom";
 import type { Book } from "../../../types/book";
 
@@ -33,8 +32,9 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
       <Link to={`/books/${book.id}`} style={{ textDecoration: "none" }}>
         <Flex
           direction="column"
-          bg="white"
-          border="1px solid #e8e8e8"
+          bg="bg.surface"
+          border="1px solid"
+          borderColor="border.default"
           borderRadius="16px"
           overflow="hidden"
           w="275px"
@@ -43,7 +43,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
           transition="box-shadow 0.25s, border-color 0.25s"
           _hover={{
             boxShadow: "0 6px 24px rgba(108,93,211,0.12)",
-            borderColor: PRIMARY_PURPLE,
+            borderColor: "brand.purple",
           }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -53,7 +53,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
             position="relative"
             w={`${COVER_W}px`}
             h={`${COVER_H}px`}
-            bg="#e0e0e0"
+            bg="bg.skeleton"
             borderRadius="12px"
             m="8px auto 0"
             overflow="hidden"
@@ -80,8 +80,8 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                 <Flex
                   align="center"
                   justify="center"
-                  bg={PRIMARY_PURPLE}
-                  color="white"
+                  bg="brand.purple"
+                  color="text.onBrand"
                   fontSize="10px"
                   fontWeight="700"
                   px={2}
@@ -95,8 +95,8 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                 <Flex
                   align="center"
                   justify="center"
-                  bg={PRIMARY_ORANGE}
-                  color="white"
+                  bg="brand.orange"
+                  color="text.onBrand"
                   fontSize="10px"
                   fontWeight="700"
                   px={2}
@@ -126,7 +126,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
             <Text
               fontSize="14px"
               fontWeight="700"
-              color="#11142d"
+              color="text.strong"
               textAlign="center"
               lineClamp={1}
             >
@@ -138,7 +138,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                 <Text
                   fontSize="11px"
                   fontWeight="500"
-                  color={PRIMARY_PURPLE}
+                  color="brand.purple"
                   textAlign="center"
                   textTransform="uppercase"
                   lineClamp={1}
@@ -154,14 +154,14 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
             {hovered && (
               <>
                 <Flex align="baseline" gap={2} mt={1}>
-                  <Text fontSize="16px" fontWeight="700" color="#11142d">
+                  <Text fontSize="16px" fontWeight="700" color="text.strong">
                     $ {book.discounted_price.toFixed(2)}
                   </Text>
                   {hasDiscount && (
                     <Text
                       fontSize="12px"
                       fontWeight="400"
-                      color="#b0b7c3"
+                      color="text.muted"
                       textDecoration="line-through"
                     >
                       ${book.price.toFixed(2)}
@@ -172,9 +172,10 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                   <Flex
                     align="center"
                     gap={2}
-                    bg="white"
-                    color={PRIMARY_PURPLE}
-                    border={`1.5px solid ${PRIMARY_PURPLE}`}
+                    bg="bg.surface"
+                    color="brand.purple"
+                    border="1.5px solid"
+                    borderColor="brand.purple"
                     px={4}
                     h="34px"
                     borderRadius="8px"
@@ -183,7 +184,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                     fontSize="12px"
                     mt={1}
                     transition="all 0.2s"
-                    _hover={{ bg: "#f0eeff" }}
+                    _hover={{ bg: "brand.lightPurple" }}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
@@ -196,8 +197,8 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                   <Flex
                     align="center"
                     gap={2}
-                    bg={PRIMARY_PURPLE}
-                    color="white"
+                    bg="brand.purple"
+                    color="text.onBrand"
                     px={4}
                     h="34px"
                     borderRadius="8px"

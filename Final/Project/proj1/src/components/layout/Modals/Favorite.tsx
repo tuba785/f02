@@ -9,7 +9,6 @@ import {
   removeFavorite,
   clearAllFavorites,
 } from "../../../store/slices/favoritesSlice";
-import { PRIMARY_PURPLE } from "../../../styles/colors";
 import type { Book } from "../../../types/book";
 
 interface FavoriteProps {
@@ -73,7 +72,7 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
         h="calc(100vh - 100px)"
         w="400px"
         maxW="90vw"
-        bg="white"
+        bg="bg.surface"
         boxShadow="-4px 0 24px rgba(0,0,0,0.1)"
         borderLeftRadius="16px"
         zIndex={11}
@@ -88,12 +87,13 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
           justify="space-between"
           px={6}
           py={5}
-          borderBottom="1px solid #f0f0f0"
+          borderBottom="1px solid"
+          borderColor="border.subtle"
           flexShrink={0}
         >
           <Flex align="center" gap={2}>
-            <FaHeart size={18} color={PRIMARY_PURPLE} />
-            <Text fontSize="18px" fontWeight="800" color="#11142d">
+            <FaHeart size={18} color="var(--chakra-colors-brand-purple)" />
+            <Text fontSize="18px" fontWeight="800" color="text.primary">
               Favorites
             </Text>
             {favoriteBooks.length > 0 && (
@@ -104,8 +104,8 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
                 h="22px"
                 px="6px"
                 borderRadius="11px"
-                bg={PRIMARY_PURPLE}
-                color="white"
+                bg="brand.purple"
+                color="text.onBrand"
                 fontSize="11px"
                 fontWeight="700"
               >
@@ -121,10 +121,10 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
             borderRadius="10px"
             cursor="pointer"
             transition="background 0.15s"
-            _hover={{ bg: "#f0f0f0" }}
+            _hover={{ bg: "hover.surface" }}
             onClick={onClose}
           >
-            <FiX size={20} color="#808191" />
+            <FiX size={20} color="var(--chakra-colors-text-secondary)" />
           </Flex>
         </Flex>
 
@@ -139,13 +139,14 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
             px={4}
             h="38px"
             borderRadius="10px"
-            border="1.5px solid #e53e3e"
-            color="#e53e3e"
+            border="1.5px solid"
+            borderColor="status.error"
+            color="status.error"
             cursor="pointer"
             fontWeight="600"
             fontSize="13px"
             transition="all 0.15s"
-            _hover={{ bg: "#fff5f5" }}
+            _hover={{ bg: "hover.danger" }}
             flexShrink={0}
             onClick={() => dispatch(clearAllFavorites())}
           >
@@ -167,19 +168,19 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
                 w="56px"
                 h="56px"
                 borderRadius="full"
-                bg={`${PRIMARY_PURPLE}18`}
+                bg="brand.purpleFaint"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
               >
-                <FaHeart size={22} color={PRIMARY_PURPLE} />
+                <FaHeart size={22} color="var(--chakra-colors-brand-purple)" />
               </Box>
-              <Text fontSize="15px" fontWeight="600" color="#11142d">
+              <Text fontSize="15px" fontWeight="600" color="text.primary">
                 No favorites yet
               </Text>
               <Text
                 fontSize="13px"
-                color="#808191"
+                color="text.secondary"
                 textAlign="center"
                 maxW="260px"
               >
@@ -217,8 +218,9 @@ const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
 
   return (
     <Flex
-      bg="#fafafa"
-      border="1px solid #f0f0f0"
+      bg="bg.surfaceMuted"
+      border="1px solid"
+      borderColor="border.subtle"
       borderRadius="12px"
       p={3}
       gap={3}
@@ -234,7 +236,7 @@ const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
         <Box
           w={`${THUMB}px`}
           h={`${THUMB + 20}px`}
-          bg="#e0e0e0"
+          bg="bg.placeholder"
           borderRadius="8px"
           overflow="hidden"
           cursor="pointer"
@@ -257,20 +259,25 @@ const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
         style={{ flex: 1, minWidth: 0, textDecoration: "none" }}
       >
         <Flex direction="column" gap={0.5} cursor="pointer">
-          <Text fontSize="13px" fontWeight="700" color="#11142d" lineClamp={1}>
+          <Text
+            fontSize="13px"
+            fontWeight="700"
+            color="text.primary"
+            lineClamp={1}
+          >
             {book.title}
           </Text>
-          <Text fontSize="11px" color="#808191" lineClamp={1}>
+          <Text fontSize="11px" color="text.secondary" lineClamp={1}>
             {book.author}
           </Text>
           <Flex align="baseline" gap={1.5} mt={0.5}>
-            <Text fontSize="14px" fontWeight="700" color="#11142d">
+            <Text fontSize="14px" fontWeight="700" color="text.primary">
               ${book.discounted_price.toFixed(2)}
             </Text>
             {hasDiscount && (
               <Text
                 fontSize="11px"
-                color="#b0b7c3"
+                color="text.tertiary"
                 textDecoration="line-through"
               >
                 ${book.price.toFixed(2)}
@@ -287,12 +294,13 @@ const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
         alignItems="center"
         justifyContent="center"
         borderRadius="8px"
-        border={`1.5px solid ${PRIMARY_PURPLE}`}
-        bg="white"
-        color={PRIMARY_PURPLE}
+        border="1.5px solid"
+        borderColor="brand.purple"
+        bg="bg.surface"
+        color="brand.purple"
         cursor="pointer"
         transition="all 0.2s"
-        _hover={{ bg: "#f0eeff" }}
+        _hover={{ bg: "hover.brand" }}
         flexShrink={0}
         onClick={onRemove}
       >

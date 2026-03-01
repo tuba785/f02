@@ -13,15 +13,15 @@ const CVVInfo = () => {
       onMouseLeave={() => setShow(false)}
       cursor="pointer"
     >
-      <FaInfoCircle size={16} color="#9ca3af" />
+      <FaInfoCircle size={16} color="var(--chakra-colors-text-placeholder)" />
 
       {show && (
         <Box
           position="absolute"
           bottom="calc(100% + 8px)"
           right={0}
-          bg="#1a202c"
-          color="white"
+          bg="bg.tooltip"
+          color="text.onBrand"
           borderRadius="8px"
           px={4}
           py={3}
@@ -32,7 +32,7 @@ const CVVInfo = () => {
           <Text fontSize="12px" fontWeight="600" mb={1}>
             What is CVV?
           </Text>
-          <Text fontSize="11px" lineHeight="1.5" color="gray.300">
+          <Text fontSize="11px" lineHeight="1.5" color="text.muted">
             The CVV is a 3 or 4 digit security code on the back of your credit
             or debit card. It helps verify that you have the physical card.
           </Text>
@@ -44,7 +44,8 @@ const CVVInfo = () => {
             h={0}
             borderLeft="6px solid transparent"
             borderRight="6px solid transparent"
-            borderTop="6px solid #1a202c"
+            borderTop="6px solid"
+            borderTopColor="bg.tooltip"
           />
         </Box>
       )}

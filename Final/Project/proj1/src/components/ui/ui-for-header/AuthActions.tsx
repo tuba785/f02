@@ -2,8 +2,6 @@ import { Box, Button, HStack } from "@chakra-ui/react";
 import { FiUser } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { login } from "../../../store/slices/authSlice";
-import { PRIMARY_PURPLE, PRIMARY_LIGHT_PURPLE } from "../../../styles/colors";
-
 const AuthActions = () => {
   const dispatch = useDispatch();
 
@@ -16,10 +14,10 @@ const AuthActions = () => {
     <HStack gap={3}>
       <Button
         variant="ghost"
-        color={PRIMARY_PURPLE}
+        color="brand.purple"
         h="44px"
         px="16px"
-        bg={PRIMARY_LIGHT_PURPLE}
+        bg="brand.lightPurple"
         borderRadius="14px"
         fontWeight="600"
         _hover={{ opacity: 0.8 }}
@@ -30,8 +28,8 @@ const AuthActions = () => {
         display="flex"
         alignItems="center"
         gap={2}
-        bg={PRIMARY_PURPLE}
-        color="white"
+        bg="brand.purple"
+        color="text.onBrand"
         h="44px"
         px="18px"
         borderRadius="14px"

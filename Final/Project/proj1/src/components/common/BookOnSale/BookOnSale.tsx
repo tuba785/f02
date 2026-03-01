@@ -25,13 +25,13 @@ const BookOnSale = () => {
   }, [allBooks]);
 
   return (
-    <Box py={12} px={4} bg="white">
+    <Box py={12} px={4} bg="bg.page">
       <VStack gap={6} maxW="1400px" mx="auto" align="start">
         <Heading
           as="h2"
           fontSize={{ base: "2xl", md: "3xl" }}
           fontWeight="bold"
-          color="gray.800"
+          color="text.strong"
         >
           Books on Sale
         </Heading>

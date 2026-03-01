@@ -5,11 +5,6 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
-import {
-  PRIMARY_PURPLE,
-  PRIMARY_ORANGE,
-  PRIMARY_LIGHT_PURPLE,
-} from "../../../styles/colors";
 
 const BOOKS = [
   {
@@ -51,7 +46,7 @@ const RelatedBooks = () => {
   return (
     <Flex
       direction="column"
-      bg="white"
+      bg="bg.surface"
       borderRadius="20px"
       w="full"
       maxW="400px"
@@ -67,14 +62,15 @@ const RelatedBooks = () => {
             px={6}
             py={5}
             align="flex-start"
-            borderTop={i === 0 ? "none" : "1px solid #ebebeb"}
+            borderTop={i === 0 ? "none" : "1px solid"}
+            borderTopColor={i === 0 ? "transparent" : "border.default"}
             cursor="pointer"
           >
             <Box
               w="100px"
               minW="100px"
               h="130px"
-              bg="#e0e0e0"
+              bg="bg.skeleton"
               borderRadius="10px"
               overflow="hidden"
               flexShrink={0}
@@ -92,7 +88,7 @@ const RelatedBooks = () => {
               <Text
                 fontSize="15px"
                 fontWeight="700"
-                color="#11142d"
+                color="text.heading"
                 lineClamp={1}
               >
                 {book.title}
@@ -100,7 +96,7 @@ const RelatedBooks = () => {
               <Text
                 fontSize="11px"
                 fontWeight="600"
-                color={PRIMARY_PURPLE}
+                color="brand.purple"
                 textTransform="uppercase"
                 letterSpacing="0.3px"
               >
@@ -108,24 +104,24 @@ const RelatedBooks = () => {
               </Text>
 
               <Flex align="center" gap={1.5} mt={0.5}>
-                <FaStar size={13} color={PRIMARY_ORANGE} />
-                <Text fontSize="14px" fontWeight="700" color={PRIMARY_ORANGE}>
+                <FaStar size={13} color="var(--chakra-colors-brand-orange)" />
+                <Text fontSize="14px" fontWeight="700" color="brand.orange">
                   {book.rating}
                 </Text>
-                <Text fontSize="12px" color="#b0b7c3">
+                <Text fontSize="12px" color="text.muted">
                   {book.reviews} reviews
                 </Text>
               </Flex>
 
               <Flex align="baseline" gap={1.5}>
-                <Text fontSize="16px" fontWeight="800" color="#11142d">
+                <Text fontSize="16px" fontWeight="800" color="text.heading">
                   ${book.price}
                 </Text>
                 {book.oldPrice && (
                   <Text
                     fontSize="13px"
                     fontWeight="400"
-                    color="#b0b7c3"
+                    color="text.muted"
                     textDecoration="line-through"
                   >
                     ${book.oldPrice}
@@ -145,7 +141,7 @@ const RelatedBooks = () => {
                     dispatch(removeFromCart(book.id));
                   }}
                 >
-                  <Text fontSize="13px" fontWeight="700" color={PRIMARY_PURPLE}>
+                  <Text fontSize="13px" fontWeight="700" color="brand.purple">
                     Already in cart
                   </Text>
                 </Flex>
@@ -161,8 +157,11 @@ const RelatedBooks = () => {
                     dispatch(addToCart({ bookId: book.id }));
                   }}
                 >
-                  <FiShoppingCart size={14} color={PRIMARY_PURPLE} />
-                  <Text fontSize="13px" fontWeight="700" color={PRIMARY_PURPLE}>
+                  <FiShoppingCart
+                    size={14}
+                    color="var(--chakra-colors-brand-purple)"
+                  />
+                  <Text fontSize="13px" fontWeight="700" color="brand.purple">
                     Add to cart
                   </Text>
                 </Flex>
@@ -179,14 +178,14 @@ const RelatedBooks = () => {
           justify="center"
           w="full"
           h="44px"
-          color={PRIMARY_PURPLE}
-          bgColor={PRIMARY_LIGHT_PURPLE}
+          color="brand.purple"
+          bgColor="brand.lightPurple"
           borderRadius="10px"
           fontSize="14px"
           fontWeight="700"
           cursor="pointer"
           transition="background 0.15s"
-          _hover={{ bgColor: PRIMARY_PURPLE, color: "white" }}
+          _hover={{ bgColor: "brand.purple", color: "text.onBrand" }}
         >
           View More
         </Flex>

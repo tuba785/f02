@@ -24,18 +24,18 @@ const FreshSale = () => {
   }, [allBooks]);
 
   return (
-    <Box py={16} px={4} bg="white">
+    <Box py={16} px={4} bg="bg.page">
       <VStack gap={8} maxW="1400px" mx="auto">
         <VStack gap={3} textAlign="center">
           <Heading
             as="h2"
             fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
             fontWeight="bold"
-            color="gray.800"
+            color="text.heading"
           >
             Flash Sale
           </Heading>
-          <Text fontSize={{ base: "sm", md: "md" }} color="gray.500">
+          <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Text>
@@ -43,7 +43,7 @@ const FreshSale = () => {
 
         <Box
           border="1px solid"
-          borderColor="gray.200"
+          borderColor="border.default"
           borderRadius="lg"
           px={{ base: 6, md: 10 }}
           py={4}
@@ -57,7 +57,7 @@ const FreshSale = () => {
               >
                 02
               </Text>
-              <Text fontSize="xs" color="gray.500">
+              <Text fontSize="xs" color="text.muted">
                 Day
               </Text>
             </VStack>
@@ -69,7 +69,7 @@ const FreshSale = () => {
               >
                 05
               </Text>
-              <Text fontSize="xs" color="gray.500">
+              <Text fontSize="xs" color="text.muted">
                 Hours
               </Text>
             </VStack>
@@ -81,7 +81,7 @@ const FreshSale = () => {
               >
                 42
               </Text>
-              <Text fontSize="xs" color="gray.500">
+              <Text fontSize="xs" color="text.muted">
                 Minutes
               </Text>
             </VStack>
@@ -93,7 +93,7 @@ const FreshSale = () => {
               >
                 19
               </Text>
-              <Text fontSize="xs" color="gray.500">
+              <Text fontSize="xs" color="text.muted">
                 Second
               </Text>
             </VStack>

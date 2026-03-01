@@ -24,7 +24,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
       <VStack
         align="stretch"
         gap={4}
-        bg="white"
+        bg="bg.surface"
         borderRadius="lg"
         p={6}
         w="512px"
@@ -35,7 +35,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
         <Box
           w="full"
           h="300px"
-          bg="gray.300"
+          bg="bg.skeleton"
           borderRadius="lg"
           overflow="hidden"
         >
@@ -50,7 +50,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
           )}
         </Box>
 
-        <Text fontSize="lg" fontWeight="bold" color="gray.800">
+        <Text fontSize="lg" fontWeight="bold" color="text.strong">
           {book.title}
         </Text>
 
@@ -93,18 +93,18 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
           </Text>
         </HStack>
 
-        <Text fontSize="sm" color="gray.500" lineHeight="tall" flex={1}>
+        <Text fontSize="sm" color="text.muted" lineHeight="tall" flex={1}>
           {book.description}
         </Text>
 
-        <Text fontSize="sm" fontWeight="semibold" color="gray.800">
+        <Text fontSize="sm" fontWeight="semibold" color="text.strong">
           {book.author}
         </Text>
 
         <HStack justify="space-between" align="center" w="full">
           {inCart ? (
             <Button
-              bg="white"
+              bg="bg.surface"
               color={colors.primary.purple}
               border={`1.5px solid ${colors.primary.purple}`}
               _hover={{ bg: colors.primary.lightPurple }}
@@ -121,7 +121,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
           ) : (
             <Button
               bg={colors.primary.purple}
-              color="white"
+              color="text.onBrand"
               _hover={{ bg: colors.primary.purple, opacity: 0.9 }}
               fontSize="sm"
               fontWeight="semibold"
@@ -142,7 +142,11 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
             <Text fontSize="md" fontWeight="bold" color={colors.primary.purple}>
               ${formatPrice(book.discounted_price)}
             </Text>
-            <Text fontSize="sm" color="gray.400" textDecoration="line-through">
+            <Text
+              fontSize="sm"
+              color="text.muted"
+              textDecoration="line-through"
+            >
               ${formatPrice(book.price)}
             </Text>
           </HStack>
