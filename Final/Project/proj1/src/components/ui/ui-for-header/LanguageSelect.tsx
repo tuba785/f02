@@ -4,7 +4,19 @@ import {
   NativeSelectRoot,
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+
+const langMap: Record<string, string> = { en: "EN", az: "AZ", ru: "RU" };
+const codemap: Record<string, string> = { EN: "en", AZ: "az", RU: "ru" };
+
 const LanguageSelect = () => {
+  const { i18n } = useTranslation();
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const code = codemap[e.target.value];
+    if (code) i18n.changeLanguage(code);
+  };
+
   return (
     <NativeSelectRoot
       w="78px"
@@ -16,7 +28,8 @@ const LanguageSelect = () => {
       fontWeight="600"
     >
       <NativeSelectField
-        defaultValue="EN"
+        value={langMap[i18n.language] ?? "EN"}
+        onChange={handleChange}
         h="44px"
         px="10px"
         border="none"

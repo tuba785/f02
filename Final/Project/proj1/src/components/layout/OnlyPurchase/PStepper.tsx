@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FaCheck } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export type PStep = "Shopping Summary" | "Checkout" | "Payment" | "Shipping";
 
@@ -15,6 +16,7 @@ const PStepper = ({
   defaultStep = "Shopping Summary",
   onChange,
 }: PStepperProps) => {
+  const { t } = useTranslation();
   const [activeStep, setActiveStep] = useState<PStep>(defaultStep);
 
   const handleSelect = (step: PStep) => {
@@ -27,6 +29,12 @@ const PStepper = ({
       {STEPS.map((label, index) => {
         const isActive = label === activeStep;
         const isLast = index === STEPS.length - 1;
+        const stepKeys: Record<PStep, string> = {
+          "Shopping Summary": "stepper.shopping_summary",
+          Checkout: "stepper.checkout",
+          Payment: "stepper.payment",
+          Shipping: "stepper.shipping",
+        };
 
         return (
           <Flex key={label} align="flex-start">
@@ -65,7 +73,7 @@ const PStepper = ({
                 textAlign="center"
                 transition="color 0.2s"
               >
-                {label}
+                {t(stepKeys[label])}
               </Text>
             </Flex>
 

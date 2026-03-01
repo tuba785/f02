@@ -5,8 +5,10 @@ import { FiHeart } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store/store";
 import Favorite from "../../layout/Modals/Favorite";
+import { useTranslation } from "react-i18next";
 
 const FavoritesButton = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const count = useSelector((state: RootState) => state.favorites.ids.length);
 
@@ -14,7 +16,7 @@ const FavoritesButton = () => {
     <>
       <Box position="relative">
         <IconButton
-          aria-label="Favorites"
+          aria-label={t("header.favorites")}
           variant="outline"
           border="1px solid"
           borderColor="border.subtle"

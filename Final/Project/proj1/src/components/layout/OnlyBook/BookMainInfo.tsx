@@ -18,6 +18,7 @@ import { setCartQty } from "../../../store/slices/cartSlice";
 import { AddToCartBtn, HeartBtn, StarRating } from "../OnlyBooks/BooksBtnCom";
 import { bookService } from "../../../services/bookService";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 const COVER_W = 400;
 const COVER_H = 572;
@@ -32,6 +33,7 @@ interface BookMainInfoProps {
 }
 
 const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const cartQty = useSelector(
     (state: RootState) =>
@@ -52,7 +54,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
     bookService
       .fetchBookById(bookId)
       .then((b) => setBook(b))
-      .catch(() => setError("Failed to load book"))
+      .catch(() => setError(t("book_detail.failed_to_load_book")))
       .finally(() => setLoading(false));
   }, [bookId]);
 
@@ -68,7 +70,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
     return (
       <Flex justify="center" py={10}>
         <Text color="red.500" fontSize="16px" fontWeight="600">
-          {error ?? "Book not found"}
+          {error ?? t("book_detail.book_not_found")}
         </Text>
       </Flex>
     );
@@ -127,11 +129,15 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
           </Text>
           <Flex align="center" gap={1} color="brand.purple" fontSize="14px">
             <FaComment size={13} />
-            <Text>{book.comments_count} Reviews</Text>
+            <Text>
+              {book.comments_count} {t("book_detail.reviews")}
+            </Text>
           </Flex>
           <Flex align="center" gap={1} color="brand.purple" fontSize="14px">
             <FaThumbsUp size={13} />
-            <Text>{formatLikes(book.likes_count)} Like</Text>
+            <Text>
+              {formatLikes(book.likes_count)} {t("book_detail.like")}
+            </Text>
           </Flex>
 
           <Flex gap={2} flexShrink={0} ml="auto">
@@ -182,7 +188,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
             />
             <Flex direction="column">
               <Text fontSize="13px" color="text.muted" fontWeight="400">
-                Written by
+                {t("book_detail.written_by")}
               </Text>
               <Text fontSize="15px" fontWeight="700" color="text.strong">
                 {book.author}
@@ -192,7 +198,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
 
           <Flex direction="column">
             <Text fontSize="13px" color="text.muted" fontWeight="400">
-              Publisher
+              {t("book_detail.publisher")}
             </Text>
             <Text fontSize="15px" fontWeight="700" color="text.strong">
               {book.publisher}
@@ -201,7 +207,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
 
           <Flex direction="column">
             <Text fontSize="13px" color="text.muted" fontWeight="400">
-              Year
+              {t("book_detail.year")}
             </Text>
             <Text fontSize="15px" fontWeight="700" color="text.strong">
               {year}
@@ -224,7 +230,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
                 color="brand.purple"
                 textTransform="uppercase"
               >
-                Free Shipping
+                {t("book_detail.free_shipping")}
               </Text>
             </Flex>
             <Flex
@@ -242,7 +248,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
                 color="#4caf50"
                 textTransform="uppercase"
               >
-                In Stocks
+                {t("book_detail.in_stocks")}
               </Text>
             </Flex>
           </Flex>
@@ -292,7 +298,7 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
               h="26px"
               borderRadius="6px"
             >
-              Bestseller
+              {t("book_list.bestseller")}
             </Flex>
           )}
 

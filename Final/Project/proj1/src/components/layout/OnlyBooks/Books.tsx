@@ -8,6 +8,7 @@ import BooksGallery from "./BooksGallery";
 import BooksPartNav from "./BooksPartNav";
 import BooksFilters, { type FiltersState } from "./BooksFilters";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 const LIST_PER_PAGE = 4;
 const GALLERY_PER_PAGE = 12;
@@ -102,6 +103,7 @@ const applyFiltersToBooks = (books: Book[], f: FiltersState | null): Book[] => {
 };
 
 const BooksR = () => {
+  const { t } = useTranslation();
   const { books, loading, error, getBooks } = useBooks();
   const [searchParams] = useSearchParams();
   const urlGenre = searchParams.get("genre") || "";
@@ -170,7 +172,7 @@ const BooksR = () => {
     <Flex gap={6} w="full" maxW="1440px" mx="auto" align="start">
       <Flex direction="column" gap={4} w="260px" flexShrink={0}>
         <Text fontSize="22px" fontWeight="800" color="text.heading">
-          Filter Option
+          {t("books_page.filter_option")}
         </Text>
         <BooksFilters
           key={urlGenre}
@@ -184,7 +186,7 @@ const BooksR = () => {
         {urlSearch && (
           <Flex align="center" gap={2}>
             <Text fontSize="22px" fontWeight="800" color="text.heading">
-              Search results for:
+              {t("books_page.search_results_for")}
             </Text>
             <Text fontSize="22px" fontWeight="800" color="brand.purple">
               &quot;{urlSearch}&quot;
@@ -193,7 +195,7 @@ const BooksR = () => {
         )}
 
         <Text fontSize="22px" fontWeight="800" color="text.heading">
-          Books
+          {t("books_page.books")}
         </Text>
 
         <BooksSorting onChange={handleSortChange} />

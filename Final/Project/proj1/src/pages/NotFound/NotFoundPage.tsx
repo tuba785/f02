@@ -2,8 +2,10 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 const NotFoundPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -29,7 +31,7 @@ const NotFoundPage = () => {
         </Text>
 
         <Text fontSize="28px" fontWeight="700" color="text.heading">
-          Page Not Found
+          {t("not_found.title")}
         </Text>
 
         <Text
@@ -38,7 +40,7 @@ const NotFoundPage = () => {
           maxW="380px"
           textAlign="center"
         >
-          The page you're looking for doesn't exist or has been moved.
+          {t("not_found.description")}
         </Text>
 
         <Box mt={4}>
@@ -53,7 +55,7 @@ const NotFoundPage = () => {
             _hover={{ opacity: 0.85 }}
             onClick={() => navigate("/")}
           >
-            Back to Home
+            {t("not_found.back_to_home")}
           </Button>
         </Box>
       </Flex>

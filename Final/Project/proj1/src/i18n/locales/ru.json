@@ -1,0 +1,366 @@
+{
+  "header": {
+    "cart": "Корзина",
+    "favorites": "Избранное",
+    "toggle_theme": "Сменить тему",
+    "log_in": "Войти",
+    "sign_up": "Регистрация",
+    "profile": "Профиль",
+    "admin_name": "Admin Admin",
+    "administrator": "Администратор",
+    "account_settings": "Настройки аккаунта",
+    "log_out": "Выйти",
+    "menus": "Меню",
+    "search_placeholder": "Поиск среди более 30 миллионов книг"
+  },
+  "footer": {
+    "copyright": "Bookoe Книжный Магазин - © 2026 Все Права Защищены",
+    "made_with": "Сделано с ❤️",
+    "author": "Peterdraw",
+    "books_categories": "Категории Книг",
+    "quick_links": "Быстрые Ссылки",
+    "follow_us": "Подписывайтесь",
+    "description": "Bookoe — это сайт книжного магазина lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "our_store": "Наш Магазин",
+    "address": "832 Thompson Drive, Сан-Франциско CA 94107, США",
+    "categories": {
+      "action": "Экшн",
+      "adventure": "Приключения",
+      "comedy": "Комедия",
+      "crime": "Криминал",
+      "drama": "Драма",
+      "fantasy": "Фантастика",
+      "horror": "Ужасы",
+      "view_more": "Ещё"
+    },
+    "links": {
+      "about_us": "О нас",
+      "contact_us": "Контакты",
+      "products": "Товары",
+      "login": "Вход",
+      "sign_up": "Регистрация",
+      "faq": "FAQ",
+      "shipment": "Доставка"
+    }
+  },
+  "banner1": {
+    "slides": [
+      {
+        "title": "Скидка 50%",
+        "subtitle": "для студентов",
+        "badge": "ОБРАТНО В ШКОЛУ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+      },
+      {
+        "title": "Скидка 40%",
+        "subtitle": "для пожилых людей",
+        "badge": "ДЛЯ ПОЖИЛЫХ",
+        "description": "Эксклюзивное предложение для наших уважаемых пожилых клиентов. Наслаждайтесь премиальными продуктами и услугами со специальными скидками."
+      },
+      {
+        "title": "Скидка 45%",
+        "subtitle": "для детей и семей",
+        "badge": "ДЕТСКАЯ АКЦИЯ",
+        "description": "Порадуйте своих детей! Специальные скидки на развивающие игрушки, игры и детские товары. Безопасные и весёлые товары для ваших малышей."
+      },
+      {
+        "title": "Пакетная скидка 55%",
+        "subtitle": "покупай больше — экономь больше",
+        "badge": "СЕМЕЙНЫЙ ПАКЕТ",
+        "description": "Идеально для семейных покупок! Получите отличные скидки при объединении покупок. Смешивайте товары из разных категорий."
+      }
+    ],
+    "get_the_deal": "Получить скидку",
+    "see_other_promos": "Другие акции"
+  },
+  "mini_slider": {
+    "best_seller": "Бестселлер",
+    "based_sales": "По продажам этой недели"
+  },
+  "banner2": {
+    "title": "Рекомендуем Вам",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner3": {
+    "title": "Популярное в 2020",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner4": {
+    "featured_books": "Избранные Книги",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+    "written_by": "Автор",
+    "year": "Год",
+    "add": "ДОБАВИТЬ"
+  },
+  "fresh_sale": {
+    "title": "Флеш-распродажа",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "day": "Дней",
+    "hours": "Часов",
+    "minutes": "Минут",
+    "second": "Секунд"
+  },
+  "special_offers": {
+    "title": "Специальные Предложения",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "add_to_cart": "В корзину",
+    "already_in_cart": "Уже в корзине"
+  },
+  "statistics": {
+    "happy_customers": "Довольных Клиентов",
+    "book_collections": "Коллекций Книг",
+    "our_stores": "Наших Магазинов",
+    "famous_writers": "Известных Писателей"
+  },
+  "testimonials": {
+    "title": "Отзывы",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ut aliqua",
+    "items": [
+      {
+        "text": "Раньше я не знала этот магазин, пока бабушка не рассказала. Этот книжный магазин просто отличный!",
+        "name": "Miranda Lee",
+        "role": "Книголюбы"
+      },
+      {
+        "text": "Покупать книги на Bookoe очень легко. Быстрая доставка и оперативная обратная связь. Их сервис великолепен!",
+        "name": "Steve Henry",
+        "role": "Книголюбы"
+      },
+      {
+        "text": "Отличный сервис и широкий выбор книг. Рекомендую всем!",
+        "name": "John Smith",
+        "role": "Книголюбы"
+      }
+    ]
+  },
+  "latest_news": {
+    "title": "Последние Новости",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "view_more": "Ещё",
+    "continue_reading": "Продолжить чтение",
+    "articles": [
+      {
+        "title": "Почему чтение важно для наших детей?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "Польза чтения: Умнее, Лучше, Счастливее",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "Какие книги стоит прочитать в 2020?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "10 вещей, которые нужно знать для улучшения навыков чтения",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      }
+    ]
+  },
+  "books_page": {
+    "filter_option": "Фильтры",
+    "search_results_for": "Результаты поиска:",
+    "books": "Книги",
+    "no_books_found": "Книги не найдены",
+    "try_adjusting": "Попробуйте изменить фильтры или критерии поиска"
+  },
+  "filters": {
+    "editor_picks": "Выбор Редактора",
+    "bestsellers": "Бестселлеры",
+    "has_discount": "Со скидкой",
+    "most_likes": "Больше всего лайков (Топ 10)",
+    "most_comments": "Больше всего отзывов (Топ 10)",
+    "shop_by_category": "По Категориям",
+    "choose_format": "Выбрать Формат",
+    "choose_language": "Выбрать Язык",
+    "select_year": "Выбрать Год",
+    "price_range": "Ценовой Диапазон",
+    "refine_search": "Уточнить Поиск",
+    "reset_filter": "Сбросить Фильтр",
+    "view_more": "Ещё ▼",
+    "view_less": "Меньше ▲"
+  },
+  "sorting": {
+    "all": "Все",
+    "none": "Нет",
+    "newest": "Новые",
+    "oldest": "Старые",
+    "price_high": "Цена: Высокая",
+    "price_low": "Цена: Низкая",
+    "rating": "Рейтинг",
+    "likes": "Лайки"
+  },
+  "book_list": {
+    "reviews": "Отзывы",
+    "off_discount": "Скидка",
+    "bestseller": "Бестселлер",
+    "written_by": "Автор",
+    "publisher": "Издательство",
+    "year": "Год",
+    "add_to_cart": "В корзину",
+    "already_in_cart": "Уже в корзине"
+  },
+  "pagination": {
+    "showing": "Показано {{start}}-{{end}} из {{total}}",
+    "previous": "Назад",
+    "next": "Вперёд"
+  },
+  "book_detail": {
+    "details_product": "Описание Книги",
+    "customer_reviews": "Отзывы Покупателей",
+    "related_books": "Похожие Книги",
+    "book_title": "Название",
+    "author": "Автор",
+    "isbn": "ISBN",
+    "edition_language": "Язык Издания",
+    "book_format": "Формат Книги",
+    "date_published": "Дата Публикации",
+    "publisher": "Издательство",
+    "tags": "Теги",
+    "written_by": "Автор",
+    "year": "Год",
+    "free_shipping": "Бесплатная Доставка",
+    "in_stocks": "В Наличии",
+    "reviews": "Отзывы",
+    "like": "Нравится",
+    "view_more": "Ещё",
+    "pages": "Страниц",
+    "book_not_found": "Книга не найдена",
+    "failed_to_load": "Не удалось загрузить информацию о книге",
+    "failed_to_load_book": "Не удалось загрузить книгу"
+  },
+  "book_reviews": {
+    "rating_information": "Информация о Рейтинге",
+    "rating_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim",
+    "out_of_5": "из 5",
+    "showing_reviews": "Показано {{shown}} из {{total}} отзывов",
+    "newest": "Новые",
+    "oldest": "Старые",
+    "highest": "Высокий рейтинг",
+    "lowest": "Низкий рейтинг",
+    "view_more": "Ещё"
+  },
+  "cart": {
+    "title": "Корзина",
+    "go_to_payment": "Перейти к Оплате",
+    "clear": "Очистить",
+    "empty_title": "Ваша корзина пуста",
+    "empty_description": "Просматривайте книги и добавляйте их в корзину.",
+    "total": "Итого ({{count}} товаров)"
+  },
+  "favorites": {
+    "title": "Избранное",
+    "remove_all": "Удалить Все",
+    "empty_title": "Пока нет избранных",
+    "empty_description": "Просматривайте книги и нажимайте на сердечко, чтобы сохранить их в избранное."
+  },
+  "menus": {
+    "view_all_books": "Смотреть Все Книги",
+    "browse_by_genre": "По Жанрам"
+  },
+  "search": {
+    "search_results": "Результаты поиска",
+    "no_books_found": "Книги по запросу \"{{query}}\" не найдены"
+  },
+  "profile_settings": {
+    "title": "Настройки Аккаунта",
+    "coming_soon": "Настройки скоро появятся",
+    "description": "Настройки аккаунта и персонализация профиля будут доступны в будущем обновлении."
+  },
+  "purchase": {
+    "buyer_info": "Данные Покупателя",
+    "first_name": "ИМЯ",
+    "last_name": "ФАМИЛИЯ",
+    "email_address": "ЭЛЕКТРОННАЯ ПОЧТА",
+    "phone_number": "МОБИЛЬНЫЙ ТЕЛЕФОН",
+    "address": "АДРЕС",
+    "state": "СТРАНА",
+    "postcode": "ПОЧТОВЫЙ ИНДЕКС",
+    "city": "ГОРОД",
+    "note": "ПРИМЕЧАНИЕ",
+    "enter_first_name": "Введите имя",
+    "enter_last_name": "Введите фамилию",
+    "email_placeholder": "email@example.com",
+    "enter_phone": "Введите номер телефона",
+    "enter_address": "Введите адрес",
+    "select_state": "Выберите страну",
+    "enter_postcode": "Введите индекс",
+    "enter_city": "Введите город",
+    "notes_placeholder": "Дополнительные примечания...",
+    "required": "Это поле обязательно",
+    "max_chars": "Максимум {{count}} символов",
+    "invalid_email": "Неверный адрес электронной почты",
+    "payment": "Оплата",
+    "bank_transfer": "Банковский Перевод",
+    "credit_card": "Кредитная Карта",
+    "paypal": "Paypal",
+    "name_on_card": "ИМЯ НА КАРТЕ",
+    "card_number": "НОМЕР КАРТЫ",
+    "cvv": "CVV",
+    "month": "МЕСЯЦ",
+    "year": "ГОД",
+    "enter_card_name": "Введите имя на карте",
+    "card_placeholder": "0000 - 0000 - 0000 - 0000",
+    "enter_cvv": "Введите CVV",
+    "select_month": "Выберите месяц",
+    "select_year": "Выберите год",
+    "place_order": "Оформить Заказ",
+    "states": {
+      "england": "Англия",
+      "us": "США",
+      "azerbaijan": "Азербайджан",
+      "turkey": "Турция",
+      "russia": "Россия",
+      "other": "Другое"
+    }
+  },
+  "purchase_modal": {
+    "success_title": "Покупка Успешна!",
+    "success_description": "Ваш заказ успешно оформлен. Спасибо за покупку!",
+    "back_to_home": "На Главную",
+    "back_to_purchase": "Вернуться к Покупке"
+  },
+  "stepper": {
+    "shopping_summary": "Корзина",
+    "checkout": "Оформление",
+    "payment": "Оплата",
+    "shipping": "Доставка"
+  },
+  "error_page": {
+    "title": "Произошла Ошибка",
+    "default_message": "Что-то пошло не так. Пожалуйста, попробуйте позже.",
+    "back_to_home": "На Главную",
+    "go_back": "Назад"
+  },
+  "not_found": {
+    "title": "Страница Не Найдена",
+    "description": "Страница, которую вы ищете, не существует или была перемещена.",
+    "back_to_home": "На Главную"
+  },
+  "features": {
+    "quick_delivery": "Быстрая Доставка",
+    "secure_payment": "Безопасная Оплата",
+    "best_quality": "Лучшее Качество",
+    "return_guarantee": "Гарантия Возврата",
+    "quick_delivery_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "secure_payment_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "best_quality_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "return_guarantee_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+  },
+  "subscription": {
+    "title": "Подпишитесь на рассылку для новинок книг",
+    "placeholder": "Введите ваш email",
+    "button": "ПОДПИСАТЬСЯ"
+  },
+  "book_on_sale": {
+    "title": "Книги со Скидкой"
+  },
+  "coming_soon": {
+    "title": "Скоро",
+    "description": "Этот раздел находится в разработке. Следите за обновлениями!"
+  },
+  "cvv_info": {
+    "title": "Что такое CVV?",
+    "description": "CVV — это 3- или 4-значный код безопасности на обратной стороне вашей кредитной или дебетовой карты. Он помогает подтвердить, что карта находится у вас."
+  }
+}

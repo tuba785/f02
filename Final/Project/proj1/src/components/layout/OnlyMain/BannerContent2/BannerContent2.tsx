@@ -9,6 +9,7 @@ import type { Book } from "../../../../types/book";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useColorMode } from "../../../ui/color-mode";
+import { useTranslation } from "react-i18next";
 
 const BOOK_COVER_WIDTH = 140;
 const BOOK_COVER_HEIGHT = 200;
@@ -19,6 +20,7 @@ const getRandomBooks = (books: Book[], count: number) => {
 };
 
 export const BannerContent2 = () => {
+  const { t } = useTranslation();
   const { books, loading, getBooks } = useBooks();
   const [randomBooks, setRandomBooks] = useState<Book[]>([]);
   const [isAtStart, setIsAtStart] = useState(true);
@@ -62,11 +64,10 @@ export const BannerContent2 = () => {
         paddingBottom="32px"
       >
         <Text fontSize="28px" fontWeight="700" color="text.heading">
-          Recommended For You
+          {t("banner2.title")}
         </Text>
         <Text fontSize="14px" color="text.secondary" lineHeight="1.6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {t("banner2.description")}
         </Text>
       </Flex>
 

@@ -2,6 +2,7 @@ import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { AddToCartBtn, HeartBtn, StarRating } from "./BooksBtnCom";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface BooksListItemProps {
   book: Book;
@@ -11,6 +12,7 @@ const BOOK_WIDTH = 229;
 const BOOK_HEIGHT = 320;
 
 const BooksListItem = ({ book }: BooksListItemProps) => {
+  const { t } = useTranslation();
   const hasDiscount = book.discount !== null && book.discount > 0;
 
   const subtitle = [book.genre, book.language, book.format]
@@ -89,7 +91,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                   {book.rating}
                 </Text>
                 <Text fontSize="12px" fontWeight="400" color="text.muted">
-                  {book.comments_count} Reviews
+                  {book.comments_count} {t("book_list.reviews")}
                 </Text>
               </Flex>
             </Flex>
@@ -130,7 +132,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                   color="brand.purple"
                   whiteSpace="nowrap"
                 >
-                  {book.discount}% OFF Discount
+                  {book.discount}% {t("book_list.off_discount")}
                 </Text>
               </Flex>
             )}
@@ -152,7 +154,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
                   color="brand.orange"
                   whiteSpace="nowrap"
                 >
-                  Bestseller
+                  {t("book_list.bestseller")}
                 </Text>
               </Flex>
             )}
@@ -169,7 +171,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
             <Flex gap={8}>
               <Flex direction="column" gap={0}>
                 <Text fontSize="11px" fontWeight="400" color="text.muted">
-                  Written by
+                  {t("book_list.written_by")}
                 </Text>
                 <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.author}
@@ -177,7 +179,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
               </Flex>
               <Flex direction="column" gap={0}>
                 <Text fontSize="11px" fontWeight="400" color="text.muted">
-                  Publisher
+                  {t("book_list.publisher")}
                 </Text>
                 <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.publisher}
@@ -185,7 +187,7 @@ const BooksListItem = ({ book }: BooksListItemProps) => {
               </Flex>
               <Flex direction="column" gap={0}>
                 <Text fontSize="11px" fontWeight="400" color="text.muted">
-                  Year
+                  {t("book_list.year")}
                 </Text>
                 <Text fontSize="13px" fontWeight="600" color="text.strong">
                   {book.release_date?.split("/")[2]}

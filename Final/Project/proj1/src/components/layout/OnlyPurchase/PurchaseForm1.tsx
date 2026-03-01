@@ -11,6 +11,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const MAX_LEN = 20;
 
@@ -35,6 +36,7 @@ interface PurchaseForm1Props {
 }
 
 const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
+  const { t } = useTranslation();
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const set = (field: keyof BuyerInfoData, value: string) => {
@@ -48,11 +50,11 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
   const err = (field: keyof BuyerInfoData, required = true) => {
     const show = touched[field] || submitted;
     if (!show) return null;
-    if (required && !data[field].trim()) return "This field is required";
+    if (required && !data[field].trim()) return t("purchase.required");
     if (field !== "note" && data[field].length > MAX_LEN)
-      return `Max ${MAX_LEN} characters`;
+      return t("purchase.max_chars", { count: MAX_LEN });
     if (field === "email" && data[field] && !data[field].includes("@"))
-      return "Invalid email address";
+      return t("purchase.invalid_email");
     return null;
   };
 
@@ -81,16 +83,16 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
   return (
     <Box flex={1}>
       <Text fontSize="28px" fontWeight="800" color="text.heading" mb={6}>
-        Buyer Info
+        {t("purchase.buyer_info")}
       </Text>
 
       <VStack gap={5} align="stretch">
         <Flex gap={4}>
           <Box flex={1}>
-            <Text {...labelStyle}>FIRST NAME</Text>
+            <Text {...labelStyle}>{t("purchase.first_name")}</Text>
             <Input
               {...inputStyle}
-              placeholder="Enter first name"
+              placeholder={t("purchase.enter_first_name")}
               value={data.firstName}
               maxLength={MAX_LEN}
               onChange={(e) => set("firstName", e.target.value)}
@@ -104,10 +106,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             )}
           </Box>
           <Box flex={1}>
-            <Text {...labelStyle}>LAST NAME</Text>
+            <Text {...labelStyle}>{t("purchase.last_name")}</Text>
             <Input
               {...inputStyle}
-              placeholder="Enter last name"
+              placeholder={t("purchase.enter_last_name")}
               value={data.lastName}
               maxLength={MAX_LEN}
               onChange={(e) => set("lastName", e.target.value)}
@@ -124,10 +126,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
 
         <Flex gap={4}>
           <Box flex={1}>
-            <Text {...labelStyle}>EMAIL ADDRESS</Text>
+            <Text {...labelStyle}>{t("purchase.email_address")}</Text>
             <Input
               {...inputStyle}
-              placeholder="email@example.com"
+              placeholder={t("purchase.email_placeholder")}
               type="email"
               value={data.email}
               maxLength={MAX_LEN}
@@ -142,10 +144,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             )}
           </Box>
           <Box flex={1}>
-            <Text {...labelStyle}>MOBILE PHONE NUMBER</Text>
+            <Text {...labelStyle}>{t("purchase.phone_number")}</Text>
             <Input
               {...inputStyle}
-              placeholder="Enter phone number"
+              placeholder={t("purchase.enter_phone")}
               value={data.phone}
               maxLength={MAX_LEN}
               onChange={(e) => set("phone", e.target.value)}
@@ -161,10 +163,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
         </Flex>
 
         <Box>
-          <Text {...labelStyle}>ADDRESS</Text>
+          <Text {...labelStyle}>{t("purchase.address")}</Text>
           <Input
             {...inputStyle}
-            placeholder="Enter your address"
+            placeholder={t("purchase.enter_address")}
             value={data.address}
             maxLength={MAX_LEN}
             onChange={(e) => set("address", e.target.value)}
@@ -180,7 +182,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
 
         <Flex gap={4}>
           <Box flex={1}>
-            <Text {...labelStyle}>STATE</Text>
+            <Text {...labelStyle}>{t("purchase.state")}</Text>
             <NativeSelectRoot
               border="1px solid"
               borderColor={err("state") ? "red.400" : "border.input"}
@@ -201,7 +203,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
                 _focusVisible={{ boxShadow: "none", outline: "none" }}
               >
                 <option value="" disabled>
-                  Select State
+                  {t("purchase.select_state")}
                 </option>
                 {STATES.map((s) => (
                   <option key={s} value={s}>
@@ -220,10 +222,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             )}
           </Box>
           <Box flex={1}>
-            <Text {...labelStyle}>POSTCODE/ZIP</Text>
+            <Text {...labelStyle}>{t("purchase.postcode")}</Text>
             <Input
               {...inputStyle}
-              placeholder="Enter postcode"
+              placeholder={t("purchase.enter_postcode")}
               value={data.postcode}
               maxLength={MAX_LEN}
               onChange={(e) => set("postcode", e.target.value)}
@@ -239,10 +241,10 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
         </Flex>
 
         <Box w="50%">
-          <Text {...labelStyle}>TOWN/CITY</Text>
+          <Text {...labelStyle}>{t("purchase.city")}</Text>
           <Input
             {...inputStyle}
-            placeholder="Enter city"
+            placeholder={t("purchase.enter_city")}
             value={data.city}
             maxLength={MAX_LEN}
             onChange={(e) => set("city", e.target.value)}
@@ -257,7 +259,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
         </Box>
 
         <Box>
-          <Text {...labelStyle}>NOTE</Text>
+          <Text {...labelStyle}>{t("purchase.note")}</Text>
           <Textarea
             border="1px solid"
             borderColor="border.input"
@@ -266,7 +268,7 @@ const PurchaseForm1 = ({ data, onChange, submitted }: PurchaseForm1Props) => {
             py="12px"
             fontSize="14px"
             minH="100px"
-            placeholder="Any additional notes..."
+            placeholder={t("purchase.notes_placeholder")}
             value={data.note}
             onChange={(e) => set("note", e.target.value)}
             _focusVisible={{

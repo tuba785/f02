@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Flex, Text, Spinner } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 import { bookService } from "../../../services/bookService";
 import type { Book } from "../../../types/book";
@@ -45,6 +46,7 @@ interface BookDetailsProps {
 }
 
 const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
+  const { t } = useTranslation();
   const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,7 +57,7 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
     bookService
       .fetchBookById(bookId)
       .then((b) => setBook(b))
-      .catch(() => setError("Failed to load book details"))
+      .catch(() => setError(t("book_detail.failed_to_load")))
       .finally(() => setLoading(false));
   }, [bookId]);
 
@@ -71,7 +73,7 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
     return (
       <Flex justify="center" py={10}>
         <Text color="red.500" fontSize="16px" fontWeight="600">
-          {error ?? "Book not found"}
+          {error ?? t("book_detail.book_not_found")}
         </Text>
       </Flex>
     );
@@ -105,7 +107,7 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
 
   if (book.is_bestseller) {
     tags.push({
-      label: "Bestseller",
+      label: t("book_list.bestseller"),
       color: "brand.purple",
       bg: "brand.lightPurple",
       border: "brand.purple",
@@ -113,16 +115,22 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
   }
 
   const rows: { label: string; value: string }[] = [
-    { label: "Book Title", value: book.title },
-    { label: "Author", value: book.author },
-    { label: "ISBN", value: `${book.isbn} (ISBN13: ${book.isbn})` },
-    { label: "Edition Language", value: book.language },
+    { label: t("book_detail.book_title"), value: book.title },
+    { label: t("book_detail.author"), value: book.author },
     {
-      label: "Book Format",
-      value: `${book.format}, ${book.page_count} Pages`,
+      label: t("book_detail.isbn"),
+      value: `${book.isbn} (ISBN13: ${book.isbn})`,
     },
-    { label: "Date Published", value: formatDate(book.release_date) },
-    { label: "Publisher", value: book.publisher },
+    { label: t("book_detail.edition_language"), value: book.language },
+    {
+      label: t("book_detail.book_format"),
+      value: `${book.format}, ${book.page_count} ${t("book_detail.pages")}`,
+    },
+    {
+      label: t("book_detail.date_published"),
+      value: formatDate(book.release_date),
+    },
+    { label: t("book_detail.publisher"), value: book.publisher },
   ];
 
   return (
@@ -168,7 +176,7 @@ const BookDetails = ({ bookId = "15" }: BookDetailsProps) => {
           flexShrink={0}
           pt={1}
         >
-          Tags
+          {t("book_detail.tags")}
         </Text>
         <Flex gap={2} flexWrap="wrap">
           {tags.map((tag) => (

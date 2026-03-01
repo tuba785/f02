@@ -11,15 +11,17 @@ import { FaArrowRight } from "react-icons/fa";
 import { colors } from "../../../../styles/colors";
 import { NewsCard } from "./NBL2";
 import type { NewsArticle } from "./NBL2";
+import { useTranslation } from "react-i18next";
 
 const NBL = () => {
+  const { t } = useTranslation();
+
   const articles: NewsArticle[] = [
     {
       id: 1,
       image: "https://picsum.photos/seed/newhpoto1/332/200",
-      title: "Why reading is important for our children?",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...",
+      title: t("latest_news.articles.0.title"),
+      description: t("latest_news.articles.0.description"),
       author: "Lidya Humble",
       authorAvatar: "us8",
       date: "2 days ago",
@@ -27,9 +29,8 @@ const NBL = () => {
     {
       id: 2,
       image: "https://picsum.photos/seed/newhpoto2/332/200",
-      title: "Benefits of reading: Smart, Diligent, Happy",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...",
+      title: t("latest_news.articles.1.title"),
+      description: t("latest_news.articles.1.description"),
       author: "Steffanny William",
       authorAvatar: "us9",
       date: "5 August 2020",
@@ -37,9 +38,8 @@ const NBL = () => {
     {
       id: 3,
       image: "https://picsum.photos/seed/newhpoto3/332/200",
-      title: "What books you should read in 2020?",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...",
+      title: t("latest_news.articles.2.title"),
+      description: t("latest_news.articles.2.description"),
       author: "James Wong",
       authorAvatar: "us10",
       date: "3 August 2020",
@@ -47,9 +47,8 @@ const NBL = () => {
     {
       id: 4,
       image: "https://picsum.photos/seed/newhpoto4/332/200",
-      title: "10 Things you must know to improve your reading skills",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...",
+      title: t("latest_news.articles.3.title"),
+      description: t("latest_news.articles.3.description"),
       author: "Franklin Junior",
       authorAvatar: "us11",
       date: "1 August 2020",
@@ -67,11 +66,10 @@ const NBL = () => {
               fontWeight="bold"
               color="text.heading"
             >
-              Letest News
+              {t("latest_news.title")}
             </Heading>
             <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
+              {t("latest_news.description")}
             </Text>
           </VStack>
 
@@ -86,7 +84,7 @@ const NBL = () => {
             fontWeight="semibold"
           >
             <HStack gap={2}>
-              <Text>View more</Text>
+              <Text>{t("latest_news.view_more")}</Text>
               <FaArrowRight />
             </HStack>
           </Button>

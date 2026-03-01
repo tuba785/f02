@@ -4,8 +4,10 @@ import { colors } from "../../../../styles/colors";
 import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
 import FreshSalesCard from "./FreshSalesCard";
+import { useTranslation } from "react-i18next";
 
 const FreshSale = () => {
+  const { t } = useTranslation();
   const { books: allBooks, getBooks } = useBooks();
   const [books, setBooks] = useState<Book[]>([]);
 
@@ -33,11 +35,10 @@ const FreshSale = () => {
             fontWeight="bold"
             color="text.heading"
           >
-            Flash Sale
+            {t("fresh_sale.title")}
           </Heading>
           <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {t("fresh_sale.description")}
           </Text>
         </VStack>
 
@@ -58,7 +59,7 @@ const FreshSale = () => {
                 02
               </Text>
               <Text fontSize="xs" color="text.muted">
-                Day
+                {t("fresh_sale.day")}
               </Text>
             </VStack>
             <VStack gap={1} w="60px">
@@ -70,7 +71,7 @@ const FreshSale = () => {
                 05
               </Text>
               <Text fontSize="xs" color="text.muted">
-                Hours
+                {t("fresh_sale.hours")}
               </Text>
             </VStack>
             <VStack gap={1} w="60px">
@@ -82,7 +83,7 @@ const FreshSale = () => {
                 42
               </Text>
               <Text fontSize="xs" color="text.muted">
-                Minutes
+                {t("fresh_sale.minutes")}
               </Text>
             </VStack>
             <VStack gap={1} w="60px">
@@ -94,7 +95,7 @@ const FreshSale = () => {
                 19
               </Text>
               <Text fontSize="xs" color="text.muted">
-                Second
+                {t("fresh_sale.second")}
               </Text>
             </VStack>
           </HStack>

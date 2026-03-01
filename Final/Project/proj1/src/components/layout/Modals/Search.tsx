@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface SearchProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface SearchProps {
 }
 
 const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
+  const { t } = useTranslation();
   if (!isOpen || !query.trim()) return null;
 
   return (
@@ -30,13 +32,13 @@ const Search = ({ isOpen, onClose, books, query }: SearchProps) => {
       overflowY="auto"
     >
       <Text fontSize="13px" fontWeight="600" color="text.secondary" mb={2}>
-        Search results
+        {t("search.search_results")}
       </Text>
 
       {books.length === 0 ? (
         <Flex align="center" justify="center" py={6}>
           <Text fontSize="14px" color="text.secondary">
-            No books found for &quot;{query}&quot;
+            {t("search.no_books_found", { query })}
           </Text>
         </Flex>
       ) : (

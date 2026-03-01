@@ -6,12 +6,14 @@ import type { RootState } from "../../../../store/store";
 import { addToCart, removeFromCart } from "../../../../store/slices/cartSlice";
 import type { Book } from "../../../../types/book";
 import { colors } from "../../../../styles/colors";
+import { useTranslation } from "react-i18next";
 
 interface SpecialOffersCardProps {
   book: Book;
 }
 
 const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inCart = useSelector((state: RootState) =>
     state.cart.items.some((i) => i.bookId === book.id),
@@ -116,7 +118,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
                 dispatch(removeFromCart(book.id));
               }}
             >
-              <Text>Already in cart</Text>
+              <Text>{t("special_offers.already_in_cart")}</Text>
             </Button>
           ) : (
             <Button
@@ -133,7 +135,7 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
             >
               <HStack gap={2}>
                 <FaShoppingCart />
-                <Text>Add to cart</Text>
+                <Text>{t("special_offers.add_to_cart")}</Text>
               </HStack>
             </Button>
           )}

@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiX } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 interface ProfileSettingsProps {
   isOpen: boolean;
@@ -7,6 +8,7 @@ interface ProfileSettingsProps {
 }
 
 const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   return (
@@ -35,7 +37,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
       >
         <Flex align="center" justify="space-between" mb={6}>
           <Text fontSize="20px" fontWeight="800" color="text.primary">
-            Account Settings
+            {t("profile_settings.title")}
           </Text>
           <Flex
             align="center"
@@ -71,7 +73,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
             <Text fontSize="22px">⚙️</Text>
           </Box>
           <Text fontSize="15px" fontWeight="600" color="text.primary">
-            Settings coming soon
+            {t("profile_settings.coming_soon")}
           </Text>
           <Text
             fontSize="13px"
@@ -79,8 +81,7 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
             textAlign="center"
             maxW="300px"
           >
-            Account settings and profile customization will be available in a
-            future update.
+            {t("profile_settings.description")}
           </Text>
         </Flex>
       </Box>

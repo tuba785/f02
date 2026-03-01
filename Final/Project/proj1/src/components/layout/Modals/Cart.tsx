@@ -11,6 +11,7 @@ import {
   clearCart,
 } from "../../../store/slices/cartSlice";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface CartProps {
   isOpen: boolean;
@@ -18,6 +19,7 @@ interface CartProps {
 }
 
 const Cart = ({ isOpen, onClose }: CartProps) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const panelRef = useRef<HTMLDivElement>(null);
@@ -113,7 +115,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               color="var(--chakra-colors-brand-purple)"
             />
             <Text fontSize="18px" fontWeight="800" color="text.primary">
-              Cart
+              {t("cart.title")}
             </Text>
             {totalItems > 0 && (
               <Flex
@@ -165,7 +167,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               _hover={{ opacity: 0.85 }}
               onClick={handleGoToPayment}
             >
-              <Text>Go to Payment</Text>
+              <Text>{t("cart.go_to_payment")}</Text>
             </Flex>
             <Flex
               align="center"
@@ -185,7 +187,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
               onClick={() => dispatch(clearCart())}
             >
               <FaTrash size={12} />
-              <Text>Clear</Text>
+              <Text>{t("cart.clear")}</Text>
             </Flex>
           </Flex>
         )}
@@ -214,7 +216,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                 />
               </Box>
               <Text fontSize="15px" fontWeight="600" color="text.primary">
-                Your cart is empty
+                {t("cart.empty_title")}
               </Text>
               <Text
                 fontSize="13px"
@@ -222,7 +224,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
                 textAlign="center"
                 maxW="260px"
               >
-                Browse books and add them to your cart to see them here.
+                {t("cart.empty_description")}
               </Text>
             </Flex>
           ) : (
@@ -254,7 +256,7 @@ const Cart = ({ isOpen, onClose }: CartProps) => {
             flexShrink={0}
           >
             <Text fontSize="14px" fontWeight="600" color="text.secondary">
-              Total ({totalItems} items)
+              {t("cart.total", { count: totalItems })}
             </Text>
             <Text fontSize="20px" fontWeight="800" color="text.primary">
               ${totalPrice.toFixed(2)}

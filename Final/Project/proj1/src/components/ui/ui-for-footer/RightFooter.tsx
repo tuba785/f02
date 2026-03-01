@@ -1,11 +1,14 @@
 import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const RightFooter = () => {
+  const { t } = useTranslation();
+
   return (
     <VStack align="start" gap={4} maxW="340px">
       <Text fontSize="16px" fontWeight="700" color="text.strong">
-        Our Store
+        {t("footer.our_store")}
       </Text>
 
       <Image
@@ -23,7 +26,7 @@ const RightFooter = () => {
             <FiMapPin size={18} />
           </Box>
           <Text fontSize="14px" color="text.subtle" lineHeight="1.6">
-            832 Thompson Drive, San Fransisco CA 94107, United States
+            {t("footer.address")}
           </Text>
         </HStack>
 

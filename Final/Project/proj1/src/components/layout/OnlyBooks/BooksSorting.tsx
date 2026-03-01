@@ -10,18 +10,19 @@ import {
 import { FiChevronDown } from "react-icons/fi";
 import { FaList, FaThLarge } from "react-icons/fa";
 import { BsSortDown } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 type Era = "all" | "1900-1999" | "2000-now";
 type View = "list" | "gallery";
 
 const SORT_OPTIONS = [
-  { value: "none", label: "None" },
-  { value: "newest", label: "Newest" },
-  { value: "oldest", label: "Oldest" },
-  { value: "price-high", label: "Price: High" },
-  { value: "price-low", label: "Price: Low" },
-  { value: "rating", label: "Rating" },
-  { value: "likes", label: "Likes" },
+  { value: "none", labelKey: "sorting.none" },
+  { value: "newest", labelKey: "sorting.newest" },
+  { value: "oldest", labelKey: "sorting.oldest" },
+  { value: "price-high", labelKey: "sorting.price_high" },
+  { value: "price-low", labelKey: "sorting.price_low" },
+  { value: "rating", labelKey: "sorting.rating" },
+  { value: "likes", labelKey: "sorting.likes" },
 ];
 
 export interface SortingState {
@@ -35,6 +36,7 @@ interface BooksSortingProps {
 }
 
 const BooksSorting = ({ onChange }: BooksSortingProps) => {
+  const { t } = useTranslation();
   const [era, setEra] = useState<Era>("all");
   const [view, setView] = useState<View>("list");
   const [sort, setSort] = useState("none");
@@ -75,7 +77,7 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
     >
       <Flex gap={8} align="center" h="full">
         {[
-          { value: "all" as Era, label: "All" },
+          { value: "all" as Era, label: t("sorting.all") },
           { value: "1900-1999" as Era, label: "1900-1999" },
           { value: "2000-now" as Era, label: "2000-now" },
         ].map((tab) => (
@@ -136,7 +138,7 @@ const BooksSorting = ({ onChange }: BooksSortingProps) => {
             >
               {SORT_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>
-                  {o.label}
+                  {t(o.labelKey)}
                 </option>
               ))}
             </NativeSelectField>

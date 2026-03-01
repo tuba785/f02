@@ -1,6 +1,7 @@
 import { Flex, Text, Spinner, Grid } from "@chakra-ui/react";
 import BooksGalleryItem from "./BooksGalleryItem";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface BooksGalleryProps {
   books: Book[];
@@ -9,6 +10,7 @@ interface BooksGalleryProps {
 }
 
 const BooksGallery = ({ books, loading, error }: BooksGalleryProps) => {
+  const { t } = useTranslation();
   if (loading === "pending") {
     return (
       <Flex justify="center" align="center" py={20}>
@@ -32,10 +34,10 @@ const BooksGallery = ({ books, loading, error }: BooksGalleryProps) => {
       <Flex direction="column" align="center" justify="center" py={16} gap={2}>
         <Text fontSize="40px">📚</Text>
         <Text fontSize="18px" fontWeight="700" color="text.heading">
-          No books found
+          {t("books_page.no_books_found")}
         </Text>
         <Text fontSize="14px" color="text.muted">
-          Try adjusting your filters or search criteria
+          {t("books_page.try_adjusting")}
         </Text>
       </Flex>
     );

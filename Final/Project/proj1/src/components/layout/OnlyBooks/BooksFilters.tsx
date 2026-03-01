@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Box, Flex, Text, Grid, Input, Slider } from "@chakra-ui/react";
 import { FiChevronUp, FiChevronDown, FiCheck } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const YEARS_INITIAL = 16;
 
@@ -111,10 +112,10 @@ const YEARS = [
 ];
 
 const EDITOR_PICKS = [
-  { key: "bestsellers", label: "Bestsellers" },
-  { key: "discounted", label: "Has Discount" },
-  { key: "most_likes", label: "Most Likes (Top 10)" },
-  { key: "most_comments", label: "Most Comments (Top 10)" },
+  { key: "bestsellers", labelKey: "filters.bestsellers" },
+  { key: "discounted", labelKey: "filters.has_discount" },
+  { key: "most_likes", labelKey: "filters.most_likes" },
+  { key: "most_comments", labelKey: "filters.most_comments" },
 ] as const;
 
 type EditorPick = (typeof EDITOR_PICKS)[number]["key"] | null;
@@ -303,6 +304,7 @@ const BooksFilters = ({
   onReset,
   initialGenres = [],
 }: BooksFiltersProps) => {
+  const { t } = useTranslation();
   const [filters, setFilters] = useState<FiltersState>({
     ...defaultFilters,
     genres: initialGenres,
@@ -379,7 +381,7 @@ const BooksFilters = ({
       flexShrink={0}
     >
       <Section
-        title="Editor Picks"
+        title={t("filters.editor_picks")}
         open={openSections.editorPicks}
         onToggle={() => toggle("editorPicks")}
       >
@@ -387,7 +389,7 @@ const BooksFilters = ({
           {EDITOR_PICKS.map((item) => (
             <RadioItem
               key={item.key}
-              label={item.label}
+              label={t(item.labelKey)}
               active={filters.editorPick === item.key}
               onClick={() =>
                 setFilters((p) => ({
@@ -401,7 +403,7 @@ const BooksFilters = ({
       </Section>
 
       <Section
-        title="Shop by Category"
+        title={t("filters.shop_by_category")}
         open={openSections.genres}
         onToggle={() => toggle("genres")}
       >
@@ -418,7 +420,7 @@ const BooksFilters = ({
       </Section>
 
       <Section
-        title="Choose Format"
+        title={t("filters.choose_format")}
         open={openSections.formats}
         onToggle={() => toggle("formats")}
       >
@@ -435,7 +437,7 @@ const BooksFilters = ({
       </Section>
 
       <Section
-        title="Choose Language"
+        title={t("filters.choose_language")}
         open={openSections.languages}
         onToggle={() => toggle("languages")}
       >
@@ -452,7 +454,7 @@ const BooksFilters = ({
       </Section>
 
       <Section
-        title="Select Year"
+        title={t("filters.select_year")}
         open={openSections.years}
         onToggle={() => toggle("years")}
       >
@@ -477,13 +479,13 @@ const BooksFilters = ({
             _hover={{ textDecoration: "underline" }}
             onClick={() => setShowAllYears((p) => !p)}
           >
-            {showAllYears ? "View less ▲" : "View more ▼"}
+            {showAllYears ? t("filters.view_less") : t("filters.view_more")}
           </Text>
         )}
       </Section>
 
       <Section
-        title="Price Range"
+        title={t("filters.price_range")}
         open={openSections.price}
         onToggle={() => toggle("price")}
       >
@@ -572,7 +574,7 @@ const BooksFilters = ({
           _hover={{ opacity: 0.85 }}
           onClick={applyFilters}
         >
-          Refine Search
+          {t("filters.refine_search")}
         </Flex>
         <Flex
           as="button"
@@ -587,7 +589,7 @@ const BooksFilters = ({
           _hover={{ color: "text.heading" }}
           onClick={resetFilters}
         >
-          Reset Filter
+          {t("filters.reset_filter")}
         </Flex>
       </Flex>
     </Box>

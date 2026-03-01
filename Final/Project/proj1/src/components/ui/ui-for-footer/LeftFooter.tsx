@@ -8,8 +8,10 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useColorMode } from "../color-mode";
+import { useTranslation } from "react-i18next";
 
 const LeftFooter = () => {
+  const { t } = useTranslation();
   const { colorMode } = useColorMode();
 
   return (
@@ -30,14 +32,12 @@ const LeftFooter = () => {
       </HStack>
 
       <Text fontSize="14px" color="text.subtle" lineHeight="1.6">
-        Bookoe is a Book Store Website lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud
+        {t("footer.description")}
       </Text>
 
       <Box>
         <Text fontSize="14px" fontWeight="600" color="text.strong" mb={3}>
-          Follow Us
+          {t("footer.follow_us")}
         </Text>
         <HStack gap={2}>
           <IconButton

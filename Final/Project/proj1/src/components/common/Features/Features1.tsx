@@ -1,37 +1,36 @@
 import { Box, Grid, VStack, HStack, Text, Heading } from "@chakra-ui/react";
 import { FaBolt, FaCheckCircle, FaThumbsUp, FaStar } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface FeatureItem {
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
 }
 
 const Features1 = () => {
+  const { t } = useTranslation();
+
   const features: FeatureItem[] = [
     {
       icon: <FaBolt size={32} />,
-      title: "Quick Delivery",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      titleKey: "features.quick_delivery",
+      descriptionKey: "features.quick_delivery_desc",
     },
     {
       icon: <FaCheckCircle size={32} />,
-      title: "Secure Payment",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      titleKey: "features.secure_payment",
+      descriptionKey: "features.secure_payment_desc",
     },
     {
       icon: <FaThumbsUp size={32} />,
-      title: "Best Quality",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      titleKey: "features.best_quality",
+      descriptionKey: "features.best_quality_desc",
     },
     {
       icon: <FaStar size={32} />,
-      title: "Return Guarantee",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+      titleKey: "features.return_guarantee",
+      descriptionKey: "features.return_guarantee_desc",
     },
   ];
 
@@ -69,10 +68,10 @@ const Features1 = () => {
                 color="text.heading"
                 fontWeight={700}
               >
-                {feature.title}
+                {t(feature.titleKey)}
               </Heading>
               <Text fontSize="14px" color="text.muted" lineHeight="1.6">
-                {feature.description}
+                {t(feature.descriptionKey)}
               </Text>
             </VStack>
           </HStack>

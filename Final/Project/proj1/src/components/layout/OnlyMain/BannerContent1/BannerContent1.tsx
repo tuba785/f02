@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { HiArrowRight } from "react-icons/hi";
 import { useColorMode } from "../../../ui/color-mode";
+import { useTranslation } from "react-i18next";
 
 interface Slide {
   title: string;
@@ -61,6 +62,16 @@ export const BannerContent1 = ({
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
+  const { t } = useTranslation();
+
+  const translatedSlides = slides.map((slide, i) => ({
+    ...slide,
+    title: t(`banner1.slides.${i}.title`),
+    subtitle: t(`banner1.slides.${i}.subtitle`),
+    badge: t(`banner1.slides.${i}.badge`),
+    description: t(`banner1.slides.${i}.description`),
+  }));
+
   return (
     <Box
       width={width}
@@ -105,7 +116,7 @@ export const BannerContent1 = ({
           zIndex: 1,
         }}
       >
-        {slides.map((slide, index) => (
+        {translatedSlides.map((slide, index) => (
           <SwiperSlide
             key={index}
             style={{
@@ -179,7 +190,7 @@ export const BannerContent1 = ({
                   }}
                   transition="all 0.3s ease"
                 >
-                  Get the deal
+                  {t("banner1.get_the_deal")}
                   <HiArrowRight size={20} />
                 </Button>
 
@@ -201,7 +212,7 @@ export const BannerContent1 = ({
                   }}
                   transition="all 0.3s ease"
                 >
-                  See other promos
+                  {t("banner1.see_other_promos")}
                 </Button>
               </Flex>
             </Flex>

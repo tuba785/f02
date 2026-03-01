@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 interface BooksPartNavProps {
   currentPage: number;
@@ -40,6 +41,7 @@ const BooksPartNav = ({
   itemsPerPage,
   onPageChange,
 }: BooksPartNavProps) => {
+  const { t } = useTranslation();
   if (totalPages <= 0) return null;
 
   const showingEnd = Math.min(currentPage * itemsPerPage, totalItems);
@@ -56,7 +58,11 @@ const BooksPartNav = ({
       py={4}
     >
       <Text fontSize="14px" fontWeight="400" color="text.muted">
-        Showing {showingStart}-{showingEnd} from {totalItems} data
+        {t("pagination.showing", {
+          start: showingStart,
+          end: showingEnd,
+          total: totalItems,
+        })}
       </Text>
 
       <Flex align="center" gap={2}>
@@ -79,7 +85,7 @@ const BooksPartNav = ({
         >
           <FiChevronLeft size={16} color="var(--chakra-colors-brand-purple)" />
           <Text fontSize="14px" fontWeight="500" color="text.heading">
-            Previous
+            {t("pagination.previous")}
           </Text>
         </Flex>
 
@@ -142,7 +148,7 @@ const BooksPartNav = ({
           }}
         >
           <Text fontSize="14px" fontWeight="500" color="text.heading">
-            Next
+            {t("pagination.next")}
           </Text>
           <FiChevronRight size={16} color="var(--chakra-colors-brand-purple)" />
         </Flex>

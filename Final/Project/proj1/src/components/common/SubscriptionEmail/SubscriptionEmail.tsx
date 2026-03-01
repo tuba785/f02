@@ -9,8 +9,10 @@ import {
   Center,
 } from "@chakra-ui/react";
 import bannerImage from "../../../assets/banners/email-banner.png";
+import { useTranslation } from "react-i18next";
 
 const SubscriptionEmail = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
@@ -54,13 +56,13 @@ const SubscriptionEmail = () => {
             fontWeight={600}
             lineHeight={1.3}
           >
-            Subscribe our newsletter for newest books updates
+            {t("subscription.title")}
           </Heading>
 
           <HStack gap={0} w="100%" maxW="450px" mx="auto">
             <Input
               type="email"
-              placeholder="Type your email here"
+              placeholder={t("subscription.placeholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               bg="rgba(255, 255, 255, 0.25)"
@@ -93,7 +95,7 @@ const SubscriptionEmail = () => {
               _active={{ transform: "translateY(0)" }}
               transition="all 0.3s ease"
             >
-              SUBSCRIBE
+              {t("subscription.button")}
             </Button>
           </HStack>
         </VStack>

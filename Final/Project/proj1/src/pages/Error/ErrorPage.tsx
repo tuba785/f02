@@ -6,13 +6,15 @@ import {
 } from "react-router-dom";
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   const error = useRouteError();
   const navigate = useNavigate();
 
   let status = "500";
-  let message = "Something went wrong on our end. Please try again later.";
+  let message = t("error_page.default_message");
 
   if (isRouteErrorResponse(error)) {
     status = String(error.status);
@@ -44,7 +46,7 @@ const ErrorPage = () => {
         </Text>
 
         <Text fontSize="28px" fontWeight="700" color="text.heading">
-          An Error Occurred
+          {t("error_page.title")}
         </Text>
 
         <Text
@@ -68,7 +70,7 @@ const ErrorPage = () => {
             _hover={{ opacity: 0.85 }}
             onClick={() => navigate("/")}
           >
-            Back to Home
+            {t("error_page.back_to_home")}
           </Button>
           <Button
             bg="transparent"
@@ -83,7 +85,7 @@ const ErrorPage = () => {
             _hover={{ borderColor: "brand.purple", color: "brand.purple" }}
             onClick={() => navigate(-1)}
           >
-            Go Back
+            {t("error_page.go_back")}
           </Button>
         </Box>
       </Flex>

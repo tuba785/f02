@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const GENRES = [
   "Biography",
@@ -20,6 +21,7 @@ interface MenusProps {
 }
 
 const Menus = ({ isOpen, onClose }: MenusProps) => {
+  const { t } = useTranslation();
   if (!isOpen) return null;
 
   return (
@@ -52,12 +54,12 @@ const Menus = ({ isOpen, onClose }: MenusProps) => {
           _hover={{ opacity: 0.85 }}
           mb={4}
         >
-          View All Books
+          {t("menus.view_all_books")}
         </Flex>
       </Link>
 
       <Text fontSize="15px" fontWeight="700" color="text.primary" mb={3}>
-        Browse by Genre
+        {t("menus.browse_by_genre")}
       </Text>
 
       <Grid templateColumns="1fr 1fr" gap={2}>

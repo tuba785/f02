@@ -10,6 +10,7 @@ import {
   clearAllFavorites,
 } from "../../../store/slices/favoritesSlice";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface FavoriteProps {
   isOpen: boolean;
@@ -17,6 +18,7 @@ interface FavoriteProps {
 }
 
 const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const panelRef = useRef<HTMLDivElement>(null);
   const favoriteIds = useSelector((state: RootState) => state.favorites.ids);
@@ -94,7 +96,7 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
           <Flex align="center" gap={2}>
             <FaHeart size={18} color="var(--chakra-colors-brand-purple)" />
             <Text fontSize="18px" fontWeight="800" color="text.primary">
-              Favorites
+              {t("favorites.title")}
             </Text>
             {favoriteBooks.length > 0 && (
               <Flex
@@ -151,7 +153,7 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
             onClick={() => dispatch(clearAllFavorites())}
           >
             <FaTrash size={12} />
-            <Text>Remove All</Text>
+            <Text>{t("favorites.remove_all")}</Text>
           </Flex>
         )}
 
@@ -176,7 +178,7 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
                 <FaHeart size={22} color="var(--chakra-colors-brand-purple)" />
               </Box>
               <Text fontSize="15px" fontWeight="600" color="text.primary">
-                No favorites yet
+                {t("favorites.empty_title")}
               </Text>
               <Text
                 fontSize="13px"
@@ -184,7 +186,7 @@ const Favorite = ({ isOpen, onClose }: FavoriteProps) => {
                 textAlign="center"
                 maxW="260px"
               >
-                Browse books and tap the heart icon to save your favorites here.
+                {t("favorites.empty_description")}
               </Text>
             </Flex>
           ) : (

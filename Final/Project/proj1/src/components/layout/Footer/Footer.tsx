@@ -2,8 +2,11 @@ import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 import CenterFooter from "../../ui/ui-for-footer/CenterFooter";
 import LeftFooter from "../../ui/ui-for-footer/LeftFooter";
 import RightFooter from "../../ui/ui-for-footer/RightFooter";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       as="footer"
@@ -42,11 +45,11 @@ const Footer = () => {
           flexWrap="wrap"
           gap={2}
         >
-          <Text>Bookoe Book Store Website - © 2026 All Rights Reserved</Text>
+          <Text>{t("footer.copyright")}</Text>
           <Text>
-            Made with ❤️ by{" "}
+            {t("footer.made_with")}{" "}
             <Text as="span" fontWeight="600" color="text.strong">
-              Peterdraw
+              {t("footer.author")}
             </Text>
           </Text>
         </HStack>

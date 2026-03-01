@@ -9,11 +9,13 @@ import type { Book } from "../../../../types/book";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useColorMode } from "../../../ui/color-mode";
+import { useTranslation } from "react-i18next";
 
 const BOOK_COVER_WIDTH = 140;
 const BOOK_COVER_HEIGHT = 200;
 
 export const BannerContent3 = () => {
+  const { t } = useTranslation();
   const { books, loading, getBooks } = useBooks();
   const [topBooks, setTopBooks] = useState<Book[]>([]);
   const { colorMode } = useColorMode();
@@ -57,11 +59,10 @@ export const BannerContent3 = () => {
         paddingBottom="32px"
       >
         <Text fontSize="28px" fontWeight="700" color="text.heading">
-          Popular in 2020
+          {t("banner3.title")}
         </Text>
         <Text fontSize="14px" color="text.secondary" lineHeight="1.6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {t("banner3.description")}
         </Text>
       </Flex>
 

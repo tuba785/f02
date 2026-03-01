@@ -5,8 +5,10 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useBooks } from "../../../hooks/useBooks";
 import Search from "../../layout/Modals/Search";
 import Menus from "../../layout/Modals/Menus";
+import { useTranslation } from "react-i18next";
 
 const SearchBar = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { books, getBooks } = useBooks();
@@ -90,7 +92,7 @@ const SearchBar = () => {
           }}
         >
           <FiGrid />
-          <Box as="span">Menus</Box>
+          <Box as="span">{t("header.menus")}</Box>
           {isMenuOpen ? <FiChevronUp /> : <FiChevronDown />}
         </Button>
 
@@ -99,7 +101,7 @@ const SearchBar = () => {
         <InputGroup flex="1">
           <Input
             size="md"
-            placeholder="Search over 30 million book titles"
+            placeholder={t("header.search_placeholder")}
             bg="bg.surface"
             border="none"
             h="44px"

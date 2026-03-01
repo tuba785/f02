@@ -5,6 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
+import { useTranslation } from "react-i18next";
 
 const BOOKS = [
   {
@@ -40,6 +41,7 @@ const BOOKS = [
 ];
 
 const RelatedBooks = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
@@ -109,7 +111,7 @@ const RelatedBooks = () => {
                   {book.rating}
                 </Text>
                 <Text fontSize="12px" color="text.muted">
-                  {book.reviews} reviews
+                  {book.reviews} {t("book_detail.reviews").toLowerCase()}
                 </Text>
               </Flex>
 
@@ -142,7 +144,7 @@ const RelatedBooks = () => {
                   }}
                 >
                   <Text fontSize="13px" fontWeight="700" color="brand.purple">
-                    Already in cart
+                    {t("book_list.already_in_cart")}
                   </Text>
                 </Flex>
               ) : (
@@ -162,7 +164,7 @@ const RelatedBooks = () => {
                     color="var(--chakra-colors-brand-purple)"
                   />
                   <Text fontSize="13px" fontWeight="700" color="brand.purple">
-                    Add to cart
+                    {t("book_list.add_to_cart")}
                   </Text>
                 </Flex>
               )}
@@ -187,7 +189,7 @@ const RelatedBooks = () => {
           transition="background 0.15s"
           _hover={{ bgColor: "brand.purple", color: "text.onBrand" }}
         >
-          View More
+          {t("book_detail.view_more")}
         </Flex>
       </Box>
     </Flex>

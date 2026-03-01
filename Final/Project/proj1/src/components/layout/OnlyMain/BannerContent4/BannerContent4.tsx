@@ -15,6 +15,7 @@ import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
 import { useColorMode } from "../../../ui/color-mode";
 import { HiShoppingCart } from "react-icons/hi";
+import { useTranslation } from "react-i18next";
 
 const MAIN_BOOK_WIDTH = 292;
 const MAIN_BOOK_HEIGHT = 410;
@@ -22,6 +23,7 @@ const SMALL_BOOK_WIDTH = 240;
 const SMALL_BOOK_HEIGHT = 335;
 
 export const BannerContent4 = () => {
+  const { t } = useTranslation();
   const { books, loading, getBooks } = useBooks();
   const [mainBook, setMainBook] = useState<Book | null>(null);
   const [featuredBooks, setFeaturedBooks] = useState<Book[]>([]);
@@ -93,7 +95,7 @@ export const BannerContent4 = () => {
               textTransform="uppercase"
               letterSpacing="1px"
             >
-              Featured Books
+              {t("banner4.featured_books")}
             </Text>
             <Heading
               as="h2"
@@ -102,7 +104,7 @@ export const BannerContent4 = () => {
               color="text.heading"
               lineHeight="1.2"
             >
-              Featured Books
+              {t("banner4.featured_books")}
             </Heading>
             <Text
               fontSize="15px"
@@ -110,8 +112,7 @@ export const BannerContent4 = () => {
               lineHeight="1.6"
               maxW="420px"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore
+              {t("banner4.description")}
             </Text>
           </VStack>
 
@@ -238,7 +239,7 @@ export const BannerContent4 = () => {
                             color="text.placeholder"
                             textTransform="uppercase"
                           >
-                            Written by
+                            {t("banner4.written_by")}
                           </Text>
                           <Text fontWeight="600" color="text.heading">
                             {mainBook.author}
@@ -251,7 +252,7 @@ export const BannerContent4 = () => {
                             color="text.placeholder"
                             textTransform="uppercase"
                           >
-                            Year
+                            {t("banner4.year")}
                           </Text>
                           <Text fontWeight="600" color="text.heading">
                             {mainBook.release_date.split("/")[2]}
@@ -296,7 +297,7 @@ export const BannerContent4 = () => {
                           transition="all 0.3s ease"
                         >
                           <HiShoppingCart size={18} />
-                          ADD
+                          {t("banner4.add")}
                         </Button>
                       </Flex>
                     </Box>

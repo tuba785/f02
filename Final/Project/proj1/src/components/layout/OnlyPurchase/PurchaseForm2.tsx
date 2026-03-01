@@ -13,6 +13,7 @@ import {
 import { FiChevronDown } from "react-icons/fi";
 import { FaExchangeAlt, FaCreditCard, FaPaypal } from "react-icons/fa";
 import CVVInfo from "../MiniModals/CVVInfo";
+import { useTranslation } from "react-i18next";
 
 const MAX_LEN = 20;
 
@@ -51,9 +52,17 @@ interface PurchaseForm2Props {
 }
 
 const methods: { id: PaymentMethod; label: string; icon: React.ReactNode }[] = [
-  { id: "bank", label: "Bank Transfer", icon: <FaExchangeAlt size={28} /> },
-  { id: "card", label: "Credit Card", icon: <FaCreditCard size={28} /> },
-  { id: "paypal", label: "Paipal", icon: <FaPaypal size={28} /> },
+  {
+    id: "bank",
+    label: "purchase.bank_transfer",
+    icon: <FaExchangeAlt size={28} />,
+  },
+  {
+    id: "card",
+    label: "purchase.credit_card",
+    icon: <FaCreditCard size={28} />,
+  },
+  { id: "paypal", label: "purchase.paypal", icon: <FaPaypal size={28} /> },
 ];
 
 const PurchaseForm2 = ({
@@ -62,6 +71,7 @@ const PurchaseForm2 = ({
   submitted,
   onSubmit,
 }: PurchaseForm2Props) => {
+  const { t } = useTranslation();
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
   const set = (field: keyof PaymentData, value: string) => {
@@ -75,8 +85,9 @@ const PurchaseForm2 = ({
   const err = (field: keyof PaymentData) => {
     const show = touched[field] || submitted;
     if (!show) return null;
-    if (!data[field].trim()) return "This field is required";
-    if (data[field].length > MAX_LEN) return `Max ${MAX_LEN} characters`;
+    if (!data[field].trim()) return t("purchase.required");
+    if (data[field].length > MAX_LEN)
+      return t("purchase.max_chars", { count: MAX_LEN });
     return null;
   };
 
@@ -105,7 +116,7 @@ const PurchaseForm2 = ({
   return (
     <Box flex={1}>
       <Text fontSize="28px" fontWeight="800" color="text.heading" mb={6}>
-        Payment
+        {t("purchase.payment")}
       </Text>
 
       <VStack gap={5} align="stretch">
@@ -153,7 +164,7 @@ const PurchaseForm2 = ({
                     fontWeight="600"
                     color={selected ? "text.heading" : "text.placeholder"}
                   >
-                    {m.label}
+                    {t(m.label)}
                   </Text>
                 </Flex>
               </Box>
@@ -164,10 +175,10 @@ const PurchaseForm2 = ({
         <Box borderTop="2px dashed" borderColor="border.input" my={2} />
 
         <Box>
-          <Text {...labelStyle}>NAME ON CARD</Text>
+          <Text {...labelStyle}>{t("purchase.name_on_card")}</Text>
           <Input
             {...inputStyle}
-            placeholder="Enter name on card"
+            placeholder={t("purchase.enter_card_name")}
             value={data.nameOnCard}
             maxLength={MAX_LEN}
             onChange={(e) => set("nameOnCard", e.target.value)}
@@ -183,10 +194,10 @@ const PurchaseForm2 = ({
 
         <Flex gap={4}>
           <Box flex={2}>
-            <Text {...labelStyle}>CARD NUMBER</Text>
+            <Text {...labelStyle}>{t("purchase.card_number")}</Text>
             <Input
               {...inputStyle}
-              placeholder="0000 - 0000 - 0000 - 0000"
+              placeholder={t("purchase.card_placeholder")}
               value={data.cardNumber}
               maxLength={MAX_LEN}
               onChange={(e) => set("cardNumber", e.target.value)}
@@ -200,11 +211,11 @@ const PurchaseForm2 = ({
             )}
           </Box>
           <Box flex={1}>
-            <Text {...labelStyle}>CVV</Text>
+            <Text {...labelStyle}>{t("purchase.cvv")}</Text>
             <Box position="relative">
               <Input
                 {...inputStyle}
-                placeholder="Enter CVV"
+                placeholder={t("purchase.enter_cvv")}
                 value={data.cvv}
                 maxLength={MAX_LEN}
                 onChange={(e) => set("cvv", e.target.value)}
@@ -231,7 +242,7 @@ const PurchaseForm2 = ({
 
         <Flex gap={4}>
           <Box flex={1}>
-            <Text {...labelStyle}>MONTH</Text>
+            <Text {...labelStyle}>{t("purchase.month")}</Text>
             <NativeSelectRoot
               border="1px solid"
               borderColor={
@@ -256,7 +267,7 @@ const PurchaseForm2 = ({
                 _focusVisible={{ boxShadow: "none", outline: "none" }}
               >
                 <option value="" disabled>
-                  Select Month
+                  {t("purchase.select_month")}
                 </option>
                 {MONTHS.map((m) => (
                   <option key={m} value={m}>
@@ -270,12 +281,12 @@ const PurchaseForm2 = ({
             </NativeSelectRoot>
             {(touched.month || submitted) && !data.month && (
               <Text fontSize="12px" color="red.500" mt={1}>
-                This field is required
+                {t("purchase.required")}
               </Text>
             )}
           </Box>
           <Box flex={1}>
-            <Text {...labelStyle}>YEAR</Text>
+            <Text {...labelStyle}>{t("purchase.year")}</Text>
             <NativeSelectRoot
               border="1px solid"
               borderColor={
@@ -300,7 +311,7 @@ const PurchaseForm2 = ({
                 _focusVisible={{ boxShadow: "none", outline: "none" }}
               >
                 <option value="" disabled>
-                  Select Year
+                  {t("purchase.select_year")}
                 </option>
                 {YEARS.map((y) => (
                   <option key={y} value={y}>
@@ -314,7 +325,7 @@ const PurchaseForm2 = ({
             </NativeSelectRoot>
             {(touched.year || submitted) && !data.year && (
               <Text fontSize="12px" color="red.500" mt={1}>
-                This field is required
+                {t("purchase.required")}
               </Text>
             )}
           </Box>
@@ -334,7 +345,7 @@ const PurchaseForm2 = ({
           _hover={{ opacity: 0.85 }}
           onClick={onSubmit}
         >
-          Place Order
+          {t("purchase.place_order")}
         </Button>
       </VStack>
     </Box>

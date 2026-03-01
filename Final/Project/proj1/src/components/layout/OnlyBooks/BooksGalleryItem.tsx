@@ -7,6 +7,7 @@ import type { RootState } from "../../../store/store";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
 import { HeartBtn, StarRating } from "./BooksBtnCom";
 import type { Book } from "../../../types/book";
+import { useTranslation } from "react-i18next";
 
 interface BooksGalleryItemProps {
   book: Book;
@@ -16,6 +17,7 @@ const COVER_W = 230;
 const COVER_H = 320;
 
 const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
+  const { t } = useTranslation();
   const [hovered, setHovered] = useState(false);
   const dispatch = useDispatch();
   const inCart = useSelector((state: RootState) =>
@@ -191,7 +193,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                       dispatch(removeFromCart(book.id));
                     }}
                   >
-                    <Text>Already in cart</Text>
+                    <Text>{t("book_list.already_in_cart")}</Text>
                   </Flex>
                 ) : (
                   <Flex
@@ -215,7 +217,7 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                     }}
                   >
                     <FiShoppingCart size={14} />
-                    <Text>Add to cart</Text>
+                    <Text>{t("book_list.add_to_cart")}</Text>
                   </Flex>
                 )}
               </>

@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { useBooks } from "../../../hooks/useBooks";
 import type { Book } from "../../../types/book";
 import BookOnSaleCard from "./BookOnSaleCard";
+import { useTranslation } from "react-i18next";
 
 const BookOnSale = () => {
+  const { t } = useTranslation();
   const { books: allBooks, getBooks } = useBooks();
   const [books, setBooks] = useState<Book[]>([]);
 
@@ -33,7 +35,7 @@ const BookOnSale = () => {
           fontWeight="bold"
           color="text.strong"
         >
-          Books on Sale
+          {t("book_on_sale.title")}
         </Heading>
 
         <Grid

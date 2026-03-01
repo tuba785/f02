@@ -8,6 +8,7 @@ import {
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { FaCheck } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface PurchaseModalProps {
   isOpen: boolean;
@@ -15,6 +16,7 @@ interface PurchaseModalProps {
 }
 
 const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const goHome = () => {
@@ -73,12 +75,11 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
             </Box>
 
             <Text fontSize="22px" fontWeight="800" color="text.heading">
-              Purchase Successful!
+              {t("purchase_modal.success_title")}
             </Text>
 
             <Text fontSize="14px" color="text.placeholder" maxW="320px">
-              Your order has been placed successfully. Thank you for your
-              purchase!
+              {t("purchase_modal.success_description")}
             </Text>
 
             <Flex direction="column" gap={3} w="full" mt={2}>
@@ -93,7 +94,7 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
                 _hover={{ opacity: 0.85 }}
                 onClick={goHome}
               >
-                Back to Home
+                {t("purchase_modal.back_to_home")}
               </Button>
               <Button
                 bg="transparent"
@@ -108,7 +109,7 @@ const PurchaseModal = ({ isOpen, onClose }: PurchaseModalProps) => {
                 _hover={{ borderColor: "brand.purple", color: "brand.purple" }}
                 onClick={goPurchase}
               >
-                Back to Purchase
+                {t("purchase_modal.back_to_purchase")}
               </Button>
             </Flex>
           </Flex>

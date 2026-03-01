@@ -5,8 +5,10 @@ import { FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/slices/authSlice";
 import ProfileSettings from "../../layout/Modals/ProfileSettings";
+import { useTranslation } from "react-i18next";
 
 const ProfileButton = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -46,7 +48,7 @@ const ProfileButton = () => {
           onClick={() => setIsOpen(!isOpen)}
         >
           <FiUser />
-          <Box as="span">Profile</Box>
+          <Box as="span">{t("header.profile")}</Box>
         </Button>
 
         {isOpen && (
@@ -78,10 +80,10 @@ const ProfileButton = () => {
               </Flex>
               <Box>
                 <Text fontSize="14px" fontWeight="700" color="text.primary">
-                  Admin Admin
+                  {t("header.admin_name")}
                 </Text>
                 <Text fontSize="12px" color="text.secondary">
-                  Administrator
+                  {t("header.administrator")}
                 </Text>
               </Box>
             </Flex>
@@ -107,7 +109,7 @@ const ProfileButton = () => {
                 color="var(--chakra-colors-text-secondary)"
               />
               <Text fontSize="14px" fontWeight="600" color="text.primary">
-                Account Settings
+                {t("header.account_settings")}
               </Text>
             </Flex>
 
@@ -124,7 +126,7 @@ const ProfileButton = () => {
             >
               <FiLogOut size={16} color="var(--chakra-colors-status-error)" />
               <Text fontSize="14px" fontWeight="600" color="status.error">
-                Log Out
+                {t("header.log_out")}
               </Text>
             </Flex>
           </Box>

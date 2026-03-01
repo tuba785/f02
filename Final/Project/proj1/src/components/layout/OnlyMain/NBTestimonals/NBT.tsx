@@ -3,28 +3,31 @@ import { colors } from "../../../../styles/colors";
 import { TestimonialCard } from "./NBT2";
 import type { Testimonial } from "./NBT2";
 import NBT3 from "./NBT3";
+import { useTranslation } from "react-i18next";
 
 const NBT = () => {
+  const { t } = useTranslation();
+
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      text: "I never know this shop before, until my grandma and how excelent this book store",
-      name: "Miranda Lee",
-      role: "Book Lovers",
+      text: t("testimonials.items.0.text"),
+      name: t("testimonials.items.0.name"),
+      role: t("testimonials.items.0.role"),
       image: "https://picsum.photos/seed/us1/50/50",
     },
     {
       id: 2,
-      text: "Shoping book in Bookee is very easy. Quick delivery and fast respon. They service is awesome!",
-      name: "Steve Henry",
-      role: "Book Lovers",
+      text: t("testimonials.items.1.text"),
+      name: t("testimonials.items.1.name"),
+      role: t("testimonials.items.1.role"),
       image: "https://picsum.photos/seed/us2/50/50",
     },
     {
       id: 3,
-      text: "Amazing service and great selection of books. Highly recommend to everyone!",
-      name: "John Smith",
-      role: "Book Lovers",
+      text: t("testimonials.items.2.text"),
+      name: t("testimonials.items.2.name"),
+      role: t("testimonials.items.2.role"),
       image: "https://picsum.photos/seed/us3/50/50",
     },
   ];
@@ -39,15 +42,14 @@ const NBT = () => {
             fontWeight="bold"
             color="text.heading"
           >
-            Testimonials
+            {t("testimonials.title")}
           </Heading>
           <Text
             fontSize={{ base: "sm", md: "md" }}
             color="text.muted"
             maxW="600px"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore ut aliqua
+            {t("testimonials.description")}
           </Text>
         </VStack>
 

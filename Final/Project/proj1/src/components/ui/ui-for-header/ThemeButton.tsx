@@ -1,14 +1,16 @@
 import { IconButton } from "@chakra-ui/react";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useColorMode } from "../color-mode";
+import { useTranslation } from "react-i18next";
 
 const ThemeButton = () => {
+  const { t } = useTranslation();
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
   return (
     <IconButton
-      aria-label="Toggle theme"
+      aria-label={t("header.toggle_theme")}
       variant="outline"
       border="1px solid"
       borderColor="border.subtle"

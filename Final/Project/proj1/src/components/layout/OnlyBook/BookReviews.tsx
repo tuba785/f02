@@ -8,6 +8,7 @@ import { FaStar } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import { BsSortDown } from "react-icons/bs";
 import { StarRating } from "../OnlyBooks/BooksBtnCom";
+import { useTranslation } from "react-i18next";
 
 const RATING_BARS: { stars: number; pct: number }[] = [
   { stars: 5, pct: 86 },
@@ -49,6 +50,7 @@ const REVIEWS = [
 ];
 
 const BookReviews = () => {
+  const { t } = useTranslation();
   return (
     <Flex
       direction="column"
@@ -60,7 +62,7 @@ const BookReviews = () => {
       <Flex px={8} pt={8} pb={6} gap={8} align="center">
         <Flex direction="column" gap={2} maxW="260px" flexShrink={0}>
           <Text fontSize="22px" fontWeight="800" color="text.heading">
-            Rating Information
+            {t("book_reviews.rating_information")}
           </Text>
           <Text fontSize="13px" color="text.muted" lineHeight="1.6">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -111,7 +113,7 @@ const BookReviews = () => {
               4.7
             </Text>
             <Text fontSize="14px" fontWeight="400" color="text.muted">
-              out of 5
+              {t("book_reviews.out_of_5")}
             </Text>
           </Flex>
           <StarRating rating={4.7} size={22} />
@@ -122,7 +124,7 @@ const BookReviews = () => {
 
       <Flex align="center" justify="space-between" px={8} py={4}>
         <Text fontSize="15px" fontWeight="700" color="text.heading">
-          Showing 4 of 20 reviews
+          {t("book_reviews.showing_reviews", { shown: 4, total: 20 })}
         </Text>
         <Flex align="center" gap={2}>
           <Box color="brand.purple" display="flex" alignItems="center">
@@ -139,10 +141,10 @@ const BookReviews = () => {
               _focusVisible={{ boxShadow: "none", outline: "none" }}
               defaultValue="newest"
             >
-              <option value="newest">Newest</option>
-              <option value="oldest">Oldest</option>
-              <option value="highest">Highest</option>
-              <option value="lowest">Lowest</option>
+              <option value="newest">{t("book_reviews.newest")}</option>
+              <option value="oldest">{t("book_reviews.oldest")}</option>
+              <option value="highest">{t("book_reviews.highest")}</option>
+              <option value="lowest">{t("book_reviews.lowest")}</option>
             </NativeSelectField>
             <NativeSelectIndicator color="text.muted">
               <FiChevronDown />
@@ -214,7 +216,7 @@ const BookReviews = () => {
           transition="opacity 0.15s"
           _hover={{ opacity: 0.9 }}
         >
-          View More
+          {t("book_reviews.view_more")}
         </Flex>
       </Box>
     </Flex>

@@ -2,6 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import type { RootState } from "../../../store/store";
 import { toggleFavorite } from "../../../store/slices/favoritesSlice";
 import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
@@ -62,6 +63,7 @@ export const AddToCartBtn = ({
   qty = 1,
   onClick,
 }: AddToCartBtnProps) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const inCart = useSelector((state: RootState) =>
     bookId ? state.cart.items.some((i) => i.bookId === bookId) : false,
@@ -97,7 +99,7 @@ export const AddToCartBtn = ({
           if (bookId) dispatch(removeFromCart(bookId));
         }}
       >
-        <Text>Already in cart</Text>
+        <Text>{t("book_list.already_in_cart")}</Text>
       </Flex>
     );
   }
@@ -119,7 +121,7 @@ export const AddToCartBtn = ({
       onClick={handleClick}
     >
       <FiShoppingCart size={16} />
-      <Text>Add to cart</Text>
+      <Text>{t("book_list.add_to_cart")}</Text>
     </Flex>
   );
 };
@@ -128,27 +130,31 @@ interface AlreadyInCartBtnProps {
   onClick?: () => void;
 }
 
-export const AlreadyInCartBtn = ({ onClick }: AlreadyInCartBtnProps) => (
-  <Flex
-    align="center"
-    gap={2}
-    bg="bg.surface"
-    color="brand.purple"
-    border="1.5px solid"
-    borderColor="brand.purple"
-    px={5}
-    h="44px"
-    borderRadius="10px"
-    cursor="pointer"
-    fontWeight="600"
-    fontSize="14px"
-    transition="all 0.2s"
-    _hover={{ bg: "brand.lightPurple" }}
-    onClick={onClick}
-  >
-    <Text>Already in cart</Text>
-  </Flex>
-);
+export const AlreadyInCartBtn = ({ onClick }: AlreadyInCartBtnProps) => {
+  const { t } = useTranslation();
+  return (
+    <Flex
+      align="center"
+      gap={2}
+      bg="bg.surface"
+      color="brand.purple"
+      border="1.5px solid"
+      borderColor="brand.purple"
+      px={5}
+      h="44px"
+      borderRadius="10px"
+      cursor="pointer"
+      fontWeight="600"
+      fontSize="14px"
+      transition="all 0.2s"
+      _hover={{ bg: "brand.lightPurple" }}
+      onClick={onClick}
+    >
+      <Text>{t("book_list.already_in_cart")}</Text>
+    </Flex>
+  );
+};
+// );
 
 interface HeartBtnProps {
   bookId?: string;

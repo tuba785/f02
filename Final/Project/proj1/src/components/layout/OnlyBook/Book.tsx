@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Flex, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 import BookMainInfo from "./BookMainInfo";
 import BookDetails from "./BookDetails";
@@ -13,6 +14,7 @@ interface BookProps {
 }
 
 const Book = ({ bookId = "15" }: BookProps) => {
+  const { t } = useTranslation();
   const [tab, setTab] = useState<Tab>("details");
 
   return (
@@ -36,7 +38,7 @@ const Book = ({ bookId = "15" }: BookProps) => {
               onClick={() => setTab("details")}
               _hover={{ color: "text.heading" }}
             >
-              Details Product
+              {t("book_detail.details_product")}
             </Text>
             <Text
               fontSize="20px"
@@ -52,7 +54,7 @@ const Book = ({ bookId = "15" }: BookProps) => {
               onClick={() => setTab("reviews")}
               _hover={{ color: "text.heading" }}
             >
-              Customer Reviews
+              {t("book_detail.customer_reviews")}
             </Text>
           </Flex>
 
@@ -65,7 +67,7 @@ const Book = ({ bookId = "15" }: BookProps) => {
 
         <Flex direction="column" gap={6} w="320px" minW="320px" flexShrink={0}>
           <Text fontSize="20px" fontWeight="700" color="text.heading">
-            Related Books
+            {t("book_detail.related_books")}
           </Text>
           <RelatedBooks />
         </Flex>

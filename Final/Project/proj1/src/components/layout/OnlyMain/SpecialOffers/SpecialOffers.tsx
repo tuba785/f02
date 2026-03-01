@@ -9,8 +9,10 @@ import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
 import { colors } from "../../../../styles/colors";
 import SpecialOffersCard from "./SpecialOffersCard";
+import { useTranslation } from "react-i18next";
 
 const SpecialOffers = () => {
+  const { t } = useTranslation();
   const { books: allBooks, getBooks } = useBooks();
   const [books, setBooks] = useState<Book[]>([]);
   const [canSlidePrev, setCanSlidePrev] = useState(false);
@@ -70,11 +72,10 @@ const SpecialOffers = () => {
             fontWeight="bold"
             color="text.heading"
           >
-            Special Offers
+            {t("special_offers.title")}
           </Heading>
           <Text fontSize={{ base: "sm", md: "md" }} color="text.muted">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            {t("special_offers.description")}
           </Text>
         </VStack>
 

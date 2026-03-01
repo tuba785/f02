@@ -1,0 +1,366 @@
+{
+  "header": {
+    "cart": "Cart",
+    "favorites": "Favorites",
+    "toggle_theme": "Toggle theme",
+    "log_in": "Log In",
+    "sign_up": "Sign Up",
+    "profile": "Profile",
+    "admin_name": "Admin Admin",
+    "administrator": "Administrator",
+    "account_settings": "Account Settings",
+    "log_out": "Log Out",
+    "menus": "Menus",
+    "search_placeholder": "Search over 30 million book titles"
+  },
+  "footer": {
+    "copyright": "Bookoe Book Store Website - © 2026 All Rights Reserved",
+    "made_with": "Made with ❤️ by",
+    "author": "Peterdraw",
+    "books_categories": "Books Categories",
+    "quick_links": "Quick Links",
+    "follow_us": "Follow Us",
+    "description": "Bookoe is a Book Store Website lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "our_store": "Our Store",
+    "address": "832 Thompson Drive, San Fransisco CA 94107, United States",
+    "categories": {
+      "action": "Action",
+      "adventure": "Adventure",
+      "comedy": "Comedy",
+      "crime": "Crime",
+      "drama": "Drama",
+      "fantasy": "Fantasy",
+      "horror": "Horror",
+      "view_more": "View more"
+    },
+    "links": {
+      "about_us": "About us",
+      "contact_us": "Contact us",
+      "products": "Products",
+      "login": "Login",
+      "sign_up": "Sign Up",
+      "faq": "FAQ",
+      "shipment": "Shipment"
+    }
+  },
+  "banner1": {
+    "slides": [
+      {
+        "title": "Special 50% Off",
+        "subtitle": "for our student community",
+        "badge": "BACK TO SCHOOL",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+      },
+      {
+        "title": "Extra 40% Off",
+        "subtitle": "for our elder community",
+        "badge": "SENIOR SPECIAL",
+        "description": "Exclusive offer for our valued seniors. Enjoy premium products and services with special senior discounts. Experience quality and comfort with our dedicated senior-friendly options."
+      },
+      {
+        "title": "Amazing 45% Off",
+        "subtitle": "for kids and families",
+        "badge": "KIDS SPECIAL",
+        "description": "Make your kids happy! Special discounts on educational toys, games, and children products. Safe, fun, and affordable options for your little ones and family enjoyment."
+      },
+      {
+        "title": "Bundle Deal 55% Off",
+        "subtitle": "buy more save more",
+        "badge": "FAMILY BUNDLE",
+        "description": "Perfect for family shopping! Get amazing discounts when you bundle your purchases. Mix and match products from different categories and save even more on your total purchase."
+      }
+    ],
+    "get_the_deal": "Get the deal",
+    "see_other_promos": "See other promos"
+  },
+  "mini_slider": {
+    "best_seller": "Best Seller",
+    "based_sales": "Based sales this week"
+  },
+  "banner2": {
+    "title": "Recommended For You",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner3": {
+    "title": "Popular in 2020",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner4": {
+    "featured_books": "Featured Books",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+    "written_by": "Written by",
+    "year": "Year",
+    "add": "ADD"
+  },
+  "fresh_sale": {
+    "title": "Flash Sale",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "day": "Day",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "second": "Second"
+  },
+  "special_offers": {
+    "title": "Special Offers",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "add_to_cart": "Add to cart",
+    "already_in_cart": "Already in cart"
+  },
+  "statistics": {
+    "happy_customers": "Happy Customers",
+    "book_collections": "Book Collections",
+    "our_stores": "Our Stores",
+    "famous_writers": "Famous Writers"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ut aliqua",
+    "items": [
+      {
+        "text": "I never know this shop before, until my grandma and how excelent this book store",
+        "name": "Miranda Lee",
+        "role": "Book Lovers"
+      },
+      {
+        "text": "Shoping book in Bookee is very easy. Quick delivery and fast respon. They service is awesome!",
+        "name": "Steve Henry",
+        "role": "Book Lovers"
+      },
+      {
+        "text": "Amazing service and great selection of books. Highly recommend to everyone!",
+        "name": "John Smith",
+        "role": "Book Lovers"
+      }
+    ]
+  },
+  "latest_news": {
+    "title": "Latest News",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "view_more": "View more",
+    "continue_reading": "Continue reading",
+    "articles": [
+      {
+        "title": "Why reading is important for our children?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "Benefits of reading: Smart, Diligent, Happy",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "What books you should read in 2020?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "10 Things you must know to improve your reading skills",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      }
+    ]
+  },
+  "books_page": {
+    "filter_option": "Filter Option",
+    "search_results_for": "Search results for:",
+    "books": "Books",
+    "no_books_found": "No books found",
+    "try_adjusting": "Try adjusting your filters or search criteria"
+  },
+  "filters": {
+    "editor_picks": "Editor Picks",
+    "bestsellers": "Bestsellers",
+    "has_discount": "Has Discount",
+    "most_likes": "Most Likes (Top 10)",
+    "most_comments": "Most Comments (Top 10)",
+    "shop_by_category": "Shop by Category",
+    "choose_format": "Choose Format",
+    "choose_language": "Choose Language",
+    "select_year": "Select Year",
+    "price_range": "Price Range",
+    "refine_search": "Refine Search",
+    "reset_filter": "Reset Filter",
+    "view_more": "View more ▼",
+    "view_less": "View less ▲"
+  },
+  "sorting": {
+    "all": "All",
+    "none": "None",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "price_high": "Price: High",
+    "price_low": "Price: Low",
+    "rating": "Rating",
+    "likes": "Likes"
+  },
+  "book_list": {
+    "reviews": "Reviews",
+    "off_discount": "OFF Discount",
+    "bestseller": "Bestseller",
+    "written_by": "Written by",
+    "publisher": "Publisher",
+    "year": "Year",
+    "add_to_cart": "Add to cart",
+    "already_in_cart": "Already in cart"
+  },
+  "pagination": {
+    "showing": "Showing {{start}}-{{end}} from {{total}} data",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "book_detail": {
+    "details_product": "Details Product",
+    "customer_reviews": "Customer Reviews",
+    "related_books": "Related Books",
+    "book_title": "Book Title",
+    "author": "Author",
+    "isbn": "ISBN",
+    "edition_language": "Edition Language",
+    "book_format": "Book Format",
+    "date_published": "Date Published",
+    "publisher": "Publisher",
+    "tags": "Tags",
+    "written_by": "Written by",
+    "year": "Year",
+    "free_shipping": "Free Shipping",
+    "in_stocks": "In Stocks",
+    "reviews": "Reviews",
+    "like": "Like",
+    "view_more": "View More",
+    "pages": "Pages",
+    "book_not_found": "Book not found",
+    "failed_to_load": "Failed to load book details",
+    "failed_to_load_book": "Failed to load book"
+  },
+  "book_reviews": {
+    "rating_information": "Rating Information",
+    "rating_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim",
+    "out_of_5": "out of 5",
+    "showing_reviews": "Showing {{shown}} of {{total}} reviews",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "highest": "Highest",
+    "lowest": "Lowest",
+    "view_more": "View More"
+  },
+  "cart": {
+    "title": "Cart",
+    "go_to_payment": "Go to Payment",
+    "clear": "Clear",
+    "empty_title": "Your cart is empty",
+    "empty_description": "Browse books and add them to your cart to see them here.",
+    "total": "Total ({{count}} items)"
+  },
+  "favorites": {
+    "title": "Favorites",
+    "remove_all": "Remove All",
+    "empty_title": "No favorites yet",
+    "empty_description": "Browse books and tap the heart icon to save your favorites here."
+  },
+  "menus": {
+    "view_all_books": "View All Books",
+    "browse_by_genre": "Browse by Genre"
+  },
+  "search": {
+    "search_results": "Search results",
+    "no_books_found": "No books found for \"{{query}}\""
+  },
+  "profile_settings": {
+    "title": "Account Settings",
+    "coming_soon": "Settings coming soon",
+    "description": "Account settings and profile customization will be available in a future update."
+  },
+  "purchase": {
+    "buyer_info": "Buyer Info",
+    "first_name": "FIRST NAME",
+    "last_name": "LAST NAME",
+    "email_address": "EMAIL ADDRESS",
+    "phone_number": "MOBILE PHONE NUMBER",
+    "address": "ADDRESS",
+    "state": "STATE",
+    "postcode": "POSTCODE/ZIP",
+    "city": "TOWN/CITY",
+    "note": "NOTE",
+    "enter_first_name": "Enter first name",
+    "enter_last_name": "Enter last name",
+    "email_placeholder": "email@example.com",
+    "enter_phone": "Enter phone number",
+    "enter_address": "Enter your address",
+    "select_state": "Select State",
+    "enter_postcode": "Enter postcode",
+    "enter_city": "Enter city",
+    "notes_placeholder": "Any additional notes...",
+    "required": "This field is required",
+    "max_chars": "Max {{count}} characters",
+    "invalid_email": "Invalid email address",
+    "payment": "Payment",
+    "bank_transfer": "Bank Transfer",
+    "credit_card": "Credit Card",
+    "paypal": "Paypal",
+    "name_on_card": "NAME ON CARD",
+    "card_number": "CARD NUMBER",
+    "cvv": "CVV",
+    "month": "MONTH",
+    "year": "YEAR",
+    "enter_card_name": "Enter name on card",
+    "card_placeholder": "0000 - 0000 - 0000 - 0000",
+    "enter_cvv": "Enter CVV",
+    "select_month": "Select Month",
+    "select_year": "Select Year",
+    "place_order": "Place Order",
+    "states": {
+      "england": "England",
+      "us": "US",
+      "azerbaijan": "Azerbaijan",
+      "turkey": "Turkey",
+      "russia": "Russia",
+      "other": "Other"
+    }
+  },
+  "purchase_modal": {
+    "success_title": "Purchase Successful!",
+    "success_description": "Your order has been placed successfully. Thank you for your purchase!",
+    "back_to_home": "Back to Home",
+    "back_to_purchase": "Back to Purchase"
+  },
+  "stepper": {
+    "shopping_summary": "Shopping Summary",
+    "checkout": "Checkout",
+    "payment": "Payment",
+    "shipping": "Shipping"
+  },
+  "error_page": {
+    "title": "An Error Occurred",
+    "default_message": "Something went wrong on our end. Please try again later.",
+    "back_to_home": "Back to Home",
+    "go_back": "Go Back"
+  },
+  "not_found": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "back_to_home": "Back to Home"
+  },
+  "features": {
+    "quick_delivery": "Quick Delivery",
+    "secure_payment": "Secure Payment",
+    "best_quality": "Best Quality",
+    "return_guarantee": "Return Guarantee",
+    "quick_delivery_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "secure_payment_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "best_quality_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "return_guarantee_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+  },
+  "subscription": {
+    "title": "Subscribe our newsletter for newest books updates",
+    "placeholder": "Type your email here",
+    "button": "SUBSCRIBE"
+  },
+  "book_on_sale": {
+    "title": "Books on Sale"
+  },
+  "coming_soon": {
+    "title": "Coming Soon",
+    "description": "This section is under construction. Stay tuned!"
+  },
+  "cvv_info": {
+    "title": "What is CVV?",
+    "description": "The CVV is a 3 or 4 digit security code on the back of your credit or debit card. It helps verify that you have the physical card."
+  }
+}

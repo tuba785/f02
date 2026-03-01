@@ -1,33 +1,36 @@
 import { Box, Grid, VStack, Text } from "@chakra-ui/react";
 import { FaUsers, FaBook, FaStore, FaFeather } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface StatisticItem {
   icon: React.ReactNode;
   number: string;
-  label: string;
+  labelKey: string;
 }
 
 const StatisticsField = () => {
+  const { t } = useTranslation();
+
   const statistics: StatisticItem[] = [
     {
       icon: <FaUsers size={80} />,
       number: "125,663",
-      label: "Happy Customers",
+      labelKey: "statistics.happy_customers",
     },
     {
       icon: <FaBook size={80} />,
       number: "50,672+",
-      label: "Book Collections",
+      labelKey: "statistics.book_collections",
     },
     {
       icon: <FaStore size={80} />,
       number: "1,562",
-      label: "Our Stores",
+      labelKey: "statistics.our_stores",
     },
     {
       icon: <FaFeather size={80} />,
       number: "457",
-      label: "Famous Writers",
+      labelKey: "statistics.famous_writers",
     },
   ];
 
@@ -47,7 +50,7 @@ const StatisticsField = () => {
               {stat.number}
             </Text>
             <Text fontSize="14px" color="text.placeholder">
-              {stat.label}
+              {t(stat.labelKey)}
             </Text>
           </VStack>
         ))}

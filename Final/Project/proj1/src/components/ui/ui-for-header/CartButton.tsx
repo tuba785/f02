@@ -5,8 +5,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../../store/store";
 import Cart from "../../layout/Modals/Cart";
+import { useTranslation } from "react-i18next";
 
 const CartButton = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const totalItems = useSelector((state: RootState) =>
     state.cart.items.reduce((sum, ci) => sum + ci.qty, 0),
@@ -16,7 +18,7 @@ const CartButton = () => {
     <>
       <Box position="relative">
         <IconButton
-          aria-label="Cart"
+          aria-label={t("header.cart")}
           variant="outline"
           border="1px solid"
           borderColor="border.subtle"

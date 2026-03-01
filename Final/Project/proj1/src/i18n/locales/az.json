@@ -1,0 +1,366 @@
+{
+  "header": {
+    "cart": "Səbət",
+    "favorites": "Sevimlilər",
+    "toggle_theme": "Tema dəyiş",
+    "log_in": "Daxil ol",
+    "sign_up": "Qeydiyyat",
+    "profile": "Profil",
+    "admin_name": "Admin Admin",
+    "administrator": "Administrator",
+    "account_settings": "Hesab Parametrləri",
+    "log_out": "Çıxış",
+    "menus": "Menyu",
+    "search_placeholder": "30 milyondan çox kitab arasında axtarış"
+  },
+  "footer": {
+    "copyright": "Bookoe Kitab Mağazası Vebsaytı - © 2026 Bütün Hüquqlar Qorunur",
+    "made_with": "❤️ ilə hazırlanıb",
+    "author": "Peterdraw",
+    "books_categories": "Kitab Kateqoriyaları",
+    "quick_links": "Sürətli Keçidlər",
+    "follow_us": "Bizi İzləyin",
+    "description": "Bookoe Kitab Mağazası Vebsaytıdır lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "our_store": "Mağazamız",
+    "address": "832 Thompson Drive, San Fransisko CA 94107, ABŞ",
+    "categories": {
+      "action": "Ekşn",
+      "adventure": "Macəra",
+      "comedy": "Komediya",
+      "crime": "Cinayət",
+      "drama": "Drama",
+      "fantasy": "Fantaziya",
+      "horror": "Dəhşət",
+      "view_more": "Daha çox"
+    },
+    "links": {
+      "about_us": "Haqqımızda",
+      "contact_us": "Əlaqə",
+      "products": "Məhsullar",
+      "login": "Giriş",
+      "sign_up": "Qeydiyyat",
+      "faq": "FAQ",
+      "shipment": "Çatdırılma"
+    }
+  },
+  "banner1": {
+    "slides": [
+      {
+        "title": "Xüsusi 50% Endirim",
+        "subtitle": "tələbə icması üçün",
+        "badge": "MƏKTƏBƏ QAYIDIŞ",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+      },
+      {
+        "title": "Əlavə 40% Endirim",
+        "subtitle": "yaşlı icmamız üçün",
+        "badge": "YAŞLI XÜSUSİ",
+        "description": "Dəyərli yaşlılarımız üçün eksklüziv təklif. Xüsusi yaşlı endirmləri ilə premium məhsul və xidmətlərdən yararlanın."
+      },
+      {
+        "title": "Möhtəşəm 45% Endirim",
+        "subtitle": "uşaqlar və ailələr üçün",
+        "badge": "UŞAQ XÜSUSİ",
+        "description": "Uşaqlarınızı sevindirin! Təhsil oyuncaqları, oyunlar və uşaq məhsullarında xüsusi endirimlər. Balacalarınız üçün təhlükəsiz və əyləncəli seçimlər."
+      },
+      {
+        "title": "Paket Sövdələşmə 55% Endirim",
+        "subtitle": "daha çox al daha çox qənaət et",
+        "badge": "AİLƏ PAKETİ",
+        "description": "Ailə alış-verişi üçün mükəmməl! Alışlarınızı birləşdirəndə möhtəşəm endirimlər əldə edin. Müxtəlif kateqoriyalardan məhsulları qarışdırın."
+      }
+    ],
+    "get_the_deal": "Sövdələşməni al",
+    "see_other_promos": "Digər aksiyalar"
+  },
+  "mini_slider": {
+    "best_seller": "Ən Çox Satılan",
+    "based_sales": "Bu həftənin satışlarına əsasən"
+  },
+  "banner2": {
+    "title": "Sizin Üçün Tövsiyə",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner3": {
+    "title": "2020-də Populyar",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "banner4": {
+    "featured_books": "Seçilmiş Kitablar",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+    "written_by": "Müəllif",
+    "year": "İl",
+    "add": "ƏLAVƏ ET"
+  },
+  "fresh_sale": {
+    "title": "Ani Satış",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "day": "Gün",
+    "hours": "Saat",
+    "minutes": "Dəqiqə",
+    "second": "Saniyə"
+  },
+  "special_offers": {
+    "title": "Xüsusi Təkliflər",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "add_to_cart": "Səbətə əlavə et",
+    "already_in_cart": "Artıq səbətdə"
+  },
+  "statistics": {
+    "happy_customers": "Məmnun Müştərilər",
+    "book_collections": "Kitab Kolleksiyaları",
+    "our_stores": "Mağazalarımız",
+    "famous_writers": "Məşhur Yazıçılar"
+  },
+  "testimonials": {
+    "title": "Rəylər",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore ut aliqua",
+    "items": [
+      {
+        "text": "Bu mağazanı əvvəl tanımırdım, nənəmə qədər. Bu kitab mağazası əladır!",
+        "name": "Miranda Lee",
+        "role": "Kitab Həvəskarları"
+      },
+      {
+        "text": "Bookoe-da kitab almaq çox asandır. Sürətli çatdırılma və tez cavab. Xidmətləri möhtəşəmdir!",
+        "name": "Steve Henry",
+        "role": "Kitab Həvəskarları"
+      },
+      {
+        "text": "Möhtəşəm xidmət və geniş kitab seçimi. Hər kəsə tövsiyə edirəm!",
+        "name": "John Smith",
+        "role": "Kitab Həvəskarları"
+      }
+    ]
+  },
+  "latest_news": {
+    "title": "Son Xəbərlər",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "view_more": "Daha çox",
+    "continue_reading": "Oxumağa davam et",
+    "articles": [
+      {
+        "title": "Oxumaq niyə uşaqlarımız üçün vacibdir?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "Oxumağın faydaları: Ağıllı, Çalışqan, Xoşbəxt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "2020-də hansı kitabları oxumalısınız?",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      },
+      {
+        "title": "Oxu bacarıqlarınızı yaxşılaşdırmaq üçün bilməli olduğunuz 10 şey",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+      }
+    ]
+  },
+  "books_page": {
+    "filter_option": "Filtr Seçimi",
+    "search_results_for": "Axtarış nəticələri:",
+    "books": "Kitablar",
+    "no_books_found": "Kitab tapılmadı",
+    "try_adjusting": "Filtrlərini və ya axtarış meyarlarını düzəltməyə çalışın"
+  },
+  "filters": {
+    "editor_picks": "Redaktor Seçimi",
+    "bestsellers": "Bestsellerlər",
+    "has_discount": "Endirimli",
+    "most_likes": "Ən Çox Bəyənilən (İlk 10)",
+    "most_comments": "Ən Çox Şərh (İlk 10)",
+    "shop_by_category": "Kateqoriyaya Görə",
+    "choose_format": "Format Seçin",
+    "choose_language": "Dil Seçin",
+    "select_year": "İl Seçin",
+    "price_range": "Qiymət Aralığı",
+    "refine_search": "Axtarışı Dəqiqləşdir",
+    "reset_filter": "Filtri Sıfırla",
+    "view_more": "Daha çox ▼",
+    "view_less": "Daha az ▲"
+  },
+  "sorting": {
+    "all": "Hamısı",
+    "none": "Heç biri",
+    "newest": "Ən Yeni",
+    "oldest": "Ən Köhnə",
+    "price_high": "Qiymət: Bahalı",
+    "price_low": "Qiymət: Ucuz",
+    "rating": "Reytinq",
+    "likes": "Bəyənmələr"
+  },
+  "book_list": {
+    "reviews": "Rəylər",
+    "off_discount": "Endirim",
+    "bestseller": "Bestseller",
+    "written_by": "Müəllif",
+    "publisher": "Nəşriyyat",
+    "year": "İl",
+    "add_to_cart": "Səbətə əlavə et",
+    "already_in_cart": "Artıq səbətdə"
+  },
+  "pagination": {
+    "showing": "{{start}}-{{end}} göstərilir, cəmi {{total}}",
+    "previous": "Əvvəlki",
+    "next": "Növbəti"
+  },
+  "book_detail": {
+    "details_product": "Məhsul Detalları",
+    "customer_reviews": "Müştəri Rəyləri",
+    "related_books": "Oxşar Kitablar",
+    "book_title": "Kitab Adı",
+    "author": "Müəllif",
+    "isbn": "ISBN",
+    "edition_language": "Nəşr Dili",
+    "book_format": "Kitab Formatı",
+    "date_published": "Nəşr Tarixi",
+    "publisher": "Nəşriyyat",
+    "tags": "Etiketlər",
+    "written_by": "Müəllif",
+    "year": "İl",
+    "free_shipping": "Pulsuz Çatdırılma",
+    "in_stocks": "Anbarda Var",
+    "reviews": "Rəylər",
+    "like": "Bəyənmə",
+    "view_more": "Daha Çox",
+    "pages": "Səhifə",
+    "book_not_found": "Kitab tapılmadı",
+    "failed_to_load": "Kitab detallarını yükləmək alınmadı",
+    "failed_to_load_book": "Kitabı yükləmək alınmadı"
+  },
+  "book_reviews": {
+    "rating_information": "Reytinq Məlumatı",
+    "rating_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim",
+    "out_of_5": "5-dən",
+    "showing_reviews": "{{total}} rəydən {{shown}} göstərilir",
+    "newest": "Ən Yeni",
+    "oldest": "Ən Köhnə",
+    "highest": "Ən Yüksək",
+    "lowest": "Ən Aşağı",
+    "view_more": "Daha Çox"
+  },
+  "cart": {
+    "title": "Səbət",
+    "go_to_payment": "Ödənişə Keç",
+    "clear": "Təmizlə",
+    "empty_title": "Səbətiniz boşdur",
+    "empty_description": "Kitablara baxın və onları burada görmək üçün səbətə əlavə edin.",
+    "total": "Cəmi ({{count}} məhsul)"
+  },
+  "favorites": {
+    "title": "Sevimlilər",
+    "remove_all": "Hamısını Sil",
+    "empty_title": "Hələ sevimli yoxdur",
+    "empty_description": "Kitablara baxın və sevimlilər siyahısına əlavə etmək üçün ürək işarəsinə toxunun."
+  },
+  "menus": {
+    "view_all_books": "Bütün Kitablara Bax",
+    "browse_by_genre": "Janra Görə Gözdən Keçir"
+  },
+  "search": {
+    "search_results": "Axtarış nəticələri",
+    "no_books_found": "\"{{query}}\" üçün kitab tapılmadı"
+  },
+  "profile_settings": {
+    "title": "Hesab Parametrləri",
+    "coming_soon": "Parametrlər tezliklə",
+    "description": "Hesab parametrləri və profil fərdiləşdirmə gələcək yeniləmədə mövcud olacaq."
+  },
+  "purchase": {
+    "buyer_info": "Alıcı Məlumatları",
+    "first_name": "AD",
+    "last_name": "SOYAD",
+    "email_address": "E-POÇT ÜNVANI",
+    "phone_number": "MOBİL TELEFON NÖMRƏSİ",
+    "address": "ÜNVAN",
+    "state": "ÖLKƏ",
+    "postcode": "POÇİNDEKS",
+    "city": "ŞƏHƏR",
+    "note": "QEYD",
+    "enter_first_name": "Adınızı daxil edin",
+    "enter_last_name": "Soyadınızı daxil edin",
+    "email_placeholder": "email@example.com",
+    "enter_phone": "Telefon nömrəsini daxil edin",
+    "enter_address": "Ünvanınızı daxil edin",
+    "select_state": "Ölkə seçin",
+    "enter_postcode": "Poçindeksi daxil edin",
+    "enter_city": "Şəhəri daxil edin",
+    "notes_placeholder": "Əlavə qeydlər...",
+    "required": "Bu sahə məcburidir",
+    "max_chars": "Maksimum {{count}} simvol",
+    "invalid_email": "Yanlış e-poçt ünvanı",
+    "payment": "Ödəniş",
+    "bank_transfer": "Bank Köçürməsi",
+    "credit_card": "Kredit Kartı",
+    "paypal": "Paypal",
+    "name_on_card": "KARTDAKI AD",
+    "card_number": "KART NÖMRƏSİ",
+    "cvv": "CVV",
+    "month": "AY",
+    "year": "İL",
+    "enter_card_name": "Kartdakı adı daxil edin",
+    "card_placeholder": "0000 - 0000 - 0000 - 0000",
+    "enter_cvv": "CVV daxil edin",
+    "select_month": "Ay seçin",
+    "select_year": "İl seçin",
+    "place_order": "Sifariş Ver",
+    "states": {
+      "england": "İngiltərə",
+      "us": "ABŞ",
+      "azerbaijan": "Azərbaycan",
+      "turkey": "Türkiyə",
+      "russia": "Rusiya",
+      "other": "Digər"
+    }
+  },
+  "purchase_modal": {
+    "success_title": "Alış Uğurlu!",
+    "success_description": "Sifarişiniz uğurla yerləşdirildi. Alışınız üçün təşəkkür edirik!",
+    "back_to_home": "Ana Səhifəyə Qayıt",
+    "back_to_purchase": "Alışa Qayıt"
+  },
+  "stepper": {
+    "shopping_summary": "Alış-veriş Xülasəsi",
+    "checkout": "Yoxlama",
+    "payment": "Ödəniş",
+    "shipping": "Çatdırılma"
+  },
+  "error_page": {
+    "title": "Xəta Baş Verdi",
+    "default_message": "Bizdə bir xəta baş verdi. Zəhmət olmasa sonra yenidən cəhd edin.",
+    "back_to_home": "Ana Səhifəyə Qayıt",
+    "go_back": "Geri Qayıt"
+  },
+  "not_found": {
+    "title": "Səhifə Tapılmadı",
+    "description": "Axtardığınız səhifə mövcud deyil və ya köçürülüb.",
+    "back_to_home": "Ana Səhifəyə Qayıt"
+  },
+  "features": {
+    "quick_delivery": "Sürətli Çatdırılma",
+    "secure_payment": "Təhlükəsiz Ödəniş",
+    "best_quality": "Ən Yaxşı Keyfiyyət",
+    "return_guarantee": "Geri Qaytarma Zəmanəti",
+    "quick_delivery_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "secure_payment_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "best_quality_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "return_guarantee_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+  },
+  "subscription": {
+    "title": "Ən yeni kitab yenilikləri üçün bülletenimizə abunə olun",
+    "placeholder": "E-poçtunuzu bura yazın",
+    "button": "ABUNƏ OL"
+  },
+  "book_on_sale": {
+    "title": "Endirimdə Olan Kitablar"
+  },
+  "coming_soon": {
+    "title": "Tezliklə",
+    "description": "Bu bölmə hazırlanma mərhələsindədir. İzləməyə davam edin!"
+  },
+  "cvv_info": {
+    "title": "CVV nədir?",
+    "description": "CVV kredit və ya debet kartınızın arxasındakı 3 və ya 4 rəqəmli təhlükəsizlik kodudur. Fiziki kartın sizdə olduğunu təsdiqləməyə kömək edir."
+  }
+}

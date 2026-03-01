@@ -1,8 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaInfoCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const CVVInfo = () => {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
 
   return (
@@ -30,11 +32,10 @@ const CVVInfo = () => {
           zIndex={20}
         >
           <Text fontSize="12px" fontWeight="600" mb={1}>
-            What is CVV?
+            {t("cvv_info.title")}
           </Text>
           <Text fontSize="11px" lineHeight="1.5" color="text.muted">
-            The CVV is a 3 or 4 digit security code on the back of your credit
-            or debit card. It helps verify that you have the physical card.
+            {t("cvv_info.description")}
           </Text>
           <Box
             position="absolute"
