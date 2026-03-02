@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { FiShoppingCart } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,6 +20,8 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
   const { t } = useTranslation();
   const [hovered, setHovered] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const inCart = useSelector((state: RootState) =>
     state.cart.items.some((i) => i.bookId === book.id),
   );
@@ -213,6 +215,10 @@ const BooksGalleryItem = ({ book }: BooksGalleryItemProps) => {
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
+                      if (!isLoggedIn) {
+                        navigate("/login");
+                        return;
+                      }
                       dispatch(addToCart({ bookId: book.id }));
                     }}
                   >

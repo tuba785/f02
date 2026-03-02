@@ -37,7 +37,7 @@ const Header = () => {
             <Image
               src={
                 colorMode === "dark"
-                  ? "/bookoe_logo_dark.svg"
+                  ? "/bookoe-logo-dark.svg"
                   : "/bookoe-logo-main.svg"
               }
               alt="Bookoe logo"

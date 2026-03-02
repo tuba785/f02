@@ -1,5 +1,5 @@
 import { Box, VStack, HStack, Text, Image, Button } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../../store/store";
@@ -15,6 +15,8 @@ interface SpecialOffersCardProps {
 const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const inCart = useSelector((state: RootState) =>
     state.cart.items.some((i) => i.bookId === book.id),
   );
@@ -130,6 +132,10 @@ const SpecialOffersCard = ({ book }: SpecialOffersCardProps) => {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                if (!isLoggedIn) {
+                  navigate("/login");
+                  return;
+                }
                 dispatch(addToCart({ bookId: book.id }));
               }}
             >

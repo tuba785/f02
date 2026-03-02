@@ -24,23 +24,24 @@
     "our_store": "Our Store",
     "address": "832 Thompson Drive, San Fransisco CA 94107, United States",
     "categories": {
-      "action": "Action",
-      "adventure": "Adventure",
-      "comedy": "Comedy",
-      "crime": "Crime",
-      "drama": "Drama",
+      "biography": "Biography",
       "fantasy": "Fantasy",
+      "historical": "Historical",
       "horror": "Horror",
-      "view_more": "View more"
+      "mystery": "Mystery",
+      "romance": "Romance",
+      "sci_fi": "Sci-Fi",
+      "self_help": "Self-help",
+      "thriller": "Thriller",
+      "young_adult": "Young-adult"
     },
     "links": {
-      "about_us": "About us",
-      "contact_us": "Contact us",
-      "products": "Products",
-      "login": "Login",
+      "books": "Books",
+      "login": "Log In",
       "sign_up": "Sign Up",
-      "faq": "FAQ",
-      "shipment": "Shipment"
+      "about_us": "About Us",
+      "promos": "Promos",
+      "terms": "Terms"
     }
   },
   "banner1": {
@@ -362,5 +363,154 @@
   "cvv_info": {
     "title": "What is CVV?",
     "description": "The CVV is a 3 or 4 digit security code on the back of your credit or debit card. It helps verify that you have the physical card."
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "subtitle": "Sign in to continue to your account",
+    "email": "EMAIL ADDRESS",
+    "email_placeholder": "email@example.com",
+    "password": "PASSWORD",
+    "password_placeholder": "Enter your password",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password?",
+    "submit": "Log In",
+    "no_account": "Don't have an account?",
+    "sign_up_link": "Sign Up",
+    "required": "This field is required",
+    "max_chars": "Max {{count}} characters",
+    "min_chars": "Min {{count}} characters",
+    "invalid_email": "Invalid email address"
+  },
+  "signup": {
+    "title": "Create Account",
+    "subtitle": "Join our community of book lovers",
+    "first_name": "FIRST NAME",
+    "first_name_placeholder": "Enter your first name",
+    "last_name": "LAST NAME",
+    "last_name_placeholder": "Enter your last name",
+    "email": "EMAIL ADDRESS",
+    "email_placeholder": "email@example.com",
+    "password": "PASSWORD",
+    "password_placeholder": "Create a password",
+    "confirm_password": "CONFIRM PASSWORD",
+    "confirm_password_placeholder": "Confirm your password",
+    "agree_terms": "I agree to the Terms of Service and Privacy Policy",
+    "submit": "Sign Up",
+    "have_account": "Already have an account?",
+    "log_in_link": "Log In",
+    "required": "This field is required",
+    "max_chars": "Max {{count}} characters",
+    "min_chars": "Min {{count}} characters",
+    "invalid_email": "Invalid email address",
+    "passwords_not_match": "Passwords do not match"
+  },
+  "terms_info": {
+    "title": "Terms Required",
+    "description": "You must accept the Terms of Service and Privacy Policy before creating an account. Please read our",
+    "link": "Terms & Conditions"
+  },
+  "terms": {
+    "page_title": "Terms of Service & Privacy Policy",
+    "last_updated": "Last updated: March 1, 2026",
+    "intro": "Welcome to Bookoe. By accessing or using our website, mobile application, and services (collectively, the \"Services\"), you agree to be bound by these Terms of Service and our Privacy Policy. Please read them carefully before using our platform.",
+    "section1_title": "1. Account Registration & Eligibility",
+    "section1_p1": "To use certain features of our Services, you must create an account. You must be at least 13 years of age to register. By creating an account, you represent that you are of legal age in your jurisdiction or that you have obtained parental consent. You agree to provide accurate, current, and complete information during registration and to update such information as necessary.",
+    "section1_p2": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to immediately notify Bookoe of any unauthorized use of your account or any other security breach. Bookoe will not be liable for any loss or damage arising from your failure to protect your login credentials.",
+    "section2_title": "2. Use of Services",
+    "section2_p1": "Our Services are provided for personal, non-commercial use only. You may browse, search, and purchase books and related products through the platform. You shall not use the Services for any unlawful purpose, to transmit harmful or objectionable content, to interfere with the proper working of the platform, or to attempt to gain unauthorized access to any system or network.",
+    "section2_p2": "Bookoe reserves the right to suspend or terminate your account at any time if we reasonably believe that you have violated these Terms of Service or engaged in fraudulent activity. We also reserve the right to modify, suspend, or discontinue any aspect of the Services at any time without prior notice.",
+    "section3_title": "3. Orders, Pricing & Payment",
+    "section3_p1": "All prices displayed on the platform are in the currency indicated and may be subject to applicable taxes and shipping fees. Bookoe reserves the right to change prices at any time without prior notice. Promotional discounts and special offers are valid only for the specified period and may not be combined with other offers unless explicitly stated.",
+    "section3_p2": "When you place an order, you are making an offer to purchase. Bookoe reserves the right to accept or reject any order. Payment must be made at the time of order using an accepted payment method. In the event of a pricing error, Bookoe reserves the right to cancel the order and issue a full refund.",
+    "section4_title": "4. Shipping & Returns",
+    "section4_p1": "Bookoe offers shipping to select regions. Estimated delivery times are provided for informational purposes and are not guaranteed. Bookoe is not responsible for delays caused by shipping carriers, customs, or other factors beyond our control. Risk of loss transfers to the buyer upon delivery to the shipping carrier.",
+    "section4_p2": "You may return eligible items within 30 days of delivery for a full refund or exchange, provided the items are in their original condition. Digital products, gift cards, and items marked as final sale are not eligible for return. To initiate a return, please contact our customer support team with your order details.",
+    "section5_title": "5. Privacy & Data Collection",
+    "section5_p1": "Bookoe collects and processes personal information in accordance with applicable data protection laws. This includes information you provide during registration (name, email, address), browsing data, purchase history, and technical information such as IP address and device information. We use this data to operate and improve our Services, process transactions, and communicate with you.",
+    "section5_p2": "We do not sell your personal information to third parties. We may share your information with trusted service providers who assist us in operating the platform, processing payments, and delivering products. You have the right to access, correct, or delete your personal data at any time by contacting us or using your account settings.",
+    "section6_title": "6. Intellectual Property",
+    "section6_p1": "All content on the Bookoe platform, including text, graphics, logos, images, software, and other materials, is the property of Bookoe or its content suppliers and is protected by international copyright, trademark, and intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without explicit written permission from Bookoe.",
+    "section7_title": "7. Limitation of Liability",
+    "section7_p1": "To the maximum extent permitted by applicable law, Bookoe and its affiliates, officers, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the Services. Our total liability shall not exceed the amount you paid for the product or service giving rise to the claim.",
+    "section8_title": "8. Contact Information",
+    "section8_p1": "If you have any questions about these Terms of Service or our Privacy Policy, please contact us at support@bookoe.com or write to us at 832 Thompson Drive, San Francisco CA 94107, United States. We aim to respond to all inquiries within 48 business hours."
+  },
+  "about": {
+    "badge": "ABOUT US",
+    "hero_title": "We Make Books Accessible to Everyone",
+    "hero_description": "Bookoe is a passionate team of book lovers dedicated to connecting readers with their next great read. Since 2018, we've been building the ultimate online bookstore experience.",
+    "story_title": "Our Story",
+    "story_p1": "Bookoe was founded in 2018 by a group of avid readers who believed that discovering and purchasing books online should be as enjoyable as browsing a physical bookstore. What started as a small passion project has grown into one of the most trusted online book retailers.",
+    "story_p2": "Our journey began in a small office in San Francisco, where our founders spent countless hours curating collections, building relationships with publishers, and developing a platform that puts readers first. Today, we serve millions of customers worldwide.",
+    "story_p3": "We believe that every book has the power to change a life, inspire creativity, and broaden perspectives. That's why we work tirelessly to make books accessible, affordable, and easy to discover for readers of all ages and interests.",
+    "stats": {
+      "books": "Book Collections",
+      "books_count": "30M+",
+      "customers": "Happy Customers",
+      "customers_count": "2M+",
+      "deliveries": "Deliveries Completed",
+      "deliveries_count": "5M+",
+      "countries": "Countries Served",
+      "countries_count": "50+"
+    },
+    "values_title": "Our Core Values",
+    "values_description": "These principles guide everything we do — from curating our catalog to delivering your order.",
+    "values": {
+      "passion_title": "Passion for Reading",
+      "passion_desc": "We are readers at heart. Every decision we make is driven by our love for books and the reading community.",
+      "mission_title": "Customer First",
+      "mission_desc": "Your satisfaction is our top priority. We strive to provide exceptional service at every touchpoint.",
+      "quality_title": "Quality Selection",
+      "quality_desc": "We carefully curate our catalog to ensure every book meets our standards of excellence and relevance.",
+      "trust_title": "Trust & Security",
+      "trust_desc": "Your data and transactions are protected with industry-leading security measures. Shop with confidence."
+    },
+    "team_title": "Meet Our Team",
+    "team_description": "The passionate people behind Bookoe who work every day to bring you the best reading experience.",
+    "team": {
+      "member1_name": "Sarah Johnson",
+      "member1_role": "CEO & Founder",
+      "member1_bio": "Visionary leader with 15+ years in publishing and e-commerce. Passionate about making literature accessible to all.",
+      "member2_name": "Michael Chen",
+      "member2_role": "CTO",
+      "member2_bio": "Tech innovator who built Bookoe's platform from the ground up. Former engineer at leading tech companies.",
+      "member3_name": "Emily Rodriguez",
+      "member3_role": "Head of Curation",
+      "member3_bio": "Literary expert who handpicks our collections. Reads 100+ books per year and knows every genre inside out.",
+      "member4_name": "David Kim",
+      "member4_role": "Head of Operations",
+      "member4_bio": "Logistics specialist ensuring your books arrive on time, every time. Manages our global delivery network."
+    },
+    "why_title": "Why Choose Bookoe?",
+    "why": {
+      "reason1_title": "Vast Selection",
+      "reason1_desc": "Over 30 million titles across every genre imaginable. From bestsellers to rare finds, we have it all.",
+      "reason2_title": "Fast & Free Shipping",
+      "reason2_desc": "Free shipping on orders over $25. Most orders are delivered within 2-5 business days worldwide.",
+      "reason3_title": "Best Prices Guaranteed",
+      "reason3_desc": "Competitive pricing with regular discounts and flash sales. We match any competitor's price.",
+      "reason4_title": "Easy Returns",
+      "reason4_desc": "30-day hassle-free return policy. Not satisfied? Send it back for a full refund, no questions asked."
+    },
+    "contact_title": "Get in Touch",
+    "contact_description": "Have questions, feedback, or partnership inquiries? We'd love to hear from you. Our support team is available 24/7 to assist you."
+  },
+  "promos": {
+    "page_title": "Promotions & Deals",
+    "page_subtitle": "Explore our current promotions and save big on your favorite books.",
+    "items": [
+      {
+        "details": "Valid for all students with a valid student ID. Applies to all books in the store, including new releases and bestsellers. Offer cannot be combined with other promotions. One-time use per customer."
+      },
+      {
+        "details": "Available to customers 60 years and older with valid identification. Covers the entire catalog including audiobooks and e-books. No minimum purchase required. Valid in-store and online."
+      },
+      {
+        "details": "Applies to the entire children's section including picture books, educational materials, and young-adult fiction. Families can combine discounts across up to 5 items per order."
+      },
+      {
+        "details": "Buy 3 or more books and receive the bundle discount on your entire order. Mix and match any genre or format. Free gift wrapping included for bundles over $50."
+      }
+    ]
   }
 }

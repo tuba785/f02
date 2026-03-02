@@ -1,5 +1,5 @@
 import { Flex, Text, Image, Box } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
@@ -43,6 +43,8 @@ const BOOKS = [
 const RelatedBooks = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
@@ -156,6 +158,10 @@ const RelatedBooks = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
+                    if (!isLoggedIn) {
+                      navigate("/login");
+                      return;
+                    }
                     dispatch(addToCart({ bookId: book.id }));
                   }}
                 >

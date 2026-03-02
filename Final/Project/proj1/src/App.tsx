@@ -4,8 +4,11 @@ import BooksPage from "./pages/Books/BooksPage";
 import BookPage from "./pages/Book/BookPage";
 import LoginPage from "./pages/Login/LoginPage";
 import RegisterPage from "./pages/Register/RegisterPage";
+import TermsPage from "./pages/Terms/TermsPage";
+import AboutUsPage from "./pages/AboutUs/AboutUsPage";
 import PurchasePage from "./pages/Purchase/PurchasePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import PromosPage from "./pages/Promos/PromosPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -44,8 +47,20 @@ const router = createBrowserRouter([
         element: <RegisterPage />,
       },
       {
+        path: "/terms",
+        element: <TermsPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutUsPage />,
+      },
+      {
         path: "/purchase",
         element: <PurchasePage />,
+      },
+      {
+        path: "/promos",
+        element: <PromosPage />,
       },
       {
         path: "*",

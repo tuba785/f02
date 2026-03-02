@@ -300,7 +300,6 @@ const CartItem = ({
       transition="box-shadow 0.15s"
       _hover={{ boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
     >
-      {/* Thumbnail */}
       <Link
         to={`/books/${book.id}`}
         onClick={onNavigate}

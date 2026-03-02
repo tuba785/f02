@@ -81,10 +81,30 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
   const authorImg = `https://picsum.photos/seed/author${book.id}/48/48`;
 
   const socials = [
-    { icon: FaFacebookF, label: "Facebook", bg: "#3b5998" },
-    { icon: FaTwitter, label: "Twitter", bg: "#1da1f2" },
-    { icon: FaWhatsapp, label: "Whatsapp", bg: "#25d366" },
-    { icon: FaEnvelope, label: "Email", bg: "#555555" },
+    {
+      icon: FaFacebookF,
+      label: "Facebook",
+      bg: "#3b5998",
+      url: "https://www.facebook.com",
+    },
+    {
+      icon: FaTwitter,
+      label: "Twitter",
+      bg: "#1da1f2",
+      url: "https://www.x.com",
+    },
+    {
+      icon: FaWhatsapp,
+      label: "Whatsapp",
+      bg: "#25d366",
+      url: "https://www.whatsapp.com",
+    },
+    {
+      icon: FaEnvelope,
+      label: "Email",
+      bg: "#555555",
+      url: "https://mail.google.com",
+    },
   ];
 
   return (
@@ -142,24 +162,31 @@ const BookMainInfo = ({ bookId = "15" }: BookMainInfoProps) => {
 
           <Flex gap={2} flexShrink={0} ml="auto">
             {socials.map((s) => (
-              <Flex
+              <a
                 key={s.label}
-                align="center"
-                gap={1.5}
-                bg={s.bg}
-                color="text.onBrand"
-                px={3}
-                h="32px"
-                borderRadius="8px"
-                cursor="pointer"
-                fontSize="13px"
-                fontWeight="600"
-                transition="opacity 0.15s"
-                _hover={{ opacity: 0.85 }}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
               >
-                <s.icon size={12} />
-                <Text>{s.label}</Text>
-              </Flex>
+                <Flex
+                  align="center"
+                  gap={1.5}
+                  bg={s.bg}
+                  color="text.onBrand"
+                  px={3}
+                  h="32px"
+                  borderRadius="8px"
+                  cursor="pointer"
+                  fontSize="13px"
+                  fontWeight="600"
+                  transition="opacity 0.15s"
+                  _hover={{ opacity: 0.85 }}
+                >
+                  <s.icon size={12} />
+                  <Text>{s.label}</Text>
+                </Flex>
+              </a>
             ))}
           </Flex>
         </Flex>

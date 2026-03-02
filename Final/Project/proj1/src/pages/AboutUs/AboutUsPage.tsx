@@ -1,15 +1,15 @@
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
-import LoginComponent from "../../components/layout/Account/LoginComponent";
+import AboutUsCompanent from "../../components/layout/Aboutus/AboutUsCompanent";
 
-const LoginPage = () => {
+const AboutUsPage = () => {
   return (
     <>
       <Header />
-      <LoginComponent />
+      <AboutUsCompanent />
       <Footer />
     </>
   );
 };
 
-export default LoginPage;
+export default AboutUsPage;

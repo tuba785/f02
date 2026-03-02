@@ -24,23 +24,24 @@
     "our_store": "Mağazamız",
     "address": "832 Thompson Drive, San Fransisko CA 94107, ABŞ",
     "categories": {
-      "action": "Ekşn",
-      "adventure": "Macəra",
-      "comedy": "Komediya",
-      "crime": "Cinayət",
-      "drama": "Drama",
+      "biography": "Bioqrafiya",
       "fantasy": "Fantaziya",
+      "historical": "Tarixi",
       "horror": "Dəhşət",
-      "view_more": "Daha çox"
+      "mystery": "Detektiv",
+      "romance": "Romantika",
+      "sci_fi": "Sci-Fi",
+      "self_help": "Self-help",
+      "thriller": "Triller",
+      "young_adult": "Young-adult"
     },
     "links": {
-      "about_us": "Haqqımızda",
-      "contact_us": "Əlaqə",
-      "products": "Məhsullar",
-      "login": "Giriş",
+      "books": "Kitablar",
+      "login": "Daxil ol",
       "sign_up": "Qeydiyyat",
-      "faq": "FAQ",
-      "shipment": "Çatdırılma"
+      "about_us": "Haqqımızda",
+      "promos": "Aksiyalar",
+      "terms": "Şərtlər"
     }
   },
   "banner1": {
@@ -362,5 +363,154 @@
   "cvv_info": {
     "title": "CVV nədir?",
     "description": "CVV kredit və ya debet kartınızın arxasındakı 3 və ya 4 rəqəmli təhlükəsizlik kodudur. Fiziki kartın sizdə olduğunu təsdiqləməyə kömək edir."
+  },
+  "login": {
+    "title": "Xoş Gəldiniz!",
+    "subtitle": "Hesabınıza daxil olmaq üçün giriş edin",
+    "email": "E-POÇT ÜNVANI",
+    "email_placeholder": "email@example.com",
+    "password": "ŞİFRƏ",
+    "password_placeholder": "Şifrənizi daxil edin",
+    "remember_me": "Məni yadda saxla",
+    "forgot_password": "Şifrəni unutdunuz?",
+    "submit": "Daxil ol",
+    "no_account": "Hesabınız yoxdur?",
+    "sign_up_link": "Qeydiyyat",
+    "required": "Bu sahə məcburidir",
+    "max_chars": "Maksimum {{count}} simvol",
+    "min_chars": "Minimum {{count}} simvol",
+    "invalid_email": "Yanlış e-poçt ünvanı"
+  },
+  "signup": {
+    "title": "Hesab Yaradın",
+    "subtitle": "Kitab həvəskarları icmasına qoşulun",
+    "first_name": "AD",
+    "first_name_placeholder": "Adınızı daxil edin",
+    "last_name": "SOYAD",
+    "last_name_placeholder": "Soyadınızı daxil edin",
+    "email": "E-POÇT ÜNVANI",
+    "email_placeholder": "email@example.com",
+    "password": "ŞİFRƏ",
+    "password_placeholder": "Şifrə yaradın",
+    "confirm_password": "ŞİFRƏNİ TƏSDİQLƏ",
+    "confirm_password_placeholder": "Şifrənizi təsdiqləyin",
+    "agree_terms": "İstifadə Şərtləri və Məxfilik Siyasəti ilə razıyam",
+    "submit": "Qeydiyyat",
+    "have_account": "Artıq hesabınız var?",
+    "log_in_link": "Daxil ol",
+    "required": "Bu sahə məcburidir",
+    "max_chars": "Maksimum {{count}} simvol",
+    "min_chars": "Minimum {{count}} simvol",
+    "invalid_email": "Yanlış e-poçt ünvanı",
+    "passwords_not_match": "Şifrələr uyğun gəlmir"
+  },
+  "terms_info": {
+    "title": "Şərtlər Tələb Olunur",
+    "description": "Hesab yaratmazdan əvvəl İstifadə Şərtləri və Məxfilik Siyasətini qəbul etməlisiniz. Zəhmət olmasa bizim",
+    "link": "Şərtlər və Qaydaları"
+  },
+  "terms": {
+    "page_title": "İstifadə Şərtləri və Məxfilik Siyasəti",
+    "last_updated": "Son yenilənmə: 1 Mart 2026",
+    "intro": "Bookoe-ya xoş gəlmisiniz. Veb saytımıza, mobil tətbiqimizə və xidmətlərimizə (birlikdə \"Xidmətlər\") daxil olaraq və ya istifadə edərək, bu İstifadə Şərtləri və Məxfilik Siyasətimiz ilə bağlı olmaq barədə razılaşırsınız. Zəhmət olmasa platformamızı istifadə etməzdən əvvəl onları diqqətlə oxuyun.",
+    "section1_title": "1. Hesab Qeydiyyatı və Uyğunluq",
+    "section1_p1": "Xidmətlərimizin müəyyən funksiyalarından istifadə etmək üçün hesab yaratmalısınız. Qeydiyyatdan keçmək üçün ən az 13 yaşında olmalısınız. Hesab yaradaraq hüquqi yaşda olduğunuzu və ya valideyn razılığı aldığınızı təsdiq edirsiniz. Qeydiyyat zamanı dəqiq, cari və tam məlumat verməyi öhdəsinizə götürürsünüz.",
+    "section1_p2": "Hesab məlumatlarınızın məxfiliyini qorumaq və hesabınız altında baş verən bütün fəaliyyətlər üçün siz məsuliyyət daşıyırsınız. Hesabınızın icazəsiz istifadəsi barədə dərhal Bookoe-ya məlumat verməyi qəbul edirsiniz. Giriş məlumatlarınızı qorumadığınız təqdirdə Bookoe heç bir itki və ya zərərə görə məsuliyyət daşımır.",
+    "section2_title": "2. Xidmətlərdən İstifadə",
+    "section2_p1": "Xidmətlərimiz yalnız şəxsi, qeyri-kommersiya istifadəsi üçün təqdim olunur. Platforma üzrə kitab və əlaqəli məhsulları axtarıb ala bilərsiniz. Xidmətlərdən qanunsuz məqsədlə, zərərli və ya itirazedici məzmun ötürmək, platformanın düzgün işləməsinə müdaxilə etmək üçün istifadə etməməlisiniz.",
+    "section2_p2": "Bu İstifadə Şərtlərini pozduqda və ya dələdəkarlıq fəaliyyəti ilə məşğul olduqda Bookoe hesabınızı dayandırmaq və ya ləğv etmək hüququnu özündə saxlayır. Biz həmçinin xidmətlərin istənilən aspektini əvvəlcədən xəbərdarlıq etmədən dəyişdirmək, dayandırmaq və ya dayandırmaq hüququmuzu saxlayırıq.",
+    "section3_title": "3. Sifarişlər, Qiymətlər və Ödəniş",
+    "section3_p1": "Platformada göstərilən bütün qiymətlər göstərilən valyutadadır və vergılər və çatdırılma haqllarına tabe ola bilər. Bookoe qiymətləri istənilən vaxt əvvəlcədən xəbərdarlıq etmədən dəyişdirmək hüququnu özündə saxlayır. Promosyon endirımləri və xüsusi təkliflər yalnız müəyyən müddət üçün keçərlidir.",
+    "section3_p2": "Sifariş verərkən satınalma təklifi edirsiniz. Bookoe istənilən sifarişi qəbul və ya rədd etmək hüququnu özündə saxlayır. Ödəniş sifariş zamanı qəbul edilmiş ödəniş üsulu ilə edilməlidir. Qiymət xətası halında Bookoe sifarişi ləğv edib tam geri ödəmə hüququnu saxlayır.",
+    "section4_title": "4. Çatdırılma və Geri Qaytarma",
+    "section4_p1": "Bookoe seçilmiş regionlara çatdırılma təklif edir. Təxmini çatdırılma müddətləri məlumat məqsədli verilir və zəmanət deyil. Bookoe çatdırılma şirkətləri, gömrük və ya nəzarətimizdən kənar digər amillər üzündən yaranan gecikmələrə görə məsuliyyət daşımır.",
+    "section4_p2": "Çatdırılmadan sonra 30 gün ərzində uyğun məhsulları orijinal vəziyyətdə qaytara bilərsiniz. Rəqəmsal məhsullar, hədiyyə kartları və son satış kimi qeyd olunan məhsullar qaytarma üçün uyğun deyil. Qaytarma üçün müştəri dəstəyi komandamızla əlaqə saxlayın.",
+    "section5_title": "5. Məxfilik və Məlumat Toplama",
+    "section5_p1": "Bookoe şəxsi məlumatları müvafiq məlumatların müdafiəsi qanunlarına uyğun olaraq toplayır və emal edir. Bura qeydiyyat zamanı verdiyiniz məlumatlar (ad, e-poçt, ünvan), baxma məlumatları, alış tarixçəsi və texniki məlumatlar (IP ünvanı, cihaz məlumatı) daxildir.",
+    "section5_p2": "Şəxsi məlumatlarınızı üçüncü tərəflərə satmırıq. Məlumatlarınızı platformanın idarə olunmasında, ödənişlərin emalında və məhsulların çatdırılmasında bizə kömək edən etibarlı xidmət təminatçıları ilə paylaşa bilərik. İstənilən vaxt şəxsi məlumatlarınıza daxil olmaq, düzəltmək və ya silmək hüququnuz var.",
+    "section6_title": "6. İntellektual Mülkiyyət",
+    "section6_p1": "Bookoe platformasındakı bütün məzmun, o cümlədən mətn, qrafika, loqolar, şəkillər və proqram təminatı Bookoe-nun və ya məzmun təminatçılarının mülkiyyətidir və beynəlxalq müəllif hüququ qanunları ilə qorunur. Bookoe-dan yazılı icazə olmadan heç bir məzmunu çoxaltmaq, yaymaq və ya dəyişdirmək olmaz.",
+    "section7_title": "7. Məsuliyyətin Məhdudlaşdırılması",
+    "section7_p1": "Tətbiq olunan qanunvericiliyin icazə verdiyi maksimum həddə qədər, Bookoe və onun filialları, məmurları, işçiləri Xidmətlərdən istifadənizlə bağlı birbaşa olmayan, təsadüfi, xüsusi və ya cəza xarakterli zərərlərə görə məsuliyyət daşımır.",
+    "section8_title": "8. Əlaqə Məlumatları",
+    "section8_p1": "Bu İstifadə Şərtləri və ya Məxfilik Siyasətimiz haqqında suallarınız varsa, zəhmət olmasa support@bookoe.com ünvanına yazın və ya 832 Thompson Drive, San Fransisko CA 94107, ABŞ ünvanına müraciət edin. Bütün sorğulara 48 iş saatı ərzındə cavab verməyə çalışırıq."
+  },
+  "about": {
+    "badge": "HAQQIMIZDA",
+    "hero_title": "Kitabları Hər Kəs Üçün Əlçatan Edirik",
+    "hero_description": "Bookoe — oxucuları növbəti möhtəşəm kitabları ilə birləşdirməyə həsr olunmuş kitab həvəskarları komandasıdır. 2018-ci ildən bəri ən yaxşı onlayn kitab mağazası təcrübəsini qururuq.",
+    "story_title": "Bizim Hekayəmiz",
+    "story_p1": "Bookoe 2018-ci ildə kitab onlayn tapmağın və almağın fiziki kitab mağazasını gəzmək qədər xoş olmalı olduğuna inanan həvəsli oxucular qrupu tərəfindən quruldu. Kiçik bir hobidən başlayan layihə ən etibarlı onlayn kitab satıcılarından birinə çevrildi.",
+    "story_p2": "Yolumuz San Fransiskodakı kiçik bir ofisdə başladı, burada təsisçilərimiz kolleksiyalar yaratmaq, naşirlərlə əlaqələr qurmaq və oxuculara yönəlmiş platforma inkişaf etdirmək üçün saatlarla çalışdılar. Bu gün biz dünya üzrə milyonlarla müştəriyə xidmət göstəririk.",
+    "story_p3": "Hər kitabın həyatı dəyişdirmək, yaradıcılığa ilham vermək və üfüqləri genişləndirmək gücünə malik olduğuna inanırıq. Buna görə bütün yaş və maraqlardan olan oxucular üçün kitabları əlçatan etmək üçün yorulmadan çalışırıq.",
+    "stats": {
+      "books": "Kitab Kolleksiyası",
+      "books_count": "30M+",
+      "customers": "Məmnun Müştəri",
+      "customers_count": "2M+",
+      "deliveries": "Tamamlanmış Çatdırılma",
+      "deliveries_count": "5M+",
+      "countries": "Xidmət Göstərilən Ölkə",
+      "countries_count": "50+"
+    },
+    "values_title": "Əsas Dəyərlərimiz",
+    "values_description": "Bu prinsiplər etdiyimiz hər şeyə rəhbərlik edir — kataloq formalaşdırmaqdan sifarişinizin çatdırılmasına qədər.",
+    "values": {
+      "passion_title": "Oxumağa Ehtiras",
+      "passion_desc": "Biz ürəyimizdə oxucuyuq. Hər qərarımız kitablara və oxucu icmasına olan sevgimizlə idarə olunur.",
+      "mission_title": "Müştəri Birinci",
+      "mission_desc": "Sizin məmnuniyyətiniz bizim əsas prioritetimizdir. Hər nöqtədə müstəsna xidmət göstərməyə çalışırıq.",
+      "quality_title": "Keyfiyyətli Seçim",
+      "quality_desc": "Hər kitabın mükəmməllik standartlarımıza cavab verməsini təmin etmək üçün kataloqu diqqətlə formalaşdırırıq.",
+      "trust_title": "Etibar və Təhlükəsizlik",
+      "trust_desc": "Məlumatlarınız və əməliyyatlarınız sənaye lideri təhlükəsizlik tədbirləri ilə qorunur. Əminliklə alış-veriş edin."
+    },
+    "team_title": "Komandamızla Tanış Olun",
+    "team_description": "Hər gün sizə ən yaxşı oxu təcrübəsini təqdim etmək üçün çalışan Bookoe-nun həvəsli insanları.",
+    "team": {
+      "member1_name": "Sarah Johnson",
+      "member1_role": "CEO və Qurucu",
+      "member1_bio": "Nəşriyyat və e-ticarətdə 15+ illik təcrübəyə malik lider. Ədəbiyyatı hər kəs üçün əlçatan etməyə həsr olunub.",
+      "member2_name": "Michael Chen",
+      "member2_role": "Texniki Direktor",
+      "member2_bio": "Bookoe platformasını sıfırdan quran texnologiya novatoru. Aparıcı texnologiya şirkətlərinin keçmiş mühəndisi.",
+      "member3_name": "Emily Rodriguez",
+      "member3_role": "Seçim Rəhbəri",
+      "member3_bio": "Kolleksiyalarımızı şəxsən seçən ədəbiyyat mütəxəssisi. İldə 100-dən çox kitab oxuyur.",
+      "member4_name": "David Kim",
+      "member4_role": "Əməliyyat Rəhbəri",
+      "member4_bio": "Kitablarınızın vaxtında çatmasını təmin edən logistika mütəxəssisi. Qlobal çatdırılma şəbəkəsini idarə edir."
+    },
+    "why_title": "Niyə Bookoe?",
+    "why": {
+      "reason1_title": "Geniş Seçim",
+      "reason1_desc": "Hər janrda 30 milyondan çox kitab. Bestsellerlərdən nadir tapıntılara qədər — hər şey bizdə var.",
+      "reason2_title": "Sürətli və Pulsuz Çatdırılma",
+      "reason2_desc": "$25-dan yuxarı sifarişlərə pulsuz çatdırılma. Əksər sifarişlər 2-5 iş günü ərzində dünya üzrə çatdırılır.",
+      "reason3_title": "Ən Yaxşı Qiymətlər",
+      "reason3_desc": "Müntəzəm endirimlər və ani satışlarla rəqabətli qiymətləndirmə. İstənilən rəqibin qiymətini uyğunlaşdırırıq.",
+      "reason4_title": "Asan Geri Qaytarma",
+      "reason4_desc": "30 günlük problemsiz qaytarma siyasəti. Razı deyilsiniz? Tam geri ödəmə üçün göndərin."
+    },
+    "contact_title": "Bizimlə Əlaqə",
+    "contact_description": "Suallarınız, rəyləriniz və ya əməkdaşlıq təklifləriniz var? Sizdən eşitmək istərdik. Dəstək komandamız 24/7 sizin xidmətinizdədir."
+  },
+  "promos": {
+    "page_title": "Aksiyalar və Təkliflər",
+    "page_subtitle": "Cari aksiyalarımızı kəşf edin və sevimli kitablarınızda qənaət edin.",
+    "items": [
+      {
+        "details": "Etibarlı tələbə vəsiqəsi olan bütün tələbələr üçün keçərlidir. Mağazadakı bütün kitablara, o cümlədən yeni buraxılışlara və bestselerlərə şamil edilir. Digər aksiyalarla birləşdirilə bilməz. Hər müştəri üçün bir dəfəlik."
+      },
+      {
+        "details": "Etibarlı şəxsiyyət vəsiqəsi olan 60 yaş və yuxarı müştərilər üçün mövcuddur. Audiokitablar və e-kitablar daxil olmaqla bütün kataloqu əhatə edir. Minimum alış tələb olunmur. Mağazada və onlayn keçərlidir."
+      },
+      {
+        "details": "Şəkilli kitablar, təhsil materialları və gənc-yetkin bədii ədəbiyyat daxil olmaqla bütün uşaq bölməsinə şamil edilir. Ailələr hər sifarişdə 5 məhsula qədər endirimlər birləşdirə bilər."
+      },
+      {
+        "details": "3 və ya daha çox kitab alın və bütün sifarişinizə paket endirimi əldə edin. İstənilən janr və formatı qarışdırın. $50-dan yuxarı paketlər üçün pulsuz hədiyyə paketləmə daxildir."
+      }
+    ]
   }
 }

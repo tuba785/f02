@@ -1,70 +1,65 @@
-import { HStack, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Grid, HStack, Text, VStack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
+const GENRES = [
+  { genre: "Biography", key: "biography" },
+  { genre: "Fantasy", key: "fantasy" },
+  { genre: "Historical", key: "historical" },
+  { genre: "Horror", key: "horror" },
+  { genre: "Mystery", key: "mystery" },
+  { genre: "Romance", key: "romance" },
+  { genre: "Sci-Fi", key: "sci_fi" },
+  { genre: "Self-help", key: "self_help" },
+  { genre: "Thriller", key: "thriller" },
+  { genre: "Young-adult", key: "young_adult" },
+];
+
+const QUICK_LINKS = [
+  { key: "books", path: "/books" },
+  { key: "login", path: "/login" },
+  { key: "sign_up", path: "/register" },
+  { key: "promos", path: "/promos" },
+  { key: "about_us", path: "/about" },
+  { key: "terms", path: "/terms" },
+];
+
+const linkStyle = {
+  fontSize: "16px",
+  color: "text.subtle",
+  textDecoration: "none",
+  transition: "color 0.15s",
+  _hover: {
+    color: "brand.purple",
+    textDecoration: "none",
+  },
+};
 
 const CenterFooter = () => {
   const { t } = useTranslation();
 
-  const booksCategories = [
-    { key: "action", label: t("footer.categories.action") },
-    { key: "adventure", label: t("footer.categories.adventure") },
-    { key: "comedy", label: t("footer.categories.comedy") },
-    { key: "crime", label: t("footer.categories.crime") },
-    { key: "drama", label: t("footer.categories.drama") },
-    { key: "fantasy", label: t("footer.categories.fantasy") },
-    { key: "horror", label: t("footer.categories.horror") },
-    { key: "view_more", label: t("footer.categories.view_more") },
-  ];
-
-  const quickLinks = [
-    { key: "about_us", label: t("footer.links.about_us") },
-    { key: "contact_us", label: t("footer.links.contact_us") },
-    { key: "products", label: t("footer.links.products") },
-    { key: "login", label: t("footer.links.login") },
-    { key: "sign_up", label: t("footer.links.sign_up") },
-    { key: "faq", label: t("footer.links.faq") },
-    { key: "shipment", label: t("footer.links.shipment") },
-  ];
-
   return (
     <HStack align="start" gap={12}>
-      <VStack align="start" gap={3}>
-        <Text fontSize="16px" fontWeight="700" color="text.strong" mb={1}>
+      <Box>
+        <Text fontSize="16px" fontWeight="700" color="text.strong" mb={3}>
           {t("footer.books_categories")}
         </Text>
-        {booksCategories.map((category) => (
-          <Link
-            key={category.key}
-            fontSize="14px"
-            color="text.subtle"
-            textDecoration="none"
-            _hover={{
-              color: "brand.purple",
-              textDecoration: "none",
-              fontWeight: "600",
-            }}
-          >
-            {category.label}
-          </Link>
-        ))}
-      </VStack>
+        <Grid templateColumns="1fr 1fr" columnGap={8} rowGap={3}>
+          {GENRES.map(({ genre, key }) => (
+            <Link key={key} to={`/books?genre=${genre}`}>
+              <Text {...linkStyle}>{t(`footer.categories.${key}`)}</Text>
+            </Link>
+          ))}
+        </Grid>
+      </Box>
 
       <VStack align="start" gap={3}>
         <Text fontSize="16px" fontWeight="700" color="text.strong" mb={1}>
           {t("footer.quick_links")}
         </Text>
-        {quickLinks.map((link) => (
-          <Link
-            key={link.key}
-            fontSize="14px"
-            color="text.subtle"
-            textDecoration="none"
-            _hover={{
-              color: "brand.purple",
-              textDecoration: "none",
-              fontWeight: "600",
-            }}
-          >
-            {link.label}
+        {QUICK_LINKS.map(({ key, path }) => (
+          <Link key={key} to={path}>
+            <Text {...linkStyle}>{t(`footer.links.${key}`)}</Text>
           </Link>
         ))}
       </VStack>

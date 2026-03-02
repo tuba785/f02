@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import { HiArrowRight } from "react-icons/hi";
 import { useColorMode } from "../../../ui/color-mode";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 interface Slide {
   title: string;
@@ -61,6 +62,7 @@ export const BannerContent1 = ({
 }: BannerContent1Props) => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
+  const navigate = useNavigate();
 
   const { t } = useTranslation();
 
@@ -189,6 +191,7 @@ export const BannerContent1 = ({
                     transform: "translateY(-2px)",
                   }}
                   transition="all 0.3s ease"
+                  onClick={() => navigate("/purchase")}
                 >
                   {t("banner1.get_the_deal")}
                   <HiArrowRight size={20} />
@@ -211,6 +214,7 @@ export const BannerContent1 = ({
                     color: "brand.purple",
                   }}
                   transition="all 0.3s ease"
+                  onClick={() => navigate("/promos")}
                 >
                   {t("banner1.see_other_promos")}
                 </Button>

@@ -21,7 +21,6 @@ const config = defineConfig({
     },
     semanticTokens: {
       colors: {
-        // ── Backgrounds ──
         "bg.page": {
           value: { _light: "#ffffff", _dark: "#0f0f1a" },
         },
@@ -56,7 +55,6 @@ const config = defineConfig({
           value: { _light: "gray.100", _dark: "gray.700" },
         },
 
-        // ── Text ──
         "text.primary": {
           value: { _light: "#11142d", _dark: "#e2e4e9" },
         },
@@ -88,7 +86,6 @@ const config = defineConfig({
           value: { _light: "black", _dark: "white" },
         },
 
-        // ── Borders ──
         "border.default": {
           value: { _light: "#e8e8e8", _dark: "#3a3a4c" },
         },
@@ -114,7 +111,6 @@ const config = defineConfig({
           value: { _light: "#ccc", _dark: "gray.500" },
         },
 
-        // ── Brand ──
         "brand.purple": {
           value: { _light: "#6c5dd3", _dark: "#8b7fdf" },
         },
@@ -128,7 +124,6 @@ const config = defineConfig({
           value: { _light: "#6c5dd318", _dark: "rgba(108,93,211,0.12)" },
         },
 
-        // ── Status ──
         "status.error": {
           value: { _light: "#e53e3e", _dark: "#fc8181" },
         },
@@ -151,7 +146,6 @@ const config = defineConfig({
           value: { _light: "#e5e7eb", _dark: "#3a3a4c" },
         },
 
-        // ── Hover ──
         "hover.surface": {
           value: { _light: "#f0f0f0", _dark: "#2d2d3f" },
         },
@@ -171,7 +165,6 @@ const config = defineConfig({
           value: { _light: "#f5f5f5", _dark: "#2a2a3c" },
         },
 
-        // ── Overlay ──
         "overlay.light": {
           value: { _light: "rgba(0,0,0,0.4)", _dark: "rgba(0,0,0,0.6)" },
         },

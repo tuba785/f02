@@ -1,16 +1,11 @@
 import { Box, Button, HStack } from "@chakra-ui/react";
 import { FiUser } from "react-icons/fi";
-import { useDispatch } from "react-redux";
-import { login } from "../../../store/slices/authSlice";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-const AuthActions = () => {
-  const dispatch = useDispatch();
-  const { t } = useTranslation();
 
-  const handleSignUp = () => {
-    dispatch(login());
-    window.location.reload();
-  };
+const AuthActions = () => {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <HStack gap={3}>
@@ -23,6 +18,7 @@ const AuthActions = () => {
         borderRadius="14px"
         fontWeight="600"
         _hover={{ opacity: 0.8 }}
+        onClick={() => navigate("/login")}
       >
         {t("header.log_in")}
       </Button>
@@ -36,7 +32,7 @@ const AuthActions = () => {
         px="18px"
         borderRadius="14px"
         _hover={{ opacity: 0.85 }}
-        onClick={handleSignUp}
+        onClick={() => navigate("/register")}
       >
         <FiUser />
         <Box as="span">{t("header.sign_up")}</Box>

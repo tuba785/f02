@@ -1,15 +1,15 @@
 import Header from "../../components/layout/Header/Header";
 import Footer from "../../components/layout/Footer/Footer";
-import LoginComponent from "../../components/layout/Account/LoginComponent";
+import TermsComponent from "../../components/layout/Account/TermsComponent";
 
-const LoginPage = () => {
+const TermsPage = () => {
   return (
     <>
       <Header />
-      <LoginComponent />
+      <TermsComponent />
       <Footer />
     </>
   );
 };
 
-export default LoginPage;
+export default TermsPage;

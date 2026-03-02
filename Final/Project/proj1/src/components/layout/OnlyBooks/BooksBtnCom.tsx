@@ -2,6 +2,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaHeart, FaRegHeart, FaStar } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { RootState } from "../../../store/store";
 import { toggleFavorite } from "../../../store/slices/favoritesSlice";
@@ -65,6 +66,8 @@ export const AddToCartBtn = ({
 }: AddToCartBtnProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const inCart = useSelector((state: RootState) =>
     bookId ? state.cart.items.some((i) => i.bookId === bookId) : false,
   );
@@ -72,6 +75,10 @@ export const AddToCartBtn = ({
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     if (bookId) dispatch(addToCart({ bookId, qty }));
     onClick?.();
   };
@@ -154,7 +161,6 @@ export const AlreadyInCartBtn = ({ onClick }: AlreadyInCartBtnProps) => {
     </Flex>
   );
 };
-// );
 
 interface HeartBtnProps {
   bookId?: string;
@@ -163,6 +169,8 @@ interface HeartBtnProps {
 
 export const HeartBtn = ({ bookId, onClick }: HeartBtnProps) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
   const isFav = useSelector((state: RootState) =>
     bookId ? state.favorites.ids.includes(bookId) : false,
   );
@@ -170,6 +178,10 @@ export const HeartBtn = ({ bookId, onClick }: HeartBtnProps) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     if (bookId) dispatch(toggleFavorite(bookId));
     onClick?.();
   };
@@ -198,10 +210,16 @@ export const HeartBtn = ({ bookId, onClick }: HeartBtnProps) => {
 
 export const HeartBtnFilled = ({ bookId, onClick }: HeartBtnProps) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
     if (bookId) dispatch(toggleFavorite(bookId));
     onClick?.();
   };
