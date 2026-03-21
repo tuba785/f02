@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { FaHeart, FaTrash } from "react-icons/fa";
-import { FiX } from "react-icons/fi";
+import { FiShoppingCart, FiX } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store/store";
 import {
   removeFavorite,
   clearAllFavorites,
 } from "../../../store/slices/favoritesSlice";
+import { addToCart, removeFromCart } from "../../../store/slices/cartSlice";
 import type { Book } from "../../../types/book";
 import { useTranslation } from "react-i18next";
 
@@ -216,7 +217,27 @@ interface FavoriteItemProps {
 const THUMB = 60;
 
 const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+  const inCart = useSelector((state: RootState) =>
+    state.cart.items.some((item) => item.bookId === book.id),
+  );
   const hasDiscount = book.discount !== null && book.discount > 0;
+
+  const handleCartToggle = () => {
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
+
+    if (inCart) {
+      dispatch(removeFromCart(book.id));
+      return;
+    }
+
+    dispatch(addToCart({ bookId: book.id }));
+  };
 
   return (
     <Flex
@@ -289,25 +310,45 @@ const FavoriteItem = ({ book, onRemove, onNavigate }: FavoriteItemProps) => {
         </Flex>
       </Link>
 
-      <Box
-        w="36px"
-        h="36px"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        borderRadius="8px"
-        border="1.5px solid"
-        borderColor="brand.purple"
-        bg="bg.surface"
-        color="brand.purple"
-        cursor="pointer"
-        transition="all 0.2s"
-        _hover={{ bg: "hover.brand" }}
-        flexShrink={0}
-        onClick={onRemove}
-      >
-        <FaHeart size={14} />
-      </Box>
+      <Flex gap={2} flexShrink={0}>
+        <Box
+          w="36px"
+          h="36px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="8px"
+          border="1.5px solid"
+          borderColor="brand.purple"
+          bg={inCart ? "bg.surface" : "brand.purple"}
+          color={inCart ? "brand.purple" : "text.onBrand"}
+          cursor="pointer"
+          transition="all 0.2s"
+          _hover={inCart ? { bg: "hover.brand" } : { opacity: 0.85 }}
+          onClick={handleCartToggle}
+        >
+          <FiShoppingCart size={14} />
+        </Box>
+
+        <Box
+          w="36px"
+          h="36px"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="8px"
+          border="1.5px solid"
+          borderColor="brand.purple"
+          bg="bg.surface"
+          color="brand.purple"
+          cursor="pointer"
+          transition="all 0.2s"
+          _hover={{ bg: "hover.brand" }}
+          onClick={onRemove}
+        >
+          <FaHeart size={14} />
+        </Box>
+      </Flex>
     </Flex>
   );
 };

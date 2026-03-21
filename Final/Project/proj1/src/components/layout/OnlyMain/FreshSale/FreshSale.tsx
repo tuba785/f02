@@ -1,10 +1,10 @@
-﻿import { Box, VStack, HStack, Text, Heading, Grid } from "@chakra-ui/react";
+﻿import { Box, VStack, Text, Heading, Grid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { colors } from "../../../../styles/colors";
 import { useBooks } from "../../../../hooks/useBooks";
 import type { Book } from "../../../../types/book";
 import FreshSalesCard from "./FreshSalesCard";
 import { useTranslation } from "react-i18next";
+import TimeForSale from "./TimeForSale";
 
 const FreshSale = () => {
   const { t } = useTranslation();
@@ -42,64 +42,7 @@ const FreshSale = () => {
           </Text>
         </VStack>
 
-        <Box
-          border="1px solid"
-          borderColor="border.default"
-          borderRadius="lg"
-          px={{ base: 6, md: 10 }}
-          py={4}
-        >
-          <HStack gap={{ base: 4, md: 8 }}>
-            <VStack gap={1} w="60px">
-              <Text
-                fontSize="4xl"
-                fontWeight="bold"
-                color={colors.primary.orange}
-              >
-                02
-              </Text>
-              <Text fontSize="xs" color="text.muted">
-                {t("fresh_sale.day")}
-              </Text>
-            </VStack>
-            <VStack gap={1} w="60px">
-              <Text
-                fontSize="4xl"
-                fontWeight="bold"
-                color={colors.primary.orange}
-              >
-                05
-              </Text>
-              <Text fontSize="xs" color="text.muted">
-                {t("fresh_sale.hours")}
-              </Text>
-            </VStack>
-            <VStack gap={1} w="60px">
-              <Text
-                fontSize="4xl"
-                fontWeight="bold"
-                color={colors.primary.orange}
-              >
-                42
-              </Text>
-              <Text fontSize="xs" color="text.muted">
-                {t("fresh_sale.minutes")}
-              </Text>
-            </VStack>
-            <VStack gap={1} w="60px">
-              <Text
-                fontSize="4xl"
-                fontWeight="bold"
-                color={colors.primary.orange}
-              >
-                19
-              </Text>
-              <Text fontSize="xs" color="text.muted">
-                {t("fresh_sale.second")}
-              </Text>
-            </VStack>
-          </HStack>
-        </Box>
+        <TimeForSale />
 
         <Grid
           templateColumns={{

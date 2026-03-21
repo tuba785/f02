@@ -18,6 +18,16 @@ import LoginImg from "../../../assets/images/LogIn.png";
 const EMAIL_MAX = 50;
 const PASS_MAX = 30;
 const PASS_MIN = 6;
+const API_URL = "https://699ec8af78dda56d396b55cf.mockapi.io/api/v1/accounts";
+
+interface Account {
+  id: string;
+  email: string;
+  password: string;
+  first_name?: string;
+  last_name?: string;
+  role?: string;
+}
 
 const LoginComponent = () => {
   const { t } = useTranslation();
@@ -29,6 +39,8 @@ const LoginComponent = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   const blur = (field: string) => {
     setTouched((p) => ({ ...p, [field]: true }));
@@ -56,9 +68,10 @@ const LoginComponent = () => {
     return null;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    setApiError(null);
 
     if (
       !email.trim() ||
@@ -69,8 +82,45 @@ const LoginComponent = () => {
       return;
     }
 
-    dispatch(login());
-    navigate("/");
+    setLoading(true);
+
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error(t("login.error"));
+      }
+
+      const accounts: Account[] = await response.json();
+      const user = accounts.find(
+        (acc) => acc.email === email && acc.password === password,
+      );
+
+      if (!user) {
+        setApiError(t("login.invalid_credentials"));
+        setLoading(false);
+        return;
+      }
+
+      dispatch(
+        login({
+          user: {
+            id: user.id,
+            email: user.email,
+            first_name: user.first_name || "",
+            last_name: user.last_name || "",
+            role: user.role || "user",
+          },
+          rememberMe,
+        }),
+      );
+
+      navigate("/");
+    } catch (error) {
+      console.error("Login error:", error);
+      setApiError(t("login.error"));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle = {
@@ -146,6 +196,18 @@ const LoginComponent = () => {
 
           <form onSubmit={handleSubmit}>
             <VStack gap={5} align="stretch">
+              {apiError && (
+                <Box
+                  bg="status.error"
+                  color="text.onError"
+                  p={3}
+                  borderRadius="10px"
+                  fontSize="14px"
+                >
+                  {apiError}
+                </Box>
+              )}
+
               <Box>
                 <Text {...labelStyle}>{t("login.email")}</Text>
                 <Input
@@ -157,6 +219,7 @@ const LoginComponent = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => blur("email")}
                   borderColor={getError("email") ? "red.400" : undefined}
+                  disabled={loading}
                 />
                 {getError("email") && (
                   <Text fontSize="12px" color="status.error" mt={1}>
@@ -176,6 +239,7 @@ const LoginComponent = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   onBlur={() => blur("password")}
                   borderColor={getError("password") ? "red.400" : undefined}
+                  disabled={loading}
                 />
                 {getError("password") && (
                   <Text fontSize="12px" color="status.error" mt={1}>
@@ -190,6 +254,7 @@ const LoginComponent = () => {
                   onCheckedChange={(e) => setRememberMe(!!e.checked)}
                   colorPalette="purple"
                   size="sm"
+                  disabled={loading}
                 >
                   <Checkbox.HiddenInput />
                   <Checkbox.Control
@@ -226,9 +291,11 @@ const LoginComponent = () => {
                 fontSize="16px"
                 fontWeight="700"
                 _hover={{ opacity: 0.85 }}
+                _disabled={{ opacity: 0.6, cursor: "not-allowed" }}
                 mt={2}
+                disabled={loading}
               >
-                {t("login.submit")}
+                {loading ? t("login.loading") : t("login.submit")}
               </Button>
 
               <Flex justify="center" gap={1} mt={2}>

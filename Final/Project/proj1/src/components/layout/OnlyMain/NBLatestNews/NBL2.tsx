@@ -2,6 +2,7 @@ import { Box, VStack, HStack, Text, Heading, Image } from "@chakra-ui/react";
 import { colors } from "../../../../styles/colors";
 import NBT3 from "../NBTestimonals/NBT3";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export interface NewsArticle {
   id: number;
@@ -19,6 +20,7 @@ interface NewsCardProps {
 
 export const NewsCard = ({ article }: NewsCardProps) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <VStack align="stretch" gap={4} bg="bg.surface" borderRadius="lg">
@@ -61,6 +63,7 @@ export const NewsCard = ({ article }: NewsCardProps) => {
           fontWeight="semibold"
           cursor="pointer"
           _hover={{ textDecoration: "underline" }}
+          onClick={() => navigate("/news")}
         >
           {t("latest_news.continue_reading")}
         </Text>

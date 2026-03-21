@@ -1,6 +1,14 @@
 ﻿import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
@@ -13,6 +21,8 @@ import { useTranslation } from "react-i18next";
 
 const BOOK_COVER_WIDTH = 140;
 const BOOK_COVER_HEIGHT = 200;
+
+const formatPrice = (value: number) => value.toFixed(2);
 
 const getRandomBooks = (books: Book[], count: number) => {
   const shuffled = [...books].sort(() => Math.random() - 0.5);
@@ -61,7 +71,7 @@ export const BannerContent2 = () => {
         gap="8px"
         maxW="520px"
         paddingLeft="32px"
-        paddingBottom="32px"
+        paddingBottom="10px"
       >
         <Text fontSize="28px" fontWeight="700" color="text.heading">
           {t("banner2.title")}
@@ -143,23 +153,69 @@ export const BannerContent2 = () => {
           {randomBooks.map((book) => (
             <SwiperSlide key={book.id}>
               <Link to={`/books/${book.id}`}>
-                <Box
-                  width={`${BOOK_COVER_WIDTH}px`}
-                  height={`${BOOK_COVER_HEIGHT}px`}
-                  borderRadius="12px"
-                  overflow="hidden"
-                  backgroundColor="status.inactive"
-                  boxShadow="inset 0 0 0 2px rgba(255, 255, 255, 0.7)"
-                  cursor="pointer"
-                >
-                  <Image
-                    src={`${book.cover}/${BOOK_COVER_WIDTH}/${BOOK_COVER_HEIGHT}`}
-                    alt={book.title}
-                    width="100%"
-                    height="100%"
-                    objectFit="cover"
-                  />
-                </Box>
+                <VStack align="start" gap={2} width={`${BOOK_COVER_WIDTH}px`}>
+                  <Box
+                    width={`${BOOK_COVER_WIDTH}px`}
+                    height={`${BOOK_COVER_HEIGHT}px`}
+                    borderRadius="12px"
+                    overflow="hidden"
+                    backgroundColor="status.inactive"
+                    boxShadow="inset 0 0 0 2px rgba(255, 255, 255, 0.7)"
+                    cursor="pointer"
+                  >
+                    <Image
+                      src={`${book.cover}/${BOOK_COVER_WIDTH}/${BOOK_COVER_HEIGHT}`}
+                      alt={book.title}
+                      width="100%"
+                      height="100%"
+                      objectFit="cover"
+                    />
+                  </Box>
+
+                  <Text
+                    fontSize="sm"
+                    fontWeight="700"
+                    color="text.strong"
+                    lineHeight="1.3"
+                    css={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 1,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {book.title}
+                  </Text>
+
+                  <Text
+                    fontSize="xs"
+                    color="text.secondary"
+                    lineHeight="1.3"
+                    css={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 1,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {book.author}
+                  </Text>
+
+                  <HStack gap={2} align="baseline">
+                    <Text fontSize="sm" fontWeight="700" color="text.strong">
+                      $ {formatPrice(book.discounted_price)}
+                    </Text>
+                    {book.discount !== null && book.discount > 0 && (
+                      <Text
+                        fontSize="xs"
+                        color="text.placeholder"
+                        textDecoration="line-through"
+                      >
+                        $ {formatPrice(book.price)}
+                      </Text>
+                    )}
+                  </HStack>
+                </VStack>
               </Link>
             </SwiperSlide>
           ))}

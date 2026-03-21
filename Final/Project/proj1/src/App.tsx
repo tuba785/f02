@@ -9,6 +9,7 @@ import AboutUsPage from "./pages/AboutUs/AboutUsPage";
 import PurchasePage from "./pages/Purchase/PurchasePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PromosPage from "./pages/Promos/PromosPage";
+import NewsPage from "./pages/News/NewsPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/promos",
         element: <PromosPage />,
+      },
+      {
+        path: "/news",
+        element: <NewsPage />,
       },
       {
         path: "*",

@@ -2,17 +2,31 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { FiUser, FiSettings, FiLogOut } from "react-icons/fi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/slices/authSlice";
 import ProfileSettings from "../../layout/Modals/ProfileSettings";
 import { useTranslation } from "react-i18next";
+import type { RootState } from "../../../store/store";
 
 const ProfileButton = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const currentUser = useSelector((state: RootState) => state.auth.user);
   const [isOpen, setIsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const fullName = [currentUser?.last_name, currentUser?.first_name]
+    .filter(Boolean)
+    .join(" ");
+  const userName = fullName || currentUser?.email || t("header.profile");
+  const rawRole = (currentUser?.role || "user").toLowerCase();
+  const userRole =
+    rawRole === "admin"
+      ? t("header.role_admin")
+      : rawRole === "user"
+        ? t("header.role_user")
+        : currentUser?.role || t("header.role_user");
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -80,10 +94,10 @@ const ProfileButton = () => {
               </Flex>
               <Box>
                 <Text fontSize="14px" fontWeight="700" color="text.primary">
-                  {t("header.admin_name")}
+                  {userName}
                 </Text>
                 <Text fontSize="12px" color="text.secondary">
-                  {t("header.administrator")}
+                  {userRole}
                 </Text>
               </Box>
             </Flex>

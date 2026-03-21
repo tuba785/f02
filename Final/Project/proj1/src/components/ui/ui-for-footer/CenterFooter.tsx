@@ -20,6 +20,7 @@ const QUICK_LINKS = [
   { key: "login", path: "/login" },
   { key: "sign_up", path: "/register" },
   { key: "promos", path: "/promos" },
+  { key: "news", path: "/news" },
   { key: "about_us", path: "/about" },
   { key: "terms", path: "/terms" },
 ];

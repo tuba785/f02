@@ -8,6 +8,8 @@
     "profile": "Profile",
     "admin_name": "Admin Admin",
     "administrator": "Administrator",
+    "role_user": "User",
+    "role_admin": "Administrator",
     "account_settings": "Account Settings",
     "log_out": "Log Out",
     "menus": "Menus",
@@ -41,6 +43,7 @@
       "sign_up": "Sign Up",
       "about_us": "About Us",
       "promos": "Promos",
+      "news": "News",
       "terms": "Terms"
     }
   },
@@ -136,25 +139,30 @@
   },
   "latest_news": {
     "title": "Latest News",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "description": "Discover the most important updates about reading, books, and literary trends. Stay informed with our carefully curated news collection for book lovers.",
     "view_more": "View more",
     "continue_reading": "Continue reading",
+    "read_more": "Read More",
     "articles": [
       {
         "title": "Why reading is important for our children?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+        "description": "Reading fosters imagination and expands vocabulary...",
+        "full_description": "Reading is a fundamental activity that ignites children's imagination, expands their vocabulary, and improves concentration. Research shows that children who start reading early perform better in school and develop superior communication skills. It creates a foundation for lifelong learning and helps them understand different perspectives and cultures from an early age."
       },
       {
         "title": "Benefits of reading: Smart, Diligent, Happy",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+        "description": "Regular reading enhances cognitive abilities and mental health...",
+        "full_description": "Regular reading is scientifically proven to enhance cognitive abilities, improve memory, and strengthen analytical thinking skills. People who read consistently experience lower stress levels, better sleep quality, and improved mental health. Reading provides an escape from daily pressures while simultaneously developing your mind, making you smarter, more diligent, and ultimately happier."
       },
       {
         "title": "What books you should read in 2020?",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+        "description": "From classics to bestsellers, explore the best books of 2020...",
+        "full_description": "From timeless classics to contemporary bestsellers, 2020 brought us an extraordinary collection of books worth reading. Whether you're interested in fiction, biography, or self-help, we've curated a list of the most impactful books of 2020 that deserve a place in your library. Discover new genres, meet innovative authors, and broaden your literary horizons with our carefully selected recommendations."
       },
       {
         "title": "10 Things you must know to improve your reading skills",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore..."
+        "description": "Master effective reading techniques to read faster and retain more...",
+        "full_description": "Improving your reading skills requires practice and the right techniques. From speed reading methods to active reading strategies, we reveal the 10 most effective techniques that help you read faster, understand text better, and retain information longer. Whether you're a casual reader or a dedicated book enthusiast, these proven methods will transform how you engage with literature and maximize your learning potential."
       }
     ]
   },
@@ -266,7 +274,17 @@
   "profile_settings": {
     "title": "Account Settings",
     "coming_soon": "Settings coming soon",
-    "description": "Account settings and profile customization will be available in a future update."
+    "description": "Additional account settings are currently in development.",
+    "change_password_title": "Change Password",
+    "old_password": "OLD PASSWORD",
+    "old_password_placeholder": "Enter your current password",
+    "new_password": "NEW PASSWORD",
+    "new_password_placeholder": "Enter a new password",
+    "change_password_submit": "Confirm",
+    "change_password_loading": "Updating...",
+    "old_password_incorrect": "Current password is incorrect",
+    "password_changed": "Password changed successfully",
+    "change_password_error": "Failed to change password"
   },
   "purchase": {
     "buyer_info": "Buyer Info",
@@ -379,7 +397,10 @@
     "required": "This field is required",
     "max_chars": "Max {{count}} characters",
     "min_chars": "Min {{count}} characters",
-    "invalid_email": "Invalid email address"
+    "invalid_email": "Invalid email address",
+    "invalid_credentials": "Invalid email or password",
+    "loading": "Logging in...",
+    "error": "Login failed. Please try again"
   },
   "signup": {
     "title": "Create Account",
@@ -402,7 +423,17 @@
     "max_chars": "Max {{count}} characters",
     "min_chars": "Min {{count}} characters",
     "invalid_email": "Invalid email address",
-    "passwords_not_match": "Passwords do not match"
+    "passwords_not_match": "Passwords do not match",
+    "password_min": "Password must be at least {{count}} characters",
+    "password_uppercase": "Password must contain at least 1 uppercase letter",
+    "password_lowercase": "Password must contain at least 1 lowercase letter",
+    "password_digit": "Password must contain at least 1 digit",
+    "password_special": "Password must contain at least 1 special character",
+    "password_english_only": "Password must contain only English characters and symbols",
+    "name_min": "Min {{count}} characters",
+    "signup_loading": "Creating account...",
+    "signup_error": "Failed to create account",
+    "email_exists": "Email already registered"
   },
   "terms_info": {
     "title": "Terms Required",

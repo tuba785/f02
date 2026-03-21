@@ -194,6 +194,7 @@ const RelatedBooks = () => {
           cursor="pointer"
           transition="background 0.15s"
           _hover={{ bgColor: "brand.purple", color: "text.onBrand" }}
+          onClick={() => navigate("/books")}
         >
           {t("book_detail.view_more")}
         </Flex>

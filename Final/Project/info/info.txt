@@ -1,4 +1,5 @@
 Api: https://699ec8af78dda56d396b55cf.mockapi.io/api/v1/books
+Api2: https://699ec8af78dda56d396b55cf.mockapi.io/api/v1/accounts
 
 Color 1 - Purple - #6c5dd3
 Color 2 - Pale Purple - #f0eeff

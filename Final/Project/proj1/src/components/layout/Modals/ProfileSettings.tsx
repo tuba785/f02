@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import ChangePassword from "./ChangePassword";
 
 interface ProfileSettingsProps {
   isOpen: boolean;
@@ -54,36 +55,29 @@ const ProfileSettings = ({ isOpen, onClose }: ProfileSettingsProps) => {
           </Flex>
         </Flex>
 
-        <Flex
-          align="center"
-          justify="center"
-          py={12}
-          direction="column"
-          gap={3}
-        >
-          <Box
-            w="56px"
-            h="56px"
-            borderRadius="full"
-            bg="brand.purpleFaint"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+        <Box>
+          <ChangePassword />
+
+          <Flex
+            align="center"
+            justify="center"
+            pt={6}
+            direction="column"
+            gap={2}
           >
-            <Text fontSize="22px">⚙️</Text>
-          </Box>
-          <Text fontSize="15px" fontWeight="600" color="text.primary">
-            {t("profile_settings.coming_soon")}
-          </Text>
-          <Text
-            fontSize="13px"
-            color="text.secondary"
-            textAlign="center"
-            maxW="300px"
-          >
-            {t("profile_settings.description")}
-          </Text>
-        </Flex>
+            <Text fontSize="15px" fontWeight="600" color="text.primary">
+              {t("profile_settings.coming_soon")}
+            </Text>
+            <Text
+              fontSize="13px"
+              color="text.secondary"
+              textAlign="center"
+              maxW="320px"
+            >
+              {t("profile_settings.description")}
+            </Text>
+          </Flex>
+        </Box>
       </Box>
     </Box>
   );

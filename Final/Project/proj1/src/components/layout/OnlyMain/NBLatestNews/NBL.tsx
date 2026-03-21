@@ -12,9 +12,11 @@ import { colors } from "../../../../styles/colors";
 import { NewsCard } from "./NBL2";
 import type { NewsArticle } from "./NBL2";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const NBL = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const articles: NewsArticle[] = [
     {
@@ -82,6 +84,7 @@ const NBL = () => {
             _hover={{ bg: colors.primary.purple, opacity: 0.9 }}
             fontSize="md"
             fontWeight="semibold"
+            onClick={() => navigate("/news")}
           >
             <HStack gap={2}>
               <Text>{t("latest_news.view_more")}</Text>

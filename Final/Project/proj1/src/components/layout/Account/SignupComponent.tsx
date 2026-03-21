@@ -10,20 +10,31 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { login } from "../../../store/slices/authSlice";
 import TermsInfo from "../MiniModals/TermsInfo";
 import SignUpImg from "../../../assets/images/SignUp.png";
 
+const NAME_MIN = 2;
 const NAME_MAX = 30;
 const EMAIL_MAX = 50;
-const PASS_MAX = 30;
-const PASS_MIN = 6;
+const PASS_MIN = 10;
+const PASS_MAX = 50;
+const API_URL = "https://699ec8af78dda56d396b55cf.mockapi.io/api/v1/accounts";
+
+const ENGLISH_ONLY_PATTERN = /^[a-zA-Z\s]*$/;
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PASSWORD_PATTERN = /^[a-zA-Z0-9!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?-]*$/;
+
+interface Account {
+  email: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  role: string;
+}
 
 const SignupComponent = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
@@ -35,9 +46,39 @@ const SignupComponent = () => {
   const [submitted, setSubmitted] = useState(false);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [showTermsInfo, setShowTermsInfo] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   const blur = (field: string) => {
     setTouched((p) => ({ ...p, [field]: true }));
+  };
+
+  const validatePasswordComplexity = (pwd: string): string | null => {
+    if (pwd.length < PASS_MIN) {
+      return t("signup.password_min", { count: PASS_MIN });
+    }
+
+    if (!PASSWORD_PATTERN.test(pwd)) {
+      return t("signup.password_english_only");
+    }
+
+    if (!/[A-Z]/.test(pwd)) {
+      return t("signup.password_uppercase");
+    }
+
+    if (!/[a-z]/.test(pwd)) {
+      return t("signup.password_lowercase");
+    }
+
+    if (!/\d/.test(pwd)) {
+      return t("signup.password_digit");
+    }
+
+    if (!/[!@#$%^&*()_+=\[\]{};':"\\|,.<>\/?-]/.test(pwd)) {
+      return t("signup.password_special");
+    }
+
+    return null;
   };
 
   const getError = (
@@ -48,29 +89,34 @@ const SignupComponent = () => {
 
     if (field === "firstName") {
       if (!firstName.trim()) return t("signup.required");
+      if (firstName.length < NAME_MIN)
+        return t("signup.name_min", { count: NAME_MIN });
       if (firstName.length > NAME_MAX)
         return t("signup.max_chars", { count: NAME_MAX });
+      if (!ENGLISH_ONLY_PATTERN.test(firstName))
+        return t("signup.password_english_only");
     }
 
     if (field === "lastName") {
       if (!lastName.trim()) return t("signup.required");
+      if (lastName.length < NAME_MIN)
+        return t("signup.name_min", { count: NAME_MIN });
       if (lastName.length > NAME_MAX)
         return t("signup.max_chars", { count: NAME_MAX });
+      if (!ENGLISH_ONLY_PATTERN.test(lastName))
+        return t("signup.password_english_only");
     }
 
     if (field === "email") {
       if (!email.trim()) return t("signup.required");
       if (email.length > EMAIL_MAX)
         return t("signup.max_chars", { count: EMAIL_MAX });
-      if (!email.includes("@")) return t("signup.invalid_email");
+      if (!EMAIL_PATTERN.test(email)) return t("signup.invalid_email");
     }
 
     if (field === "password") {
       if (!password.trim()) return t("signup.required");
-      if (password.length < PASS_MIN)
-        return t("signup.min_chars", { count: PASS_MIN });
-      if (password.length > PASS_MAX)
-        return t("signup.max_chars", { count: PASS_MAX });
+      return validatePasswordComplexity(password);
     }
 
     if (field === "confirmPassword") {
@@ -84,28 +130,67 @@ const SignupComponent = () => {
   const isValid = () => {
     return (
       firstName.trim() &&
+      firstName.length >= NAME_MIN &&
+      firstName.length <= NAME_MAX &&
+      ENGLISH_ONLY_PATTERN.test(firstName) &&
       lastName.trim() &&
+      lastName.length >= NAME_MIN &&
+      lastName.length <= NAME_MAX &&
+      ENGLISH_ONLY_PATTERN.test(lastName) &&
       email.trim() &&
-      email.includes("@") &&
+      EMAIL_PATTERN.test(email) &&
+      email.length <= EMAIL_MAX &&
       password.trim() &&
       password.length >= PASS_MIN &&
+      password.length <= PASS_MAX &&
+      !validatePasswordComplexity(password) &&
       confirmPassword === password &&
       agreeTerms
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    setApiError(null);
 
     if (!agreeTerms) {
       setShowTermsInfo(true);
+      return;
     }
 
     if (!isValid()) return;
 
-    dispatch(login());
-    navigate("/");
+    setLoading(true);
+
+    try {
+      const accountData: Account = {
+        email: email.trim(),
+        password: password.trim(),
+        first_name: firstName.trim(),
+        last_name: lastName.trim(),
+        role: "user",
+      };
+
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(accountData),
+      });
+
+      if (!response.ok) {
+        throw new Error(t("signup.signup_error"));
+      }
+
+      navigate("/login");
+    } catch (error) {
+      console.error("Signup error:", error);
+      setApiError(t("signup.signup_error"));
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle = {
@@ -181,6 +266,18 @@ const SignupComponent = () => {
 
           <form onSubmit={handleSubmit}>
             <VStack gap={5} align="stretch">
+              {apiError && (
+                <Box
+                  bg="status.error"
+                  color="text.onError"
+                  p={3}
+                  borderRadius="10px"
+                  fontSize="14px"
+                >
+                  {apiError}
+                </Box>
+              )}
+
               <Flex gap={4} direction={{ base: "column", sm: "row" }}>
                 <Box flex={1}>
                   <Text {...labelStyle}>{t("signup.first_name")}</Text>
@@ -192,6 +289,7 @@ const SignupComponent = () => {
                     onChange={(e) => setFirstName(e.target.value)}
                     onBlur={() => blur("firstName")}
                     borderColor={getError("firstName") ? "red.400" : undefined}
+                    disabled={loading}
                   />
                   {getError("firstName") && (
                     <Text fontSize="12px" color="status.error" mt={1}>
@@ -209,6 +307,7 @@ const SignupComponent = () => {
                     onChange={(e) => setLastName(e.target.value)}
                     onBlur={() => blur("lastName")}
                     borderColor={getError("lastName") ? "red.400" : undefined}
+                    disabled={loading}
                   />
                   {getError("lastName") && (
                     <Text fontSize="12px" color="status.error" mt={1}>
@@ -229,6 +328,7 @@ const SignupComponent = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   onBlur={() => blur("email")}
                   borderColor={getError("email") ? "red.400" : undefined}
+                  disabled={loading}
                 />
                 {getError("email") && (
                   <Text fontSize="12px" color="status.error" mt={1}>
@@ -248,6 +348,7 @@ const SignupComponent = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   onBlur={() => blur("password")}
                   borderColor={getError("password") ? "red.400" : undefined}
+                  disabled={loading}
                 />
                 {getError("password") && (
                   <Text fontSize="12px" color="status.error" mt={1}>
@@ -269,6 +370,7 @@ const SignupComponent = () => {
                   borderColor={
                     getError("confirmPassword") ? "red.400" : undefined
                   }
+                  disabled={loading}
                 />
                 {getError("confirmPassword") && (
                   <Text fontSize="12px" color="status.error" mt={1}>
@@ -286,6 +388,7 @@ const SignupComponent = () => {
                   }}
                   colorPalette="purple"
                   size="sm"
+                  disabled={loading}
                 >
                   <Checkbox.HiddenInput />
                   <Checkbox.Control
@@ -327,9 +430,11 @@ const SignupComponent = () => {
                 fontSize="16px"
                 fontWeight="700"
                 _hover={{ opacity: 0.85 }}
+                _disabled={{ opacity: 0.6, cursor: "not-allowed" }}
                 mt={2}
+                disabled={loading}
               >
-                {t("signup.submit")}
+                {loading ? t("signup.signup_loading") : t("signup.submit")}
               </Button>
 
               <Flex justify="center" gap={1} mt={2}>
